@@ -9,23 +9,24 @@ import qualified Network.HTTP.Types.Header as HTTP
 import qualified Data.ByteString.Lazy as B
 import qualified Data.Text    as T
 import qualified Data.Text.IO as T
+import qualified Text.Parsec.Token as Tok
 
+--import           Text.Parsec.Language (haskellStyle)
 --import           Text.Parsec.String
 --import           Text.Parsec.Char
+--import           Text.Parsec.Char
+--import           Text.Parsec.String
+--import           Text.ParserCombinators.Parsec hiding (State)
+--import           Text.ParserCombinators.Parsec.Char
+
 import           Network.HTTP.Conduit
 import           Web.Authenticate.OAuth
 import           Data.Text hiding (intersperse)
 import           Data.List (isInfixOf, intersperse)
 import           Text.Regex.TDFA
---import           Text.Parsec.Char
---import           Text.Parsec.String
---import           Text.ParserCombinators.Parsec hiding (State)
---import           Text.ParserCombinators.Parsec.Char
 import           System.IO
 import           Control.Monad
 import           Text.HTML.Scalpel
---import           Text.HTML.TagSoup-import           Data.Aeson
---import           Control.Applicative
 import           Control.Applicative hiding ((<|>), many)
 import           Data.Default (def)
 import           System.Environment
@@ -46,7 +47,8 @@ managerSettings = HTTP.tlsManagerSettings {
 --tags :: [Tag String]
 --tags = [TagText "text", TagComment "comment"]
 
---data Coin = String URL
+data Coin = String URL
+--
 {-
 brackets :: Parser a -> Parser a
 brackets m =
@@ -96,12 +98,12 @@ scraper = do
       url = "https://coinmarketcap.com/all/views/all/"
       printError = putStrLn "Failed"
       printHtml = mapM_ putStrLn
-      process :: Maybe [String] -> [String] -> [String]
-      process Nothing   _       = []
-      process (Just (x:[])) acc = acc
-      process (Just (x:xs)) acc = process (Just xs) 
-        (acc ++ [x =~~ "[a-zA-Z0-9-]" 
-          :: String])
+      --process :: Maybe [String] -> [String] -> [String]
+      --process Nothing   _       = []
+      --process (Just (x:[])) acc = acc
+      --process (Just (x:xs)) acc = process (Just xs) 
+      --  (acc ++ [x =~~ "[a-zA-Z0-9-]" 
+      --    :: String])
       --coins :: Scraper String [Coin]
       -- parseURLS :: Parser
       coins = "a" @: [hasClass "currency-name-container"] -- $ do
