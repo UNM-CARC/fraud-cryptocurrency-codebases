@@ -1,6 +1,3 @@
-module Lib
-    ( someFunc
-    ) where
+module Lib where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+data DirTree a = LeafHash a | Node (DirTree a) (DirTree a)

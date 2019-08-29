@@ -14,6 +14,7 @@ import           System.IO
 import           Control.Monad
 import           Control.Applicative
 import           System.Process
+import           Data.Hash.MD5
 
 import Lib
 
@@ -22,10 +23,25 @@ splitEvery _ [] = []
 splitEvery n xs = as : splitEvery n bs 
   where (as,bs) = splitAt n xs
 
+cloneRepo :: [String] -> IO ()
+cloneRepo x = do
+  let str = "git clone --recursive " ++ last x ++ " /tmp/" ++ head x
+  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
+  print $ head x
+
+hashFile :: String -> IO ()
+
+generateTree :: String -> DirTree a
+generateTree prfx = do
+  let str = " /tmp/" ++ prfx
+  
+
 main :: IO ()
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $ fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp = splitEvery 3 $ fmap (filter (/= '\n') . filter (/= '\r')) $ concat clean
-  print tmp
+  cloneRepo $ head tmp
+  --print $ head tmp
+
   
