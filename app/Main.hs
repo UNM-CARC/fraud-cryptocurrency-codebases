@@ -52,7 +52,7 @@ cloneRepo x = do
 --  let str = " /tmp/" ++ prfx
   
 
-main :: IO ()
+main :: IO [FilePath]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $ fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
@@ -60,6 +60,7 @@ main = do
   --cloneRepo $ head tmp
   --print $ head tmp
   --getDirectoryContents "/tmp/BTC"
-  traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
+  --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
+  traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ head (head tmp))
 
   
