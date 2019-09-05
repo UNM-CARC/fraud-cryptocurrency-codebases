@@ -1,0 +1,2753 @@
+/tmp/BTC/:
+total 148K
+drwxr-xr-x 14 ela  ela   600 Aug 28 08:44 [0m[01;34m.[0m
+drwxrwxrwt 29 root root  640 Aug 29 11:47 [30;42m..[0m
+-rw-r--r--  1 ela  ela  2.2K Aug 28 08:44 .appveyor.yml
+-rwxr-xr-x  1 ela  ela   542 Aug 28 08:44 [01;32mautogen.sh[0m
+drwxr-xr-x  3 ela  ela    60 Aug 28 08:44 [01;34mbuild-aux[0m
+drwxr-xr-x 24 ela  ela   640 Aug 28 08:44 [01;34mbuild_msvc[0m
+drwxr-xr-x  6 ela  ela   160 Aug 28 08:44 [01;34mci[0m
+-rw-r--r--  1 ela  ela  1.8K Aug 28 08:44 .cirrus.yml
+-rw-r--r--  1 ela  ela   59K Aug 28 08:44 configure.ac
+drwxr-xr-x 17 ela  ela   520 Aug 28 08:44 [01;34mcontrib[0m
+-rw-r--r--  1 ela  ela   16K Aug 28 08:44 CONTRIBUTING.md
+-rw-r--r--  1 ela  ela  1.2K Aug 28 08:44 COPYING
+drwxr-xr-x  6 ela  ela   300 Aug 28 08:44 [01;34mdepends[0m
+drwxr-xr-x  4 ela  ela   820 Aug 28 08:44 [01;34mdoc[0m
+drwxr-xr-x  8 ela  ela   260 Aug 29 11:28 [01;34m.git[0m
+-rw-r--r--  1 ela  ela    35 Aug 28 08:44 .gitattributes
+drwxr-xr-x  2 ela  ela    80 Aug 28 08:44 [01;34m.github[0m
+-rw-r--r--  1 ela  ela  1.8K Aug 28 08:44 .gitignore
+-rw-r--r--  1 ela  ela   161 Aug 28 08:44 INSTALL.md
+-rw-r--r--  1 ela  ela   295 Aug 28 08:44 libbitcoinconsensus.pc.in
+-rw-r--r--  1 ela  ela   12K Aug 28 08:44 Makefile.am
+-rw-r--r--  1 ela  ela     6 Aug 28 08:44 .python-version
+-rw-r--r--  1 ela  ela  3.3K Aug 28 08:44 README.md
+-rw-r--r--  1 ela  ela   850 Aug 28 08:44 SECURITY.md
+drwxr-xr-x  6 ela  ela   160 Aug 28 08:44 [01;34mshare[0m
+drwxr-xr-x 23 ela  ela  3.4K Aug 28 08:44 [01;34msrc[0m
+-rw-r--r--  1 ela  ela  7.8K Aug 28 08:44 .style.yapf
+drwxr-xr-x  7 ela  ela   180 Aug 28 08:44 [01;34mtest[0m
+-rw-r--r--  1 ela  ela  5.7K Aug 28 08:44 .travis.yml
+drwxr-xr-x  2 ela  ela    60 Aug 28 08:44 [01;34m.tx[0m
+
+/tmp/BTC/build-aux:
+total 0
+drwxr-xr-x  3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela 600 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela 360 Aug 28 08:44 [01;34mm4[0m
+
+/tmp/BTC/build-aux/m4:
+total 148K
+drwxr-xr-x 2 ela ela  360 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  14K Aug 28 08:44 ax_boost_base.m4
+-rw-r--r-- 1 ela ela 4.4K Aug 28 08:44 ax_boost_chrono.m4
+-rw-r--r-- 1 ela ela 4.4K Aug 28 08:44 ax_boost_filesystem.m4
+-rw-r--r-- 1 ela ela 4.1K Aug 28 08:44 ax_boost_system.m4
+-rw-r--r-- 1 ela ela 5.1K Aug 28 08:44 ax_boost_thread.m4
+-rw-r--r-- 1 ela ela 5.9K Aug 28 08:44 ax_boost_unit_test_framework.m4
+-rw-r--r-- 1 ela ela 3.3K Aug 28 08:44 ax_check_compile_flag.m4
+-rw-r--r-- 1 ela ela 3.2K Aug 28 08:44 ax_check_link_flag.m4
+-rw-r--r-- 1 ela ela 3.2K Aug 28 08:44 ax_check_preproc_flag.m4
+-rw-r--r-- 1 ela ela  14K Aug 28 08:44 ax_cxx_compile_stdcxx.m4
+-rw-r--r-- 1 ela ela 7.6K Aug 28 08:44 ax_gcc_func_attribute.m4
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 ax_pthread.m4
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 bitcoin_find_bdb48.m4
+-rw-r--r-- 1 ela ela  20K Aug 28 08:44 bitcoin_qt.m4
+-rw-r--r-- 1 ela ela  800 Aug 28 08:44 bitcoin_subdir_to_include.m4
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 l_atomic.m4
+
+/tmp/BTC/build_msvc:
+total 60K
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mbench_bitcoin[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mbitcoin-cli[0m
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 bitcoin_config.h
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mbitcoind[0m
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 bitcoin.sln
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mbitcoin-tx[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mbitcoin-wallet[0m
+-rw-r--r--  1 ela ela 6.3K Aug 28 08:44 common.init.vcxproj
+-rw-r--r--  1 ela ela  741 Aug 28 08:44 common.vcxproj
+-rw-r--r--  1 ela ela  116 Aug 28 08:44 .gitignore
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_cli[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_common[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoinconsensus[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_crypto[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_qt[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_server[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_util[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_wallet[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_wallet_tool[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibbitcoin_zmq[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibleveldb[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibsecp256k1[0m
+-rw-r--r--  1 ela ela  910 Aug 28 08:44 libsecp256k1_config.h
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibunivalue[0m
+drwxr-xr-x  3 ela ela   60 Aug 28 08:44 [01;34mmsbuild[0m
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 msvc-autogen.py
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mtest_bitcoin[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mtest_bitcoin-qt[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mtestconsensus[0m
+
+/tmp/BTC/build_msvc/bench_bitcoin:
+total 8.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 bench_bitcoin.vcxproj
+
+/tmp/BTC/build_msvc/bitcoin-cli:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 bitcoin-cli.vcxproj
+
+/tmp/BTC/build_msvc/bitcoind:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 bitcoind.vcxproj
+
+/tmp/BTC/build_msvc/bitcoin-tx:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 bitcoin-tx.vcxproj
+
+/tmp/BTC/build_msvc/bitcoin-wallet:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 bitcoin-wallet.vcxproj
+
+/tmp/BTC/build_msvc/libbitcoin_cli:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 613 Aug 28 08:44 libbitcoin_cli.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoin_common:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 635 Aug 28 08:44 libbitcoin_common.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoinconsensus:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 libbitcoinconsensus.vcxproj
+
+/tmp/BTC/build_msvc/libbitcoin_crypto:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 635 Aug 28 08:44 libbitcoin_crypto.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoin_qt:
+total 44K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 44K Aug 28 08:44 libbitcoin_qt.vcxproj
+
+/tmp/BTC/build_msvc/libbitcoin_server:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 769 Aug 28 08:44 libbitcoin_server.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoin_util:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 635 Aug 28 08:44 libbitcoin_util.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoin_wallet:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 635 Aug 28 08:44 libbitcoin_wallet.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoin_wallet_tool:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 635 Aug 28 08:44 libbitcoin_wallet_tool.vcxproj.in
+
+/tmp/BTC/build_msvc/libbitcoin_zmq:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 635 Aug 28 08:44 libbitcoin_zmq.vcxproj.in
+
+/tmp/BTC/build_msvc/libleveldb:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 libleveldb.vcxproj
+
+/tmp/BTC/build_msvc/libsecp256k1:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1014 Aug 28 08:44 libsecp256k1.vcxproj
+
+/tmp/BTC/build_msvc/libunivalue:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 891 Aug 28 08:44 libunivalue.vcxproj
+
+/tmp/BTC/build_msvc/msbuild:
+total 0
+drwxr-xr-x  3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela 640 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela  80 Aug 28 08:44 [01;34mtasks[0m
+
+/tmp/BTC/build_msvc/msbuild/tasks:
+total 8.0K
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 hexdump.targets
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 replaceinfile.targets
+
+/tmp/BTC/build_msvc/test_bitcoin:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.5K Aug 28 08:44 test_bitcoin.vcxproj
+
+/tmp/BTC/build_msvc/test_bitcoin-qt:
+total 8.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 7.0K Aug 28 08:44 test_bitcoin-qt.vcxproj
+
+/tmp/BTC/build_msvc/testconsensus:
+total 8.0K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 24 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 testconsensus.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 testconsensus.vcxproj
+
+/tmp/BTC/ci:
+total 8.0K
+drwxr-xr-x  6 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mextended_lint[0m
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34mlint[0m
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mretry[0m
+drwxr-xr-x  2 ela ela  360 Aug 28 08:44 [01;34mtest[0m
+-rwxr-xr-x  1 ela ela  531 Aug 28 08:44 [01;32mtest_run_all.sh[0m
+
+/tmp/BTC/ci/extended_lint:
+total 8.0K
+drwxr-xr-x 2 ela ela  80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 160 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 519 Aug 28 08:44 [01;32m04_install.sh[0m
+-rwxr-xr-x 1 ela ela 257 Aug 28 08:44 [01;32m06_script.sh[0m
+
+/tmp/BTC/ci/lint:
+total 12K
+drwxr-xr-x 2 ela ela 100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 160 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 577 Aug 28 08:44 [01;32m04_install.sh[0m
+-rwxr-xr-x 1 ela ela 248 Aug 28 08:44 [01;32m05_before_script.sh[0m
+-rwxr-xr-x 1 ela ela 986 Aug 28 08:44 [01;32m06_script.sh[0m
+
+/tmp/BTC/ci/retry:
+total 12K
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 3.1K Aug 28 08:44 README.md
+-rwxr-xr-x 1 ela ela 4.4K Aug 28 08:44 [01;32mretry[0m
+
+/tmp/BTC/ci/test:
+total 64K
+drwxr-xr-x 2 ela ela  360 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  787 Aug 28 08:44 00_setup_env_amd64_asan.sh
+-rw-r--r-- 1 ela ela  671 Aug 28 08:44 00_setup_env_amd64_fuzz.sh
+-rw-r--r-- 1 ela ela  426 Aug 28 08:44 00_setup_env_amd64_nowallet.sh
+-rw-r--r-- 1 ela ela  835 Aug 28 08:44 00_setup_env_amd64_qt5.sh
+-rw-r--r-- 1 ela ela  755 Aug 28 08:44 00_setup_env_amd64_trusty.sh
+-rw-r--r-- 1 ela ela  828 Aug 28 08:44 00_setup_env_amd64_tsan.sh
+-rw-r--r-- 1 ela ela  684 Aug 28 08:44 00_setup_env_arm.sh
+-rw-r--r-- 1 ela ela  504 Aug 28 08:44 00_setup_env_i686.sh
+-rw-r--r-- 1 ela ela  572 Aug 28 08:44 00_setup_env_mac.sh
+-rwxr-xr-x 1 ela ela 1.7K Aug 28 08:44 [01;32m00_setup_env.sh[0m
+-rw-r--r-- 1 ela ela  457 Aug 28 08:44 00_setup_env_win64.sh
+-rwxr-xr-x 1 ela ela  644 Aug 28 08:44 [01;32m03_before_install.sh[0m
+-rwxr-xr-x 1 ela ela 2.1K Aug 28 08:44 [01;32m04_install.sh[0m
+-rwxr-xr-x 1 ela ela  986 Aug 28 08:44 [01;32m05_before_script.sh[0m
+-rwxr-xr-x 1 ela ela 1.5K Aug 28 08:44 [01;32m06_script_a.sh[0m
+-rwxr-xr-x 1 ela ela  939 Aug 28 08:44 [01;32m06_script_b.sh[0m
+
+/tmp/BTC/contrib:
+total 52K
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 bitcoin-cli.bash-completion
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 bitcoind.bash-completion
+-rw-r--r--  1 ela ela  756 Aug 28 08:44 bitcoin-qt.pro
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 bitcoin-tx.bash-completion
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mdebian[0m
+drwxr-xr-x  2 ela ela  260 Aug 28 08:44 [01;34mdevtools[0m
+-rwxr-xr-x  1 ela ela  950 Aug 28 08:44 [01;32mfilter-lcov.py[0m
+-rwxr-xr-x  1 ela ela  15K Aug 28 08:44 [01;32mgitian-build.py[0m
+drwxr-xr-x  2 ela ela  140 Aug 28 08:44 [01;34mgitian-descriptors[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mgitian-keys[0m
+drwxr-xr-x  3 ela ela  120 Aug 28 08:44 [01;34mguix[0m
+drwxr-xr-x  2 ela ela  180 Aug 28 08:44 [01;34minit[0m
+-rwxr-xr-x  1 ela ela 3.3K Aug 28 08:44 [01;32minstall_db4.sh[0m
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34mlinearize[0m
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34mmacdeploy[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mqos[0m
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela  140 Aug 28 08:44 [01;34mseeds[0m
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34mtestgen[0m
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 valgrind.supp
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mverifybinaries[0m
+drwxr-xr-x  2 ela ela  240 Aug 28 08:44 [01;34mverify-commits[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mwindeploy[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mzmq[0m
+
+/tmp/BTC/contrib/debian:
+total 8.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 5.4K Aug 28 08:44 copyright
+
+/tmp/BTC/contrib/devtools:
+total 88K
+drwxr-xr-x  2 ela ela  260 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x  1 ela ela 2.9K Aug 28 08:44 [01;32mcircular-dependencies.py[0m
+-rwxr-xr-x  1 ela ela 6.2K Aug 28 08:44 [01;32mclang-format-diff.py[0m
+-rwxr-xr-x  1 ela ela  22K Aug 28 08:44 [01;32mcopyright_header.py[0m
+-rwxr-xr-x  1 ela ela 1.2K Aug 28 08:44 [01;32mgen-manpages.sh[0m
+-rwxr-xr-x  1 ela ela 3.4K Aug 28 08:44 [01;32moptimize-pngs.py[0m
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 README.md
+-rwxr-xr-x  1 ela ela 8.1K Aug 28 08:44 [01;32msecurity-check.py[0m
+-rw-r--r--  1 ela ela  359 Aug 28 08:44 split-debug.sh.in
+-rwxr-xr-x  1 ela ela 6.6K Aug 28 08:44 [01;32msymbol-check.py[0m
+-rwxr-xr-x  1 ela ela 6.7K Aug 28 08:44 [01;32mtest_deterministic_coverage.sh[0m
+-rwxr-xr-x  1 ela ela 3.0K Aug 28 08:44 [01;32mtest-security-check.py[0m
+
+/tmp/BTC/contrib/gitian-descriptors:
+total 32K
+drwxr-xr-x  2 ela ela  140 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 6.6K Aug 28 08:44 gitian-linux.yml
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 gitian-osx-signer.yml
+-rw-r--r--  1 ela ela 5.6K Aug 28 08:44 gitian-osx.yml
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 gitian-win-signer.yml
+-rw-r--r--  1 ela ela 6.7K Aug 28 08:44 gitian-win.yml
+
+/tmp/BTC/contrib/gitian-keys:
+total 8.0K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 keys.txt
+-rw-r--r--  1 ela ela  891 Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/guix:
+total 24K
+drwxr-xr-x  3 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x  1 ela ela 1.8K Aug 28 08:44 [01;32mguix-build.sh[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mlibexec[0m
+-rw-r--r--  1 ela ela 6.0K Aug 28 08:44 manifest.scm
+-rw-r--r--  1 ela ela 8.1K Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/guix/libexec:
+total 12K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  120 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 8.4K Aug 28 08:44 build.sh
+
+/tmp/BTC/contrib/init:
+total 28K
+drwxr-xr-x  2 ela ela  180 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 bitcoind.conf
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 bitcoind.init
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 bitcoind.openrc
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 bitcoind.openrcconf
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 bitcoind.service
+-rw-r--r--  1 ela ela  367 Aug 28 08:44 org.bitcoin.bitcoind.plist
+-rw-r--r--  1 ela ela  318 Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/linearize:
+total 28K
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 example-linearize.cfg
+-rwxr-xr-x  1 ela ela  12K Aug 28 08:44 [01;32mlinearize-data.py[0m
+-rwxr-xr-x  1 ela ela 5.0K Aug 28 08:44 [01;32mlinearize-hashes.py[0m
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/macdeploy:
+total 100K
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 background.svg
+-rwxr-xr-x  1 ela ela 3.7K Aug 28 08:44 [01;32mcustom_dsstore.py[0m
+-rwxr-xr-x  1 ela ela 1.5K Aug 28 08:44 [01;32mdetached-sig-apply.sh[0m
+-rwxr-xr-x  1 ela ela 1.6K Aug 28 08:44 [01;32mdetached-sig-create.sh[0m
+-rwxr-xr-x  1 ela ela 1.2K Aug 28 08:44 [01;32mextract-osx-sdk.sh[0m
+-rw-r--r--  1 ela ela  729 Aug 28 08:44 fancy.plist
+-rw-r--r--  1 ela ela  35K Aug 28 08:44 LICENSE
+-rwxr-xr-x  1 ela ela  35K Aug 28 08:44 [01;32mmacdeployqtplus[0m
+-rw-r--r--  1 ela ela  463 Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/qos:
+total 8.0K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  444 Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 tc.sh
+
+/tmp/BTC/contrib/seeds:
+total 60K
+drwxr-xr-x  2 ela ela  140 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x  1 ela ela 4.3K Aug 28 08:44 [01;32mgenerate-seeds.py[0m
+-rwxr-xr-x  1 ela ela 6.2K Aug 28 08:44 [01;32mmakeseeds.py[0m
+-rw-r--r--  1 ela ela  34K Aug 28 08:44 nodes_main.txt
+-rw-r--r--  1 ela ela  216 Aug 28 08:44 nodes_test.txt
+-rw-r--r--  1 ela ela  815 Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/testgen:
+total 20K
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 base58.py
+-rwxr-xr-x  1 ela ela 9.0K Aug 28 08:44 [01;32mgen_key_io_test_vectors.py[0m
+-rw-r--r--  1 ela ela  371 Aug 28 08:44 README.md
+
+/tmp/BTC/contrib/verifybinaries:
+total 12K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 README.md
+-rwxr-xr-x  1 ela ela 5.0K Aug 28 08:44 [01;32mverify.sh[0m
+
+/tmp/BTC/contrib/verify-commits:
+total 68K
+drwxr-xr-x  2 ela ela  240 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela   82 Aug 28 08:44 allow-incorrect-sha512-commits
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 allow-revsig-commits
+-rw-r--r--  1 ela ela  164 Aug 28 08:44 allow-unclean-merge-commits
+-rwxr-xr-x  1 ela ela 2.4K Aug 28 08:44 [01;32mgpg.sh[0m
+-rwxr-xr-x  1 ela ela  656 Aug 28 08:44 [01;32mpre-push-hook.sh[0m
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela   41 Aug 28 08:44 trusted-git-root
+-rw-r--r--  1 ela ela  246 Aug 28 08:44 trusted-keys
+-rw-r--r--  1 ela ela   41 Aug 28 08:44 trusted-sha512-root-commit
+-rwxr-xr-x  1 ela ela 8.1K Aug 28 08:44 [01;32mverify-commits.py[0m
+
+/tmp/BTC/contrib/windeploy:
+total 12K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x  1 ela ela 1.1K Aug 28 08:44 [01;32mdetached-sig-create.sh[0m
+-rw-r--r--  1 ela ela 6.1K Aug 28 08:44 win-codesign.cert
+
+/tmp/BTC/contrib/zmq:
+total 4.0K
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 17 ela ela  520 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 zmq_sub.py
+
+/tmp/BTC/depends:
+total 124K
+drwxr-xr-x  6 ela ela  300 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34mbuilders[0m
+-rwxr-xr-x  1 ela ela  44K Aug 28 08:44 [01;32mconfig.guess[0m
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 config.site.in
+-rwxr-xr-x  1 ela ela  35K Aug 28 08:44 [01;32mconfig.sub[0m
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 description.md
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 funcs.mk
+-rw-r--r--  1 ela ela   92 Aug 28 08:44 .gitignore
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34mhosts[0m
+-rw-r--r--  1 ela ela 7.1K Aug 28 08:44 Makefile
+drwxr-xr-x  2 ela ela  560 Aug 28 08:44 [01;34mpackages[0m
+-rw-r--r--  1 ela ela 7.1K Aug 28 08:44 packages.md
+drwxr-xr-x  5 ela ela  100 Aug 28 08:44 [01;34mpatches[0m
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 README.md
+
+/tmp/BTC/depends/builders:
+total 12K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  300 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 darwin.mk
+-rw-r--r-- 1 ela ela  779 Aug 28 08:44 default.mk
+-rw-r--r-- 1 ela ela  157 Aug 28 08:44 linux.mk
+
+/tmp/BTC/depends/hosts:
+total 16K
+drwxr-xr-x 2 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  300 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  622 Aug 28 08:44 darwin.mk
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 default.mk
+-rw-r--r-- 1 ela ela  739 Aug 28 08:44 linux.mk
+-rw-r--r-- 1 ela ela  275 Aug 28 08:44 mingw32.mk
+
+/tmp/BTC/depends/packages:
+total 116K
+drwxr-xr-x 2 ela ela  560 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  300 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 bdb.mk
+-rw-r--r-- 1 ela ela 2.0K Aug 28 08:44 boost.mk
+-rw-r--r-- 1 ela ela  701 Aug 28 08:44 expat.mk
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 fontconfig.mk
+-rw-r--r-- 1 ela ela  705 Aug 28 08:44 freetype.mk
+-rw-r--r-- 1 ela ela  809 Aug 28 08:44 libevent.mk
+-rw-r--r-- 1 ela ela  909 Aug 28 08:44 libXau.mk
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 libxcb.mk
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 miniupnpc.mk
+-rw-r--r-- 1 ela ela  611 Aug 28 08:44 native_biplist.mk
+-rw-r--r-- 1 ela ela 3.5K Aug 28 08:44 native_cctools.mk
+-rw-r--r-- 1 ela ela  770 Aug 28 08:44 native_cdrkit.mk
+-rw-r--r-- 1 ela ela  642 Aug 28 08:44 native_ds_store.mk
+-rw-r--r-- 1 ela ela  610 Aug 28 08:44 native_libdmg-hfsplus.mk
+-rw-r--r-- 1 ela ela  605 Aug 28 08:44 native_mac_alias.mk
+-rw-r--r-- 1 ela ela  673 Aug 28 08:44 native_protobuf.mk
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 openssl.mk
+-rw-r--r-- 1 ela ela  520 Aug 28 08:44 packages.mk
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 protobuf.mk
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 qrencode.mk
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 qt.mk
+-rw-r--r-- 1 ela ela  674 Aug 28 08:44 rapidcheck.mk
+-rw-r--r-- 1 ela ela  668 Aug 28 08:44 xcb_proto.mk
+-rw-r--r-- 1 ela ela  686 Aug 28 08:44 xproto.mk
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 zeromq.mk
+-rw-r--r-- 1 ela ela  869 Aug 28 08:44 zlib.mk
+
+/tmp/BTC/depends/patches:
+total 0
+drwxr-xr-x 5 ela ela 100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 300 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34mnative_cdrkit[0m
+drwxr-xr-x 2 ela ela 200 Aug 28 08:44 [01;34mqt[0m
+drwxr-xr-x 2 ela ela  80 Aug 28 08:44 [01;34mzeromq[0m
+
+/tmp/BTC/depends/patches/native_cdrkit:
+total 4.0K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela  100 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 cdrkit-deterministic.patch
+
+/tmp/BTC/depends/patches/qt:
+total 32K
+drwxr-xr-x 2 ela ela  200 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela  100 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 fix_configure_mac.patch
+-rw-r--r-- 1 ela ela  532 Aug 28 08:44 fix_no_printer.patch
+-rw-r--r-- 1 ela ela  313 Aug 28 08:44 fix_qt_pkgconfig.patch
+-rw-r--r-- 1 ela ela  765 Aug 28 08:44 fix_rcc_determinism.patch
+-rw-r--r-- 1 ela ela  768 Aug 28 08:44 fix_riscv64_arch.patch
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 mac-qmake.conf
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 no-xlib.patch
+-rw-r--r-- 1 ela ela  749 Aug 28 08:44 xkb-default.patch
+
+/tmp/BTC/depends/patches/zeromq:
+total 8.0K
+drwxr-xr-x 2 ela ela  80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 100 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 824 Aug 28 08:44 0001-fix-build-with-older-mingw64.patch
+-rw-r--r-- 1 ela ela 898 Aug 28 08:44 0002-disable-pthread_set_name_np.patch
+
+/tmp/BTC/doc:
+total 396K
+drwxr-xr-x  4 ela ela  820 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  145 Aug 28 08:44 assets-attribution.md
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 benchmarking.md
+-rw-r--r--  1 ela ela 9.7K Aug 28 08:44 bips.md
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 bitcoin-conf.md
+-rw-r--r--  1 ela ela 3.2K Aug 28 08:44 bitcoin_logo_doxygen.png
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 build-freebsd.md
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 build-netbsd.md
+-rw-r--r--  1 ela ela 3.3K Aug 28 08:44 build-openbsd.md
+-rw-r--r--  1 ela ela 8.4K Aug 28 08:44 build-osx.md
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 build-unix.md
+-rw-r--r--  1 ela ela 5.8K Aug 28 08:44 build-windows.md
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 dependencies.md
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 descriptors.md
+-rw-r--r--  1 ela ela  39K Aug 28 08:44 developer-notes.md
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 dnsseed-policy.md
+-rw-r--r--  1 ela ela 105K Aug 28 08:44 Doxyfile.in
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 files.md
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 fuzzing.md
+-rw-r--r--  1 ela ela  251 Aug 28 08:44 gitian-building.md
+-rw-r--r--  1 ela ela    9 Aug 28 08:44 .gitignore
+-rw-r--r--  1 ela ela 6.4K Aug 28 08:44 init.md
+-rw-r--r--  1 ela ela 6.8K Aug 28 08:44 JSON-RPC-interface.md
+drwxr-xr-x  2 ela ela  160 Aug 28 08:44 [01;34mman[0m
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 productivity.md
+-rw-r--r--  1 ela ela 8.1K Aug 28 08:44 psbt.md
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 rapidcheck.md
+-rw-r--r--  1 ela ela 3.9K Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela  846 Aug 28 08:44 README_windows.txt
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 reduce-memory.md
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 reduce-traffic.md
+drwxr-xr-x  2 ela ela 1.6K Aug 28 08:44 [01;34mrelease-notes[0m
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 release-notes.md
+-rw-r--r--  1 ela ela  18K Aug 28 08:44 release-process.md
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 REST-interface.md
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 shared-libraries.md
+-rw-r--r--  1 ela ela 6.7K Aug 28 08:44 tor.md
+-rw-r--r--  1 ela ela 6.6K Aug 28 08:44 translation_process.md
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 translation_strings_policy.md
+-rw-r--r--  1 ela ela 4.9K Aug 28 08:44 zmq.md
+
+/tmp/BTC/doc/man:
+total 56K
+drwxr-xr-x 2 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela  820 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 3.5K Aug 28 08:44 bitcoin-cli.1
+-rw-r--r-- 1 ela ela  17K Aug 28 08:44 bitcoind.1
+-rw-r--r-- 1 ela ela  17K Aug 28 08:44 bitcoin-qt.1
+-rw-r--r-- 1 ela ela 3.1K Aug 28 08:44 bitcoin-tx.1
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 bitcoin-wallet.1
+-rw-r--r-- 1 ela ela  328 Aug 28 08:44 Makefile.am
+
+/tmp/BTC/doc/release-notes:
+total 852K
+drwxr-xr-x 2 ela ela 1.6K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela  820 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  36K Aug 28 08:44 release-notes-0.10.0.md
+-rw-r--r-- 1 ela ela 5.1K Aug 28 08:44 release-notes-0.10.1.md
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 release-notes-0.10.2.md
+-rw-r--r-- 1 ela ela 6.4K Aug 28 08:44 release-notes-0.10.3.md
+-rw-r--r-- 1 ela ela 7.0K Aug 28 08:44 release-notes-0.10.4.md
+-rw-r--r-- 1 ela ela  22K Aug 28 08:44 release-notes-0.11.0.md
+-rw-r--r-- 1 ela ela 6.6K Aug 28 08:44 release-notes-0.11.1.md
+-rw-r--r-- 1 ela ela 9.3K Aug 28 08:44 release-notes-0.11.2.md
+-rw-r--r-- 1 ela ela  46K Aug 28 08:44 release-notes-0.12.0.md
+-rw-r--r-- 1 ela ela 7.7K Aug 28 08:44 release-notes-0.12.1.md
+-rw-r--r-- 1 ela ela  45K Aug 28 08:44 release-notes-0.13.0.md
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 release-notes-0.13.1.md
+-rw-r--r-- 1 ela ela 8.0K Aug 28 08:44 release-notes-0.13.2.md
+-rw-r--r-- 1 ela ela  47K Aug 28 08:44 release-notes-0.14.0.md
+-rw-r--r-- 1 ela ela 5.4K Aug 28 08:44 release-notes-0.14.1.md
+-rw-r--r-- 1 ela ela 3.5K Aug 28 08:44 release-notes-0.14.2.md
+-rw-r--r-- 1 ela ela 3.9K Aug 28 08:44 release-notes-0.14.3.md
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 release-notes-0.15.0.1.md
+-rw-r--r-- 1 ela ela  62K Aug 28 08:44 release-notes-0.15.0.md
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 release-notes-0.15.1.md
+-rw-r--r-- 1 ela ela 4.2K Aug 28 08:44 release-notes-0.15.2.md
+-rw-r--r-- 1 ela ela  46K Aug 28 08:44 release-notes-0.16.0.md
+-rw-r--r-- 1 ela ela 5.6K Aug 28 08:44 release-notes-0.16.1.md
+-rw-r--r-- 1 ela ela 4.3K Aug 28 08:44 release-notes-0.16.2.md
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 release-notes-0.16.3.md
+-rw-r--r-- 1 ela ela  991 Aug 28 08:44 release-notes-0.17.0.1.md
+-rw-r--r-- 1 ela ela  68K Aug 28 08:44 release-notes-0.17.0.md
+-rw-r--r-- 1 ela ela 7.3K Aug 28 08:44 release-notes-0.17.1.md
+-rw-r--r-- 1 ela ela  63K Aug 28 08:44 release-notes-0.18.0.md
+-rw-r--r-- 1 ela ela 5.0K Aug 28 08:44 release-notes-0.18.1.md
+-rw-r--r-- 1 ela ela  811 Aug 28 08:44 release-notes-0.3.12.md
+-rw-r--r-- 1 ela ela 1.4K Aug 28 08:44 release-notes-0.3.13.md
+-rw-r--r-- 1 ela ela  332 Aug 28 08:44 release-notes-0.3.14.md
+-rw-r--r-- 1 ela ela  385 Aug 28 08:44 release-notes-0.3.15.md
+-rw-r--r-- 1 ela ela   16 Aug 28 08:44 release-notes-0.3.16.md
+-rw-r--r-- 1 ela ela  499 Aug 28 08:44 release-notes-0.3.17.md
+-rw-r--r-- 1 ela ela  495 Aug 28 08:44 release-notes-0.3.18.md
+-rw-r--r-- 1 ela ela  861 Aug 28 08:44 release-notes-0.3.19.md
+-rw-r--r-- 1 ela ela   43 Aug 28 08:44 release-notes-0.3.20.1.md
+-rw-r--r-- 1 ela ela  694 Aug 28 08:44 release-notes-0.3.20.2.md
+-rw-r--r-- 1 ela ela  998 Aug 28 08:44 release-notes-0.3.20.md
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 release-notes-0.3.21.md
+-rw-r--r-- 1 ela ela 1018 Aug 28 08:44 release-notes-0.3.22.md
+-rw-r--r-- 1 ela ela  776 Aug 28 08:44 release-notes-0.3.23.md
+-rw-r--r-- 1 ela ela 1.4K Aug 28 08:44 release-notes-0.3.24.md
+-rw-r--r-- 1 ela ela 3.4K Aug 28 08:44 release-notes-0.4.0.md
+-rw-r--r-- 1 ela ela 2.2K Aug 28 08:44 release-notes-0.4.1.md
+-rw-r--r-- 1 ela ela   43 Aug 28 08:44 release-notes-0.4.2.md
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 release-notes-0.4.3.md
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 release-notes-0.4.4.md
+-rw-r--r-- 1 ela ela   43 Aug 28 08:44 release-notes-0.4.5.md
+-rw-r--r-- 1 ela ela 2.5K Aug 28 08:44 release-notes-0.4.6.md
+-rw-r--r-- 1 ela ela 3.7K Aug 28 08:44 release-notes-0.5.0.md
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 release-notes-0.5.1.md
+-rw-r--r-- 1 ela ela 1.4K Aug 28 08:44 release-notes-0.5.2.md
+-rw-r--r-- 1 ela ela 2.8K Aug 28 08:44 release-notes-0.5.3.md
+-rw-r--r-- 1 ela ela 2.2K Aug 28 08:44 release-notes-0.5.4.md
+-rw-r--r-- 1 ela ela 2.5K Aug 28 08:44 release-notes-0.5.5.md
+-rw-r--r-- 1 ela ela 4.5K Aug 28 08:44 release-notes-0.6.0.md
+-rw-r--r-- 1 ela ela   16 Aug 28 08:44 release-notes-0.6.1.md
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 release-notes-0.6.2.md
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 release-notes-0.6.3.md
+-rw-r--r-- 1 ela ela 5.8K Aug 28 08:44 release-notes-0.7.0.md
+-rw-r--r-- 1 ela ela 3.8K Aug 28 08:44 release-notes-0.7.1.md
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 release-notes-0.7.2.md
+-rw-r--r-- 1 ela ela 4.9K Aug 28 08:44 release-notes-0.8.0.md
+-rw-r--r-- 1 ela ela  883 Aug 28 08:44 release-notes-0.8.1.md
+-rw-r--r-- 1 ela ela 4.4K Aug 28 08:44 release-notes-0.8.2.md
+-rw-r--r-- 1 ela ela  585 Aug 28 08:44 release-notes-0.8.3.md
+-rw-r--r-- 1 ela ela 2.6K Aug 28 08:44 release-notes-0.8.4.md
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 release-notes-0.8.5.md
+-rw-r--r-- 1 ela ela 2.5K Aug 28 08:44 release-notes-0.8.6.md
+-rw-r--r-- 1 ela ela  15K Aug 28 08:44 release-notes-0.9.0.md
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 release-notes-0.9.1.md
+-rw-r--r-- 1 ela ela 6.4K Aug 28 08:44 release-notes-0.9.2.1.md
+-rw-r--r-- 1 ela ela 6.4K Aug 28 08:44 release-notes-0.9.2.md
+-rw-r--r-- 1 ela ela 3.3K Aug 28 08:44 release-notes-0.9.3.md
+-rw-r--r-- 1 ela ela 3.1K Aug 28 08:44 release-notes-0.9.4.md
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 release-notes-0.9.5.md
+
+/tmp/BTC/.git:
+total 204K
+drwxr-xr-x  8 ela ela  260 Aug 29 11:28 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela   40 Aug 28 08:40 [01;34mbranches[0m
+-rw-r--r--  1 ela ela  283 Aug 28 08:44 config
+-rw-r--r--  1 ela ela   73 Aug 28 08:40 description
+-rw-r--r--  1 ela ela   23 Aug 28 08:44 HEAD
+drwxr-xr-x  2 ela ela  260 Aug 28 08:40 [01;34mhooks[0m
+-rw-r--r--  1 ela ela 168K Aug 29 11:28 index
+drwxr-xr-x  2 ela ela   60 Aug 28 08:40 [01;34minfo[0m
+drwxr-xr-x  3 ela ela   80 Aug 28 08:44 [01;34mlogs[0m
+drwxr-xr-x  4 ela ela   80 Aug 28 08:40 [01;34mobjects[0m
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 packed-refs
+drwxr-xr-x  5 ela ela  100 Aug 28 08:44 [01;34mrefs[0m
+
+/tmp/BTC/.git/branches:
+total 0
+drwxr-xr-x 2 ela ela  40 Aug 28 08:40 [01;34m.[0m
+drwxr-xr-x 8 ela ela 260 Aug 29 11:28 [01;34m..[0m
+
+/tmp/BTC/.git/hooks:
+total 48K
+drwxr-xr-x 2 ela ela  260 Aug 28 08:40 [01;34m.[0m
+drwxr-xr-x 8 ela ela  260 Aug 29 11:28 [01;34m..[0m
+-rwxr-xr-x 1 ela ela  478 Aug 28 08:40 [01;32mapplypatch-msg.sample[0m
+-rwxr-xr-x 1 ela ela  896 Aug 28 08:40 [01;32mcommit-msg.sample[0m
+-rwxr-xr-x 1 ela ela 3.3K Aug 28 08:40 [01;32mfsmonitor-watchman.sample[0m
+-rwxr-xr-x 1 ela ela  189 Aug 28 08:40 [01;32mpost-update.sample[0m
+-rwxr-xr-x 1 ela ela  424 Aug 28 08:40 [01;32mpre-applypatch.sample[0m
+-rwxr-xr-x 1 ela ela 1.6K Aug 28 08:40 [01;32mpre-commit.sample[0m
+-rwxr-xr-x 1 ela ela 1.5K Aug 28 08:40 [01;32mprepare-commit-msg.sample[0m
+-rwxr-xr-x 1 ela ela 1.4K Aug 28 08:40 [01;32mpre-push.sample[0m
+-rwxr-xr-x 1 ela ela 4.8K Aug 28 08:40 [01;32mpre-rebase.sample[0m
+-rwxr-xr-x 1 ela ela  544 Aug 28 08:40 [01;32mpre-receive.sample[0m
+-rwxr-xr-x 1 ela ela 3.6K Aug 28 08:40 [01;32mupdate.sample[0m
+
+/tmp/BTC/.git/info:
+total 4.0K
+drwxr-xr-x 2 ela ela  60 Aug 28 08:40 [01;34m.[0m
+drwxr-xr-x 8 ela ela 260 Aug 29 11:28 [01;34m..[0m
+-rw-r--r-- 1 ela ela 240 Aug 28 08:40 exclude
+
+/tmp/BTC/.git/logs:
+total 4.0K
+drwxr-xr-x 3 ela ela  80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela 260 Aug 29 11:28 [01;34m..[0m
+-rw-r--r-- 1 ela ela 175 Aug 28 08:44 HEAD
+drwxr-xr-x 4 ela ela  80 Aug 28 08:44 [01;34mrefs[0m
+
+/tmp/BTC/.git/logs/refs:
+total 0
+drwxr-xr-x 4 ela ela 80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela 80 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela 60 Aug 28 08:44 [01;34mheads[0m
+drwxr-xr-x 3 ela ela 60 Aug 28 08:44 [01;34mremotes[0m
+
+/tmp/BTC/.git/logs/refs/heads:
+total 4.0K
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela  80 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 175 Aug 28 08:44 master
+
+/tmp/BTC/.git/logs/refs/remotes:
+total 0
+drwxr-xr-x 3 ela ela 60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela 80 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela 60 Aug 28 08:44 [01;34morigin[0m
+
+/tmp/BTC/.git/logs/refs/remotes/origin:
+total 4.0K
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 175 Aug 28 08:44 HEAD
+
+/tmp/BTC/.git/objects:
+total 0
+drwxr-xr-x 4 ela ela  80 Aug 28 08:40 [01;34m.[0m
+drwxr-xr-x 8 ela ela 260 Aug 29 11:28 [01;34m..[0m
+drwxr-xr-x 2 ela ela  40 Aug 28 08:40 [01;34minfo[0m
+drwxr-xr-x 2 ela ela  80 Aug 28 08:44 [01;34mpack[0m
+
+/tmp/BTC/.git/objects/info:
+total 0
+drwxr-xr-x 2 ela ela 40 Aug 28 08:40 [01;34m.[0m
+drwxr-xr-x 4 ela ela 80 Aug 28 08:40 [01;34m..[0m
+
+/tmp/BTC/.git/objects/pack:
+total 132M
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela   80 Aug 28 08:40 [01;34m..[0m
+-r--r--r-- 1 ela ela 3.9M Aug 28 08:44 pack-de4be0ae8ad337ea39d6939fbf268a6dae5c7faa.idx
+-r--r--r-- 1 ela ela 129M Aug 28 08:44 pack-de4be0ae8ad337ea39d6939fbf268a6dae5c7faa.pack
+
+/tmp/BTC/.git/refs:
+total 0
+drwxr-xr-x 5 ela ela 100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela 260 Aug 29 11:28 [01;34m..[0m
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34mheads[0m
+drwxr-xr-x 3 ela ela  60 Aug 28 08:44 [01;34mremotes[0m
+drwxr-xr-x 2 ela ela  40 Aug 28 08:40 [01;34mtags[0m
+
+/tmp/BTC/.git/refs/heads:
+total 4.0K
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 100 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  41 Aug 28 08:44 master
+
+/tmp/BTC/.git/refs/remotes:
+total 0
+drwxr-xr-x 3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 100 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34morigin[0m
+
+/tmp/BTC/.git/refs/remotes/origin:
+total 4.0K
+drwxr-xr-x 2 ela ela 60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela 60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 32 Aug 28 08:44 HEAD
+
+/tmp/BTC/.git/refs/tags:
+total 0
+drwxr-xr-x 2 ela ela  40 Aug 28 08:40 [01;34m.[0m
+drwxr-xr-x 5 ela ela 100 Aug 28 08:44 [01;34m..[0m
+
+/tmp/BTC/.github:
+total 8.0K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 ISSUE_TEMPLATE.md
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 PULL_REQUEST_TEMPLATE.md
+
+/tmp/BTC/share:
+total 12K
+drwxr-xr-x  6 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mexamples[0m
+-rwxr-xr-x  1 ela ela 1.6K Aug 28 08:44 [01;32mgenbuild.sh[0m
+drwxr-xr-x  2 ela ela  300 Aug 28 08:44 [01;34mpixmaps[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mqt[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mrpcauth[0m
+-rw-r--r--  1 ela ela 7.0K Aug 28 08:44 setup.nsi.in
+
+/tmp/BTC/share/examples:
+total 8.0K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 6.3K Aug 28 08:44 bitcoin.conf
+
+/tmp/BTC/share/pixmaps:
+total 500K
+drwxr-xr-x 2 ela ela  300 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  11K Aug 28 08:44 bitcoin128.png
+-rw-r--r-- 1 ela ela  37K Aug 28 08:44 bitcoin128.xpm
+-rw-r--r-- 1 ela ela  827 Aug 28 08:44 bitcoin16.png
+-rw-r--r-- 1 ela ela 3.2K Aug 28 08:44 bitcoin16.xpm
+-rw-r--r-- 1 ela ela  28K Aug 28 08:44 bitcoin256.png
+-rw-r--r-- 1 ela ela 133K Aug 28 08:44 bitcoin256.xpm
+-rw-r--r-- 1 ela ela 2.0K Aug 28 08:44 bitcoin32.png
+-rw-r--r-- 1 ela ela 3.9K Aug 28 08:44 bitcoin32.xpm
+-rw-r--r-- 1 ela ela 4.5K Aug 28 08:44 bitcoin64.png
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 bitcoin64.xpm
+-rw-r--r-- 1 ela ela  68K Aug 28 08:44 bitcoin.ico
+-rw-r--r-- 1 ela ela  26K Aug 28 08:44 nsis-header.bmp
+-rw-r--r-- 1 ela ela 151K Aug 28 08:44 nsis-wizard.bmp
+
+/tmp/BTC/share/qt:
+total 8.0K
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 2.4K Aug 28 08:44 [01;32mextract_strings_qt.py[0m
+-rw-r--r-- 1 ela ela 2.8K Aug 28 08:44 Info.plist.in
+
+/tmp/BTC/share/rpcauth:
+total 8.0K
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  411 Aug 28 08:44 README.md
+-rwxr-xr-x 1 ela ela 1.6K Aug 28 08:44 [01;32mrpcauth.py[0m
+
+/tmp/BTC/src:
+total 2.2M
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 addrdb.cpp
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 addrdb.h
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 addrman.cpp
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 addrman.h
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 amount.h
+-rw-r--r--  1 ela ela 7.3K Aug 28 08:44 arith_uint256.cpp
+-rw-r--r--  1 ela ela 8.8K Aug 28 08:44 arith_uint256.h
+-rw-r--r--  1 ela ela  633 Aug 28 08:44 attributes.h
+-rw-r--r--  1 ela ela 6.1K Aug 28 08:44 banman.cpp
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 banman.h
+-rw-r--r--  1 ela ela 5.5K Aug 28 08:44 base58.cpp
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 base58.h
+-rw-r--r--  1 ela ela 7.9K Aug 28 08:44 bech32.cpp
+-rw-r--r--  1 ela ela  946 Aug 28 08:44 bech32.h
+drwxr-xr-x  3 ela ela  660 Aug 28 08:44 [01;34mbench[0m
+-rw-r--r--  1 ela ela  23K Aug 28 08:44 bitcoin-cli.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 bitcoin-cli-res.rc
+-rw-r--r--  1 ela ela 6.0K Aug 28 08:44 bitcoind.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 bitcoind-res.rc
+-rw-r--r--  1 ela ela  30K Aug 28 08:44 bitcoin-tx.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 bitcoin-tx-res.rc
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 bitcoin-wallet.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 bitcoin-wallet-res.rc
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 blockencodings.cpp
+-rw-r--r--  1 ela ela 7.1K Aug 28 08:44 blockencodings.h
+-rw-r--r--  1 ela ela 9.9K Aug 28 08:44 blockfilter.cpp
+-rw-r--r--  1 ela ela 5.2K Aug 28 08:44 blockfilter.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 bloom.cpp
+-rw-r--r--  1 ela ela 5.1K Aug 28 08:44 bloom.h
+-rw-r--r--  1 ela ela 5.7K Aug 28 08:44 chain.cpp
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 chain.h
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 chainparamsbase.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 chainparamsbase.h
+-rw-r--r--  1 ela ela  20K Aug 28 08:44 chainparams.cpp
+-rw-r--r--  1 ela ela 4.8K Aug 28 08:44 chainparams.h
+-rw-r--r--  1 ela ela 119K Aug 28 08:44 chainparamsseeds.h
+-rw-r--r--  1 ela ela 6.6K Aug 28 08:44 checkqueue.h
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 .clang-format
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 clientversion.cpp
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 clientversion.h
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 coins.cpp
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 coins.h
+drwxr-xr-x  2 ela ela  200 Aug 28 08:44 [01;34mcompat[0m
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 compat.h
+-rw-r--r--  1 ela ela 5.4K Aug 28 08:44 compressor.cpp
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 compressor.h
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mconfig[0m
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34mconsensus[0m
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 core_io.h
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 core_memusage.h
+-rw-r--r--  1 ela ela 6.8K Aug 28 08:44 core_read.cpp
+-rw-r--r--  1 ela ela 9.1K Aug 28 08:44 core_write.cpp
+drwxr-xr-x  3 ela ela  640 Aug 28 08:44 [01;34mcrypto[0m
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 cuckoocache.h
+-rw-r--r--  1 ela ela 8.9K Aug 28 08:44 dbwrapper.cpp
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 dbwrapper.h
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 dummywallet.cpp
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 flatfile.cpp
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 flatfile.h
+-rw-r--r--  1 ela ela 6.2K Aug 28 08:44 fs.cpp
+-rw-r--r--  1 ela ela 3.3K Aug 28 08:44 fs.h
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 hash.cpp
+-rw-r--r--  1 ela ela 5.7K Aug 28 08:44 hash.h
+-rw-r--r--  1 ela ela 8.6K Aug 28 08:44 httprpc.cpp
+-rw-r--r--  1 ela ela  818 Aug 28 08:44 httprpc.h
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 httpserver.cpp
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 httpserver.h
+drwxr-xr-x  2 ela ela  160 Aug 28 08:44 [01;34mindex[0m
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 indirectmap.h
+-rw-r--r--  1 ela ela  96K Aug 28 08:44 init.cpp
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 init.h
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34minterfaces[0m
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 key.cpp
+-rw-r--r--  1 ela ela 6.4K Aug 28 08:44 key.h
+-rw-r--r--  1 ela ela 8.3K Aug 28 08:44 key_io.cpp
+-rw-r--r--  1 ela ela  977 Aug 28 08:44 key_io.h
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34mleveldb[0m
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 limitedmap.h
+-rw-r--r--  1 ela ela 8.6K Aug 28 08:44 logging.cpp
+-rw-r--r--  1 ela ela 5.2K Aug 28 08:44 logging.h
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 Makefile.am
+-rw-r--r--  1 ela ela 2.8K Aug 28 08:44 Makefile.bench.include
+-rw-r--r--  1 ela ela 7.3K Aug 28 08:44 Makefile.leveldb.include
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 Makefile.qt.include
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 Makefile.qttest.include
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 Makefile.test.include
+-rw-r--r--  1 ela ela 5.1K Aug 28 08:44 memusage.h
+-rw-r--r--  1 ela ela 6.3K Aug 28 08:44 merkleblock.cpp
+-rw-r--r--  1 ela ela 6.3K Aug 28 08:44 merkleblock.h
+-rw-r--r--  1 ela ela  18K Aug 28 08:44 miner.cpp
+-rw-r--r--  1 ela ela 7.5K Aug 28 08:44 miner.h
+-rw-r--r--  1 ela ela  24K Aug 28 08:44 netaddress.cpp
+-rw-r--r--  1 ela ela 6.2K Aug 28 08:44 netaddress.h
+-rw-r--r--  1 ela ela  33K Aug 28 08:44 netbase.cpp
+-rw-r--r--  1 ela ela 2.8K Aug 28 08:44 netbase.h
+-rw-r--r--  1 ela ela  87K Aug 28 08:44 net.cpp
+-rw-r--r--  1 ela ela  30K Aug 28 08:44 net.h
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 netmessagemaker.h
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 net_permissions.cpp
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 net_permissions.h
+-rw-r--r--  1 ela ela 189K Aug 28 08:44 net_processing.cpp
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 net_processing.h
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34mnode[0m
+-rw-r--r--  1 ela ela 3.3K Aug 28 08:44 noui.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 noui.h
+-rw-r--r--  1 ela ela  690 Aug 28 08:44 optional.h
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 outputtype.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 outputtype.h
+drwxr-xr-x  2 ela ela  240 Aug 28 08:44 [01;34mpolicy[0m
+-rw-r--r--  1 ela ela 3.2K Aug 28 08:44 pow.cpp
+-rw-r--r--  1 ela ela  834 Aug 28 08:44 pow.h
+-rw-r--r--  1 ela ela  18K Aug 28 08:44 prevector.h
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34mprimitives[0m
+-rw-r--r--  1 ela ela 5.6K Aug 28 08:44 protocol.cpp
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 protocol.h
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 psbt.cpp
+-rw-r--r--  1 ela ela  23K Aug 28 08:44 psbt.h
+-rw-r--r--  1 ela ela 9.3K Aug 28 08:44 pubkey.cpp
+-rw-r--r--  1 ela ela 7.5K Aug 28 08:44 pubkey.h
+drwxr-xr-x  6 ela ela 2.5K Aug 28 08:44 [01;34mqt[0m
+-rw-r--r--  1 ela ela  26K Aug 28 08:44 random.cpp
+-rw-r--r--  1 ela ela 8.3K Aug 28 08:44 random.h
+-rw-r--r--  1 ela ela  22K Aug 28 08:44 rest.cpp
+-rw-r--r--  1 ela ela  762 Aug 28 08:44 reverse_iterator.h
+-rw-r--r--  1 ela ela  768 Aug 28 08:44 reverselock.h
+drwxr-xr-x  2 ela ela  400 Aug 28 08:44 [01;34mrpc[0m
+-rw-r--r--  1 ela ela 7.1K Aug 28 08:44 scheduler.cpp
+-rw-r--r--  1 ela ela 4.5K Aug 28 08:44 scheduler.h
+drwxr-xr-x  2 ela ela  420 Aug 28 08:44 [01;34mscript[0m
+drwxr-xr-x  8 ela ela  340 Aug 28 08:44 [01;34msecp256k1[0m
+-rw-r--r--  1 ela ela  31K Aug 28 08:44 serialize.h
+-rw-r--r--  1 ela ela  499 Aug 28 08:44 shutdown.cpp
+-rw-r--r--  1 ela ela  372 Aug 28 08:44 shutdown.h
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 span.h
+-rw-r--r--  1 ela ela  26K Aug 28 08:44 streams.h
+drwxr-xr-x  3 ela ela  160 Aug 28 08:44 [01;34msupport[0m
+-rw-r--r--  1 ela ela 6.7K Aug 28 08:44 sync.cpp
+-rw-r--r--  1 ela ela 8.7K Aug 28 08:44 sync.h
+drwxr-xr-x  5 ela ela 1.7K Aug 28 08:44 [01;34mtest[0m
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 threadinterrupt.cpp
+-rw-r--r--  1 ela ela  964 Aug 28 08:44 threadinterrupt.h
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 threadsafety.h
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 timedata.cpp
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 timedata.h
+-rw-r--r--  1 ela ela  43K Aug 28 08:44 tinyformat.h
+-rw-r--r--  1 ela ela  31K Aug 28 08:44 torcontrol.cpp
+-rw-r--r--  1 ela ela  535 Aug 28 08:44 torcontrol.h
+-rw-r--r--  1 ela ela  14K Aug 28 08:44 txdb.cpp
+-rw-r--r--  1 ela ela 3.9K Aug 28 08:44 txdb.h
+-rw-r--r--  1 ela ela  43K Aug 28 08:44 txmempool.cpp
+-rw-r--r--  1 ela ela  35K Aug 28 08:44 txmempool.h
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 ui_interface.cpp
+-rw-r--r--  1 ela ela 5.1K Aug 28 08:44 ui_interface.h
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 uint256.cpp
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 uint256.h
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 undo.h
+drwxr-xr-x  8 ela ela  320 Aug 28 08:44 [01;34munivalue[0m
+drwxr-xr-x  2 ela ela  600 Aug 28 08:44 [01;34mutil[0m
+-rw-r--r--  1 ela ela 220K Aug 28 08:44 validation.cpp
+-rw-r--r--  1 ela ela  35K Aug 28 08:44 validation.h
+-rw-r--r--  1 ela ela 8.1K Aug 28 08:44 validationinterface.cpp
+-rw-r--r--  1 ela ela 8.0K Aug 28 08:44 validationinterface.h
+-rw-r--r--  1 ela ela 8.5K Aug 28 08:44 versionbits.cpp
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 versionbits.h
+-rw-r--r--  1 ela ela  437 Aug 28 08:44 versionbitsinfo.cpp
+-rw-r--r--  1 ela ela  545 Aug 28 08:44 versionbitsinfo.h
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 version.h
+drwxr-xr-x  3 ela ela  660 Aug 28 08:44 [01;34mwallet[0m
+-rw-r--r--  1 ela ela  936 Aug 28 08:44 walletinitinterface.h
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 warnings.cpp
+-rw-r--r--  1 ela ela  913 Aug 28 08:44 warnings.h
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34mzmq[0m
+
+/tmp/BTC/src/bench:
+total 136K
+drwxr-xr-x  3 ela ela  660 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 base58.cpp
+-rw-r--r--  1 ela ela  991 Aug 28 08:44 bech32.cpp
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 bench_bitcoin.cpp
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 bench.cpp
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 bench.h
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 block_assemble.cpp
+-rw-r--r--  1 ela ela 3.5K Aug 28 08:44 ccoins_caching.cpp
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 chacha20.cpp
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 chacha_poly_aead.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 checkblock.cpp
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 checkqueue.cpp
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 coin_selection.cpp
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 crypto_hash.cpp
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mdata[0m
+-rw-r--r--  1 ela ela  470 Aug 28 08:44 data.cpp
+-rw-r--r--  1 ela ela  452 Aug 28 08:44 data.h
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 duplicate_inputs.cpp
+-rw-r--r--  1 ela ela  798 Aug 28 08:44 examples.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 gcs_filter.cpp
+-rw-r--r--  1 ela ela   14 Aug 28 08:44 .gitignore
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 lockedpool.cpp
+-rw-r--r--  1 ela ela 5.2K Aug 28 08:44 mempool_eviction.cpp
+-rw-r--r--  1 ela ela  720 Aug 28 08:44 merkle_root.cpp
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 poly1305.cpp
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 prevector.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 rollingbloom.cpp
+-rw-r--r--  1 ela ela  932 Aug 28 08:44 rpc_blockchain.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 rpc_mempool.cpp
+-rw-r--r--  1 ela ela  991 Aug 28 08:44 util_time.cpp
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 verify_script.cpp
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 wallet_balance.cpp
+
+/tmp/BTC/src/bench/data:
+total 980K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  660 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 977K Aug 28 08:44 block413567.raw
+
+/tmp/BTC/src/compat:
+total 36K
+drwxr-xr-x  2 ela ela  200 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 assumptions.h
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 byteswap.h
+-rw-r--r--  1 ela ela 4.8K Aug 28 08:44 endian.h
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 glibc_compat.cpp
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 glibc_sanity.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 glibcxx_sanity.cpp
+-rw-r--r--  1 ela ela  349 Aug 28 08:44 sanity.h
+-rw-r--r--  1 ela ela  512 Aug 28 08:44 strnlen.cpp
+
+/tmp/BTC/src/config:
+total 0
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela    0 Aug 28 08:44 .empty
+
+/tmp/BTC/src/consensus:
+total 44K
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 consensus.h
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 merkle.cpp
+-rw-r--r--  1 ela ela  927 Aug 28 08:44 merkle.h
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 params.h
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 tx_check.cpp
+-rw-r--r--  1 ela ela  743 Aug 28 08:44 tx_check.h
+-rw-r--r--  1 ela ela 7.7K Aug 28 08:44 tx_verify.cpp
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 tx_verify.h
+-rw-r--r--  1 ela ela 7.4K Aug 28 08:44 validation.h
+
+/tmp/BTC/src/crypto:
+total 276K
+drwxr-xr-x  3 ela ela  640 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 aes.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 aes.h
+-rw-r--r--  1 ela ela 7.5K Aug 28 08:44 chacha20.cpp
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 chacha20.h
+-rw-r--r--  1 ela ela 5.6K Aug 28 08:44 chacha_poly_aead.cpp
+-rw-r--r--  1 ela ela 7.5K Aug 28 08:44 chacha_poly_aead.h
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 common.h
+drwxr-xr-x  2 ela ela  160 Aug 28 08:44 [01;34mctaes[0m
+-rw-r--r--  1 ela ela  815 Aug 28 08:44 hkdf_sha256_32.cpp
+-rw-r--r--  1 ela ela  781 Aug 28 08:44 hkdf_sha256_32.h
+-rw-r--r--  1 ela ela  902 Aug 28 08:44 hmac_sha256.cpp
+-rw-r--r--  1 ela ela  782 Aug 28 08:44 hmac_sha256.h
+-rw-r--r--  1 ela ela  909 Aug 28 08:44 hmac_sha512.cpp
+-rw-r--r--  1 ela ela  782 Aug 28 08:44 hmac_sha512.h
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 poly1305.cpp
+-rw-r--r--  1 ela ela  532 Aug 28 08:44 poly1305.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 ripemd160.cpp
+-rw-r--r--  1 ela ela  689 Aug 28 08:44 ripemd160.h
+-rw-r--r--  1 ela ela 8.7K Aug 28 08:44 sha1.cpp
+-rw-r--r--  1 ela ela  648 Aug 28 08:44 sha1.h
+-rw-r--r--  1 ela ela  20K Aug 28 08:44 sha256_avx2.cpp
+-rw-r--r--  1 ela ela  35K Aug 28 08:44 sha256.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 sha256.h
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 sha256_shani.cpp
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 sha256_sse41.cpp
+-rw-r--r--  1 ela ela  42K Aug 28 08:44 sha256_sse4.cpp
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 sha512.cpp
+-rw-r--r--  1 ela ela  670 Aug 28 08:44 sha512.h
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 siphash.cpp
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 siphash.h
+
+/tmp/BTC/src/crypto/ctaes:
+total 48K
+drwxr-xr-x 2 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  640 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 4.9K Aug 28 08:44 bench.c
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 COPYING
+-rw-r--r-- 1 ela ela  18K Aug 28 08:44 ctaes.c
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 ctaes.h
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 README.md
+-rw-r--r-- 1 ela ela 5.1K Aug 28 08:44 test.c
+
+/tmp/BTC/src/index:
+total 56K
+drwxr-xr-x  2 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 base.cpp
+-rw-r--r--  1 ela ela 4.4K Aug 28 08:44 base.h
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 blockfilterindex.cpp
+-rw-r--r--  1 ela ela 3.5K Aug 28 08:44 blockfilterindex.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 txindex.cpp
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 txindex.h
+
+/tmp/BTC/src/interfaces:
+total 108K
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  14K Aug 28 08:44 chain.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 chain.h
+-rw-r--r--  1 ela ela  801 Aug 28 08:44 handler.cpp
+-rw-r--r--  1 ela ela  945 Aug 28 08:44 handler.h
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 node.cpp
+-rw-r--r--  1 ela ela 8.6K Aug 28 08:44 node.h
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 wallet.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 wallet.h
+
+/tmp/BTC/src/leveldb:
+total 68K
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  293 Aug 28 08:44 AUTHORS
+-rwxr-xr-x  1 ela ela 8.6K Aug 28 08:44 [01;32mbuild_detect_platform[0m
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 CONTRIBUTING.md
+drwxr-xr-x  2 ela ela  940 Aug 28 08:44 [01;34mdb[0m
+drwxr-xr-x  3 ela ela  160 Aug 28 08:44 [01;34mdoc[0m
+-rw-r--r--  1 ela ela  106 Aug 28 08:44 .gitignore
+drwxr-xr-x  3 ela ela   60 Aug 28 08:44 [01;34mhelpers[0m
+drwxr-xr-x  3 ela ela   60 Aug 28 08:44 [01;34minclude[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34missues[0m
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 LICENSE
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 Makefile
+-rw-r--r--  1 ela ela  509 Aug 28 08:44 NEWS
+drwxr-xr-x  3 ela ela  260 Aug 28 08:44 [01;34mport[0m
+-rw-r--r--  1 ela ela 8.0K Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela  400 Aug 28 08:44 [01;34mtable[0m
+-rw-r--r--  1 ela ela  535 Aug 28 08:44 TODO
+-rw-r--r--  1 ela ela  138 Aug 28 08:44 .travis.yml
+drwxr-xr-x  2 ela ela  780 Aug 28 08:44 [01;34mutil[0m
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 WINDOWS.md
+
+/tmp/BTC/src/leveldb/db:
+total 500K
+drwxr-xr-x  2 ela ela  940 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.3K Aug 28 08:44 autocompact_test.cc
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 builder.cc
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 builder.h
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 c.cc
+-rw-r--r--  1 ela ela 9.9K Aug 28 08:44 corruption_test.cc
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 c_test.c
+-rw-r--r--  1 ela ela  30K Aug 28 08:44 db_bench.cc
+-rw-r--r--  1 ela ela 4.5K Aug 28 08:44 dbformat.cc
+-rw-r--r--  1 ela ela 7.8K Aug 28 08:44 dbformat.h
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 dbformat_test.cc
+-rw-r--r--  1 ela ela  47K Aug 28 08:44 db_impl.cc
+-rw-r--r--  1 ela ela 7.2K Aug 28 08:44 db_impl.h
+-rw-r--r--  1 ela ela 8.4K Aug 28 08:44 db_iter.cc
+-rw-r--r--  1 ela ela  803 Aug 28 08:44 db_iter.h
+-rw-r--r--  1 ela ela  62K Aug 28 08:44 db_test.cc
+-rw-r--r--  1 ela ela 6.2K Aug 28 08:44 dumpfile.cc
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 fault_injection_test.cc
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 filename.cc
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 filename.h
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 filename_test.cc
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 leveldbutil.cc
+-rw-r--r--  1 ela ela  896 Aug 28 08:44 log_format.h
+-rw-r--r--  1 ela ela 8.9K Aug 28 08:44 log_reader.cc
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 log_reader.h
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 log_test.cc
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 log_writer.cc
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 log_writer.h
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 memtable.cc
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 memtable.h
+-rw-r--r--  1 ela ela 8.3K Aug 28 08:44 recovery_test.cc
+-rw-r--r--  1 ela ela  14K Aug 28 08:44 repair.cc
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 skiplist.h
+-rw-r--r--  1 ela ela 9.6K Aug 28 08:44 skiplist_test.cc
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 snapshot.h
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 table_cache.cc
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 table_cache.h
+-rw-r--r--  1 ela ela 6.8K Aug 28 08:44 version_edit.cc
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 version_edit.h
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 version_edit_test.cc
+-rw-r--r--  1 ela ela  48K Aug 28 08:44 version_set.cc
+-rw-r--r--  1 ela ela  14K Aug 28 08:44 version_set.h
+-rw-r--r--  1 ela ela 5.3K Aug 28 08:44 version_set_test.cc
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 write_batch.cc
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 write_batch_internal.h
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 write_batch_test.cc
+
+/tmp/BTC/src/leveldb/doc:
+total 60K
+drwxr-xr-x  3 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mbench[0m
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 benchmark.html
+-rw-r--r--  1 ela ela 7.7K Aug 28 08:44 impl.md
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 index.md
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 log_format.md
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 table_format.md
+
+/tmp/BTC/src/leveldb/doc/bench:
+total 40K
+drwxr-xr-x 2 ela ela  80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela 160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 23K Aug 28 08:44 db_bench_sqlite3.cc
+-rw-r--r-- 1 ela ela 16K Aug 28 08:44 db_bench_tree_db.cc
+
+/tmp/BTC/src/leveldb/helpers:
+total 0
+drwxr-xr-x  3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela 420 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela 100 Aug 28 08:44 [01;34mmemenv[0m
+
+/tmp/BTC/src/leveldb/helpers/memenv:
+total 24K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 9.9K Aug 28 08:44 memenv.cc
+-rw-r--r-- 1 ela ela  699 Aug 28 08:44 memenv.h
+-rw-r--r-- 1 ela ela 7.1K Aug 28 08:44 memenv_test.cc
+
+/tmp/BTC/src/leveldb/include:
+total 0
+drwxr-xr-x  3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela 420 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela 320 Aug 28 08:44 [01;34mleveldb[0m
+
+/tmp/BTC/src/leveldb/include/leveldb:
+total 84K
+drwxr-xr-x 2 ela ela  320 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 4.0K Aug 28 08:44 cache.h
+-rw-r--r-- 1 ela ela 9.7K Aug 28 08:44 c.h
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 comparator.h
+-rw-r--r-- 1 ela ela 6.4K Aug 28 08:44 db.h
+-rw-r--r-- 1 ela ela  876 Aug 28 08:44 dumpfile.h
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 env.h
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 filter_policy.h
+-rw-r--r-- 1 ela ela 3.5K Aug 28 08:44 iterator.h
+-rw-r--r-- 1 ela ela 7.4K Aug 28 08:44 options.h
+-rw-r--r-- 1 ela ela 3.1K Aug 28 08:44 slice.h
+-rw-r--r-- 1 ela ela 3.6K Aug 28 08:44 status.h
+-rw-r--r-- 1 ela ela 3.4K Aug 28 08:44 table_builder.h
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 table.h
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 write_batch.h
+
+/tmp/BTC/src/leveldb/issues:
+total 8.0K
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 issue178_test.cc
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 issue200_test.cc
+
+/tmp/BTC/src/leveldb/port:
+total 60K
+drwxr-xr-x  3 ela ela  260 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 7.1K Aug 28 08:44 atomic_pointer.h
+-rw-r--r--  1 ela ela 5.0K Aug 28 08:44 port_example.h
+-rw-r--r--  1 ela ela  766 Aug 28 08:44 port.h
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 port_posix.cc
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 port_posix.h
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 port_posix_sse.cc
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 port_win.cc
+-rw-r--r--  1 ela ela 5.0K Aug 28 08:44 port_win.h
+-rw-r--r--  1 ela ela  405 Aug 28 08:44 README
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 thread_annotations.h
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mwin[0m
+
+/tmp/BTC/src/leveldb/port/win:
+total 4.0K
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela 260 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 855 Aug 28 08:44 stdint.h
+
+/tmp/BTC/src/leveldb/table:
+total 120K
+drwxr-xr-x  2 ela ela  400 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 block_builder.cc
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 block_builder.h
+-rw-r--r--  1 ela ela 7.9K Aug 28 08:44 block.cc
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 block.h
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 filter_block.cc
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 filter_block.h
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 filter_block_test.cc
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 format.cc
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 format.h
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 iterator.cc
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 iterator_wrapper.h
+-rw-r--r--  1 ela ela 4.8K Aug 28 08:44 merger.cc
+-rw-r--r--  1 ela ela  867 Aug 28 08:44 merger.h
+-rw-r--r--  1 ela ela 8.0K Aug 28 08:44 table_builder.cc
+-rw-r--r--  1 ela ela 8.3K Aug 28 08:44 table.cc
+-rw-r--r--  1 ela ela  24K Aug 28 08:44 table_test.cc
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 two_level_iterator.cc
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 two_level_iterator.h
+
+/tmp/BTC/src/leveldb/util:
+total 224K
+drwxr-xr-x  2 ela ela  780 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 10 ela ela  420 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 arena.cc
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 arena.h
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 arena_test.cc
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 bloom.cc
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 bloom_test.cc
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 cache.cc
+-rw-r--r--  1 ela ela 5.7K Aug 28 08:44 cache_test.cc
+-rw-r--r--  1 ela ela 4.9K Aug 28 08:44 coding.cc
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 coding.h
+-rw-r--r--  1 ela ela 5.4K Aug 28 08:44 coding_test.cc
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 comparator.cc
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 crc32c.cc
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 crc32c.h
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 crc32c_test.cc
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 env.cc
+-rw-r--r--  1 ela ela  18K Aug 28 08:44 env_posix.cc
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 env_posix_test.cc
+-rw-r--r--  1 ela ela  896 Aug 28 08:44 env_posix_test_helper.h
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 env_test.cc
+-rw-r--r--  1 ela ela  23K Aug 28 08:44 env_win.cc
+-rw-r--r--  1 ela ela  333 Aug 28 08:44 filter_policy.cc
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 hash.cc
+-rw-r--r--  1 ela ela  524 Aug 28 08:44 hash.h
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 hash_test.cc
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 histogram.cc
+-rw-r--r--  1 ela ela  925 Aug 28 08:44 histogram.h
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 logging.cc
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 logging.h
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 mutexlock.h
+-rw-r--r--  1 ela ela  816 Aug 28 08:44 options.cc
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 posix_logger.h
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 random.h
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 status.cc
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 testharness.cc
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 testharness.h
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 testutil.cc
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 testutil.h
+
+/tmp/BTC/src/node:
+total 40K
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  702 Aug 28 08:44 coin.cpp
+-rw-r--r--  1 ela ela  597 Aug 28 08:44 coin.h
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 coinstats.cpp
+-rw-r--r--  1 ela ela  892 Aug 28 08:44 coinstats.h
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 psbt.cpp
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 psbt.h
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 transaction.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 transaction.h
+
+/tmp/BTC/src/policy:
+total 104K
+drwxr-xr-x  2 ela ela  240 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 feerate.cpp
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 feerate.h
+-rw-r--r--  1 ela ela  41K Aug 28 08:44 fees.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 fees.h
+-rw-r--r--  1 ela ela 9.4K Aug 28 08:44 policy.cpp
+-rw-r--r--  1 ela ela 6.7K Aug 28 08:44 policy.h
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 rbf.cpp
+-rw-r--r--  1 ela ela  733 Aug 28 08:44 rbf.h
+-rw-r--r--  1 ela ela  560 Aug 28 08:44 settings.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 settings.h
+
+/tmp/BTC/src/primitives:
+total 24K
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  884 Aug 28 08:44 block.cpp
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 block.h
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 transaction.cpp
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 transaction.h
+
+/tmp/BTC/src/qt:
+total 1.1M
+drwxr-xr-x  6 ela ela 2.5K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 addressbookpage.cpp
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 addressbookpage.h
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 addresstablemodel.cpp
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 addresstablemodel.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 askpassphrasedialog.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 askpassphrasedialog.h
+-rw-r--r--  1 ela ela 4.4K Aug 28 08:44 bantablemodel.cpp
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 bantablemodel.h
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 bitcoinaddressvalidator.cpp
+-rw-r--r--  1 ela ela  925 Aug 28 08:44 bitcoinaddressvalidator.h
+-rw-r--r--  1 ela ela 9.0K Aug 28 08:44 bitcoinamountfield.cpp
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 bitcoinamountfield.h
+-rw-r--r--  1 ela ela  23K Aug 28 08:44 bitcoin.cpp
+-rw-r--r--  1 ela ela  54K Aug 28 08:44 bitcoingui.cpp
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 bitcoingui.h
+-rw-r--r--  1 ela ela 3.2K Aug 28 08:44 bitcoin.h
+-rw-r--r--  1 ela ela 4.9K Aug 28 08:44 bitcoin_locale.qrc
+-rw-r--r--  1 ela ela 5.3K Aug 28 08:44 bitcoin.qrc
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 bitcoinstrings.cpp
+-rw-r--r--  1 ela ela 6.0K Aug 28 08:44 bitcoinunits.cpp
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 bitcoinunits.h
+-rw-r--r--  1 ela ela 9.1K Aug 28 08:44 clientmodel.cpp
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 clientmodel.h
+-rw-r--r--  1 ela ela  30K Aug 28 08:44 coincontroldialog.cpp
+-rw-r--r--  1 ela ela 2.8K Aug 28 08:44 coincontroldialog.h
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 coincontroltreewidget.cpp
+-rw-r--r--  1 ela ela  574 Aug 28 08:44 coincontroltreewidget.h
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 csvmodelwriter.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 csvmodelwriter.h
+-rw-r--r--  1 ela ela 4.6K Aug 28 08:44 editaddressdialog.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 editaddressdialog.h
+drwxr-xr-x  2 ela ela  380 Aug 28 08:44 [01;34mforms[0m
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 guiconstants.h
+-rw-r--r--  1 ela ela  30K Aug 28 08:44 guiutil.cpp
+-rw-r--r--  1 ela ela 9.1K Aug 28 08:44 guiutil.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 intro.cpp
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 intro.h
+drwxr-xr-x  2 ela ela 1.9K Aug 28 08:44 [01;34mlocale[0m
+-rw-r--r--  1 ela ela  596 Aug 28 08:44 macdockiconhandler.h
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 macdockiconhandler.mm
+-rw-r--r--  1 ela ela  806 Aug 28 08:44 macnotificationhandler.h
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 macnotificationhandler.mm
+-rw-r--r--  1 ela ela  544 Aug 28 08:44 macos_appnap.h
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 macos_appnap.mm
+-rw-r--r--  1 ela ela  607 Aug 28 08:44 main.cpp
+-rw-r--r--  1 ela ela  244 Aug 28 08:44 Makefile
+-rw-r--r--  1 ela ela 6.1K Aug 28 08:44 modaloverlay.cpp
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 modaloverlay.h
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 networkstyle.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 networkstyle.h
+-rw-r--r--  1 ela ela 7.2K Aug 28 08:44 notificator.cpp
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 notificator.h
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 openuridialog.cpp
+-rw-r--r--  1 ela ela  655 Aug 28 08:44 openuridialog.h
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 optionsdialog.cpp
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 optionsdialog.h
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 optionsmodel.cpp
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 optionsmodel.h
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 overviewpage.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 overviewpage.h
+-rw-r--r--  1 ela ela 7.8K Aug 28 08:44 paymentrequestplus.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 paymentrequestplus.h
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 paymentrequest.proto
+-rw-r--r--  1 ela ela  29K Aug 28 08:44 paymentserver.cpp
+-rw-r--r--  1 ela ela 5.3K Aug 28 08:44 paymentserver.h
+-rw-r--r--  1 ela ela 6.7K Aug 28 08:44 peertablemodel.cpp
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 peertablemodel.h
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 platformstyle.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 platformstyle.h
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 qrimagewidget.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 qrimagewidget.h
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 qvalidatedlineedit.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 qvalidatedlineedit.h
+-rw-r--r--  1 ela ela  808 Aug 28 08:44 qvaluecombobox.cpp
+-rw-r--r--  1 ela ela  957 Aug 28 08:44 qvaluecombobox.h
+-rw-r--r--  1 ela ela 3.5K Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 receivecoinsdialog.cpp
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 receivecoinsdialog.h
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 receiverequestdialog.cpp
+-rw-r--r--  1 ela ela  883 Aug 28 08:44 receiverequestdialog.h
+-rw-r--r--  1 ela ela 7.2K Aug 28 08:44 recentrequeststablemodel.cpp
+-rw-r--r--  1 ela ela 3.2K Aug 28 08:44 recentrequeststablemodel.h
+drwxr-xr-x  5 ela ela  120 Aug 28 08:44 [01;34mres[0m
+-rw-r--r--  1 ela ela  49K Aug 28 08:44 rpcconsole.cpp
+-rw-r--r--  1 ela ela 5.7K Aug 28 08:44 rpcconsole.h
+-rw-r--r--  1 ela ela  35K Aug 28 08:44 sendcoinsdialog.cpp
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 sendcoinsdialog.h
+-rw-r--r--  1 ela ela 8.7K Aug 28 08:44 sendcoinsentry.cpp
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 sendcoinsentry.h
+-rw-r--r--  1 ela ela 9.3K Aug 28 08:44 signverifymessagedialog.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 signverifymessagedialog.h
+-rw-r--r--  1 ela ela 7.8K Aug 28 08:44 splashscreen.cpp
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 splashscreen.h
+drwxr-xr-x  2 ela ela  420 Aug 28 08:44 [01;34mtest[0m
+-rw-r--r--  1 ela ela 4.9K Aug 28 08:44 trafficgraphwidget.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 trafficgraphwidget.h
+-rw-r--r--  1 ela ela  14K Aug 28 08:44 transactiondesc.cpp
+-rw-r--r--  1 ela ela  807 Aug 28 08:44 transactiondescdialog.cpp
+-rw-r--r--  1 ela ela  732 Aug 28 08:44 transactiondescdialog.h
+-rw-r--r--  1 ela ela  899 Aug 28 08:44 transactiondesc.h
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 transactionfilterproxy.cpp
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 transactionfilterproxy.h
+-rw-r--r--  1 ela ela 7.7K Aug 28 08:44 transactionrecord.cpp
+-rw-r--r--  1 ela ela 4.4K Aug 28 08:44 transactionrecord.h
+-rw-r--r--  1 ela ela  26K Aug 28 08:44 transactiontablemodel.cpp
+-rw-r--r--  1 ela ela 4.4K Aug 28 08:44 transactiontablemodel.h
+-rw-r--r--  1 ela ela  26K Aug 28 08:44 transactionview.cpp
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 transactionview.h
+-rw-r--r--  1 ela ela 5.8K Aug 28 08:44 utilitydialog.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 utilitydialog.h
+-rw-r--r--  1 ela ela 5.5K Aug 28 08:44 walletcontroller.cpp
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 walletcontroller.h
+-rw-r--r--  1 ela ela 5.9K Aug 28 08:44 walletframe.cpp
+-rw-r--r--  1 ela ela 2.9K Aug 28 08:44 walletframe.h
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 walletmodel.cpp
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 walletmodel.h
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 walletmodeltransaction.cpp
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 walletmodeltransaction.h
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 walletview.cpp
+-rw-r--r--  1 ela ela 4.5K Aug 28 08:44 walletview.h
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 winshutdownmonitor.cpp
+-rw-r--r--  1 ela ela  893 Aug 28 08:44 winshutdownmonitor.h
+
+/tmp/BTC/src/qt/forms:
+total 304K
+drwxr-xr-x 2 ela ela  380 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 2.5K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 4.7K Aug 28 08:44 addressbookpage.ui
+-rw-r--r-- 1 ela ela 4.2K Aug 28 08:44 askpassphrasedialog.ui
+-rw-r--r-- 1 ela ela  15K Aug 28 08:44 coincontroldialog.ui
+-rw-r--r-- 1 ela ela  53K Aug 28 08:44 debugwindow.ui
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 editaddressdialog.ui
+-rw-r--r-- 1 ela ela 5.0K Aug 28 08:44 helpmessagedialog.ui
+-rw-r--r-- 1 ela ela 8.1K Aug 28 08:44 intro.ui
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 modaloverlay.ui
+-rw-r--r-- 1 ela ela 2.8K Aug 28 08:44 openuridialog.ui
+-rw-r--r-- 1 ela ela  28K Aug 28 08:44 optionsdialog.ui
+-rw-r--r-- 1 ela ela  20K Aug 28 08:44 overviewpage.ui
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 receivecoinsdialog.ui
+-rw-r--r-- 1 ela ela 4.2K Aug 28 08:44 receiverequestdialog.ui
+-rw-r--r-- 1 ela ela  43K Aug 28 08:44 sendcoinsdialog.ui
+-rw-r--r-- 1 ela ela  34K Aug 28 08:44 sendcoinsentry.ui
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 signverifymessagedialog.ui
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 transactiondescdialog.ui
+
+/tmp/BTC/src/qt/locale:
+total 6.9M
+drwxr-xr-x 2 ela ela 1.9K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 2.5K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  71K Aug 28 08:44 bitcoin_af.ts
+-rw-r--r-- 1 ela ela  47K Aug 28 08:44 bitcoin_af_ZA.ts
+-rw-r--r-- 1 ela ela  18K Aug 28 08:44 bitcoin_am.ts
+-rw-r--r-- 1 ela ela 125K Aug 28 08:44 bitcoin_ar.ts
+-rw-r--r-- 1 ela ela  47K Aug 28 08:44 bitcoin_be_BY.ts
+-rw-r--r-- 1 ela ela  30K Aug 28 08:44 bitcoin_bg_BG.ts
+-rw-r--r-- 1 ela ela  93K Aug 28 08:44 bitcoin_bg.ts
+-rw-r--r-- 1 ela ela 109K Aug 28 08:44 bitcoin_ca_ES.ts
+-rw-r--r-- 1 ela ela 143K Aug 28 08:44 bitcoin_ca.ts
+-rw-r--r-- 1 ela ela  97K Aug 28 08:44 bitcoin_ca@valencia.ts
+-rw-r--r-- 1 ela ela 148K Aug 28 08:44 bitcoin_cs.ts
+-rw-r--r-- 1 ela ela  34K Aug 28 08:44 bitcoin_cy.ts
+-rw-r--r-- 1 ela ela 146K Aug 28 08:44 bitcoin_da.ts
+-rw-r--r-- 1 ela ela 150K Aug 28 08:44 bitcoin_de.ts
+-rw-r--r-- 1 ela ela  84K Aug 28 08:44 bitcoin_el_GR.ts
+-rw-r--r-- 1 ela ela 5.6K Aug 28 08:44 bitcoin_el.ts
+-rw-r--r-- 1 ela ela 142K Aug 28 08:44 bitcoin_en_GB.ts
+-rw-r--r-- 1 ela ela 165K Aug 28 08:44 bitcoin_en.ts
+-rw-r--r-- 1 ela ela  65K Aug 28 08:44 bitcoin_eo.ts
+-rw-r--r-- 1 ela ela 7.8K Aug 28 08:44 bitcoin_es_AR.ts
+-rw-r--r-- 1 ela ela 116K Aug 28 08:44 bitcoin_es_CL.ts
+-rw-r--r-- 1 ela ela  69K Aug 28 08:44 bitcoin_es_CO.ts
+-rw-r--r-- 1 ela ela  46K Aug 28 08:44 bitcoin_es_DO.ts
+-rw-r--r-- 1 ela ela 121K Aug 28 08:44 bitcoin_es_ES.ts
+-rw-r--r-- 1 ela ela  22K Aug 28 08:44 bitcoin_es_MX.ts
+-rw-r--r-- 1 ela ela 148K Aug 28 08:44 bitcoin_es.ts
+-rw-r--r-- 1 ela ela  14K Aug 28 08:44 bitcoin_es_UY.ts
+-rw-r--r-- 1 ela ela  27K Aug 28 08:44 bitcoin_es_VE.ts
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 bitcoin_et_EE.ts
+-rw-r--r-- 1 ela ela  64K Aug 28 08:44 bitcoin_et.ts
+-rw-r--r-- 1 ela ela  27K Aug 28 08:44 bitcoin_eu_ES.ts
+-rw-r--r-- 1 ela ela  88K Aug 28 08:44 bitcoin_fa_IR.ts
+-rw-r--r-- 1 ela ela  68K Aug 28 08:44 bitcoin_fa.ts
+-rw-r--r-- 1 ela ela 137K Aug 28 08:44 bitcoin_fi.ts
+-rw-r--r-- 1 ela ela 4.3K Aug 28 08:44 bitcoin_fr_CA.ts
+-rw-r--r-- 1 ela ela  76K Aug 28 08:44 bitcoin_fr_FR.ts
+-rw-r--r-- 1 ela ela 152K Aug 28 08:44 bitcoin_fr.ts
+-rw-r--r-- 1 ela ela  36K Aug 28 08:44 bitcoin_gl.ts
+-rw-r--r-- 1 ela ela 137K Aug 28 08:44 bitcoin_he.ts
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 bitcoin_hi_IN.ts
+-rw-r--r-- 1 ela ela 147K Aug 28 08:44 bitcoin_hr.ts
+-rw-r--r-- 1 ela ela 115K Aug 28 08:44 bitcoin_hu.ts
+-rw-r--r-- 1 ela ela  77K Aug 28 08:44 bitcoin_id_ID.ts
+-rw-r--r-- 1 ela ela  31K Aug 28 08:44 bitcoin_id.ts
+-rw-r--r-- 1 ela ela  37K Aug 28 08:44 bitcoin_is.ts
+-rw-r--r-- 1 ela ela  36K Aug 28 08:44 bitcoin_it_IT.ts
+-rw-r--r-- 1 ela ela 147K Aug 28 08:44 bitcoin_it.ts
+-rw-r--r-- 1 ela ela 158K Aug 28 08:44 bitcoin_ja.ts
+-rw-r--r-- 1 ela ela  73K Aug 28 08:44 bitcoin_ka.ts
+-rw-r--r-- 1 ela ela 8.6K Aug 28 08:44 bitcoin_kk_KZ.ts
+-rw-r--r-- 1 ela ela 149K Aug 28 08:44 bitcoin_ko_KR.ts
+-rw-r--r-- 1 ela ela  17K Aug 28 08:44 bitcoin_ko.ts
+-rw-r--r-- 1 ela ela 9.7K Aug 28 08:44 bitcoin_ku_IQ.ts
+-rw-r--r-- 1 ela ela 9.2K Aug 28 08:44 bitcoin_ky.ts
+-rw-r--r-- 1 ela ela  28K Aug 28 08:44 bitcoin_la.ts
+-rw-r--r-- 1 ela ela  44K Aug 28 08:44 bitcoin_lt.ts
+-rw-r--r-- 1 ela ela  41K Aug 28 08:44 bitcoin_lv_LV.ts
+-rw-r--r-- 1 ela ela  18K Aug 28 08:44 bitcoin_mk_MK.ts
+-rw-r--r-- 1 ela ela  14K Aug 28 08:44 bitcoin_ml.ts
+-rw-r--r-- 1 ela ela  19K Aug 28 08:44 bitcoin_mn.ts
+-rw-r--r-- 1 ela ela  22K Aug 28 08:44 bitcoin_ms_MY.ts
+-rw-r--r-- 1 ela ela 136K Aug 28 08:44 bitcoin_nb.ts
+-rw-r--r-- 1 ela ela  28K Aug 28 08:44 bitcoin_ne.ts
+-rw-r--r-- 1 ela ela 147K Aug 28 08:44 bitcoin_nl.ts
+-rw-r--r-- 1 ela ela  26K Aug 28 08:44 bitcoin_pam.ts
+-rw-r--r-- 1 ela ela 148K Aug 28 08:44 bitcoin_pl.ts
+-rw-r--r-- 1 ela ela 146K Aug 28 08:44 bitcoin_pt_BR.ts
+-rw-r--r-- 1 ela ela 137K Aug 28 08:44 bitcoin_pt_PT.ts
+-rw-r--r-- 1 ela ela 147K Aug 28 08:44 bitcoin_ro_RO.ts
+-rw-r--r-- 1 ela ela  42K Aug 28 08:44 bitcoin_ro.ts
+-rw-r--r-- 1 ela ela  94K Aug 28 08:44 bitcoin_ru_RU.ts
+-rw-r--r-- 1 ela ela  18K Aug 28 08:44 bitcoin_ru.ts
+-rw-r--r-- 1 ela ela 148K Aug 28 08:44 bitcoin_sk.ts
+-rw-r--r-- 1 ela ela  71K Aug 28 08:44 bitcoin_sl_SI.ts
+-rw-r--r-- 1 ela ela 9.0K Aug 28 08:44 bitcoin_sn.ts
+-rw-r--r-- 1 ela ela  25K Aug 28 08:44 bitcoin_sq.ts
+-rw-r--r-- 1 ela ela  24K Aug 28 08:44 bitcoin_sr@latin.ts
+-rw-r--r-- 1 ela ela  49K Aug 28 08:44 bitcoin_sr.ts
+-rw-r--r-- 1 ela ela 145K Aug 28 08:44 bitcoin_sv.ts
+-rw-r--r-- 1 ela ela  77K Aug 28 08:44 bitcoin_szl.ts
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 bitcoin_ta.ts
+-rw-r--r-- 1 ela ela  37K Aug 28 08:44 bitcoin_th_TH.ts
+-rw-r--r-- 1 ela ela  49K Aug 28 08:44 bitcoin_tr_TR.ts
+-rw-r--r-- 1 ela ela 139K Aug 28 08:44 bitcoin_tr.ts
+-rw-r--r-- 1 ela ela 170K Aug 28 08:44 bitcoin_uk.ts
+-rw-r--r-- 1 ela ela 8.4K Aug 28 08:44 bitcoin_ur_PK.ts
+-rw-r--r-- 1 ela ela  44K Aug 28 08:44 bitcoin_uz@Cyrl.ts
+-rw-r--r-- 1 ela ela 134K Aug 28 08:44 bitcoin_vi.ts
+-rw-r--r-- 1 ela ela  41K Aug 28 08:44 bitcoin_vi_VN.ts
+-rw-r--r-- 1 ela ela 137K Aug 28 08:44 bitcoin_zh_CN.ts
+-rw-r--r-- 1 ela ela  23K Aug 28 08:44 bitcoin_zh_HK.ts
+-rw-r--r-- 1 ela ela 6.0K Aug 28 08:44 bitcoin_zh.ts
+-rw-r--r-- 1 ela ela 141K Aug 28 08:44 bitcoin_zh_TW.ts
+
+/tmp/BTC/src/qt/res:
+total 4.0K
+drwxr-xr-x 5 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 2.5K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 bitcoin-qt-res.rc
+drwxr-xr-x 2 ela ela  980 Aug 28 08:44 [01;34micons[0m
+drwxr-xr-x 2 ela ela  780 Aug 28 08:44 [01;34mmovies[0m
+drwxr-xr-x 2 ela ela  460 Aug 28 08:44 [01;34msrc[0m
+
+/tmp/BTC/src/qt/res/icons:
+total 1.5M
+drwxr-xr-x 2 ela ela  980 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela  120 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  784 Aug 28 08:44 add.png
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 address-book.png
+-rw-r--r-- 1 ela ela 898K Aug 28 08:44 bitcoin.icns
+-rwxr-xr-x 1 ela ela  57K Aug 28 08:44 [01;32mbitcoin.ico[0m
+-rw-r--r-- 1 ela ela 306K Aug 28 08:44 bitcoin.png
+-rw-r--r-- 1 ela ela  56K Aug 28 08:44 bitcoin_testnet.ico
+-rw-r--r-- 1 ela ela  803 Aug 28 08:44 chevron.png
+-rw-r--r-- 1 ela ela 2.6K Aug 28 08:44 clock1.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 clock2.png
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 clock3.png
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 clock4.png
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 clock5.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 connect0.png
+-rw-r--r-- 1 ela ela 2.2K Aug 28 08:44 connect1.png
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 connect2.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 connect3.png
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 connect4.png
+-rw-r--r-- 1 ela ela  883 Aug 28 08:44 editcopy.png
+-rw-r--r-- 1 ela ela 1.0K Aug 28 08:44 editpaste.png
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 edit.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 export.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 eye_minus.png
+-rw-r--r-- 1 ela ela 2.6K Aug 28 08:44 eye_plus.png
+-rw-r--r-- 1 ela ela 2.2K Aug 28 08:44 eye.png
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 fontbigger.png
+-rw-r--r-- 1 ela ela  951 Aug 28 08:44 fontsmaller.png
+-rw-r--r-- 1 ela ela 4.3K Aug 28 08:44 hd_disabled.png
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 hd_enabled.png
+-rw-r--r-- 1 ela ela  762 Aug 28 08:44 history.png
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 lock_closed.png
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 lock_open.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 network_disabled.png
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 overview.png
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 proxy.png
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 receive.png
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 remove.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 send.png
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 synced.png
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 transaction0.png
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 transaction2.png
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 transaction_abandoned.png
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 transaction_conflicted.png
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 tx_inout.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 tx_input.png
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 tx_mined.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 tx_output.png
+-rw-r--r-- 1 ela ela 2.8K Aug 28 08:44 warning.png
+
+/tmp/BTC/src/qt/res/movies:
+total 148K
+drwxr-xr-x 2 ela ela  780 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela  120 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela  450 Aug 28 08:44 [01;32mmakespinner.sh[0m
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 spinner-000.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-001.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-002.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-003.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-004.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-005.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-006.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-007.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-008.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 spinner-009.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-010.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-011.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-012.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-013.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-014.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-015.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-016.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-017.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 spinner-018.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-019.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-020.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-021.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-022.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-023.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-024.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-025.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-026.png
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 spinner-027.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-028.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-029.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-030.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-031.png
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 spinner-032.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-033.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-034.png
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 spinner-035.png
+
+/tmp/BTC/src/qt/res/src:
+total 120K
+drwxr-xr-x 2 ela ela  460 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela  120 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 3.6K Aug 28 08:44 bitcoin.svg
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 clock_0.svg
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 clock_1.svg
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 clock_2.svg
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 clock_3.svg
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 clock_4.svg
+-rw-r--r-- 1 ela ela 7.4K Aug 28 08:44 connect-0.svg
+-rw-r--r-- 1 ela ela 6.4K Aug 28 08:44 connect-1.svg
+-rw-r--r-- 1 ela ela 4.9K Aug 28 08:44 connect-2.svg
+-rw-r--r-- 1 ela ela 4.1K Aug 28 08:44 connect-3.svg
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 connect-4.svg
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 hd_disabled.svg
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 hd_enabled.svg
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 mine.svg
+-rw-r--r-- 1 ela ela 6.7K Aug 28 08:44 network_disabled.svg
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 proxy.svg
+-rw-r--r-- 1 ela ela 2.6K Aug 28 08:44 qt.svg
+-rw-r--r-- 1 ela ela  17K Aug 28 08:44 spinner.png
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 transaction0.svg
+-rw-r--r-- 1 ela ela 1008 Aug 28 08:44 tx_inout.svg
+-rw-r--r-- 1 ela ela  821 Aug 28 08:44 tx_in.svg
+
+/tmp/BTC/src/qt/test:
+total 124K
+drwxr-xr-x 2 ela ela  420 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 6 ela ela 2.5K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 5.2K Aug 28 08:44 addressbooktests.cpp
+-rw-r--r-- 1 ela ela  275 Aug 28 08:44 addressbooktests.h
+-rw-r--r-- 1 ela ela 3.9K Aug 28 08:44 apptests.cpp
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 apptests.h
+-rw-r--r-- 1 ela ela  836 Aug 28 08:44 compattests.cpp
+-rw-r--r-- 1 ela ela  444 Aug 28 08:44 compattests.h
+-rw-r--r-- 1 ela ela  136 Aug 28 08:44 Makefile
+-rw-r--r-- 1 ela ela  26K Aug 28 08:44 paymentrequestdata.h
+-rw-r--r-- 1 ela ela 8.4K Aug 28 08:44 paymentservertests.cpp
+-rw-r--r-- 1 ela ela  827 Aug 28 08:44 paymentservertests.h
+-rw-r--r-- 1 ela ela 7.3K Aug 28 08:44 rpcnestedtests.cpp
+-rw-r--r-- 1 ela ela  464 Aug 28 08:44 rpcnestedtests.h
+-rw-r--r-- 1 ela ela 3.0K Aug 28 08:44 test_main.cpp
+-rw-r--r-- 1 ela ela 2.9K Aug 28 08:44 uritests.cpp
+-rw-r--r-- 1 ela ela  430 Aug 28 08:44 uritests.h
+-rw-r--r-- 1 ela ela  551 Aug 28 08:44 util.cpp
+-rw-r--r-- 1 ela ela  360 Aug 28 08:44 util.h
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 wallettests.cpp
+-rw-r--r-- 1 ela ela  250 Aug 28 08:44 wallettests.h
+
+/tmp/BTC/src/rpc:
+total 416K
+drwxr-xr-x  2 ela ela  400 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  99K Aug 28 08:44 blockchain.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 blockchain.h
+-rw-r--r--  1 ela ela 9.4K Aug 28 08:44 client.cpp
+-rw-r--r--  1 ela ela  886 Aug 28 08:44 client.h
+-rw-r--r--  1 ela ela  47K Aug 28 08:44 mining.cpp
+-rw-r--r--  1 ela ela  26K Aug 28 08:44 misc.cpp
+-rw-r--r--  1 ela ela  33K Aug 28 08:44 net.cpp
+-rw-r--r--  1 ela ela 4.5K Aug 28 08:44 protocol.h
+-rw-r--r--  1 ela ela  82K Aug 28 08:44 rawtransaction.cpp
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 rawtransaction_util.cpp
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 rawtransaction_util.h
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 register.h
+-rw-r--r--  1 ela ela 5.8K Aug 28 08:44 request.cpp
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 request.h
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 server.cpp
+-rw-r--r--  1 ela ela 5.5K Aug 28 08:44 server.h
+-rw-r--r--  1 ela ela  24K Aug 28 08:44 util.cpp
+-rw-r--r--  1 ela ela 8.9K Aug 28 08:44 util.h
+
+/tmp/BTC/src/script:
+total 252K
+drwxr-xr-x  2 ela ela  420 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 4.3K Aug 28 08:44 bitcoinconsensus.cpp
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 bitcoinconsensus.h
+-rw-r--r--  1 ela ela  44K Aug 28 08:44 descriptor.cpp
+-rw-r--r--  1 ela ela 5.3K Aug 28 08:44 descriptor.h
+-rw-r--r--  1 ela ela  64K Aug 28 08:44 interpreter.cpp
+-rw-r--r--  1 ela ela 7.4K Aug 28 08:44 interpreter.h
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 keyorigin.h
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 script.cpp
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 script_error.cpp
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 script_error.h
+-rw-r--r--  1 ela ela  18K Aug 28 08:44 script.h
+-rw-r--r--  1 ela ela 3.2K Aug 28 08:44 sigcache.cpp
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 sigcache.h
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 sign.cpp
+-rw-r--r--  1 ela ela 8.0K Aug 28 08:44 sign.h
+-rw-r--r--  1 ela ela 6.4K Aug 28 08:44 signingprovider.cpp
+-rw-r--r--  1 ela ela 3.8K Aug 28 08:44 signingprovider.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 standard.cpp
+-rw-r--r--  1 ela ela 7.2K Aug 28 08:44 standard.h
+
+/tmp/BTC/src/secp256k1:
+total 52K
+drwxr-xr-x  8 ela ela  340 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x  1 ela ela   47 Aug 28 08:44 [01;32mautogen.sh[0m
+drwxr-xr-x  3 ela ela   60 Aug 28 08:44 [01;34mbuild-aux[0m
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 configure.ac
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34mcontrib[0m
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 COPYING
+-rw-r--r--  1 ela ela  713 Aug 28 08:44 .gitignore
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34minclude[0m
+-rw-r--r--  1 ela ela  327 Aug 28 08:44 libsecp256k1.pc.in
+-rw-r--r--  1 ela ela 5.7K Aug 28 08:44 Makefile.am
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mobj[0m
+-rw-r--r--  1 ela ela 3.1K Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34msage[0m
+drwxr-xr-x  5 ela ela 1.1K Aug 28 08:44 [01;34msrc[0m
+-rw-r--r--  1 ela ela  158 Aug 28 08:44 TODO
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 .travis.yml
+
+/tmp/BTC/src/secp256k1/build-aux:
+total 0
+drwxr-xr-x 3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela 340 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela 100 Aug 28 08:44 [01;34mm4[0m
+
+/tmp/BTC/src/secp256k1/build-aux/m4:
+total 16K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 4.7K Aug 28 08:44 ax_jni_include_dir.m4
+-rw-r--r-- 1 ela ela 4.0K Aug 28 08:44 ax_prog_cc_for_build.m4
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 bitcoin_secp.m4
+
+/tmp/BTC/src/secp256k1/contrib:
+total 20K
+drwxr-xr-x 2 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  340 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 3.6K Aug 28 08:44 lax_der_parsing.c
+-rw-r--r-- 1 ela ela 3.9K Aug 28 08:44 lax_der_parsing.h
+-rw-r--r-- 1 ela ela 5.0K Aug 28 08:44 lax_der_privatekey_parsing.c
+-rw-r--r-- 1 ela ela 3.7K Aug 28 08:44 lax_der_privatekey_parsing.h
+
+/tmp/BTC/src/secp256k1/include:
+total 44K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  340 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 secp256k1_ecdh.h
+-rw-r--r-- 1 ela ela  29K Aug 28 08:44 secp256k1.h
+-rw-r--r-- 1 ela ela 4.7K Aug 28 08:44 secp256k1_recovery.h
+
+/tmp/BTC/src/secp256k1/obj:
+total 0
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela 340 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela   0 Aug 28 08:44 .gitignore
+
+/tmp/BTC/src/secp256k1/sage:
+total 36K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  340 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 group_prover.sage
+-rw-r--r-- 1 ela ela 8.7K Aug 28 08:44 secp256k1.sage
+-rw-r--r-- 1 ela ela 9.4K Aug 28 08:44 weierstrass_prover.sage
+
+/tmp/BTC/src/secp256k1/src:
+total 740K
+drwxr-xr-x 5 ela ela 1.1K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  340 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34masm[0m
+-rw-r--r-- 1 ela ela  951 Aug 28 08:44 basic-config.h
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 bench_ecdh.c
+-rw-r--r-- 1 ela ela 7.3K Aug 28 08:44 bench_ecmult.c
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 bench.h
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 bench_internal.c
+-rw-r--r-- 1 ela ela 2.0K Aug 28 08:44 bench_recover.c
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 bench_sign.c
+-rw-r--r-- 1 ela ela 3.9K Aug 28 08:44 bench_verify.c
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 ecdsa.h
+-rw-r--r-- 1 ela ela  11K Aug 28 08:44 ecdsa_impl.h
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 eckey.h
+-rw-r--r-- 1 ela ela 3.5K Aug 28 08:44 eckey_impl.h
+-rw-r--r-- 1 ela ela  803 Aug 28 08:44 ecmult_const.h
+-rw-r--r-- 1 ela ela 9.5K Aug 28 08:44 ecmult_const_impl.h
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 ecmult_gen.h
+-rw-r--r-- 1 ela ela 8.2K Aug 28 08:44 ecmult_gen_impl.h
+-rw-r--r-- 1 ela ela 2.5K Aug 28 08:44 ecmult.h
+-rw-r--r-- 1 ela ela  44K Aug 28 08:44 ecmult_impl.h
+-rw-r--r-- 1 ela ela 2.0K Aug 28 08:44 field_10x26.h
+-rw-r--r-- 1 ela ela  47K Aug 28 08:44 field_10x26_impl.h
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 field_5x52_asm_impl.h
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 field_5x52.h
+-rw-r--r-- 1 ela ela  17K Aug 28 08:44 field_5x52_impl.h
+-rw-r--r-- 1 ela ela 9.2K Aug 28 08:44 field_5x52_int128_impl.h
+-rw-r--r-- 1 ela ela 6.4K Aug 28 08:44 field.h
+-rw-r--r-- 1 ela ela 8.7K Aug 28 08:44 field_impl.h
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 gen_context.c
+-rw-r--r-- 1 ela ela 7.5K Aug 28 08:44 group.h
+-rw-r--r-- 1 ela ela  27K Aug 28 08:44 group_impl.h
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 hash.h
+-rw-r--r-- 1 ela ela  13K Aug 28 08:44 hash_impl.h
+drwxr-xr-x 3 ela ela  140 Aug 28 08:44 [01;34mjava[0m
+drwxr-xr-x 4 ela ela   80 Aug 28 08:44 [01;34mmodules[0m
+-rw-r--r-- 1 ela ela  626 Aug 28 08:44 num_gmp.h
+-rw-r--r-- 1 ela ela 8.3K Aug 28 08:44 num_gmp_impl.h
+-rw-r--r-- 1 ela ela 2.8K Aug 28 08:44 num.h
+-rw-r--r-- 1 ela ela  690 Aug 28 08:44 num_impl.h
+-rw-r--r-- 1 ela ela  796 Aug 28 08:44 scalar_4x64.h
+-rw-r--r-- 1 ela ela  31K Aug 28 08:44 scalar_4x64_impl.h
+-rw-r--r-- 1 ela ela  720 Aug 28 08:44 scalar_8x32.h
+-rw-r--r-- 1 ela ela  27K Aug 28 08:44 scalar_8x32_impl.h
+-rw-r--r-- 1 ela ela 4.7K Aug 28 08:44 scalar.h
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 scalar_impl.h
+-rw-r--r-- 1 ela ela  584 Aug 28 08:44 scalar_low.h
+-rw-r--r-- 1 ela ela 3.7K Aug 28 08:44 scalar_low_impl.h
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 scratch.h
+-rw-r--r-- 1 ela ela 3.0K Aug 28 08:44 scratch_impl.h
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 secp256k1.c
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 testrand.h
+-rw-r--r-- 1 ela ela 4.0K Aug 28 08:44 testrand_impl.h
+-rw-r--r-- 1 ela ela 214K Aug 28 08:44 tests.c
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 tests_exhaustive.c
+-rw-r--r-- 1 ela ela 3.1K Aug 28 08:44 util.h
+
+/tmp/BTC/src/secp256k1/src/asm:
+total 28K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 1.1K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  28K Aug 28 08:44 field_10x26_arm.s
+
+/tmp/BTC/src/secp256k1/src/java:
+total 24K
+drwxr-xr-x 3 ela ela  140 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 1.1K Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34morg[0m
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 org_bitcoin_NativeSecp256k1.c
+-rw-r--r-- 1 ela ela 3.7K Aug 28 08:44 org_bitcoin_NativeSecp256k1.h
+-rw-r--r-- 1 ela ela  404 Aug 28 08:44 org_bitcoin_Secp256k1Context.c
+-rw-r--r-- 1 ela ela  538 Aug 28 08:44 org_bitcoin_Secp256k1Context.h
+
+/tmp/BTC/src/secp256k1/src/java/org:
+total 0
+drwxr-xr-x 3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela 140 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela 120 Aug 28 08:44 [01;34mbitcoin[0m
+
+/tmp/BTC/src/secp256k1/src/java/org/bitcoin:
+total 36K
+drwxr-xr-x 2 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela   60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  16K Aug 28 08:44 NativeSecp256k1.java
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 NativeSecp256k1Test.java
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 NativeSecp256k1Util.java
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 Secp256k1Context.java
+
+/tmp/BTC/src/secp256k1/src/modules:
+total 0
+drwxr-xr-x 4 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 1.1K Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34mecdh[0m
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34mrecovery[0m
+
+/tmp/BTC/src/secp256k1/src/modules/ecdh:
+total 16K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela   80 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 main_impl.h
+-rw-r--r-- 1 ela ela  292 Aug 28 08:44 Makefile.am.include
+-rw-r--r-- 1 ela ela 4.9K Aug 28 08:44 tests_impl.h
+
+/tmp/BTC/src/secp256k1/src/modules/recovery:
+total 32K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela   80 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 7.1K Aug 28 08:44 [01;32mmain_impl.h[0m
+-rw-r--r-- 1 ela ela  316 Aug 28 08:44 Makefile.am.include
+-rw-r--r-- 1 ela ela  20K Aug 28 08:44 tests_impl.h
+
+/tmp/BTC/src/support:
+total 36K
+drwxr-xr-x  3 ela ela  160 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mallocators[0m
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 cleanse.cpp
+-rw-r--r--  1 ela ela  560 Aug 28 08:44 cleanse.h
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 events.h
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 lockedpool.cpp
+-rw-r--r--  1 ela ela 7.9K Aug 28 08:44 lockedpool.h
+
+/tmp/BTC/src/support/allocators:
+total 8.0K
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  160 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 secure.h
+-rw-r--r-- 1 ela ela 1.7K Aug 28 08:44 zeroafterfree.h
+
+/tmp/BTC/src/test:
+total 1.1M
+drwxr-xr-x  5 ela ela 1.7K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  23K Aug 28 08:44 addrman_tests.cpp
+-rw-r--r--  1 ela ela 7.3K Aug 28 08:44 allocator_tests.cpp
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 amount_tests.cpp
+-rw-r--r--  1 ela ela  23K Aug 28 08:44 arith_uint256_tests.cpp
+-rw-r--r--  1 ela ela  917 Aug 28 08:44 base32_tests.cpp
+-rw-r--r--  1 ela ela 2.8K Aug 28 08:44 base58_tests.cpp
+-rw-r--r--  1 ela ela  893 Aug 28 08:44 base64_tests.cpp
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 bech32_tests.cpp
+-rw-r--r--  1 ela ela 6.7K Aug 28 08:44 bip32_tests.cpp
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 blockchain_tests.cpp
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 blockencodings_tests.cpp
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 blockfilter_index_tests.cpp
+-rw-r--r--  1 ela ela 7.4K Aug 28 08:44 blockfilter_tests.cpp
+-rw-r--r--  1 ela ela  48K Aug 28 08:44 bloom_tests.cpp
+-rw-r--r--  1 ela ela  741 Aug 28 08:44 bswap_tests.cpp
+-rw-r--r--  1 ela ela  14K Aug 28 08:44 checkqueue_tests.cpp
+-rw-r--r--  1 ela ela  37K Aug 28 08:44 coins_tests.cpp
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 compilerbug_tests.cpp
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 compress_tests.cpp
+-rw-r--r--  1 ela ela  45K Aug 28 08:44 crypto_tests.cpp
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 cuckoocache_tests.cpp
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34mdata[0m
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 dbwrapper_tests.cpp
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 denialofservice_tests.cpp
+-rw-r--r--  1 ela ela  42K Aug 28 08:44 descriptor_tests.cpp
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 flatfile_tests.cpp
+-rw-r--r--  1 ela ela 1.7K Aug 28 08:44 fs_tests.cpp
+drwxr-xr-x  2 ela ela  120 Aug 28 08:44 [01;34mfuzz[0m
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mgen[0m
+-rw-r--r--  1 ela ela 5.9K Aug 28 08:44 getarg_tests.cpp
+-rw-r--r--  1 ela ela 6.3K Aug 28 08:44 hash_tests.cpp
+-rw-r--r--  1 ela ela 6.4K Aug 28 08:44 key_io_tests.cpp
+-rw-r--r--  1 ela ela 1.5K Aug 28 08:44 key_properties.cpp
+-rw-r--r--  1 ela ela 9.0K Aug 28 08:44 key_tests.cpp
+-rw-r--r--  1 ela ela 2.7K Aug 28 08:44 limitedmap_tests.cpp
+-rw-r--r--  1 ela ela  282 Aug 28 08:44 main.cpp
+-rw-r--r--  1 ela ela  115 Aug 28 08:44 Makefile
+-rw-r--r--  1 ela ela  31K Aug 28 08:44 mempool_tests.cpp
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 merkleblock_tests.cpp
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 merkle_tests.cpp
+-rw-r--r--  1 ela ela  25K Aug 28 08:44 miner_tests.cpp
+-rw-r--r--  1 ela ela 8.6K Aug 28 08:44 multisig_tests.cpp
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 netbase_tests.cpp
+-rw-r--r--  1 ela ela 9.5K Aug 28 08:44 net_tests.cpp
+-rw-r--r--  1 ela ela 4.4K Aug 28 08:44 pmt_tests.cpp
+-rw-r--r--  1 ela ela 7.3K Aug 28 08:44 policyestimator_tests.cpp
+-rw-r--r--  1 ela ela 3.5K Aug 28 08:44 pow_tests.cpp
+-rw-r--r--  1 ela ela 9.0K Aug 28 08:44 prevector_tests.cpp
+-rw-r--r--  1 ela ela 2.5K Aug 28 08:44 raii_event_tests.cpp
+-rw-r--r--  1 ela ela 4.7K Aug 28 08:44 random_tests.cpp
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 README.md
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 reverselock_tests.cpp
+-rw-r--r--  1 ela ela  21K Aug 28 08:44 rpc_tests.cpp
+-rw-r--r--  1 ela ela  657 Aug 28 08:44 sanity_tests.cpp
+-rw-r--r--  1 ela ela 6.2K Aug 28 08:44 scheduler_tests.cpp
+-rw-r--r--  1 ela ela 6.6K Aug 28 08:44 scriptnum10.h
+-rw-r--r--  1 ela ela 7.3K Aug 28 08:44 scriptnum_tests.cpp
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 script_p2sh_tests.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 script_standard_tests.cpp
+-rw-r--r--  1 ela ela  96K Aug 28 08:44 script_tests.cpp
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 serialize_tests.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 setup_common.cpp
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 setup_common.h
+-rw-r--r--  1 ela ela 6.9K Aug 28 08:44 sighash_tests.cpp
+-rw-r--r--  1 ela ela  10K Aug 28 08:44 sigopcount_tests.cpp
+-rw-r--r--  1 ela ela 8.1K Aug 28 08:44 skiplist_tests.cpp
+-rw-r--r--  1 ela ela 6.8K Aug 28 08:44 streams_tests.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 sync_tests.cpp
+-rw-r--r--  1 ela ela 3.3K Aug 28 08:44 timedata_tests.cpp
+-rw-r--r--  1 ela ela 7.0K Aug 28 08:44 torcontrol_tests.cpp
+-rw-r--r--  1 ela ela  36K Aug 28 08:44 transaction_tests.cpp
+-rw-r--r--  1 ela ela 2.8K Aug 28 08:44 txindex_tests.cpp
+-rw-r--r--  1 ela ela  17K Aug 28 08:44 txvalidationcache_tests.cpp
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 txvalidation_tests.cpp
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 uint256_tests.cpp
+-rw-r--r--  1 ela ela 2.4K Aug 28 08:44 util.cpp
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 util.h
+-rw-r--r--  1 ela ela  66K Aug 28 08:44 util_tests.cpp
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 util_threadnames_tests.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 validation_block_tests.cpp
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 validation_tests.cpp
+-rw-r--r--  1 ela ela  20K Aug 28 08:44 versionbits_tests.cpp
+
+/tmp/BTC/src/test/data:
+total 612K
+drwxr-xr-x 2 ela ela  220 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 1.7K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 base58_encode_decode.json
+-rw-r--r-- 1 ela ela  18K Aug 28 08:44 blockfilters.json
+-rw-r--r-- 1 ela ela 4.7K Aug 28 08:44 key_io_invalid.json
+-rw-r--r-- 1 ela ela  15K Aug 28 08:44 key_io_valid.json
+-rw-r--r-- 1 ela ela  290 Aug 28 08:44 README.md
+-rw-r--r-- 1 ela ela 211K Aug 28 08:44 script_tests.json
+-rw-r--r-- 1 ela ela 206K Aug 28 08:44 sighash.json
+-rw-r--r-- 1 ela ela  52K Aug 28 08:44 tx_invalid.json
+-rw-r--r-- 1 ela ela  85K Aug 28 08:44 tx_valid.json
+
+/tmp/BTC/src/test/fuzz:
+total 20K
+drwxr-xr-x 2 ela ela  120 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 1.7K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 4.7K Aug 28 08:44 deserialize.cpp
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 fuzz.cpp
+-rw-r--r-- 1 ela ela  388 Aug 28 08:44 fuzz.h
+-rw-r--r-- 1 ela ela 2.4K Aug 28 08:44 script_flags.cpp
+
+/tmp/BTC/src/test/gen:
+total 8.0K
+drwxr-xr-x 2 ela ela   80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 5 ela ela 1.7K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  650 Aug 28 08:44 crypto_gen.cpp
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 crypto_gen.h
+
+/tmp/BTC/src/univalue:
+total 32K
+drwxr-xr-x  8 ela ela  320 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x  1 ela ela  214 Aug 28 08:44 [01;32mautogen.sh[0m
+drwxr-xr-x  3 ela ela   60 Aug 28 08:44 [01;34mbuild-aux[0m
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 configure.ac
+-rw-r--r--  1 ela ela 1.1K Aug 28 08:44 COPYING
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mgen[0m
+-rw-r--r--  1 ela ela  284 Aug 28 08:44 .gitignore
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34minclude[0m
+drwxr-xr-x  2 ela ela  180 Aug 28 08:44 [01;34mlib[0m
+-rw-r--r--  1 ela ela 3.4K Aug 28 08:44 Makefile.am
+drwxr-xr-x  2 ela ela   80 Aug 28 08:44 [01;34mpc[0m
+-rw-r--r--  1 ela ela  764 Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela 1.2K Aug 28 08:44 [01;34mtest[0m
+-rw-r--r--  1 ela ela  231 Aug 28 08:44 TODO
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 .travis.yml
+
+/tmp/BTC/src/univalue/build-aux:
+total 0
+drwxr-xr-x 3 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela 320 Aug 28 08:44 [01;34m..[0m
+drwxr-xr-x 2 ela ela  60 Aug 28 08:44 [01;34mm4[0m
+
+/tmp/BTC/src/univalue/build-aux/m4:
+total 4.0K
+drwxr-xr-x 2 ela ela 60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela 60 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  6 Aug 28 08:44 .gitignore
+
+/tmp/BTC/src/univalue/gen:
+total 4.0K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  320 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 1.8K Aug 28 08:44 gen.cpp
+
+/tmp/BTC/src/univalue/include:
+total 8.0K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  320 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 6.7K Aug 28 08:44 univalue.h
+
+/tmp/BTC/src/univalue/lib:
+total 48K
+drwxr-xr-x 2 ela ela  180 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  320 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela   10 Aug 28 08:44 .gitignore
+-rw-r--r-- 1 ela ela 4.5K Aug 28 08:44 univalue.cpp
+-rw-r--r-- 1 ela ela 2.2K Aug 28 08:44 univalue_escapes.h
+-rw-r--r-- 1 ela ela 4.3K Aug 28 08:44 univalue_get.cpp
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 univalue_read.cpp
+-rw-r--r-- 1 ela ela 4.6K Aug 28 08:44 univalue_utffilter.h
+-rw-r--r-- 1 ela ela 2.7K Aug 28 08:44 univalue_write.cpp
+
+/tmp/BTC/src/univalue/pc:
+total 8.0K
+drwxr-xr-x 2 ela ela  80 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela 320 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 243 Aug 28 08:44 libunivalue.pc.in
+-rw-r--r-- 1 ela ela 243 Aug 28 08:44 libunivalue-uninstalled.pc.in
+
+/tmp/BTC/src/univalue/test:
+total 244K
+drwxr-xr-x 2 ela ela 1.2K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 8 ela ela  320 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela   58 Aug 28 08:44 fail10.json
+-rw-r--r-- 1 ela ela   29 Aug 28 08:44 fail11.json
+-rw-r--r-- 1 ela ela   31 Aug 28 08:44 fail12.json
+-rw-r--r-- 1 ela ela   43 Aug 28 08:44 fail13.json
+-rw-r--r-- 1 ela ela   31 Aug 28 08:44 fail14.json
+-rw-r--r-- 1 ela ela   34 Aug 28 08:44 fail15.json
+-rw-r--r-- 1 ela ela    8 Aug 28 08:44 fail16.json
+-rw-r--r-- 1 ela ela   34 Aug 28 08:44 fail17.json
+-rw-r--r-- 1 ela ela   50 Aug 28 08:44 fail18.json
+-rw-r--r-- 1 ela ela   22 Aug 28 08:44 fail19.json
+-rw-r--r-- 1 ela ela   70 Aug 28 08:44 fail1.json
+-rw-r--r-- 1 ela ela   23 Aug 28 08:44 fail20.json
+-rw-r--r-- 1 ela ela   32 Aug 28 08:44 fail21.json
+-rw-r--r-- 1 ela ela   33 Aug 28 08:44 fail22.json
+-rw-r--r-- 1 ela ela   20 Aug 28 08:44 fail23.json
+-rw-r--r-- 1 ela ela   16 Aug 28 08:44 fail24.json
+-rw-r--r-- 1 ela ela   29 Aug 28 08:44 fail25.json
+-rw-r--r-- 1 ela ela   38 Aug 28 08:44 fail26.json
+-rw-r--r-- 1 ela ela   14 Aug 28 08:44 fail27.json
+-rw-r--r-- 1 ela ela   15 Aug 28 08:44 fail28.json
+-rw-r--r-- 1 ela ela    4 Aug 28 08:44 fail29.json
+-rw-r--r-- 1 ela ela   17 Aug 28 08:44 fail2.json
+-rw-r--r-- 1 ela ela    5 Aug 28 08:44 fail30.json
+-rw-r--r-- 1 ela ela    7 Aug 28 08:44 fail31.json
+-rw-r--r-- 1 ela ela   40 Aug 28 08:44 fail32.json
+-rw-r--r-- 1 ela ela   12 Aug 28 08:44 fail33.json
+-rw-r--r-- 1 ela ela   10 Aug 28 08:44 fail34.json
+-rw-r--r-- 1 ela ela   28 Aug 28 08:44 fail35.json
+-rw-r--r-- 1 ela ela    7 Aug 28 08:44 fail36.json
+-rw-r--r-- 1 ela ela   14 Aug 28 08:44 fail37.json
+-rw-r--r-- 1 ela ela   11 Aug 28 08:44 fail38.json
+-rw-r--r-- 1 ela ela   11 Aug 28 08:44 fail39.json
+-rw-r--r-- 1 ela ela   37 Aug 28 08:44 fail3.json
+-rw-r--r-- 1 ela ela    7 Aug 28 08:44 fail40.json
+-rw-r--r-- 1 ela ela    7 Aug 28 08:44 fail41.json
+-rw-r--r-- 1 ela ela   37 Aug 28 08:44 fail42.json
+-rw-r--r-- 1 ela ela   49 Aug 28 08:44 fail44.json
+-rw-r--r-- 1 ela ela   16 Aug 28 08:44 fail4.json
+-rw-r--r-- 1 ela ela   24 Aug 28 08:44 fail5.json
+-rw-r--r-- 1 ela ela   26 Aug 28 08:44 fail6.json
+-rw-r--r-- 1 ela ela   26 Aug 28 08:44 fail7.json
+-rw-r--r-- 1 ela ela   16 Aug 28 08:44 fail8.json
+-rw-r--r-- 1 ela ela   22 Aug 28 08:44 fail9.json
+-rw-r--r-- 1 ela ela   48 Aug 28 08:44 .gitignore
+-rw-r--r-- 1 ela ela  154 Aug 28 08:44 no_nul.cpp
+-rw-r--r-- 1 ela ela  12K Aug 28 08:44 object.cpp
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 pass1.json
+-rw-r--r-- 1 ela ela   52 Aug 28 08:44 pass2.json
+-rw-r--r-- 1 ela ela  148 Aug 28 08:44 pass3.json
+-rw-r--r-- 1 ela ela  280 Aug 28 08:44 round1.json
+-rw-r--r-- 1 ela ela   19 Aug 28 08:44 round2.json
+-rw-r--r-- 1 ela ela   29 Aug 28 08:44 round3.json
+-rw-r--r-- 1 ela ela    2 Aug 28 08:44 round4.json
+-rw-r--r-- 1 ela ela    5 Aug 28 08:44 round5.json
+-rw-r--r-- 1 ela ela    6 Aug 28 08:44 round6.json
+-rw-r--r-- 1 ela ela    5 Aug 28 08:44 round7.json
+-rw-r--r-- 1 ela ela  684 Aug 28 08:44 test_json.cpp
+-rw-r--r-- 1 ela ela 4.9K Aug 28 08:44 unitester.cpp
+
+/tmp/BTC/src/util:
+total 184K
+drwxr-xr-x  2 ela ela  600 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 1.8K Aug 28 08:44 bip32.cpp
+-rw-r--r--  1 ela ela  652 Aug 28 08:44 bip32.h
+-rw-r--r--  1 ela ela  621 Aug 28 08:44 bytevectorhash.cpp
+-rw-r--r--  1 ela ela  773 Aug 28 08:44 bytevectorhash.h
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 error.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 error.h
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 fees.cpp
+-rw-r--r--  1 ela ela  538 Aug 28 08:44 fees.h
+-rw-r--r--  1 ela ela  546 Aug 28 08:44 memory.h
+-rw-r--r--  1 ela ela 2.0K Aug 28 08:44 moneystr.cpp
+-rw-r--r--  1 ela ela  785 Aug 28 08:44 moneystr.h
+-rw-r--r--  1 ela ela  459 Aug 28 08:44 rbf.cpp
+-rw-r--r--  1 ela ela  550 Aug 28 08:44 rbf.h
+-rw-r--r--  1 ela ela  19K Aug 28 08:44 strencodings.cpp
+-rw-r--r--  1 ela ela 9.1K Aug 28 08:44 strencodings.h
+-rw-r--r--  1 ela ela  215 Aug 28 08:44 string.cpp
+-rw-r--r--  1 ela ela  995 Aug 28 08:44 string.h
+-rw-r--r--  1 ela ela  41K Aug 28 08:44 system.cpp
+-rw-r--r--  1 ela ela  12K Aug 28 08:44 system.h
+-rw-r--r--  1 ela ela 1.9K Aug 28 08:44 threadnames.cpp
+-rw-r--r--  1 ela ela  633 Aug 28 08:44 threadnames.h
+-rw-r--r--  1 ela ela 3.0K Aug 28 08:44 time.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 time.h
+-rw-r--r--  1 ela ela 1.2K Aug 28 08:44 translation.h
+-rw-r--r--  1 ela ela  591 Aug 28 08:44 url.cpp
+-rw-r--r--  1 ela ela  353 Aug 28 08:44 url.h
+-rw-r--r--  1 ela ela  713 Aug 28 08:44 validation.cpp
+-rw-r--r--  1 ela ela  567 Aug 28 08:44 validation.h
+
+/tmp/BTC/src/wallet:
+total 748K
+drwxr-xr-x  3 ela ela  660 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  794 Aug 28 08:44 coincontrol.cpp
+-rw-r--r--  1 ela ela 2.6K Aug 28 08:44 coincontrol.h
+-rw-r--r--  1 ela ela  15K Aug 28 08:44 coinselection.cpp
+-rw-r--r--  1 ela ela 3.6K Aug 28 08:44 coinselection.h
+-rw-r--r--  1 ela ela 4.8K Aug 28 08:44 crypter.cpp
+-rw-r--r--  1 ela ela 4.1K Aug 28 08:44 crypter.h
+-rw-r--r--  1 ela ela  33K Aug 28 08:44 db.cpp
+-rw-r--r--  1 ela ela  13K Aug 28 08:44 db.h
+-rw-r--r--  1 ela ela  16K Aug 28 08:44 feebumper.cpp
+-rw-r--r--  1 ela ela 2.3K Aug 28 08:44 feebumper.h
+-rw-r--r--  1 ela ela 4.2K Aug 28 08:44 fees.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 fees.h
+-rw-r--r--  1 ela ela  11K Aug 28 08:44 init.cpp
+-rw-r--r--  1 ela ela 6.5K Aug 28 08:44 ismine.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 ismine.h
+-rw-r--r--  1 ela ela 4.0K Aug 28 08:44 load.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 load.h
+-rw-r--r--  1 ela ela 2.1K Aug 28 08:44 psbtwallet.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 psbtwallet.h
+-rw-r--r--  1 ela ela  68K Aug 28 08:44 rpcdump.cpp
+-rw-r--r--  1 ela ela 199K Aug 28 08:44 rpcwallet.cpp
+-rw-r--r--  1 ela ela 1.3K Aug 28 08:44 rpcwallet.h
+drwxr-xr-x  2 ela ela  260 Aug 28 08:44 [01;34mtest[0m
+-rw-r--r--  1 ela ela 182K Aug 28 08:44 wallet.cpp
+-rw-r--r--  1 ela ela  26K Aug 28 08:44 walletdb.cpp
+-rw-r--r--  1 ela ela 9.6K Aug 28 08:44 walletdb.h
+-rw-r--r--  1 ela ela  61K Aug 28 08:44 wallet.h
+-rw-r--r--  1 ela ela 5.2K Aug 28 08:44 wallettool.cpp
+-rw-r--r--  1 ela ela  706 Aug 28 08:44 wallettool.h
+-rw-r--r--  1 ela ela 3.7K Aug 28 08:44 walletutil.cpp
+-rw-r--r--  1 ela ela  961 Aug 28 08:44 walletutil.h
+
+/tmp/BTC/src/wallet/test:
+total 116K
+drwxr-xr-x 2 ela ela  260 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  660 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  29K Aug 28 08:44 coinselector_tests.cpp
+-rw-r--r-- 1 ela ela 2.3K Aug 28 08:44 db_tests.cpp
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 init_test_fixture.cpp
+-rw-r--r-- 1 ela ela  894 Aug 28 08:44 init_test_fixture.h
+-rw-r--r-- 1 ela ela 2.7K Aug 28 08:44 init_tests.cpp
+-rw-r--r-- 1 ela ela  15K Aug 28 08:44 ismine_tests.cpp
+-rw-r--r-- 1 ela ela 8.8K Aug 28 08:44 psbt_wallet_tests.cpp
+-rw-r--r-- 1 ela ela 5.7K Aug 28 08:44 wallet_crypto_tests.cpp
+-rw-r--r-- 1 ela ela  552 Aug 28 08:44 wallet_test_fixture.cpp
+-rw-r--r-- 1 ela ela  879 Aug 28 08:44 wallet_test_fixture.h
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 wallet_tests.cpp
+
+/tmp/BTC/src/zmq:
+total 44K
+drwxr-xr-x  2 ela ela  220 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 23 ela ela 3.4K Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  560 Aug 28 08:44 zmqabstractnotifier.cpp
+-rw-r--r--  1 ela ela 1.6K Aug 28 08:44 zmqabstractnotifier.h
+-rw-r--r--  1 ela ela  543 Aug 28 08:44 zmqconfig.h
+-rw-r--r--  1 ela ela 6.0K Aug 28 08:44 zmqnotificationinterface.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 zmqnotificationinterface.h
+-rw-r--r--  1 ela ela 6.2K Aug 28 08:44 zmqpublishnotifier.cpp
+-rw-r--r--  1 ela ela 1.4K Aug 28 08:44 zmqpublishnotifier.h
+-rw-r--r--  1 ela ela 2.2K Aug 28 08:44 zmqrpc.cpp
+-rw-r--r--  1 ela ela  342 Aug 28 08:44 zmqrpc.h
+
+/tmp/BTC/test:
+total 12K
+drwxr-xr-x  7 ela ela  180 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela  600 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela  809 Aug 28 08:44 config.ini.in
+drwxr-xr-x  4 ela ela 2.6K Aug 28 08:44 [01;34mfunctional[0m
+drwxr-xr-x  2 ela ela   60 Aug 28 08:44 [01;34mfuzz[0m
+drwxr-xr-x  2 ela ela  640 Aug 28 08:44 [01;34mlint[0m
+-rw-r--r--  1 ela ela 7.6K Aug 28 08:44 README.md
+drwxr-xr-x  2 ela ela  100 Aug 28 08:44 [01;34msanitizer_suppressions[0m
+drwxr-xr-x  3 ela ela  100 Aug 28 08:44 [01;34mutil[0m
+
+/tmp/BTC/test/functional:
+total 1.5M
+drwxr-xr-x 4 ela ela 2.6K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 7 ela ela  180 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  890 Aug 28 08:44 combined_log_template.html
+-rwxr-xr-x 1 ela ela 7.5K Aug 28 08:44 [01;32mcombine_logs.py[0m
+-rwxr-xr-x 1 ela ela  826 Aug 28 08:44 [01;32mcreate_cache.py[0m
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34mdata[0m
+-rwxr-xr-x 1 ela ela 8.8K Aug 28 08:44 [01;32mexample_test.py[0m
+-rwxr-xr-x 1 ela ela 1.7K Aug 28 08:44 [01;32mfeature_abortnode.py[0m
+-rwxr-xr-x 1 ela ela 7.5K Aug 28 08:44 [01;32mfeature_assumevalid.py[0m
+-rwxr-xr-x 1 ela ela  18K Aug 28 08:44 [01;32mfeature_bip68_sequence.py[0m
+-rwxr-xr-x 1 ela ela  64K Aug 28 08:44 [01;32mfeature_block.py[0m
+-rwxr-xr-x 1 ela ela 1.7K Aug 28 08:44 [01;32mfeature_blocksdir.py[0m
+-rwxr-xr-x 1 ela ela 6.5K Aug 28 08:44 [01;32mfeature_cltv.py[0m
+-rwxr-xr-x 1 ela ela 6.9K Aug 28 08:44 [01;32mfeature_config_args.py[0m
+-rwxr-xr-x 1 ela ela  22K Aug 28 08:44 [01;32mfeature_csv_activation.py[0m
+-rwxr-xr-x 1 ela ela  13K Aug 28 08:44 [01;32mfeature_dbcrash.py[0m
+-rwxr-xr-x 1 ela ela 6.2K Aug 28 08:44 [01;32mfeature_dersig.py[0m
+-rwxr-xr-x 1 ela ela  12K Aug 28 08:44 [01;32mfeature_fee_estimation.py[0m
+-rwxr-xr-x 1 ela ela 1.8K Aug 28 08:44 [01;32mfeature_filelock.py[0m
+-rwxr-xr-x 1 ela ela 2.5K Aug 28 08:44 [01;32mfeature_help.py[0m
+-rwxr-xr-x 1 ela ela 4.1K Aug 28 08:44 [01;32mfeature_includeconf.py[0m
+-rwxr-xr-x 1 ela ela 3.0K Aug 28 08:44 [01;32mfeature_logging.py[0m
+-rwxr-xr-x 1 ela ela 6.5K Aug 28 08:44 [01;32mfeature_maxuploadtarget.py[0m
+-rwxr-xr-x 1 ela ela 4.1K Aug 28 08:44 [01;32mfeature_minchainwork.py[0m
+-rwxr-xr-x 1 ela ela 3.5K Aug 28 08:44 [01;32mfeature_notifications.py[0m
+-rwxr-xr-x 1 ela ela 6.2K Aug 28 08:44 [01;32mfeature_nulldummy.py[0m
+-rwxr-xr-x 1 ela ela 8.2K Aug 28 08:44 [01;32mfeature_proxy.py[0m
+-rwxr-xr-x 1 ela ela  21K Aug 28 08:44 [01;32mfeature_pruning.py[0m
+-rwxr-xr-x 1 ela ela  22K Aug 28 08:44 [01;32mfeature_rbf.py[0m
+-rwxr-xr-x 1 ela ela 1.4K Aug 28 08:44 [01;32mfeature_reindex.py[0m
+-rwxr-xr-x 1 ela ela  38K Aug 28 08:44 [01;32mfeature_segwit.py[0m
+-rwxr-xr-x 1 ela ela 1.4K Aug 28 08:44 [01;32mfeature_shutdown.py[0m
+-rwxr-xr-x 1 ela ela 1.7K Aug 28 08:44 [01;32mfeature_uacomment.py[0m
+-rwxr-xr-x 1 ela ela 5.0K Aug 28 08:44 [01;32mfeature_versionbits_warning.py[0m
+-rw-r--r-- 1 ela ela   12 Aug 28 08:44 .gitignore
+-rwxr-xr-x 1 ela ela 4.3K Aug 28 08:44 [01;32minterface_bitcoin_cli.py[0m
+-rwxr-xr-x 1 ela ela 4.8K Aug 28 08:44 [01;32minterface_http.py[0m
+-rwxr-xr-x 1 ela ela  15K Aug 28 08:44 [01;32minterface_rest.py[0m
+-rwxr-xr-x 1 ela ela 2.8K Aug 28 08:44 [01;32minterface_rpc.py[0m
+-rwxr-xr-x 1 ela ela 5.5K Aug 28 08:44 [01;32minterface_zmq.py[0m
+-rwxr-xr-x 1 ela ela  15K Aug 28 08:44 [01;32mmempool_accept.py[0m
+-rwxr-xr-x 1 ela ela 3.4K Aug 28 08:44 [01;32mmempool_limit.py[0m
+-rwxr-xr-x 1 ela ela 4.4K Aug 28 08:44 [01;32mmempool_package_onemore.py[0m
+-rwxr-xr-x 1 ela ela  14K Aug 28 08:44 [01;32mmempool_packages.py[0m
+-rwxr-xr-x 1 ela ela 6.5K Aug 28 08:44 [01;32mmempool_persist.py[0m
+-rwxr-xr-x 1 ela ela 4.8K Aug 28 08:44 [01;32mmempool_reorg.py[0m
+-rwxr-xr-x 1 ela ela 2.9K Aug 28 08:44 [01;32mmempool_resurrect.py[0m
+-rwxr-xr-x 1 ela ela 2.3K Aug 28 08:44 [01;32mmempool_spend_coinbase.py[0m
+-rwxr-xr-x 1 ela ela  12K Aug 28 08:44 [01;32mmining_basic.py[0m
+-rwxr-xr-x 1 ela ela 3.3K Aug 28 08:44 [01;32mmining_getblocktemplate_longpoll.py[0m
+-rwxr-xr-x 1 ela ela 7.5K Aug 28 08:44 [01;32mmining_prioritisetransaction.py[0m
+-rwxr-xr-x 1 ela ela 2.4K Aug 28 08:44 [01;32mp2p_blocksonly.py[0m
+-rwxr-xr-x 1 ela ela  39K Aug 28 08:44 [01;32mp2p_compactblocks.py[0m
+-rwxr-xr-x 1 ela ela 5.3K Aug 28 08:44 [01;32mp2p_disconnect_ban.py[0m
+-rwxr-xr-x 1 ela ela 3.5K Aug 28 08:44 [01;32mp2p_feefilter.py[0m
+-rwxr-xr-x 1 ela ela 5.8K Aug 28 08:44 [01;32mp2p_fingerprint.py[0m
+-rwxr-xr-x 1 ela ela 4.3K Aug 28 08:44 [01;32mp2p_invalid_block.py[0m
+-rwxr-xr-x 1 ela ela 2.0K Aug 28 08:44 [01;32mp2p_invalid_locator.py[0m
+-rwxr-xr-x 1 ela ela 8.9K Aug 28 08:44 [01;32mp2p_invalid_messages.py[0m
+-rwxr-xr-x 1 ela ela 6.6K Aug 28 08:44 [01;32mp2p_invalid_tx.py[0m
+-rwxr-xr-x 1 ela ela 5.2K Aug 28 08:44 [01;32mp2p_leak.py[0m
+-rwxr-xr-x 1 ela ela 2.2K Aug 28 08:44 [01;32mp2p_leak_tx.py[0m
+-rwxr-xr-x 1 ela ela 1.2K Aug 28 08:44 [01;32mp2p_mempool.py[0m
+-rwxr-xr-x 1 ela ela 4.9K Aug 28 08:44 [01;32mp2p_node_network_limited.py[0m
+-rwxr-xr-x 1 ela ela 4.2K Aug 28 08:44 [01;32mp2p_permissions.py[0m
+-rwxr-xr-x 1 ela ela  93K Aug 28 08:44 [01;32mp2p_segwit.py[0m
+-rwxr-xr-x 1 ela ela  27K Aug 28 08:44 [01;32mp2p_sendheaders.py[0m
+-rwxr-xr-x 1 ela ela 3.0K Aug 28 08:44 [01;32mp2p_timeouts.py[0m
+-rwxr-xr-x 1 ela ela 6.2K Aug 28 08:44 [01;32mp2p_tx_download.py[0m
+-rwxr-xr-x 1 ela ela  14K Aug 28 08:44 [01;32mp2p_unrequested_blocks.py[0m
+-rw-r--r-- 1 ela ela 7.3K Aug 28 08:44 README.md
+-rwxr-xr-x 1 ela ela 6.3K Aug 28 08:44 [01;32mrpc_bind.py[0m
+-rwxr-xr-x 1 ela ela  14K Aug 28 08:44 [01;32mrpc_blockchain.py[0m
+-rwxr-xr-x 1 ela ela 6.1K Aug 28 08:44 [01;32mrpc_createmultisig.py[0m
+-rwxr-xr-x 1 ela ela  17K Aug 28 08:44 [01;32mrpc_decodescript.py[0m
+-rwxr-xr-x 1 ela ela 1.2K Aug 28 08:44 [01;32mrpc_deprecated.py[0m
+-rwxr-xr-x 1 ela ela 4.7K Aug 28 08:44 [01;32mrpc_deriveaddresses.py[0m
+-rwxr-xr-x 1 ela ela  35K Aug 28 08:44 [01;32mrpc_fundrawtransaction.py[0m
+-rwxr-xr-x 1 ela ela 2.4K Aug 28 08:44 [01;32mrpc_getblockfilter.py[0m
+-rwxr-xr-x 1 ela ela 6.7K Aug 28 08:44 [01;32mrpc_getblockstats.py[0m
+-rwxr-xr-x 1 ela ela 2.3K Aug 28 08:44 [01;32mrpc_getchaintips.py[0m
+-rwxr-xr-x 1 ela ela 1.9K Aug 28 08:44 [01;32mrpc_help.py[0m
+-rwxr-xr-x 1 ela ela 4.2K Aug 28 08:44 [01;32mrpc_invalidateblock.py[0m
+-rwxr-xr-x 1 ela ela 2.2K Aug 28 08:44 [01;32mrpc_misc.py[0m
+-rwxr-xr-x 1 ela ela 1.2K Aug 28 08:44 [01;32mrpc_named_arguments.py[0m
+-rwxr-xr-x 1 ela ela 6.6K Aug 28 08:44 [01;32mrpc_net.py[0m
+-rwxr-xr-x 1 ela ela 5.2K Aug 28 08:44 [01;32mrpc_preciousblock.py[0m
+-rwxr-xr-x 1 ela ela  22K Aug 28 08:44 [01;32mrpc_psbt.py[0m
+-rwxr-xr-x 1 ela ela  26K Aug 28 08:44 [01;32mrpc_rawtransaction.py[0m
+-rwxr-xr-x 1 ela ela  13K Aug 28 08:44 [01;32mrpc_scantxoutset.py[0m
+-rwxr-xr-x 1 ela ela 1.8K Aug 28 08:44 [01;32mrpc_setban.py[0m
+-rwxr-xr-x 1 ela ela 1.9K Aug 28 08:44 [01;32mrpc_signmessage.py[0m
+-rwxr-xr-x 1 ela ela 9.4K Aug 28 08:44 [01;32mrpc_signrawtransaction.py[0m
+-rwxr-xr-x 1 ela ela 6.4K Aug 28 08:44 [01;32mrpc_txoutproof.py[0m
+-rwxr-xr-x 1 ela ela  803 Aug 28 08:44 [01;32mrpc_uptime.py[0m
+-rwxr-xr-x 1 ela ela 4.2K Aug 28 08:44 [01;32mrpc_users.py[0m
+drwxr-xr-x 2 ela ela  420 Aug 28 08:44 [01;34mtest_framework[0m
+-rwxr-xr-x 1 ela ela  27K Aug 28 08:44 [01;32mtest_runner.py[0m
+-rwxr-xr-x 1 ela ela 9.3K Aug 28 08:44 [01;32mtool_wallet.py[0m
+-rwxr-xr-x 1 ela ela 8.6K Aug 28 08:44 [01;32mwallet_abandonconflict.py[0m
+-rwxr-xr-x 1 ela ela  19K Aug 28 08:44 [01;32mwallet_address_types.py[0m
+-rwxr-xr-x 1 ela ela  11K Aug 28 08:44 [01;32mwallet_avoidreuse.py[0m
+-rwxr-xr-x 1 ela ela 7.8K Aug 28 08:44 [01;32mwallet_backup.py[0m
+-rwxr-xr-x 1 ela ela  11K Aug 28 08:44 [01;32mwallet_balance.py[0m
+-rwxr-xr-x 1 ela ela  25K Aug 28 08:44 [01;32mwallet_basic.py[0m
+-rwxr-xr-x 1 ela ela  18K Aug 28 08:44 [01;32mwallet_bumpfee.py[0m
+-rwxr-xr-x 1 ela ela 2.3K Aug 28 08:44 [01;32mwallet_bumpfee_totalfee_deprecation.py[0m
+-rwxr-xr-x 1 ela ela 2.3K Aug 28 08:44 [01;32mwallet_coinbase_category.py[0m
+-rwxr-xr-x 1 ela ela 3.2K Aug 28 08:44 [01;32mwallet_create_tx.py[0m
+-rwxr-xr-x 1 ela ela 7.9K Aug 28 08:44 [01;32mwallet_createwallet.py[0m
+-rwxr-xr-x 1 ela ela 1.6K Aug 28 08:44 [01;32mwallet_disable.py[0m
+-rwxr-xr-x 1 ela ela 7.4K Aug 28 08:44 [01;32mwallet_dump.py[0m
+-rwxr-xr-x 1 ela ela 4.3K Aug 28 08:44 [01;32mwallet_encryption.py[0m
+-rwxr-xr-x 1 ela ela 1.5K Aug 28 08:44 [01;32mwallet_fallbackfee.py[0m
+-rwxr-xr-x 1 ela ela 3.9K Aug 28 08:44 [01;32mwallet_groups.py[0m
+-rwxr-xr-x 1 ela ela 7.5K Aug 28 08:44 [01;32mwallet_hd.py[0m
+-rwxr-xr-x 1 ela ela  42K Aug 28 08:44 [01;32mwallet_importmulti.py[0m
+-rwxr-xr-x 1 ela ela 4.6K Aug 28 08:44 [01;32mwallet_importprunedfunds.py[0m
+-rwxr-xr-x 1 ela ela  11K Aug 28 08:44 [01;32mwallet_import_rescan.py[0m
+-rwxr-xr-x 1 ela ela 4.8K Aug 28 08:44 [01;32mwallet_import_with_label.py[0m
+-rwxr-xr-x 1 ela ela 3.4K Aug 28 08:44 [01;32mwallet_keypool.py[0m
+-rwxr-xr-x 1 ela ela 3.7K Aug 28 08:44 [01;32mwallet_keypool_topup.py[0m
+-rwxr-xr-x 1 ela ela 6.8K Aug 28 08:44 [01;32mwallet_labels.py[0m
+-rwxr-xr-x 1 ela ela 7.9K Aug 28 08:44 [01;32mwallet_listreceivedby.py[0m
+-rwxr-xr-x 1 ela ela 9.9K Aug 28 08:44 [01;32mwallet_listsinceblock.py[0m
+-rwxr-xr-x 1 ela ela  11K Aug 28 08:44 [01;32mwallet_listtransactions.py[0m
+-rwxr-xr-x 1 ela ela  17K Aug 28 08:44 [01;32mwallet_multiwallet.py[0m
+-rwxr-xr-x 1 ela ela 3.1K Aug 28 08:44 [01;32mwallet_resendwallettransactions.py[0m
+-rwxr-xr-x 1 ela ela 6.3K Aug 28 08:44 [01;32mwallet_txn_clone.py[0m
+-rwxr-xr-x 1 ela ela 5.9K Aug 28 08:44 [01;32mwallet_txn_doublespend.py[0m
+-rw-r--r-- 1 ela ela 4.4K Aug 28 08:44 wallet_watchonly.py
+-rwxr-xr-x 1 ela ela 3.4K Aug 28 08:44 [01;32mwallet_zapwallettxes.py[0m
+
+/tmp/BTC/test/functional/data:
+total 116K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela 2.6K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 5.8K Aug 28 08:44 invalid_txs.py
+-rw-r--r-- 1 ela ela  57K Aug 28 08:44 rpc_getblockstats.json
+-rw-r--r-- 1 ela ela  46K Aug 28 08:44 rpc_psbt.json
+
+/tmp/BTC/test/functional/test_framework:
+total 244K
+drwxr-xr-x 2 ela ela  420 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 4 ela ela 2.6K Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela 3.0K Aug 28 08:44 address.py
+-rw-r--r-- 1 ela ela 8.5K Aug 28 08:44 authproxy.py
+-rw-r--r-- 1 ela ela 1.3K Aug 28 08:44 bignum.py
+-rw-r--r-- 1 ela ela 8.0K Aug 28 08:44 blocktools.py
+-rw-r--r-- 1 ela ela 3.4K Aug 28 08:44 coverage.py
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 descriptors.py
+-rw-r--r-- 1 ela ela    0 Aug 28 08:44 __init__.py
+-rw-r--r-- 1 ela ela  14K Aug 28 08:44 key.py
+-rwxr-xr-x 1 ela ela  41K Aug 28 08:44 [01;32mmessages.py[0m
+-rwxr-xr-x 1 ela ela  23K Aug 28 08:44 [01;32mmininode.py[0m
+-rw-r--r-- 1 ela ela 5.0K Aug 28 08:44 netutil.py
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 script.py
+-rw-r--r-- 1 ela ela 3.4K Aug 28 08:44 segwit_addr.py
+-rw-r--r-- 1 ela ela 2.0K Aug 28 08:44 siphash.py
+-rw-r--r-- 1 ela ela 5.6K Aug 28 08:44 socks5.py
+-rwxr-xr-x 1 ela ela  24K Aug 28 08:44 [01;32mtest_framework.py[0m
+-rwxr-xr-x 1 ela ela  24K Aug 28 08:44 [01;32mtest_node.py[0m
+-rw-r--r-- 1 ela ela  22K Aug 28 08:44 util.py
+-rwxr-xr-x 1 ela ela 4.0K Aug 28 08:44 [01;32mwallet_util.py[0m
+
+/tmp/BTC/test/fuzz:
+total 8.0K
+drwxr-xr-x 2 ela ela   60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 7 ela ela  180 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 4.7K Aug 28 08:44 [01;32mtest_runner.py[0m
+
+/tmp/BTC/test/lint:
+total 148K
+drwxr-xr-x 2 ela ela  640 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 7 ela ela  180 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 2.8K Aug 28 08:44 [01;32mcheck-doc.py[0m
+-rwxr-xr-x 1 ela ela 6.0K Aug 28 08:44 [01;32mcheck-rpc-mappings.py[0m
+-rwxr-xr-x 1 ela ela 1.8K Aug 28 08:44 [01;32mcommit-script-check.sh[0m
+-rwxr-xr-x 1 ela ela  798 Aug 28 08:44 [01;32mextended-lint-all.sh[0m
+-rwxr-xr-x 1 ela ela 5.7K Aug 28 08:44 [01;32mextended-lint-cppcheck.sh[0m
+-rwxr-xr-x 1 ela ela 2.5K Aug 28 08:44 [01;32mgit-subtree-check.sh[0m
+-rwxr-xr-x 1 ela ela  822 Aug 28 08:44 [01;32mlint-all.sh[0m
+-rwxr-xr-x 1 ela ela  652 Aug 28 08:44 [01;32mlint-assertions.sh[0m
+-rwxr-xr-x 1 ela ela 2.9K Aug 28 08:44 [01;32mlint-circular-dependencies.sh[0m
+-rwxr-xr-x 1 ela ela  773 Aug 28 08:44 [01;32mlint-filenames.sh[0m
+-rwxr-xr-x 1 ela ela  13K Aug 28 08:44 [01;32mlint-format-strings.py[0m
+-rwxr-xr-x 1 ela ela 1.4K Aug 28 08:44 [01;32mlint-format-strings.sh[0m
+-rwxr-xr-x 1 ela ela 1.1K Aug 28 08:44 [01;32mlint-include-guards.sh[0m
+-rwxr-xr-x 1 ela ela 3.8K Aug 28 08:44 [01;32mlint-includes.sh[0m
+-rwxr-xr-x 1 ela ela 5.6K Aug 28 08:44 [01;32mlint-locale-dependence.sh[0m
+-rwxr-xr-x 1 ela ela  864 Aug 28 08:44 [01;32mlint-logs.sh[0m
+-rwxr-xr-x 1 ela ela  573 Aug 28 08:44 [01;32mlint-python-dead-code.sh[0m
+-rw-r--r-- 1 ela ela 3.3K Aug 28 08:44 lint-python-dead-code-whitelist
+-rwxr-xr-x 1 ela ela 4.5K Aug 28 08:44 [01;32mlint-python.sh[0m
+-rwxr-xr-x 1 ela ela 1.1K Aug 28 08:44 [01;32mlint-python-utf8-encoding.sh[0m
+-rwxr-xr-x 1 ela ela  490 Aug 28 08:44 [01;32mlint-qt.sh[0m
+-rwxr-xr-x 1 ela ela  832 Aug 28 08:44 [01;32mlint-rpc-help.sh[0m
+-rwxr-xr-x 1 ela ela  723 Aug 28 08:44 [01;32mlint-shebang.sh[0m
+-rwxr-xr-x 1 ela ela 1.1K Aug 28 08:44 [01;32mlint-shell-locale.sh[0m
+-rwxr-xr-x 1 ela ela 1.1K Aug 28 08:44 [01;32mlint-shell.sh[0m
+-rw-r--r-- 1 ela ela  117 Aug 28 08:44 lint-spelling.ignore-words.txt
+-rwxr-xr-x 1 ela ela  879 Aug 28 08:44 [01;32mlint-spelling.sh[0m
+-rwxr-xr-x 1 ela ela 1.2K Aug 28 08:44 [01;32mlint-tests.sh[0m
+-rwxr-xr-x 1 ela ela 3.1K Aug 28 08:44 [01;32mlint-whitespace.sh[0m
+-rw-r--r-- 1 ela ela 1.1K Aug 28 08:44 README.md
+
+/tmp/BTC/test/sanitizer_suppressions:
+total 12K
+drwxr-xr-x 2 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 7 ela ela  180 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  196 Aug 28 08:44 lsan
+-rw-r--r-- 1 ela ela  366 Aug 28 08:44 tsan
+-rw-r--r-- 1 ela ela 1.4K Aug 28 08:44 ubsan
+
+/tmp/BTC/test/util:
+total 12K
+drwxr-xr-x 3 ela ela  100 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 7 ela ela  180 Aug 28 08:44 [01;34m..[0m
+-rwxr-xr-x 1 ela ela 6.5K Aug 28 08:44 [01;32mbitcoin-util-test.py[0m
+drwxr-xr-x 2 ela ela 1.1K Aug 28 08:44 [01;34mdata[0m
+-rwxr-xr-x 1 ela ela 1.7K Aug 28 08:44 [01;32mrpcauth-test.py[0m
+
+/tmp/BTC/test/util/data:
+total 300K
+drwxr-xr-x 2 ela ela 1.1K Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 3 ela ela  100 Aug 28 08:44 [01;34m..[0m
+-rw-r--r-- 1 ela ela  26K Aug 28 08:44 bitcoin-util-test.json
+-rw-r--r-- 1 ela ela   21 Aug 28 08:44 blanktxv1.hex
+-rw-r--r-- 1 ela ela  327 Aug 28 08:44 blanktxv1.json
+-rw-r--r-- 1 ela ela   21 Aug 28 08:44 blanktxv2.hex
+-rw-r--r-- 1 ela ela  327 Aug 28 08:44 blanktxv2.json
+-rw-r--r-- 1 ela ela 6.0K Aug 28 08:44 tt-delin1-out.hex
+-rw-r--r-- 1 ela ela  21K Aug 28 08:44 tt-delin1-out.json
+-rw-r--r-- 1 ela ela 6.2K Aug 28 08:44 tt-delout1-out.hex
+-rw-r--r-- 1 ela ela  22K Aug 28 08:44 tt-delout1-out.json
+-rw-r--r-- 1 ela ela 6.3K Aug 28 08:44 tt-locktime317000-out.hex
+-rw-r--r-- 1 ela ela  22K Aug 28 08:44 tt-locktime317000-out.json
+-rw-r--r-- 1 ela ela 6.3K Aug 28 08:44 tx394b54bb.hex
+-rw-r--r-- 1 ela ela  403 Aug 28 08:44 txcreate1.hex
+-rw-r--r-- 1 ela ela 2.5K Aug 28 08:44 txcreate1.json
+-rw-r--r-- 1 ela ela   39 Aug 28 08:44 txcreate2.hex
+-rw-r--r-- 1 ela ela  554 Aug 28 08:44 txcreate2.json
+-rw-r--r-- 1 ela ela  353 Aug 28 08:44 txcreatedata1.hex
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 txcreatedata1.json
+-rw-r--r-- 1 ela ela  353 Aug 28 08:44 txcreatedata2.hex
+-rw-r--r-- 1 ela ela 1.9K Aug 28 08:44 txcreatedata2.json
+-rw-r--r-- 1 ela ela  171 Aug 28 08:44 txcreatedata_seq0.hex
+-rw-r--r-- 1 ela ela 1.2K Aug 28 08:44 txcreatedata_seq0.json
+-rw-r--r-- 1 ela ela  253 Aug 28 08:44 txcreatedata_seq1.hex
+-rw-r--r-- 1 ela ela 1.6K Aug 28 08:44 txcreatedata_seq1.json
+-rw-r--r-- 1 ela ela  249 Aug 28 08:44 txcreatemultisig1.hex
+-rw-r--r-- 1 ela ela 1.5K Aug 28 08:44 txcreatemultisig1.json
+-rw-r--r-- 1 ela ela   85 Aug 28 08:44 txcreatemultisig2.hex
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 txcreatemultisig2.json
+-rw-r--r-- 1 ela ela  107 Aug 28 08:44 txcreatemultisig3.hex
+-rw-r--r-- 1 ela ela  932 Aug 28 08:44 txcreatemultisig3.json
+-rw-r--r-- 1 ela ela   85 Aug 28 08:44 txcreatemultisig4.hex
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 txcreatemultisig4.json
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 txcreatemultisig5.json
+-rw-r--r-- 1 ela ela  109 Aug 28 08:44 txcreateoutpubkey1.hex
+-rw-r--r-- 1 ela ela  905 Aug 28 08:44 txcreateoutpubkey1.json
+-rw-r--r-- 1 ela ela   83 Aug 28 08:44 txcreateoutpubkey2.hex
+-rw-r--r-- 1 ela ela  837 Aug 28 08:44 txcreateoutpubkey2.json
+-rw-r--r-- 1 ela ela   85 Aug 28 08:44 txcreateoutpubkey3.hex
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 txcreateoutpubkey3.json
+-rw-r--r-- 1 ela ela   41 Aug 28 08:44 txcreatescript1.hex
+-rw-r--r-- 1 ela ela  565 Aug 28 08:44 txcreatescript1.json
+-rw-r--r-- 1 ela ela   85 Aug 28 08:44 txcreatescript2.hex
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 txcreatescript2.json
+-rw-r--r-- 1 ela ela  107 Aug 28 08:44 txcreatescript3.hex
+-rw-r--r-- 1 ela ela  932 Aug 28 08:44 txcreatescript3.json
+-rw-r--r-- 1 ela ela   85 Aug 28 08:44 txcreatescript4.hex
+-rw-r--r-- 1 ela ela  843 Aug 28 08:44 txcreatescript4.json
+-rw-r--r-- 1 ela ela  447 Aug 28 08:44 txcreatesignv1.hex
+-rw-r--r-- 1 ela ela 2.1K Aug 28 08:44 txcreatesignv1.json
+-rw-r--r-- 1 ela ela  447 Aug 28 08:44 txcreatesignv2.hex
+
+/tmp/BTC/.tx:
+total 4.0K
+drwxr-xr-x  2 ela ela  60 Aug 28 08:44 [01;34m.[0m
+drwxr-xr-x 14 ela ela 600 Aug 28 08:44 [01;34m..[0m
+-rw-r--r--  1 ela ela 176 Aug 28 08:44 config
