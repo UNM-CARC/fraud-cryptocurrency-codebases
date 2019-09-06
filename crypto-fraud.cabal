@@ -28,7 +28,7 @@ source-repository head
 library
   exposed-modules:
       Lib
-      Util
+      UtilF
   other-modules:
       Paths_crypto_fraud
   hs-source-dirs:

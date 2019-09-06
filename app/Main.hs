@@ -39,7 +39,7 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  print $ fmap md5 $ fmap BLU.fromString $ fmap takeBaseName $ concat dirlist
+ -- print $ fmap md5 $ fmap BLU.fromString $ fmap takeBaseName dirlist
   --generateHashes dirlist 
 
   

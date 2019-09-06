@@ -18,6 +18,7 @@ import           Data.Digest.Pure.MD5
 import           Control.Monad (foldM)
 import           System.Directory (doesDirectoryExist, listDirectory) 
 import           System.FilePath ((</>), FilePath)
+import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
 
 import Lib
@@ -45,11 +46,10 @@ cloneRepo coin = do
 
 --hashFile :: String -> IO ()
 
-{-
-generateHashes :: [ByteString] -> [(ByteString, MD5Digest)]
+generateHashes :: [FilePath] -> [(String, B.ByteString)]-> [(String, B.ByteString)]
 generateHashes []          acc = acc
-generateHashes (d:dirlist) acc =
+generateHashes (d:dirlist) acc = do
   --foldl (\x y -> x ++ [(concat $ y ,md5 y)]) [] dirlist
-  generateHashes dirlist (acc ++ [(d, md5 d)])
-
--}
+  let str = "md5sum " ++ d
+  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
+  generateHashes dirlist (acc ++ [(takeBaseName d, B.pack out')])
