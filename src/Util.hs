@@ -46,10 +46,17 @@ cloneRepo coin = do
 
 --hashFile :: String -> IO ()
 
-generateHashes :: [FilePath] -> [(String, B.ByteString)]-> [(String, B.ByteString)]
-generateHashes []          acc = acc
-generateHashes (d:dirlist) acc = do
+--generateHashes :: [FilePath] -> IO [(String, String)]-> IO [(String, String)]
+{-
+
+generateHashes [] acc = acc
+generateHashes (d:dirs) acc = do
   --foldl (\x y -> x ++ [(concat $ y ,md5 y)]) [] dirlist
-  let str = "md5sum " ++ d
-  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
-  generateHashes dirlist (acc ++ [(takeBaseName d, B.pack out')])
+  --let str = "md5sum " ++ d
+  (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
+  let t   = foldr (:) [] out'
+  let tmp = (takeBaseName d, t)
+  generateHashes dirs (acc ++ [tmp])
+-}
+
+

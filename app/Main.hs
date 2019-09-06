@@ -39,6 +39,15 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
+  let out = foldl fun [] dirlist
+  print out
+  where
+    fun d = do
+      (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
+      let t   = foldr (:) [] out'
+      (takeBaseName d, t)
+      
+  
  -- print $ fmap md5 $ fmap BLU.fromString $ fmap takeBaseName dirlist
   --generateHashes dirlist 
 
