@@ -26,6 +26,15 @@ import           Control.Monad.Extra (partitionM)
 import Lib
 import Util
 
+
+{-
+--fun :: [FilePath] -> [(String, String)] -> [(String, String)]
+fun []       acc = print acc
+fun (d:dirs) acc = do
+  (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
+  fun dirs (acc ++ [(takeBaseName d, out')])
+-}
+
 --main :: IO [FilePath]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
@@ -39,15 +48,12 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  let out = foldl fun [] dirlist
-  print out
-  where
-    fun d = do
-      (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
-      let t   = foldr (:) [] out'
-      (takeBaseName d, t)
-      
-  
+  let out = fmap BLU.fromString dirlist-- fun dirlist []
+  putStrLn out
+  --where
+    --fun :: FilePath -> IO (String, String)
+     
+
  -- print $ fmap md5 $ fmap BLU.fromString $ fmap takeBaseName dirlist
   --generateHashes dirlist 
 
