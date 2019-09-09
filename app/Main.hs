@@ -7,21 +7,28 @@ import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
 
-import           Data.Bits
-import           Data.Char
-import           Data.List
-import           Data.ByteString (ByteString, pack)
-import           Data.Word8
+--import           Data.Bits
+--import           Data.Char
+--import           Data.List
+--import           Data.ByteString (ByteString, pack)
+--import           Data.Word8
 import           System.IO
 import           Control.Monad
 import           Control.Applicative
-import           System.Process
+--import           System.Process
 import           Data.Digest.Pure.MD5
 import           Control.Monad (foldM)
 import           System.Directory (doesDirectoryExist, listDirectory) 
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
+
+import           System.Directory.Tree (
+                   AnchoredDirTree(..), DirTree(..),
+                   filterDir, readDirectoryWith
+                   )
 import           Control.Monad.Extra (partitionM)
+import           Data.Traversable (traverse)
+
 
 import Lib
 import Util
@@ -48,8 +55,12 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  let out = fmap BLU.fromString dirlist-- fun dirlist []
-  putStrLn out
+  let out = traverse Txt.readFile dirlist -- fun dirlist []
+  --let out = allFiles ("/tmp/" ++ head (head tmp))
+  --let x = foldr (\y x -> (md5 . BLU.fromString)) out
+  --dirlist
+  --putStrLn out
+  out
   --where
     --fun :: FilePath -> IO (String, String)
      

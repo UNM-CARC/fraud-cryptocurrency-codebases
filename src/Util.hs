@@ -5,11 +5,11 @@ import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
 
-import           Data.Bits
-import           Data.Char
-import           Data.List
-import           Data.ByteString (ByteString, pack)
-import           Data.Word8
+--import           Data.Bits
+--import           Data.Char
+--import           Data.List
+--import           Data.ByteString (ByteString, pack)
+--import           Data.Word8
 import           System.IO
 import           Control.Monad
 import           Control.Applicative
@@ -20,6 +20,11 @@ import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
+import           System.Directory.Tree (
+                   AnchoredDirTree(..), DirTree(..),
+                   filterDir, readDirectoryWith
+                   )
+import           System.FilePath (takeExtension)
 
 import Lib
 
@@ -32,6 +37,17 @@ traverseDir validDir transition =
            state' <- foldM transition state filePaths -- process current dir
            foldM go state' (filter validDir dirPaths) -- process subdirs
            in go
+
+
+--allFiles :: String -> IO ()
+allFiles dir = do
+    _:/tree <- readDirectoryWith return dir
+    let x = filterDir prd tree
+    --print x
+    return x
+  where prd (Dir ('.':_) _) = False
+        prd _ = True
+
 
 splitEvery :: Int -> [a] -> [[a]]
 splitEvery _ [] = []
