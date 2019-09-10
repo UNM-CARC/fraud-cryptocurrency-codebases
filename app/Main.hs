@@ -42,7 +42,7 @@ fun (d:dirs) acc = do
   fun dirs (acc ++ [(takeBaseName d, out')])
 -}
 
-main :: IO [MD5Digest]
+--main :: IO [MD5Digest]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $ 
@@ -55,13 +55,15 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
+  --let int = fmap (mfilter (\x -> if (head $ takeBaseName x) == '.' then False else True)) dirlist
+ --int
   let out = fmap (traverse Txt.readFile) dirlist -- fun dirlist []
-  --let out = allFiles ("/tmp/" ++ head (head tmp))
-  let x = fmap (traverse (md5 . BLU.fromString . Txt.unpack)) $ join out
+  --let out = fmap (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
+  let x = fmap (fmap (md5 . BLU.fromString . Txt.unpack)) $ join out
+  --let x = fmap (fmap (md5 . BLU.fromString . Txt.unpack)) $ out
   --dirlist
   --putStrLn out
   x
-  --where
     --fun :: FilePath -> IO (String, String)
      
 
