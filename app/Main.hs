@@ -42,7 +42,7 @@ fun (d:dirs) acc = do
   fun dirs (acc ++ [(takeBaseName d, out')])
 -}
 
---main :: IO [FilePath]
+main :: IO [MD5Digest]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $ 
@@ -57,10 +57,10 @@ main = do
                 ("/tmp/" ++ head (head tmp))
   let out = fmap (traverse Txt.readFile) dirlist -- fun dirlist []
   --let out = allFiles ("/tmp/" ++ head (head tmp))
-  let x = fmap (fmap (traverse (md5 . BLU.fromString . Txt.unpack))) out
+  let x = fmap (traverse (md5 . BLU.fromString . Txt.unpack)) $ join out
   --dirlist
   --putStrLn out
-  out
+  x
   --where
     --fun :: FilePath -> IO (String, String)
      
