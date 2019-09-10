@@ -55,9 +55,9 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  let out = traverse Txt.readFile dirlist -- fun dirlist []
+  let out = fmap (traverse Txt.readFile) dirlist -- fun dirlist []
   --let out = allFiles ("/tmp/" ++ head (head tmp))
-  --let x = foldr (\y x -> (md5 . BLU.fromString)) out
+  let x = fmap (fmap (traverse (md5 . BLU.fromString . Txt.unpack))) out
   --dirlist
   --putStrLn out
   out

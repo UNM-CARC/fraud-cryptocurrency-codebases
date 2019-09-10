@@ -17,7 +17,7 @@ use std::process;
 
 type Record = (String, String, String);
 
-fn run() -> Result<(), Error> {
+fn runcsv() -> Result<(), Error> {
     let file = File::open("names.csv")?;
     //let mut buff = [0;1024];
     //let csv      = f.read(&mut buff)?;
@@ -31,7 +31,7 @@ fn run() -> Result<(), Error> {
 }
 
 fn main() {
-    if let Err(err) = run() {
+    if let Err(err) = runcsv() {
         println!("{}", err);
         process::exit(1);
     }
