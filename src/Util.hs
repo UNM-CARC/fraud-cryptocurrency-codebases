@@ -73,6 +73,7 @@ generateHashes (d:dirs) acc = do
   let t   = foldr (:) [] out'
   let tmp = (takeBaseName d, t)
   generateHashes dirs (acc ++ [tmp])
+
 -}
 
 

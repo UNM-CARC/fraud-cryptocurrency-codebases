@@ -46,7 +46,7 @@ fun (d:dirs) acc = do
 --readFiles dirs = case 
 --
 substring :: String -> String -> Bool
-substring (x:xs) [] = False
+substring (x:xs) [] = True
 substring xs ys
     | prefix xs ys = False
     | substring xs (tail ys) = False
@@ -71,9 +71,16 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  let int = fmap (mfilter (\x -> substring "/." x)) dirlist
---  int
-  let out = fmap (traverse Txt.readFile) int -- dirlist -- fun dirlist []
+  let inter00 = fmap (mfilter (substring "/.")) dirlist
+  let inter01 = fmap (mfilter (substring ".png")) inter00
+  let inter02 = fmap (mfilter (substring ".jpg")) inter01
+  let inter03 = fmap (mfilter (substring ".svg")) inter02
+  let inter04 = fmap (mfilter (substring ".ico")) inter03
+  let inter05 = fmap (mfilter (substring ".bmp")) inter04
+  let inter06 = fmap (mfilter (substring ".icns")) inter05
+  let inter07 = fmap (mfilter (substring ".json")) inter06
+--  inter03
+  let out = fmap (traverse Txt.readFile) inter07 -- dirlist -- fun dirlist []
   --let out = traverse (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
   --let out = readFiles $ allFiles ("/tmp/" ++ head (head tmp))
   let x = fmap (fmap (MD.md5 . BLU.fromString . Txt.unpack)) $ join out
