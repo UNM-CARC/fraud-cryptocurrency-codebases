@@ -44,6 +44,18 @@ fun (d:dirs) acc = do
 -}
 
 --readFiles dirs = case 
+--
+substring :: String -> String -> Bool
+substring (x:xs) [] = False
+substring xs ys
+    | prefix xs ys = False
+    | substring xs (tail ys) = False
+    | otherwise = True
+
+prefix :: String -> String -> Bool
+prefix [] ys = True
+prefix (x:xs) [] = False
+prefix (x:xs) (y:ys) = (x == y) && prefix xs ys
 
 
 --main :: IO [MD5Digest]
@@ -59,9 +71,9 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
---  let int = fmap (mfilter (\x -> if (head $ takeBaseName x) == '.' then False else True)) dirlist
---int
-  let out = fmap (traverse Txt.readFile) dirlist -- fun dirlist []
+  let int = fmap (mfilter (\x -> substring "/." x)) dirlist
+--  int
+  let out = fmap (traverse Txt.readFile) int -- dirlist -- fun dirlist []
   --let out = traverse (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
   --let out = readFiles $ allFiles ("/tmp/" ++ head (head tmp))
   let x = fmap (fmap (MD.md5 . BLU.fromString . Txt.unpack)) $ join out
