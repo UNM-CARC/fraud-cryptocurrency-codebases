@@ -1,11 +1,13 @@
 module Main where
 
 --import qualified Data.ByteString as B
-import qualified Data.ByteString.Lazy as B
+import qualified Data.ByteString.Lazy as LB
 import qualified Data.ByteString.Lazy.UTF8 as BLU
 import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
+--import qualified Crypto.Hash as CH
+import qualified Data.Digest.Pure.MD5 as MD
 
 --import           Data.Bits
 --import           Data.Char
@@ -16,7 +18,6 @@ import           System.IO
 import           Control.Monad
 import           Control.Applicative
 --import           System.Process
-import           Data.Digest.Pure.MD5
 import           Control.Monad (foldM)
 import           System.Directory (doesDirectoryExist, listDirectory) 
 import           System.FilePath ((</>), FilePath)
@@ -42,6 +43,9 @@ fun (d:dirs) acc = do
   fun dirs (acc ++ [(takeBaseName d, out')])
 -}
 
+--readFiles dirs = case 
+
+
 --main :: IO [MD5Digest]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
@@ -55,12 +59,13 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  --let int = fmap (mfilter (\x -> if (head $ takeBaseName x) == '.' then False else True)) dirlist
- --int
+--  let int = fmap (mfilter (\x -> if (head $ takeBaseName x) == '.' then False else True)) dirlist
+--int
   let out = fmap (traverse Txt.readFile) dirlist -- fun dirlist []
-  --let out = fmap (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
-  let x = fmap (fmap (md5 . BLU.fromString . Txt.unpack)) $ join out
-  --let x = fmap (fmap (md5 . BLU.fromString . Txt.unpack)) $ out
+  --let out = traverse (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
+  --let out = readFiles $ allFiles ("/tmp/" ++ head (head tmp))
+  let x = fmap (fmap (MD.md5 . BLU.fromString . Txt.unpack)) $ join out
+  --let x = fmap (fmap (MD.md5 . BLU.fromString . Txt.unpack)) $ out
   --dirlist
   --putStrLn out
   x
