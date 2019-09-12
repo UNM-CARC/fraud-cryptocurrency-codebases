@@ -11,7 +11,7 @@ import qualified Data.Digest.Pure.MD5 as MD
 
 --import           Data.Bits
 --import           Data.Char
---import           Data.List
+import           Data.List
 --import           Data.ByteString (ByteString, pack)
 --import           Data.Word8
 import           System.IO
@@ -45,17 +45,18 @@ fun (d:dirs) acc = do
 
 --readFiles dirs = case 
 --
-substring :: String -> String -> Bool
-substring (x:xs) [] = True
-substring xs ys
-    | prefix xs ys = False
-    | substring xs (tail ys) = False
-    | otherwise = True
 
-prefix :: String -> String -> Bool
-prefix [] ys = True
-prefix (x:xs) [] = False
-prefix (x:xs) (y:ys) = (x == y) && prefix xs ys
+--substring :: String -> String -> Bool
+--substring (x:xs) [] = False
+--substring xs ys
+--    | prefix xs ys = False
+--    | substring xs (tail ys) = False
+--    | otherwise = True
+--
+--prefix :: String -> String -> Bool
+--prefix [] ys = True
+--prefix (x:xs) [] = False
+--prefix (x:xs) (y:ys) = (x == y) && prefix xs ys
 
 
 --main :: IO [MD5Digest]
@@ -71,16 +72,27 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  let inter00 = fmap (mfilter (substring "/.")) dirlist
-  let inter01 = fmap (mfilter (substring ".png")) inter00
-  let inter02 = fmap (mfilter (substring ".jpg")) inter01
-  let inter03 = fmap (mfilter (substring ".svg")) inter02
-  let inter04 = fmap (mfilter (substring ".ico")) inter03
-  let inter05 = fmap (mfilter (substring ".bmp")) inter04
-  let inter06 = fmap (mfilter (substring ".icns")) inter05
-  let inter07 = fmap (mfilter (substring ".json")) inter06
---  inter03
-  let out = fmap (traverse Txt.readFile) inter07 -- dirlist -- fun dirlist []
+  --let inter00 = fmap (mfilter (substring "/.")) dirlist
+  --let inter01 = fmap (mfilter (substring ".png")) inter00
+  --let inter02 = fmap (mfilter (substring ".jpg")) inter01
+  --let inter03 = fmap (mfilter (substring ".svg")) inter02
+  --let inter04 = fmap (mfilter (substring ".ico")) inter03
+  --let inter05 = fmap (mfilter (substring ".bmp")) inter04
+  --let inter06 = fmap (mfilter (substring ".json")) inter05
+  --let inter07 = fmap (mfilter (substring ".icns")) inter06
+  let inter00 = fmap (mfilter (\x -> if isInfixOf "/."    x then False else True)) dirlist
+  let inter01 = fmap (mfilter (\x -> if isInfixOf ".png"  x then False else True)) inter00
+  let inter02 = fmap (mfilter (\x -> if isInfixOf ".jpg"  x then False else True)) inter01
+  let inter03 = fmap (mfilter (\x -> if isInfixOf ".svg"  x then False else True)) inter02
+  let inter04 = fmap (mfilter (\x -> if isInfixOf ".ico"  x then False else True)) inter03
+  let inter05 = fmap (mfilter (\x -> if isInfixOf ".bmp"  x then False else True)) inter04
+  let inter06 = fmap (mfilter (\x -> if isInfixOf ".json" x then False else True)) inter05
+  let inter07 = fmap (mfilter (\x -> if isInfixOf ".icns" x then False else True)) inter06
+  let inter08 = fmap (mfilter (\x -> if isInfixOf ".raw"  x then False else True)) inter07
+  let inter09 = fmap (mfilter (\x -> if isInfixOf ".dat"  x then False else True)) inter08
+  
+--  inter08
+  let out = fmap (traverse Txt.readFile) inter09 -- dirlist -- fun dirlist []
   --let out = traverse (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
   --let out = readFiles $ allFiles ("/tmp/" ++ head (head tmp))
   let x = fmap (fmap (MD.md5 . BLU.fromString . Txt.unpack)) $ join out
