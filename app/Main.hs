@@ -43,22 +43,6 @@ fun (d:dirs) acc = do
   fun dirs (acc ++ [(takeBaseName d, out')])
 -}
 
---readFiles dirs = case 
---
-
---substring :: String -> String -> Bool
---substring (x:xs) [] = False
---substring xs ys
---    | prefix xs ys = False
---    | substring xs (tail ys) = False
---    | otherwise = True
---
---prefix :: String -> String -> Bool
---prefix [] ys = True
---prefix (x:xs) [] = False
---prefix (x:xs) (y:ys) = (x == y) && prefix xs ys
-
-
 --main :: IO [MD5Digest]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
@@ -72,14 +56,7 @@ main = do
   --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   let dirlist = traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                 ("/tmp/" ++ head (head tmp))
-  --let inter00 = fmap (mfilter (substring "/.")) dirlist
-  --let inter01 = fmap (mfilter (substring ".png")) inter00
-  --let inter02 = fmap (mfilter (substring ".jpg")) inter01
-  --let inter03 = fmap (mfilter (substring ".svg")) inter02
-  --let inter04 = fmap (mfilter (substring ".ico")) inter03
-  --let inter05 = fmap (mfilter (substring ".bmp")) inter04
-  --let inter06 = fmap (mfilter (substring ".json")) inter05
-  --let inter07 = fmap (mfilter (substring ".icns")) inter06
+
   let inter00 = fmap (mfilter (\x -> if isInfixOf "/."    x then False else True)) dirlist
   let inter01 = fmap (mfilter (\x -> if isInfixOf ".png"  x then False else True)) inter00
   let inter02 = fmap (mfilter (\x -> if isInfixOf ".jpg"  x then False else True)) inter01
