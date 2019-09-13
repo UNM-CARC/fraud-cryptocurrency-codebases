@@ -35,7 +35,16 @@ import           Data.Traversable (traverse)
 import Lib
 import Util
 
-main :: IO ()
+
+{-
+--fun :: [FilePath] -> [(String, String)] -> [(String, String)]
+fun []       acc = print acc
+fun (d:dirs) acc = do
+  (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
+  fun dirs (acc ++ [(takeBaseName d, out')])
+-}
+
+--main :: IO [MD.MD5Digest]
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $ 
@@ -45,23 +54,32 @@ main = do
   --cloneRepo $ head tmp
   --print $ head tmp
   --getDirectoryContents "/tmp/BTC"
+  --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
   dirlist <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                   ("/tmp/" ++ head (head tmp))
   let dirs = dirlist
 
-  let inter00 = filterFileType "/."    dirs
-  let inter01 = filterFileType ".png"  inter00
-  let inter02 = filterFileType ".jpg"  inter01
-  let inter03 = filterFileType ".svg"  inter02
-  let inter04 = filterFileType ".ico"  inter03
-  let inter05 = filterFileType ".bmp"  inter04
-  let inter06 = filterFileType ".json" inter05
-  let inter07 = filterFileType ".icns" inter06
-  let inter08 = filterFileType ".raw"  inter07
-  let inter09 = filterFileType ".dat"  inter08
+  let inter00 = filter (\x -> if isInfixOf "/."    x then False else True) dirs
+  let inter01 = filter (\x -> if isInfixOf ".png"  x then False else True) inter00
+  let inter02 = filter (\x -> if isInfixOf ".jpg"  x then False else True) inter01
+  let inter03 = filter (\x -> if isInfixOf ".svg"  x then False else True) inter02
+  let inter04 = filter (\x -> if isInfixOf ".ico"  x then False else True) inter03
+  let inter05 = filter (\x -> if isInfixOf ".bmp"  x then False else True) inter04
+  let inter06 = filter (\x -> if isInfixOf ".json" x then False else True) inter05
+  let inter07 = filter (\x -> if isInfixOf ".icns" x then False else True) inter06
+  let inter08 = filter (\x -> if isInfixOf ".raw"  x then False else True) inter07
+  let inter09 = filter (\x -> if isInfixOf ".dat"  x then False else True) inter08
 
-  out <- traverse Txt.readFile inter09
+--  let out = fmap (traverse Txt.readFile) inter09 -- dirlist -- fun dirlist []
+  out <- (traverse Txt.readFile) inter09 -- dirlist -- fun dirlist []
+  --out
+  --let out = map Txt.readFile inter09
   let m = out
+  --print m
+  --let out = traverse (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
+  --let out = readFiles $ allFiles ("/tmp/" ++ head (head tmp))
   let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
+--let y = x
   let z = zip inter09 x
   print z
+--  x

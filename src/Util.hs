@@ -7,7 +7,7 @@ import qualified Data.ByteString.Char8 as C
 
 --import           Data.Bits
 --import           Data.Char
---import           Data.List
+import           Data.List
 --import           Data.ByteString (ByteString, pack)
 --import           Data.Word8
 import           System.IO
@@ -27,6 +27,9 @@ import           System.Directory.Tree (
 import           System.FilePath (takeExtension)
 
 import Lib
+
+filterFileType :: String -> [String] -> [String]
+filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs
 
 traverseDir :: (FilePath -> Bool) -> (b -> FilePath -> IO b) -> b -> FilePath -> IO b
 traverseDir validDir transition =
@@ -59,21 +62,5 @@ cloneRepo coin = do
   let str = "git clone --recursive " ++ last coin ++ " /tmp/" ++ head coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
-
---hashFile :: String -> IO ()
-
---generateHashes :: [FilePath] -> IO [(String, String)]-> IO [(String, String)]
-{-
-
-generateHashes [] acc = acc
-generateHashes (d:dirs) acc = do
-  --foldl (\x y -> x ++ [(concat $ y ,md5 y)]) [] dirlist
-  --let str = "md5sum " ++ d
-  (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
-  let t   = foldr (:) [] out'
-  let tmp = (takeBaseName d, t)
-  generateHashes dirs (acc ++ [tmp])
-
--}
 
 
