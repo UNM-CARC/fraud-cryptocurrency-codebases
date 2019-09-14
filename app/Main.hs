@@ -12,6 +12,8 @@ import qualified Data.Digest.Pure.MD5 as MD
 --import           Data.Bits
 --import           Data.Char
 import           Data.List
+import           Data.Csv
+import           Data.HexString
 --import           Data.ByteString (ByteString, pack)
 --import           Data.Word8
 import           System.IO
@@ -42,11 +44,12 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n') 
             . filter (/= '\r')) $ concat clean
+  let name = head (head tmp)
   --cloneRepo $ head tmp
   --print $ head tmp
   --getDirectoryContents "/tmp/BTC"
   dirlist <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
-                  ("/tmp/" ++ head (head tmp))
+                  ("/tmp/" ++ name)
   let dirs = dirlist
 
   let inter00 = filterFileType "/."    dirs
@@ -61,7 +64,10 @@ main = do
   let inter09 = filterFileType ".dat"  inter08
 
   out <- traverse Txt.readFile inter09
+  let n = map (length . Txt.lines) out
   let m = out
   let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
-  let z = zip inter09 x
+  let o = map (toText . fromBytes . MD.md5DigestBytes) x
+  let z = zip3 inter09 o n
+  LB.writeFile (name ++ ".csv") $ encode z
   print z

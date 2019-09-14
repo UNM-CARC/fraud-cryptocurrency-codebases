@@ -42,7 +42,7 @@ traverseDir validDir transition =
            in go
 
 
---allFiles :: String -> IO ()
+allFiles :: String -> IO (DirTree FilePath)
 allFiles dir = do
     _:/tree <- readDirectoryWith return dir
     let x = filterDir prd tree
