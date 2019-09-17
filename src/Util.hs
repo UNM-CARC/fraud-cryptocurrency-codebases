@@ -5,11 +5,7 @@ import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
 
---import           Data.Bits
---import           Data.Char
 import           Data.List
---import           Data.ByteString (ByteString, pack)
---import           Data.Word8
 import           System.IO
 import           Control.Monad
 import           Control.Applicative
@@ -27,6 +23,14 @@ import           System.Directory.Tree (
 import           System.FilePath (takeExtension)
 
 import Lib
+
+-- Compare all the hashes of one coin against another and return similarity
+compareCoinHashes :: [[String]] -> [[String]] -> Float -> Float
+compareCoinHashes []     ys acc = acc / fromIntegral (length ys)
+compareCoinHashes (x:xs) ys acc = compareCoinHashes xs ys 
+  (acc + foldr (\y a -> if (head (tail y)) == 
+                           (head (tail x)) then a+1
+                                           else a) 0.0 ys)
 
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs
