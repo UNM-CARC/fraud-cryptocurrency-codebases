@@ -48,6 +48,8 @@ main = do
   let dirs = dirlist1
   let dirs2 = dirlist2
 
+--  let inter00 = filterFileType dirs
+--  let inter00a = filterFileType dirs2
   let inter00 = filterFileType "/."    dirs
   let inter01 = filterFileType ".png"  inter00
   let inter02 = filterFileType ".jpg"  inter01
@@ -58,6 +60,12 @@ main = do
   let inter07 = filterFileType ".icns" inter06
   let inter08 = filterFileType ".raw"  inter07
   let inter09 = filterFileType ".dat"  inter08
+  let inter10 = filterFileType ".md"   inter09
+  let inter11 = filterFileType ".ts"   inter10
+  let inter12 = filterFileType ".xpm"  inter11
+  let inter13 = filterFileType ".mk"   inter12
+  let inter14 = filterFileType ".m4"   inter13
+  
 
   let inter00a = filterFileType "/."    dirs2
   let inter01a = filterFileType ".png"  inter00a
@@ -69,17 +77,22 @@ main = do
   let inter07a = filterFileType ".icns" inter06a
   let inter08a = filterFileType ".raw"  inter07a
   let inter09a = filterFileType ".dat"  inter08a
+  let inter10a = filterFileType ".md"   inter09a
+  let inter11a = filterFileType ".ts"   inter10a
+  let inter12a = filterFileType ".xpm"  inter11a
+  let inter13a = filterFileType ".mk"   inter12a
+  let inter14a = filterFileType ".m4"   inter13a
 
 
-  out <- traverse Txt.readFile inter09
-  out2 <- traverse Txt.readFile inter09a
+  out <- traverse Txt.readFile inter14 
+  out2 <- traverse Txt.readFile inter14a
 
 --First iteration
   let n = map (length . Txt.lines) out
   let m = out
   let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
   let o = map (toText . fromBytes . MD.md5DigestBytes) x
-  let z = zip3 inter09 o n
+  let z = zip3 o n inter14
   LB.writeFile ("data/" ++ name ++ ".csv") $ encode z
 
 -- Second iteration
@@ -87,7 +100,7 @@ main = do
   let m2 = out2
   let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
   let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
-  let z2 = zip3 inter09a o2 n2
+  let z2 = zip3 o2 n2 inter14a
   LB.writeFile ("data/BTC-new.csv") $ encode z2
 
 --  print z
@@ -95,10 +108,20 @@ main = do
   csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ ".csv")
   csv2 <- parseFromFile CSV.csvFile ("data/BTC-new.csv")
 
-  let p = rights [csv]
+  let p  = rights [csv]
   let p2 = rights [csv2]
+  let l  = sort (concat p)
+  let l2 = sort (concat p2)
 
-  let m = compareCoinHashes (concat p) (concat p2) 0.0
+--  let k  = foldr (\b a -> if a == [] then b:a else if (head b) == (head $ head a) 
+--                                                     then (head a ++ [last b]) : tail a 
+--                                                       else b : a) [] l
+  let k = compressFiles l
+  let k2 = compressFiles l2
+
+  --print k
+  let m = compareCoinHashes k k2 0.0
+  --print (length $ k)
   print m
 
 --  print p

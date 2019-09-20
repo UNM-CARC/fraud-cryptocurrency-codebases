@@ -28,12 +28,26 @@ import Lib
 compareCoinHashes :: [[String]] -> [[String]] -> Float -> Float
 compareCoinHashes []     ys acc = acc / fromIntegral (length ys)
 compareCoinHashes (x:xs) ys acc = compareCoinHashes xs ys 
-  (acc + foldr (\y a -> if (head (tail y)) == 
-                           (head (tail x)) then a+1
-                                           else a) 0.0 ys)
+  (acc + (foldr (\y a -> if head y == 
+                            head x then a + 1
+                                     else a) 0.0 ys))
 
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs
+
+--filterFileType :: String -> [String] -> [String]
+--filterFileType s xs = filter (\x -> if (map (isInfixOf) [ ".cpp"
+--                                                       , ".c"
+--                                                       , ".h"
+--                                                       , ".sh"
+--                                                       , ".go"
+--                                                       , ".py"]) $ x then False else True) xs
+
+compressFiles :: [[String]] -> [[String]]
+compressFiles files = foldr (\b a -> if a == [] 
+  then b:a else if (head b) == (head $ head a) 
+                  then (head a ++ [last b]) : tail a 
+                    else b : a) [] files
 
 traverseDir :: (FilePath -> Bool) -> (b -> FilePath -> IO b) -> b -> FilePath -> IO b
 traverseDir validDir transition =

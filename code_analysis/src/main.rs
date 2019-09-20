@@ -5,12 +5,15 @@ extern crate walkdir;
 extern crate sha2;
 extern crate data_encoding;
 extern crate ring;
+extern crate mpi;
 
 //use std::io;
 //use std::io::prelude::*;
 //use std::fs::File;
 //use csv::Error;
 //use std::process;
+use mpi::traits::*;
+use mpi::request::WaitGuard;
 use walkdir::{DirEntry, WalkDir};
 
 mod util;
@@ -30,6 +33,10 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
 }
 
 fn main() {
+    let universe = mpi::initialize().unwrap();
+    let world = universe.world();
+    let size = world.size();
+    let rank = world.rank();
     //if let Err(err) = util::runcsv() {
     //    println!("{}", err);
     //    process::exit(1);
