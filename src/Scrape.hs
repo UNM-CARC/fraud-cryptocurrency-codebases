@@ -48,6 +48,7 @@ managerSettings = HTTP.tlsManagerSettings {
 --tags = [TagText "text", TagComment "comment"]
 
 data Coin = String URL
+
 --
 {-
 brackets :: Parser a -> Parser a

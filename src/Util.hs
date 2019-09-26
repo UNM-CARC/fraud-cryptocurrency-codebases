@@ -24,6 +24,11 @@ import           System.FilePath (takeExtension)
 
 import Lib
 
+ms = ";#"
+ 
+filterComments = getContents >>=
+    mapM_ (putStrLn . takeWhile (`notElem` ms)) . lines
+
 -- Compare all the hashes of one coin against another and return similarity
 compareCoinHashes :: [[String]] -> [[String]] -> Float -> Float
 compareCoinHashes []     ys acc = acc / fromIntegral (length ys)
@@ -33,7 +38,8 @@ compareCoinHashes (x:xs) ys acc = compareCoinHashes xs ys
                                      else a) 0.0 ys))
 
 filterFileType :: String -> [String] -> [String]
-filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs
+filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
+--filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs -- Old
 
 --filterFileType :: String -> [String] -> [String]
 --filterFileType s xs = filter (\x -> if (map (isInfixOf) [ ".cpp"
