@@ -17,7 +17,7 @@ import           System.IO
 import           Control.Applicative
 import           Control.Monad
 import           Control.Monad.Zip
-import           System.Directory (doesDirectoryExist, listDirectory) 
+import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
 import           System.Directory.Tree (
@@ -34,13 +34,13 @@ import Util
 main :: IO ()
 main = do
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
-  let clean = fmap (\x -> fmap Txt.unpack x) $ 
+  let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 3 $ fmap (filter (/= '\n') 
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
   let name = head (head tmp)
   let name2 = "rippled"
-        --"MicroBitcoin" 
+        --"MicroBitcoin"
         -- "bitcoin2"
   --cloneRepo $ head tmp
   --print $ head tmp
@@ -73,7 +73,7 @@ main = do
 --  let inter17 = filterFileType ".xcf" inter16
 --  let inter18 = filterFileType ".psd" inter17
 --  let inter19 = filterFileType ".pgp" inter18
---  
+--
 --
 --  let inter00a = filterFileType "/."    dirs2
 --  let inter01a = filterFileType ".png"  inter00a
@@ -97,7 +97,7 @@ main = do
 --  let inter19a = filterFileType ".pgp" inter18a
 
 --  print dirs
-  let inter = filterFileType ".c "    dirs 
+  let inter = filterFileType ".c "    dirs
            ++ filterFileType ".go "   dirs
            ++ filterFileType ".py "   dirs
            ++ filterFileType ".cpp "  dirs
@@ -114,7 +114,7 @@ main = do
             ++ filterFileType ".h "   dirs2
             ++ filterFileType ".js "  dirs2
 
-  
+
   let inter1  = map init inter
   let inter1a = map init intera
 
@@ -149,8 +149,8 @@ main = do
   let l  = sort (concat p)
   let l2 = sort (concat p2)
 
---  let k  = foldr (\b a -> if a == [] then b:a else if (head b) == (head $ head a) 
---                                                     then (head a ++ [last b]) : tail a 
+--  let k  = foldr (\b a -> if a == [] then b:a else if (head b) == (head $ head a)
+--                                                     then (head a ++ [last b]) : tail a
 --                                                       else b : a) [] l
   let k = compressFiles l
   let k2 = compressFiles l2

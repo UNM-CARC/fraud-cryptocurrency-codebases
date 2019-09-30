@@ -66,7 +66,7 @@ library
     , filepath >= 1.4.1.2 && <= 1.4.3.0
     , pureMD5 >= 2.1.2.1 && <= 2.1.4
     --, cryptonite >= 0.19 && <= 0.28
-    , transformers >= 0.5.2.0 && <= 0.5.4.0
+    --, transformers >= 0.5.2.0 && <= 0.5.4.0
     , utf8-string >= 0.3.8 && <= 1.0.3.0
   default-language: Haskell2010
 
@@ -111,7 +111,7 @@ executable crypto-fraud-exe
     , pureMD5 >= 2.1.2.1 && <= 2.1.4
     --, cryptonite >= 0.19 && <= 0.28
     , utf8-string >= 0.3.8 && <= 1.0.3.0
-    , transformers >= 0.5.2.0 && <= 0.5.4.0
+    --, transformers >= 0.5.2.0 && <= 0.5.4.0
     , crypto-fraud
   default-language: Haskell2010
 
@@ -157,6 +157,6 @@ test-suite crypto-fraud-test
     , pureMD5 >= 2.1.2.1 && <= 2.1.4
     --, cryptonite >= 0.19 && <= 0.28
     , utf8-string >= 0.3.8 && <= 1.0.3.0
-    , transformers >= 0.5.2.0 && <= 0.5.4.0
+    --, transformers >= 0.5.2.0 && <= 0.5.4.0
     , crypto-fraud
   default-language: Haskell2010

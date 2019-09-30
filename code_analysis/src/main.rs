@@ -24,6 +24,7 @@ mod util;
 //    name: String,
 //    repo: String,
 //}
+
 fn is_not_hidden(entry: &DirEntry) -> bool {
     entry
          .file_name()
