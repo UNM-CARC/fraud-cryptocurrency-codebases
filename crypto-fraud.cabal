@@ -36,6 +36,7 @@ library
   build-depends:
       base >=4.7 && <5
     , bytestring >= 0.10.8.0 && <= 0.10.8.2
+    , regex-pcre >= 0.94 && <= 0.95.1.0
     , hexstring >= 0.9.0 && <= 0.15.0
     , cassava >= 0.5.1.0 && <= 0.5.4.0
     , directory-tree >= 0.12.1 && <= 0.20.0
@@ -80,6 +81,7 @@ executable crypto-fraud-exe
   build-depends:
       base >=4.7 && <5
     , bytestring >= 0.10.8.0 && <= 0.10.8.2
+    , regex-pcre >= 0.94 && <= 0.95.1.0
     , hexstring >= 0.9.0 && <= 0.15.0
     , cassava >= 0.5.1.0 && <= 0.5.4.0
     , directory-tree >= 0.12.1 && <= 0.20.0
@@ -126,6 +128,7 @@ test-suite crypto-fraud-test
   build-depends:
       base >=4.7 && <5
     , bytestring >= 0.10.8.0 && <= 0.10.8.2
+    , regex-pcre >= 0.94 && <= 0.95.1.0
     , hexstring >= 0.9.0 && <= 0.15.0
     , cassava >= 0.5.1.0 && <= 0.5.4.0
     , directory-tree >= 0.12.1 && <= 0.20.0

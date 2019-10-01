@@ -6,6 +6,8 @@ import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
 
 import           Data.List
+import           Data.Char
+import           Data.String
 import           System.IO
 import           Control.Monad
 import           Control.Applicative
@@ -16,6 +18,8 @@ import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
+import           Text.Regex.TDFA
+--import           Text.Regex.PCRE
 import           System.Directory.Tree (
                    AnchoredDirTree(..), DirTree(..),
                    filterDir, readDirectoryWith
@@ -24,10 +28,30 @@ import           System.FilePath (takeExtension)
 
 import Lib
 
-ms = ";#"
+--ms = ";#"
  
-filterComments = getContents >>=
-    mapM_ (putStrLn . takeWhile (`notElem` ms)) . lines
+--filterComments = getContents >>=
+--    mapM_ (putStrLn . takeWhile (`notElem` ms)) . lines
+
+
+--jfilterMultiC x = Txt.unpack x =~ "/\\*((?!\\*/).)*\\*/" :: String
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "//[^\\n]*\\n") :: [String]
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "/\\*[^*]*\\*+([^/*][^*]*\\*+)*/|(//[^\\n]*\\n)") :: [String]
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "/\\*[^*]*\\*+([^/*][^*]*\\*+)*/") :: [String]
+
+--filterMultiC x = Txt.unpack x =~ "(//.*?\n)|(/\\*.*?\\*/)" :: String
+--filterMultiC x = Txt.unpack x =~ "(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/\\*(?:.|[\\n\\r])*?\\*/" :: String
+--filterMultiC x = Txt.unpack x =~ "(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/\\*((?!\\*/).)*\\*/|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/ \\* [^*]* \\*+ ([^/*][^*]*\\*+)*/|('(\\.|[^'\\])*'|\'(\\.|[^\'\\])*\'|.[^/'\'\\]*)" :: String
+
+--filterWhite x = Txt.unpack x =~ "/^\\s+|\\s+$|\\s+(?=\\s)/g" :: String
+
+filterComments xs = filterMultiC xs
+
+stripLeadingWhitespace :: String -> String
+stripLeadingWhitespace = unlines . map (dropWhile isSpace) . lines
 
 -- Compare all the hashes of one coin against another and return similarity
 compareCoinHashes :: [[String]] -> [[String]] -> Float -> Float
@@ -86,5 +110,4 @@ cloneRepo coin = do
   let str = "git clone --recursive " ++ last coin ++ " /tmp/" ++ head coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
-
 

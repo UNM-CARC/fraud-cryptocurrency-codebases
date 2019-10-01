@@ -123,17 +123,21 @@ main = do
   out <- traverse Txt.readFile inter1 --19
   out2 <- traverse Txt.readFile inter1a --19a
 
---First iteration
+  --First iteration
+  -- Get number of lines per file.
   let n = map (length . Txt.lines) out
   let m = out
+
   let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
   let o = map (toText . fromBytes . MD.md5DigestBytes) x
   let z = zip3 o n inter1
   LB.writeFile ("data/" ++ name ++ ".csv") $ encode z
 
--- Second iteration
+  -- Second iteration
+  -- Get number of lines per file.
   let n2 = map (length . Txt.lines) out2
   let m2 = out2
+
   let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
   let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
   let z2 = zip3 o2 n2 inter1a
