@@ -39,7 +39,7 @@ main = do
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
   let name =  "bitcoin"-- head (head tmp)
-  let name2 = "MicroBitcoin"
+  let name2 = "Vitae"
         --"MicroBitcoin"
         -- "bitcoin2"
   --cloneRepo $ head tmp
@@ -133,10 +133,10 @@ main = do
   let m = out
 
   -- To test on unmodified vs modified use either m or a. (end of first line)
-  let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
+  let x = map (MD.md5 . BLU.fromString . Txt.unpack) a
   let o = map (toText . fromBytes . MD.md5DigestBytes) x
   let z = zip3 o n inter1
-  LB.writeFile ("data/" ++ name ++ ".csv") $ encode z
+  LB.writeFile ("data/" ++ name ++ "pre.csv") $ encode z
 
   -- Second iteration
   -- Get number of lines per file.
@@ -144,15 +144,15 @@ main = do
   let m2 = out2
 
   -- To test on unmodified vs modified use either m2 or b. (end of first line)
-  let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
+  let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) b
   let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
   let z2 = zip3 o2 n2 inter1a
-  LB.writeFile ("data/" ++ name2 ++ ".csv") $ encode z2
+  LB.writeFile ("data/" ++ name2 ++ "pre.csv") $ encode z2
 
 --  print z
 
-  csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ ".csv")
-  csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ ".csv")
+  csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ "pre.csv")
+  csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ "pre.csv")
 
   let p  = rights [csv]
   let p2 = rights [csv2]
@@ -166,8 +166,11 @@ main = do
   let k2 = compressFiles l2
 
   --print k
-  let m = compareCoinHashes k k2 0.0
+  let aa = snd $ compareCoinHashes k k2 ([], 0.0)
+  let bb = fst $ compareCoinHashes k k2 ([], 0.0)
+
   --print (length $ k)
-  print m
+  print bb
+  print aa
 
 --  print p

@@ -78,12 +78,17 @@ stripLeadingWhitespace :: String -> String
 stripLeadingWhitespace = unlines . map (dropWhile isSpace) . lines
 
 -- Compare all the hashes of one coin against another and return similarity
-compareCoinHashes :: [[String]] -> [[String]] -> Float -> Float
-compareCoinHashes []     ys acc = acc / fromIntegral (length ys)
+compareCoinHashes :: [[String]] -> [[String]] -> ([[String]], Float) -> ([[String]], Float)
+compareCoinHashes []     ys acc = (fst acc, snd acc / fromIntegral (length ys))
 compareCoinHashes (x:xs) ys acc = compareCoinHashes xs ys 
-  (acc + (foldr (\y a -> if head y == 
-                            head x then a + 1
-                                     else a) 0.0 ys))
+  (fst acc ++ fst fun, snd acc + snd fun)
+--  (acc ++ (foldr (\y a -> if head y == 
+--                            head x then (y : fst a, snd a + 1)
+--                                     else (fst a, snd a)) ([], 0.0) ys))
+  where
+   fun = (foldr (\y a -> if head y == 
+                            head x then (y : fst a, snd a + 1)
+                                     else (fst a, snd a)) ([], 0.0) ys)
 
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
