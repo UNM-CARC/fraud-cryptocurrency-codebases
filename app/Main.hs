@@ -38,8 +38,8 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  let name = head (head tmp)
-  let name2 = "rippled"
+  let name =  "bitcoin"-- head (head tmp)
+  let name2 = "MicroBitcoin"
         --"MicroBitcoin"
         -- "bitcoin2"
   --cloneRepo $ head tmp
@@ -123,11 +123,16 @@ main = do
   out <- traverse Txt.readFile inter1 --19
   out2 <- traverse Txt.readFile inter1a --19a
 
+  -- Remove C style comments and whitespace from files.
+  let a = map Txt.pack $ map (concat . words) $ map (stripComments . Txt.unpack) out
+  let b = map Txt.pack $ map (concat . words) $ map (stripComments . Txt.unpack) out2
+
   --First iteration
   -- Get number of lines per file.
   let n = map (length . Txt.lines) out
   let m = out
 
+  -- To test on unmodified vs modified use either m or a. (end of first line)
   let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
   let o = map (toText . fromBytes . MD.md5DigestBytes) x
   let z = zip3 o n inter1
@@ -138,15 +143,16 @@ main = do
   let n2 = map (length . Txt.lines) out2
   let m2 = out2
 
+  -- To test on unmodified vs modified use either m2 or b. (end of first line)
   let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
   let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
   let z2 = zip3 o2 n2 inter1a
-  LB.writeFile ("data/BTC-new.csv") $ encode z2
+  LB.writeFile ("data/" ++ name2 ++ ".csv") $ encode z2
 
 --  print z
 
   csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ ".csv")
-  csv2 <- parseFromFile CSV.csvFile ("data/BTC-new.csv")
+  csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ ".csv")
 
   let p  = rights [csv]
   let p2 = rights [csv2]

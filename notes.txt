@@ -1,0 +1,7 @@
+* bitcoin vs bitcoin2:
+    - original     :: 6.386293e-2
+    - preprocessed :: 7.644306e-2
+
+* bitcoin vs MicroBitcoin
+    - original     :: 0.10918775
+    - preprocessed :: 0.12916112
