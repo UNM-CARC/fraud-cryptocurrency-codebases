@@ -48,7 +48,31 @@ import Lib
 
 --filterWhite x = Txt.unpack x =~ "/^\\s+|\\s+$|\\s+(?=\\s)/g" :: String
 
-filterComments xs = filterMultiC xs
+--filterComments xs = filterMultiC xs
+
+-- C style comment removal
+stripComments :: String -> String
+stripComments [] = []
+stripComments ('/':'/':xs) = inComment xs 
+stripComments ('/':'*':xs) = inMultiComment xs
+stripComments ('\"':xs) = '\"' : inString xs
+stripComments (x:xs) = x : stripComments xs
+
+inComment :: String -> String
+inComment [] = []
+inComment ('\n':xs) = stripComments xs
+inComment (_:xs) = inComment xs
+
+inMultiComment :: String -> String
+inMultiComment [] = []
+inMultiComment ('*':'/':xs) = stripComments xs
+inMultiComment (_:xs) = inMultiComment xs
+
+inString :: String -> String
+inString [] = []
+inString ('\"':xs) = '\"' : stripComments xs
+inString (x:xs) = x : inString xs
+
 
 stripLeadingWhitespace :: String -> String
 stripLeadingWhitespace = unlines . map (dropWhile isSpace) . lines
