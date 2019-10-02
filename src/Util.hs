@@ -50,7 +50,7 @@ import Lib
 
 --filterComments xs = filterMultiC xs
 
--- C style comment removal
+-- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
 stripComments [] = []
 stripComments ('/':'/':xs) = inComment xs 
@@ -72,10 +72,7 @@ inString :: String -> String
 inString [] = []
 inString ('\"':xs) = '\"' : stripComments xs
 inString (x:xs) = x : inString xs
-
-
-stripLeadingWhitespace :: String -> String
-stripLeadingWhitespace = unlines . map (dropWhile isSpace) . lines
+-- 
 
 -- Compare all the hashes of one coin against another and return similarity
 compareCoinHashes :: [[String]] -> [[String]] -> ([[String]], Float) -> ([[String]], Float)

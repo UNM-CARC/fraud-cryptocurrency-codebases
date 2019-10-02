@@ -9,3 +9,12 @@
 * bitcoin vs Vitae
     - original     :: 6.25e-2
     - preprocessed :: 7.366771e-2
+
+* bitcoin vs bitcoin 0.14
+    - original     :: 0.9607843
+    - preprocessed :: 0.9618163
+
+* bitcion 0.14 vs MicroBitcoin
+    - original     :: 0.10918775
+    - preprocessed :: 0.12916112
+
