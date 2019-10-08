@@ -34,6 +34,8 @@ import Util
 
 main :: IO ()
 main = do
+  let flag = 0
+
   input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
@@ -88,45 +90,87 @@ main = do
   let n = map (length . Txt.lines) out
   let m = out
 
-  -- To test on unmodified vs preprocessed use either m or a. (end of first line)
-  let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
-  let o = map (toText . fromBytes . MD.md5DigestBytes) x
-  let z = zip3 o n inter1
-  LB.writeFile ("data/" ++ name ++ ".csv") $ encode z
+  case flag of
+    0 -> do
+      -- To test on unmodified vs preprocessed use either m or a. (end of first line)
+      let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
+      let o = map (toText . fromBytes . MD.md5DigestBytes) x
+      let z = zip3 o n inter1
+      LB.writeFile ("data/" ++ name ++ ".csv") $ encode z
 
-  -- Second iteration
-  -- Get number of lines per file.
-  let n2 = map (length . Txt.lines) out2
-  let m2 = out2
+      -- Second iteration
+      -- Get number of lines per file.
+      let n2 = map (length . Txt.lines) out2
+      let m2 = out2
 
-  -- To test on unmodified vs preprocessed use either m2 or b. (end of first line)
-  let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
-  let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
-  let z2 = zip3 o2 n2 inter1a
-  LB.writeFile ("data/" ++ name2 ++ ".csv") $ encode z2
+      -- To test on unmodified vs preprocessed use either m2 or b. (end of first line)
+      let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
+      let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
+      let z2 = zip3 o2 n2 inter1a
+      LB.writeFile ("data/" ++ name2 ++ ".csv") $ encode z2
 
---  print z
+      csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ ".csv")
+      csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ ".csv")
 
-  csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ ".csv")
-  csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ ".csv")
+      let p  = rights [csv]
+      let p2 = rights [csv2]
+      let l  = sort (concat p)
+      let l2 = sort (concat p2)
+    
+      let k = compressFiles l
+      let k2 = compressFiles l2
+    
+      --print k
+      let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+    
+      --print (length $ k)
+      print bb
+      print $ Numeric.showFFloat Nothing aa ""
+      print $ length k
+      print $ length k2
+      print $ "Number of matching files " ++ (show $ length bb)
 
-  let p  = rights [csv]
-  let p2 = rights [csv2]
-  let l  = sort (concat p)
-  let l2 = sort (concat p2)
+    1 -> do
+      -- To test on unmodified vs preprocessed use either m or a. (end of first line)
+      let x = map (MD.md5 . BLU.fromString . Txt.unpack) a
+      let o = map (toText . fromBytes . MD.md5DigestBytes) x
+      let z = zip3 o n inter1
+      LB.writeFile ("data/" ++ name ++ "pre.csv") $ encode z
 
-  let k = compressFiles l
-  let k2 = compressFiles l2
+      -- Second iteration
+      -- Get number of lines per file.
+      let n2 = map (length . Txt.lines) out2
+      let m2 = out2
 
-  --print k
-  let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
-  let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      -- To test on unmodified vs preprocessed use either m2 or b. (end of first line)
+      let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) b
+      let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
+      let z2 = zip3 o2 n2 inter1a
+      LB.writeFile ("data/" ++ name2 ++ "pre.csv") $ encode z2
 
-  --print (length $ k)
-  print bb
-  print $ Numeric.showFFloat Nothing aa ""
-  print $ length k
-  print $ length k2
-  print $ "Number of matching files " ++ (show $ length bb)
+      csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ "pre.csv")
+      csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ "pre.csv")
+
+      let p  = rights [csv]
+      let p2 = rights [csv2]
+      let l  = sort (concat p)
+      let l2 = sort (concat p2)
+
+      let k = compressFiles l
+      let k2 = compressFiles l2
+
+      --print k
+      let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+
+      --print (length $ k)
+      print bb
+      print $ Numeric.showFFloat Nothing aa ""
+      print $ length k
+      print $ length k2
+      print $ "Number of matching files " ++ (show $ length bb)
+
+    _ -> error "Invalid flag value..."
 
 --  print p

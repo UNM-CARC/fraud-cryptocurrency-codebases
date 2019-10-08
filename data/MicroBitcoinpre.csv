@@ -420,6 +420,8 @@ d2c41a194d6fb4d691e6432a435071e4,34,/tmp/MicroBitcoin/contrib/windeploy/detached
 41725bb5347dcd9ba1d575970e17d05f,3,/tmp/MicroBitcoin/src/secp256k1/autogen.sh
 d975776481cb9498b807e3bc37d4c4f6,9,/tmp/MicroBitcoin/src/univalue/autogen.sh
 da0684c8c1453b393232daf4bb55d4b8,15,/tmp/MicroBitcoin/autogen.sh
+e540accb132ba0e431c2d3c283ccaf2a,459,/tmp/MicroBitcoin/src/leveldb/doc/benchmark.html
+17fe27aa923edec949bd3a113b72c5c8,40,/tmp/MicroBitcoin/test/functional/combined_log_template.html
 a9c9d2afe85cf4be012d11940d55606f,80,/tmp/MicroBitcoin/src/bench/bench.h
 03937766c1925d2b73bedc9f6fd59891,37,/tmp/MicroBitcoin/src/bench/perf.h
 12020890f31148aae7bcf485475bcc09,66,/tmp/MicroBitcoin/src/compat/byteswap.h
