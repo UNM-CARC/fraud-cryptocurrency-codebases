@@ -9,6 +9,7 @@ import qualified Data.Digest.Pure.MD5 as MD
 import qualified Data.CSV as CSV
 
 import           Text.ParserCombinators.Parsec
+import           Numeric
 import           Data.List
 import           Data.Either
 import           Data.Csv
@@ -38,8 +39,8 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  let name =  "bitcoin0.14"-- head (head tmp)
-  let name2 = "MicroBitcoin"
+  let name2 =  "bitcoin"-- head (head tmp)
+  let name = "MicroBitcoin"
         --"MicroBitcoin"
         -- "bitcoin2"
   --cloneRepo $ head tmp
@@ -48,7 +49,7 @@ main = do
 
   dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name)
   dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name2)
-  let dirs = map (\x -> x ++ " ") dirlist1
+  let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
 
   let inter = filterFileType ".c "    dirs
@@ -65,6 +66,7 @@ main = do
             ++ filterFileType ".py "  dirs2
             ++ filterFileType ".cpp " dirs2
             ++ filterFileType ".sh "  dirs2
+            ++ filterFileType "html "  dirs2
             ++ filterFileType ".h "   dirs2
             ++ filterFileType ".js "  dirs2
 
@@ -86,7 +88,7 @@ main = do
   let n = map (length . Txt.lines) out
   let m = out
 
-  -- To test on unmodified vs modified use either m or a. (end of first line)
+  -- To test on unmodified vs preprocessed use either m or a. (end of first line)
   let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
   let o = map (toText . fromBytes . MD.md5DigestBytes) x
   let z = zip3 o n inter1
@@ -97,7 +99,7 @@ main = do
   let n2 = map (length . Txt.lines) out2
   let m2 = out2
 
-  -- To test on unmodified vs modified use either m2 or b. (end of first line)
+  -- To test on unmodified vs preprocessed use either m2 or b. (end of first line)
   let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
   let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
   let z2 = zip3 o2 n2 inter1a
@@ -117,11 +119,14 @@ main = do
   let k2 = compressFiles l2
 
   --print k
-  let aa = snd $ compareCoinHashes k k2 ([], 0.0)
-  let bb = fst $ compareCoinHashes k k2 ([], 0.0)
+  let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+  let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
 
   --print (length $ k)
   print bb
-  print aa
+  print $ Numeric.showFFloat Nothing aa ""
+  print $ length k
+  print $ length k2
+  print $ "Number of matching files " ++ (show $ length bb)
 
 --  print p

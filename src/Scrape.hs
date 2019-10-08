@@ -49,42 +49,6 @@ managerSettings = HTTP.tlsManagerSettings {
 
 data Coin = String URL
 
---
-{-
-brackets :: Parser a -> Parser a
-brackets m =
-  char '<' >>= \_ ->
-    m >>= \n ->
-      char '>' >>= \_ ->
-        return n
-
-quotes :: Parser a -> Parser a
-quotes m =
-  ( try $ char '\"' <|> char '\'' ) >>= \_ ->
-    m >>= \n ->
-      ( try $ char '\"' <|> char '\'' ) >>= \_ ->
-        return n
-
-parseURL :: Parser [(String, String)]
-parseURL =
-  ( brackets >>= \_ -> 
-    string "href=" >>= \_ -> 
-      stringLit ) >>= \x ->
-        word >>= \y ->
-          brackets many1 >>= \_ ->
-            return [(y, x)]
-
-stringLit :: Parser String
-stringLit =
-  quotes $ many (noneOf "\"") >>= \x ->
-    return x
-
-word :: Parser String
-word = do
-  x <- many (noneOf "\"")
-  char '<'
-  return x
--}
 
 scraper :: IO ()
 scraper = do
@@ -99,12 +63,13 @@ scraper = do
       url = "https://coinmarketcap.com/all/views/all/"
       printError = putStrLn "Failed"
       printHtml = mapM_ putStrLn
-      --process :: Maybe [String] -> [String] -> [String]
-      --process Nothing   _       = []
-      --process (Just (x:[])) acc = acc
-      --process (Just (x:xs)) acc = process (Just xs) 
-      --  (acc ++ [x =~~ "[a-zA-Z0-9-]" 
-      --    :: String])
+
+      process :: Maybe [String] -> [String] -> [String]
+      process Nothing   _       = []
+      process (Just (x:[])) acc = acc
+      process (Just (x:xs)) acc = process (Just xs) 
+        (acc ++ [x =~~ "[a-zA-Z0-9-]" 
+          :: String])
       --coins :: Scraper String [Coin]
       -- parseURLS :: Parser
       coins = "a" @: [hasClass "currency-name-container"] -- $ do

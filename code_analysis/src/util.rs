@@ -19,7 +19,7 @@ pub fn runcsv() -> Result<(), Error> {
         println!("{:?}", record);
     }
     Ok(())
-} 
+}
 
 pub fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest, Error> {
     let mut context = Context::new(&SHA256);

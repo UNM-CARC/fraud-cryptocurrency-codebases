@@ -72,12 +72,12 @@ inString :: String -> String
 inString [] = []
 inString ('\"':xs) = '\"' : stripComments xs
 inString (x:xs) = x : inString xs
--- 
 
 -- Compare all the hashes of one coin against another and return similarity
-compareCoinHashes :: [[String]] -> [[String]] -> ([[String]], Float) -> ([[String]], Float)
-compareCoinHashes []     ys acc = (fst acc, snd acc / fromIntegral (length ys))
-compareCoinHashes (x:xs) ys acc = compareCoinHashes xs ys 
+-- lx and ly are lengths of xs and ys respectively.
+compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Float) -> ([[String]], Float)
+compareCoinHashes []     ys lx ly acc = (fst acc, if lx > ly then snd acc / fromIntegral lx else snd acc / fromIntegral ly)
+compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
   (fst acc ++ fst fun, snd acc + snd fun)
 --  (acc ++ (foldr (\y a -> if head y == 
 --                            head x then (y : fst a, snd a + 1)
@@ -90,14 +90,6 @@ compareCoinHashes (x:xs) ys acc = compareCoinHashes xs ys
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
 --filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs -- Old
-
---filterFileType :: String -> [String] -> [String]
---filterFileType s xs = filter (\x -> if (map (isInfixOf) [ ".cpp"
---                                                       , ".c"
---                                                       , ".h"
---                                                       , ".sh"
---                                                       , ".go"
---                                                       , ".py"]) $ x then False else True) xs
 
 compressFiles :: [[String]] -> [[String]]
 compressFiles files = foldr (\b a -> if a == [] 

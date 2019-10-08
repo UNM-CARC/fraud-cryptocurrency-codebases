@@ -420,6 +420,8 @@ ea14e91875930345b00c2da33c54e59c,11,/tmp/MicroBitcoin/src/qt/res/movies/makespin
 d359f3d8945f1a93acc35ef14a436bc9,3,/tmp/MicroBitcoin/src/secp256k1/autogen.sh
 22b4c67410a195b9dc85d34f5bafb016,9,/tmp/MicroBitcoin/src/univalue/autogen.sh
 c30b02e2feb8d374890ca3cd284321b0,15,/tmp/MicroBitcoin/autogen.sh
+0478cac734e9419bd1637fc640fda779,459,/tmp/MicroBitcoin/src/leveldb/doc/benchmark.html
+8c57f718408855a24f6051d525705f23,40,/tmp/MicroBitcoin/test/functional/combined_log_template.html
 fe3e0c2c8bdbdcf420359e736dc5c568,80,/tmp/MicroBitcoin/src/bench/bench.h
 f9a0a6731d13355d02db956ebab40f7e,37,/tmp/MicroBitcoin/src/bench/perf.h
 148f69009dc548b4f458d506f0cc3d87,66,/tmp/MicroBitcoin/src/compat/byteswap.h
