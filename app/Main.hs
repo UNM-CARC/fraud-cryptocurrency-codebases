@@ -34,13 +34,15 @@ import           Data.Traversable (traverse)
 import Lib
 import Util
 
-cloneRepos :: IO ()
+--runExperiment (n:names) acc = runExperiment names (foldr (\y ac -> ))
+
+cloneRepos :: [[String]] -> IO b
 cloneRepos (x:xs) = do
   cloneRepo x
-  print $ "Cloned Repo: " ++ head $ tail x
+  print $ head $ tail x
   cloneRepos xs
 
-compareRepos :: String -> String -> Int -> IO ()
+--compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do 
 
   dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
@@ -114,8 +116,9 @@ compareRepos name1 name2 flag = do
       let k = compressFiles l
       let k2 = compressFiles l2
 
-      let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
-      let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let aa = snd yy
+      let bb = fst yy
 
       print $ map last bb -- Only print file names here
       print $ Numeric.showFFloat Nothing aa ""
@@ -153,8 +156,9 @@ compareRepos name1 name2 flag = do
       let k = compressFiles l
       let k2 = compressFiles l2
 
-      let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
-      let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let aa = snd yy
+      let bb = fst yy
 
       print $ map last bb -- Only print file names here
       print $ Numeric.showFFloat Nothing aa ""
@@ -174,4 +178,4 @@ main = do
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
   print tmp
-   
+  --cloneRepos tmp
