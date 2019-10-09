@@ -13,7 +13,7 @@ import           Control.Monad
 import           Control.Applicative
 import           System.Process
 import           Data.Digest.Pure.MD5
-import           Control.Monad (foldM)
+--import           Control.Monad (foldM)
 import           System.Directory (doesDirectoryExist, listDirectory) 
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
@@ -79,11 +79,11 @@ compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Floa
 compareCoinHashes []     ys lx ly acc = (fst acc, if lx > ly then snd acc / fromIntegral lx else snd acc / fromIntegral ly)
 compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
   (fst acc ++ fst fun, snd acc + snd fun)
---  (acc ++ (foldr (\y a -> if head y == 
+--  (acc ++ (foldr (\y a -> if head y ==
 --                            head x then (y : fst a, snd a + 1)
 --                                     else (fst a, snd a)) ([], 0.0) ys))
   where
-   fun = (foldr (\y a -> if head y == 
+   fun = (foldr (\y a -> if head y ==
                             head x then (y : fst a, snd a + 1)
                                      else (fst a, snd a)) ([], 0.0) ys)
 
@@ -92,9 +92,9 @@ filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
 --filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs -- Old
 
 compressFiles :: [[String]] -> [[String]]
-compressFiles files = foldr (\b a -> if a == [] 
-  then b:a else if (head b) == (head $ head a) 
-                  then (head a ++ [last b]) : tail a 
+compressFiles files = foldr (\b a -> if a == []
+  then b:a else if (head b) == (head $ head a)
+                  then (head a ++ [last b]) : tail a
                     else b : a) [] files
 
 traverseDir :: (FilePath -> Bool) -> (b -> FilePath -> IO b) -> b -> FilePath -> IO b
@@ -120,7 +120,7 @@ allFiles dir = do
 
 splitEvery :: Int -> [a] -> [[a]]
 splitEvery _ [] = []
-splitEvery n xs = as : splitEvery n bs 
+splitEvery n xs = as : splitEvery n bs
   where (as,bs) = splitAt n xs
 
 cloneRepo :: [String] -> IO ()

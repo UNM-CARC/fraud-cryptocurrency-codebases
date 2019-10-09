@@ -11,6 +11,7 @@ import qualified Data.CSV as CSV
 import           Text.ParserCombinators.Parsec
 import           Numeric
 import           Data.List
+import           Data.Char
 import           Data.Either
 import           Data.Csv
 import           Data.HexString
@@ -18,6 +19,7 @@ import           System.IO
 import           Control.Applicative
 import           Control.Monad
 import           Control.Monad.Zip
+import           System.Environment   
 import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
@@ -32,24 +34,16 @@ import           Data.Traversable (traverse)
 import Lib
 import Util
 
-main :: IO ()
-main = do
-  let flag = 0
+cloneRepos :: IO ()
+cloneRepos (x:xs) = do
+  cloneRepo x
+  print $ "Cloned Repo: " ++ head $ tail x
+  cloneRepos xs
 
-  input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
-  let clean = fmap (\x -> fmap Txt.unpack x) $
-              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
-            . filter (/= '\r')) $ concat clean
-  let name2 =  "bitcoin"-- head (head tmp)
-  let name = "MicroBitcoin"
-        --"MicroBitcoin"
-        -- "bitcoin2"
-  --cloneRepo $ head tmp
-  --print $ head tmp
-  --getDirectoryContents "/tmp/BTC"
+compareRepos :: String -> String -> Int -> IO ()
+compareRepos name1 name2 flag = do 
 
-  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name)
+  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
   dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name2)
   let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
@@ -68,10 +62,9 @@ main = do
             ++ filterFileType ".py "  dirs2
             ++ filterFileType ".cpp " dirs2
             ++ filterFileType ".sh "  dirs2
-            ++ filterFileType "html "  dirs2
+            ++ filterFileType "html " dirs2
             ++ filterFileType ".h "   dirs2
             ++ filterFileType ".js "  dirs2
-
 
   let inter1  = map init inter
   let inter1a = map init intera
@@ -91,12 +84,13 @@ main = do
   let m = out
 
   case flag of
+    -- Test unmodified
     0 -> do
       -- To test on unmodified vs preprocessed use either m or a. (end of first line)
       let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
       let o = map (toText . fromBytes . MD.md5DigestBytes) x
       let z = zip3 o n inter1
-      LB.writeFile ("data/" ++ name ++ ".csv") $ encode z
+      LB.writeFile ("data/" ++ name1 ++ ".csv") $ encode z
 
       -- Second iteration
       -- Get number of lines per file.
@@ -109,34 +103,33 @@ main = do
       let z2 = zip3 o2 n2 inter1a
       LB.writeFile ("data/" ++ name2 ++ ".csv") $ encode z2
 
-      csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ ".csv")
+      csv <- parseFromFile CSV.csvFile ("data/" ++ name1 ++ ".csv")
       csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ ".csv")
 
       let p  = rights [csv]
       let p2 = rights [csv2]
       let l  = sort (concat p)
       let l2 = sort (concat p2)
-    
+
       let k = compressFiles l
       let k2 = compressFiles l2
-    
-      --print k
+
       let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
       let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
-    
-      --print (length $ k)
-      print bb
+
+      print $ map last bb -- Only print file names here
       print $ Numeric.showFFloat Nothing aa ""
       print $ length k
       print $ length k2
       print $ "Number of matching files " ++ (show $ length bb)
 
+    -- Test preprocessed
     1 -> do
       -- To test on unmodified vs preprocessed use either m or a. (end of first line)
       let x = map (MD.md5 . BLU.fromString . Txt.unpack) a
       let o = map (toText . fromBytes . MD.md5DigestBytes) x
       let z = zip3 o n inter1
-      LB.writeFile ("data/" ++ name ++ "pre.csv") $ encode z
+      LB.writeFile ("data/" ++ name1 ++ "pre.csv") $ encode z
 
       -- Second iteration
       -- Get number of lines per file.
@@ -149,7 +142,7 @@ main = do
       let z2 = zip3 o2 n2 inter1a
       LB.writeFile ("data/" ++ name2 ++ "pre.csv") $ encode z2
 
-      csv <- parseFromFile CSV.csvFile ("data/" ++ name ++ "pre.csv")
+      csv <- parseFromFile CSV.csvFile ("data/" ++ name1 ++ "pre.csv")
       csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ "pre.csv")
 
       let p  = rights [csv]
@@ -160,12 +153,10 @@ main = do
       let k = compressFiles l
       let k2 = compressFiles l2
 
-      --print k
       let aa = snd $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
       let bb = fst $ compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
 
-      --print (length $ k)
-      print bb
+      print $ map last bb -- Only print file names here
       print $ Numeric.showFFloat Nothing aa ""
       print $ length k
       print $ length k2
@@ -173,4 +164,14 @@ main = do
 
     _ -> error "Invalid flag value..."
 
---  print p
+main :: IO ()
+main = do
+  let flag = 1
+
+  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+  let clean = fmap (\x -> fmap Txt.unpack x) $
+              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+            . filter (/= '\r')) $ concat clean
+  print tmp
+   
