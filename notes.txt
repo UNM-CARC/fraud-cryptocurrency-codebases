@@ -24,3 +24,6 @@ to be a subset of the bigger repository.
     - original     :: 0.08650875
     - preprocessed :: 0.10195675
 
+* bitcoin MicroBitcoin again
+    - original     :: 0.13683127 matching 133 out of 972
+    - preprocessed :: 0.1399177  matching 136 out of 972

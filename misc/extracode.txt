@@ -132,3 +132,26 @@ main = do
   let z = zip inter09 x
   print z
 --  x
+
+
+--ms = ";#"
+--filterComments = getContents >>=
+--    mapM_ (putStrLn . takeWhile (`notElem` ms)) . lines
+
+
+--jfilterMultiC x = Txt.unpack x =~ "/\\*((?!\\*/).)*\\*/" :: String
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "//[^\\n]*\\n") :: [String]
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "/\\*[^*]*\\*+([^/*][^*]*\\*+)*/|(//[^\\n]*\\n)") :: [String]
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "/\\*[^*]*\\*+([^/*][^*]*\\*+)*/") :: [String]
+
+--filterMultiC x = Txt.unpack x =~ "(//.*?\n)|(/\\*.*?\\*/)" :: String
+--filterMultiC x = Txt.unpack x =~ "(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/\\*(?:.|[\\n\\r])*?\\*/" :: String
+--filterMultiC x = Txt.unpack x =~ "(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/\\*((?!\\*/).)*\\*/|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/ \\* [^*]* \\*+ ([^/*][^*]*\\*+)*/|('(\\.|[^'\\])*'|\'(\\.|[^\'\\])*\'|.[^/'\'\\]*)" :: String
+
+--filterWhite x = Txt.unpack x =~ "/^\\s+|\\s+$|\\s+(?=\\s)/g" :: String
+
+--filterComments xs = filterMultiC xs
+

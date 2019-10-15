@@ -19,7 +19,7 @@ import           System.IO
 import           Control.Applicative
 import           Control.Monad
 import           Control.Monad.Zip
-import           System.Environment   
+import           System.Environment
 import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
@@ -33,6 +33,7 @@ import           Data.Traversable (traverse)
 
 import Lib
 import Util
+import ParseTrees
 
 --runExperiment (n:names) acc = runExperiment names (foldr (\y ac -> ))
 
@@ -43,7 +44,7 @@ cloneRepos (x:xs) = do
   cloneRepos xs
 
 --compareRepos :: String -> String -> Int -> IO ()
-compareRepos name1 name2 flag = do 
+compareRepos name1 name2 flag = do
 
   dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
   dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name2)
@@ -116,14 +117,14 @@ compareRepos name1 name2 flag = do
       let k = compressFiles l
       let k2 = compressFiles l2
 
-      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0)
       let aa = snd yy
       let bb = fst yy
 
       print $ map last bb -- Only print file names here
-      print $ Numeric.showFFloat Nothing aa ""
-      print $ length k
-      print $ length k2
+      --print $ Numeric.showFFloat Nothing aa ""
+      print $ "Length of " ++ name1 ++ ": " ++ (show $ length k)
+      print $ "Length of " ++ name2 ++ ": " ++ (show $ length k2)
       print $ "Number of matching files " ++ (show $ length bb)
 
     -- Test preprocessed
@@ -156,17 +157,17 @@ compareRepos name1 name2 flag = do
       let k = compressFiles l
       let k2 = compressFiles l2
 
-      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0.0)
+      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0)
       let aa = snd yy
       let bb = fst yy
 
       print $ map last bb -- Only print file names here
-      print $ Numeric.showFFloat Nothing aa ""
-      print $ length k
-      print $ length k2
+      --print $ Numeric.showFFloat Nothing aa ""
+      print $ "Length of " ++ name1 ++ ": " ++ (show $ length k)
+      print $ "Length of " ++ name2 ++ ": " ++ (show $ length k2)
       print $ "Number of matching files " ++ (show $ length bb)
 
-    _ -> error "Invalid flag value..."
+    _ -> error "invalid flag value..."
 
 main :: IO ()
 main = do
@@ -177,5 +178,6 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  print tmp
+  --print tmp
   --cloneRepos tmp
+  compareRepos "bitcoin" "MicroBitcoin" 0
