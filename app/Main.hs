@@ -43,7 +43,7 @@ cloneRepos (x:xs) = do
   print $ head $ tail x
   cloneRepos xs
 
---compareRepos :: String -> String -> Int -> IO ()
+compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do
 
   dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
@@ -178,6 +178,6 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  --print tmp
+  print tmp
   --cloneRepos tmp
-  compareRepos "bitcoin" "MicroBitcoin" 0
+  --compareRepos "bitcoin" "MicroBitcoin" 0
