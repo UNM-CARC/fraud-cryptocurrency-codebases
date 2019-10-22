@@ -28,6 +28,7 @@ import           System.FilePath (takeExtension)
 
 import Lib
 
+
 -- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
 stripComments [] = []

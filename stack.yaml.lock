@@ -3,7 +3,14 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
+    pantry-tree:
+      size: 1293
+      sha256: a946ade0b7f7cf8138d2411ac36be23f31a23dcd3c5b22dc645034ecd5caf3ea
+  original:
+    hackage: clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
 snapshots:
 - completed:
     size: 523448

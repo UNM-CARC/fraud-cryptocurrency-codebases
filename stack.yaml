@@ -35,6 +35,7 @@ packages:
 # forks / in-progress versions pinned to a git hash. For example:
 #
 extra-deps:
+- clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
 #  - resourcet-1.1.11@sha256:096a3db6774a728bbe264e3e25c4e40d60e527ebd4b90c0b311deaa8d4cf4f27,1976
 #  - time-1.6.0.1@sha256:492067e1b6973db9df64bf0bc851985dabea138d8a35414fe9ee6870b4702c66,4232
 #  - vector-0.11.0.0@sha256:2bfafd758ab4d80fa7a16b0a650aff60fb1be109728bed6ede144baf1f744ace,6061

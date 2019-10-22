@@ -29,7 +29,10 @@ library
   exposed-modules:
       Lib
       Util
-      ParseTrees
+      --DotSyntax
+      --DotPretty
+      --DotParser
+      --ParseTrees
   other-modules:
       Paths_crypto_fraud
   hs-source-dirs:
@@ -72,7 +75,9 @@ library
     , utf8-string >= 0.3.8 && <= 1.0.3.0
     --, language-c >= 0.8.2 && <= 0.9.0
     , graphviz >= 2999.20.0.0 && <= 3000.00.0.0
-    , fgl >= 5.7.0.0 && <= 5.8.0.0
+    --, fgl >= 5.7.0.0 && <= 5.8.0.0
+    --, clang-pure >= 0.2.0.4 && <= 0.2.0.6
+    , pretty >= 1.1.3.5 && <= 1.1.4.0
   default-language: Haskell2010
 
 executable crypto-fraud-exe
@@ -120,7 +125,9 @@ executable crypto-fraud-exe
     --, transformers >= 0.5.2.0 && <= 0.5.4.0
     --, language-c >= 0.8.2 && <= 0.9.0
     , graphviz >= 2999.20.0.0 && <= 3000.00.0.0
-    , fgl >= 5.7.0.0 && <= 5.8.0.0
+    --, fgl >= 5.7.0.0 && <= 5.8.0.0
+    --, clang-pure >= 0.2.0.4 && <= 0.2.0.6
+    , pretty >= 1.1.3.5 && <= 1.1.4.0
     , crypto-fraud
   default-language: Haskell2010
 
@@ -170,6 +177,8 @@ test-suite crypto-fraud-test
     --, transformers >= 0.5.2.0 && <= 0.5.4.0
     --, language-c >= 0.8.2 && <= 0.9.0
     , graphviz >= 2999.20.0.0 && <= 3000.00.0.0
-    , fgl >= 5.7.0.0 && <= 5.8.0.0
+    --, fgl >= 5.7.0.0 && <= 5.8.0.0
+    --, clang-pure >= 0.2.0.4 && <= 0.2.0.6
+    , pretty >= 1.1.3.5 && <= 1.1.4.0
     , crypto-fraud
   default-language: Haskell2010
