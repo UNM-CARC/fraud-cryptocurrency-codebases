@@ -43,6 +43,8 @@ cloneRepos (x:xs) = do
   print $ head $ tail x
   cloneRepos xs
 
+
+
 compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do
 
