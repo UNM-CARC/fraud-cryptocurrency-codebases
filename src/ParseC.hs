@@ -11,9 +11,11 @@ parseCPP file = do
     idx <- createIndex
     tu <- parseTranslationUnit idx file ["-I/usr/local/include"]
     let root = translationUnitCursor tu
-        children = cursorChildren root
+        --children = cursorChildren root
+        children = cursorDescendants root
         --functionDecls = filter (\c -> cursorKind c == FunctionDecl) children
     --forM_ children (print . cursorSpelling)
+    --print root
     print children
 
 -- Parser for C exclusively
