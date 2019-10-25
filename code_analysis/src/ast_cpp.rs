@@ -6,8 +6,9 @@ pub fn printelem(e: clang::Entity, indent: u32) {
     }
     println!("{:?}", e);
     for j in e.get_children().into_iter() {
-        if j.get_kind() == 
-        printelem(j, indent + 2);
+        if j.get_kind() == EntityKind::FunctionDecl {
+            printelem(j, indent + 2);
+        }
     }
 }
 
@@ -19,8 +20,8 @@ pub fn parsecpp() {
     let index = Index::new(&clang, false, false);
 
     // Parse a source file into a translation unit
-    //let tu = index.parser("misc/simple.cpp").parse().unwrap();
-    let tu = index.parser("misc/prime-number.cpp").parse().unwrap();
+    let tu = index.parser("misc/simple.cpp").parse().unwrap();
+    //let tu = index.parser("misc/prime-number.cpp").parse().unwrap();
 
     printelem(tu.get_entity(), 0);
     // Get the structs in this translation unit
