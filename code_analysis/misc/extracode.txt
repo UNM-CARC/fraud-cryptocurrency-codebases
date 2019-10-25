@@ -1,0 +1,157 @@
+module Main where
+
+--import qualified Data.ByteString as B
+import qualified Data.ByteString.Lazy as LB
+import qualified Data.ByteString.Lazy.UTF8 as BLU
+import qualified Data.Text    as Txt
+import qualified Data.Text.IO as Txt
+import qualified Data.ByteString.Char8 as C
+--import qualified Crypto.Hash as CH
+import qualified Data.Digest.Pure.MD5 as MD
+
+--import           Data.Bits
+--import           Data.Char
+import           Data.List
+--import           Data.ByteString (ByteString, pack)
+--import           Data.Word8
+import           System.IO
+import           Control.Monad
+import           Control.Applicative
+--import           System.Process
+import           Control.Monad
+import           Control.Monad.Zip
+import           System.Directory (doesDirectoryExist, listDirectory) 
+import           System.FilePath ((</>), FilePath)
+import           System.FilePath.Posix
+
+import           System.Directory.Tree (
+                   AnchoredDirTree(..), DirTree(..),
+                   filterDir, readDirectoryWith
+                   )
+import           Control.Monad.Extra (partitionM)
+import           Data.Traversable (traverse)
+
+
+import Lib
+import Util
+
+
+{-
+--fun :: [FilePath] -> [(String, String)] -> [(String, String)]
+fun []       acc = print acc
+fun (d:dirs) acc = do
+  (errc, out', err') <- readCreateProcessWithExitCode (shell ("md5sum " ++ d)) []
+  fun dirs (acc ++ [(takeBaseName d, out')])
+-}
+
+--main :: IO [MD.MD5Digest]
+main = do
+  input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
+  let clean = fmap (\x -> fmap Txt.unpack x) $ 
+              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n') 
+            . filter (/= '\r')) $ concat clean
+  --cloneRepo $ head tmp
+  --print $ head tmp
+  --getDirectoryContents "/tmp/BTC"
+  --traverseDir (\_ -> True) (\() path -> print path) () "/tmp/BTC"
+  dirlist <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
+                  ("/tmp/" ++ head (head tmp))
+  let dirs = dirlist
+
+  let inter00 = filter (\x -> if isInfixOf "/."    x then False else True) dirs
+  let inter01 = filter (\x -> if isInfixOf ".png"  x then False else True) inter00
+  let inter02 = filter (\x -> if isInfixOf ".jpg"  x then False else True) inter01
+  let inter03 = filter (\x -> if isInfixOf ".svg"  x then False else True) inter02
+  let inter04 = filter (\x -> if isInfixOf ".ico"  x then False else True) inter03
+  let inter05 = filter (\x -> if isInfixOf ".bmp"  x then False else True) inter04
+  let inter06 = filter (\x -> if isInfixOf ".json" x then False else True) inter05
+  let inter07 = filter (\x -> if isInfixOf ".icns" x then False else True) inter06
+  let inter08 = filter (\x -> if isInfixOf ".raw"  x then False else True) inter07
+  let inter09 = filter (\x -> if isInfixOf ".dat"  x then False else True) inter08
+
+  let inter00 = filterFileType dirs
+  let inter00a = filterFileType dirs2
+
+  let inter00 = filterFileType "/."    dirs
+  let inter01 = filterFileType ".png"  inter00
+  let inter02 = filterFileType ".jpg"  inter01
+  let inter03 = filterFileType ".svg"  inter02
+  let inter04 = filterFileType ".ico"  inter03
+  let inter05 = filterFileType ".bmp"  inter04
+  let inter06 = filterFileType ".json" inter05
+  let inter07 = filterFileType ".icns" inter06
+  let inter08 = filterFileType ".raw"  inter07
+  let inter09 = filterFileType ".dat"  inter08
+  let inter10 = filterFileType ".md"   inter09
+  let inter11 = filterFileType ".ts"   inter10
+  let inter12 = filterFileType ".xpm"  inter11
+  let inter13 = filterFileType ".mk"   inter12
+  let inter14 = filterFileType ".m4"   inter13
+  let inter15 = filterFileType ".pdf"   inter14
+  let inter16 = filterFileType ".wallet" inter15
+  let inter17 = filterFileType ".xcf" inter16
+  let inter18 = filterFileType ".psd" inter17
+  let inter19 = filterFileType ".pgp" inter18
+
+
+  let inter00a = filterFileType "/."    dirs2
+  let inter01a = filterFileType ".png"  inter00a
+  let inter02a = filterFileType ".jpg"  inter01a
+  let inter03a = filterFileType ".svg"  inter02a
+  let inter04a = filterFileType ".ico"  inter03a
+  let inter05a = filterFileType ".bmp"  inter04a
+  let inter06a = filterFileType ".json" inter05a
+  let inter07a = filterFileType ".icns" inter06a
+  let inter08a = filterFileType ".raw"  inter07a
+  let inter09a = filterFileType ".dat"  inter08a
+  let inter10a = filterFileType ".md"   inter09a
+  let inter11a = filterFileType ".ts"   inter10a
+  let inter12a = filterFileType ".xpm"  inter11a
+  let inter13a = filterFileType ".mk"   inter12a
+  let inter14a = filterFileType ".m4"   inter13a
+  let inter15a = filterFileType ".pdf"  inter14a
+  let inter16a = filterFileType ".wallet" inter15a
+  let inter17a = filterFileType ".xcf" inter16a
+  let inter18a = filterFileType ".psd" inter17a
+  let inter19a = filterFileType ".pgp" inter18a
+
+  print dirs
+
+
+--  let out = fmap (traverse Txt.readFile) inter09 -- dirlist -- fun dirlist []
+  out <- (traverse Txt.readFile) inter09 -- dirlist -- fun dirlist []
+  --out
+  --let out = map Txt.readFile inter09
+  let m = out
+  --print m
+  --let out = traverse (Txt.readFile) $ allFiles ("/tmp/" ++ head (head tmp))
+  --let out = readFiles $ allFiles ("/tmp/" ++ head (head tmp))
+  let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
+--let y = x
+  let z = zip inter09 x
+  print z
+--  x
+
+
+--ms = ";#"
+--filterComments = getContents >>=
+--    mapM_ (putStrLn . takeWhile (`notElem` ms)) . lines
+
+
+--jfilterMultiC x = Txt.unpack x =~ "/\\*((?!\\*/).)*\\*/" :: String
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "//[^\\n]*\\n") :: [String]
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "/\\*[^*]*\\*+([^/*][^*]*\\*+)*/|(//[^\\n]*\\n)") :: [String]
+--filterMultiC x = getAllTextMatches (Txt.unpack x =~ "/\\*[^*]*\\*+([^/*][^*]*\\*+)*/") :: [String]
+
+--filterMultiC x = Txt.unpack x =~ "(//.*?\n)|(/\\*.*?\\*/)" :: String
+--filterMultiC x = Txt.unpack x =~ "(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/\\*(?:.|[\\n\\r])*?\\*/" :: String
+--filterMultiC x = Txt.unpack x =~ "(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/\\*((?!\\*/).)*\\*/|(//.*)" :: String
+--filterMultiC x = Txt.unpack x =~ "/ \\* [^*]* \\*+ ([^/*][^*]*\\*+)*/|('(\\.|[^'\\])*'|\'(\\.|[^\'\\])*\'|.[^/'\'\\]*)" :: String
+
+--filterWhite x = Txt.unpack x =~ "/^\\s+|\\s+$|\\s+(?=\\s)/g" :: String
+
+--filterComments xs = filterMultiC xs
+

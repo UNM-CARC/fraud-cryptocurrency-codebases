@@ -8,6 +8,7 @@ extern crate ring;
 //extern crate mpi;
 extern crate reqwest;
 extern crate select;
+extern crate clang;
 
 //use std::io;
 //use std::io::prelude::*;
@@ -17,10 +18,12 @@ extern crate select;
 //use mpi::traits::*;
 //use mpi::request::WaitGuard;
 
+#[warn(unused_imports)]
 use walkdir::{DirEntry, WalkDir};
 
 pub mod util;
 pub mod scrape;
+pub mod ast_cpp;
 
 //#[derive(Deserialize)]
 //struct Record {
@@ -29,6 +32,7 @@ pub mod scrape;
 //    repo: String,
 //}
 
+#[warn(dead_code)]
 fn is_not_hidden(entry: &DirEntry) -> bool {
     entry
          .file_name()
@@ -42,7 +46,9 @@ fn main() {
 //    let world = universe.world();
 //    let size = world.size();
 //    let rank = world.rank();
-    scrape::scraper("https://coinmarketcap.com/all/views/all/")
+
+    //scrape::scraper("https://coinmarketcap.com/all/views/all/")
+
     //if let Err(err) = util::runcsv() {
     //    println!("{}", err);
     //    process::exit(1);
@@ -59,4 +65,5 @@ fn main() {
     //    .filter_map(|y| util::runhash(y))
     //    .filter_map(|v| v.ok())
     //    .for_each(|x| println!("{}", x.path().display()));
+    ast_cpp::parsecpp();
 }

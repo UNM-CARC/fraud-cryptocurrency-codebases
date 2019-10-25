@@ -37,7 +37,7 @@ pub fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest, Error> {
 }
 
 pub fn runhash(filename: DirEntry) -> Result<(), Error> {
-    let mut file = File::open(filename.path())?;
+    let file = File::open(filename.path())?;
     let reader = BufReader::new(file);
     let digest = sha256_digest(reader)?;
     //let mut sha256 = Sha256::new();
