@@ -5,6 +5,8 @@ authors = ["Keira Haskins <wasp@unm.edu>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+#[features]
+#libclang = ["clang_8_0"]
 
 [dependencies]
 #mpi = "0.5"
@@ -17,4 +19,9 @@ data-encoding = "2.1.2"
 ring = "0.16.9"
 reqwest = "0.9.19"
 select.rs = "0.4.3"
-clang = "0.23.0"
+#clang = "0.23.0"
+
+[dependencies.clang]
+version = "0.23.0"
+default-features = false
+features = ["clang_8_0"]

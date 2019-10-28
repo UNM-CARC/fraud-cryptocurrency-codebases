@@ -1,0 +1,5812 @@
+{
+	"architecture" : 
+	{
+		"bitSize" : 64,
+		"endian" : "little",
+		"name" : "x86-64"
+	},
+	"classes" : [],
+	"date" : "2019-10-28",
+	"decompParams" : 
+	{
+		"abiPaths" : [],
+		"frontendFunctions" : 
+		[
+			"__decompiler_undefined_function_"
+		],
+		"keepAllFuncs" : false,
+		"libraryTypeInfoPaths" : 
+		[
+			"/usr/bin/../share/retdec/support/generic/types/arm.json",
+			"/usr/bin/../share/retdec/support/generic/types/cstdlib.json",
+			"/usr/bin/../share/retdec/support/generic/types/linux.json",
+			"/usr/bin/../share/retdec/support/generic/types/windows.json",
+			"/usr/bin/../share/retdec/support/generic/types/windrivers.json"
+		],
+		"ordinalNumDirectory" : "/usr/bin/../share/retdec/support/x86/ords/",
+		"outputFile" : "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/code_analysis/misc/simple2.c",
+		"selectedDecodeOnly" : false,
+		"selectedFunctions" : [],
+		"selectedNotFoundFncs" : [],
+		"selectedRanges" : [],
+		"staticSignPaths" : 
+		[
+			"/usr/bin/../share/retdec/support/generic/yara_patterns/static-code/elf/64/le/x86/x64-gcc-4.7.2.yarac"
+		],
+		"userStaticSignPaths" : [],
+		"verboseOut" : false
+	},
+	"entryPoint" : "0x1020",
+	"fileFormat" : "elf64",
+	"fileType" : "shared",
+	"functions" : 
+	[
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x3fe1",
+			"fncType" : "dynamicallyLinked",
+			"name" : "_ITM_deregisterTMCloneTable",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "arg1",
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x3fe0",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x3ff9",
+			"fncType" : "dynamicallyLinked",
+			"name" : "_ITM_registerTMCloneTable",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "arg1",
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "arg2",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x3ff8",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"demangledName" : "fun(int)",
+			"endAddr" : "0x1143",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "stack_var_-12",
+					"realName" : "stack_var_-12",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -12
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32*"
+					}
+				},
+				{
+					"name" : "stack_var_-28",
+					"realName" : "stack_var_-28",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -28
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32*"
+					}
+				},
+				{
+					"name" : "stack_var_-8",
+					"realName" : "stack_var_-8",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -8
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_0",
+					"realName" : "stack_var_0",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : 0
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"name" : "_Z3funi",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "arg1",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1119",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"declarationStr" : "void __cxa_finalize(void * d);",
+			"endAddr" : "0x3fd9",
+			"fncType" : "dynamicallyLinked",
+			"name" : "__cxa_finalize",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "d",
+					"realName" : "d",
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x3fd8",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x10c1",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "__do_global_dtors_aux",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x10c0",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"declarationStr" : "void __gmon_start__(void);",
+			"endAddr" : "0x3ff1",
+			"fncType" : "dynamicallyLinked",
+			"name" : "__gmon_start__",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x3ff0",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x11d1",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "__libc_csu_fini",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x11d0",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1161",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "__libc_csu_init",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1160",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"declarationStr" : "int __libc_start_main(int *(main)(int, char **, char **), int argc, char ** ubp_av, void(* init)(void), void(* fini)(void), void(* rtld_fini)(void), void(* stack_end));",
+			"endAddr" : "0x3fe9",
+			"fncType" : "dynamicallyLinked",
+			"name" : "__libc_start_main",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "main",
+					"realName" : "main",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "argc",
+					"realName" : "argc",
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "ubp_av",
+					"realName" : "ubp_av",
+					"type" : 
+					{
+						"llvmIr" : "i8**"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "init",
+					"realName" : "init",
+					"type" : 
+					{
+						"llvmIr" : "void ()*"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "fini",
+					"realName" : "fini",
+					"type" : 
+					{
+						"llvmIr" : "void ()*"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "rtld_fini",
+					"realName" : "rtld_fini",
+					"type" : 
+					{
+						"llvmIr" : "void ()*"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x3fe8",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x11d9",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "_fini",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x11d8",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1001",
+			"fncType" : "userDefined",
+			"name" : "_init",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1000",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1021",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "_start",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1020",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1079",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "deregister_tm_clones",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1050",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1111",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "frame_dummy",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1110",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x101b",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "stack_var_-8",
+					"realName" : "stack_var_-8",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -8
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_0",
+					"realName" : "stack_var_0",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : 0
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"name" : "function_1003",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1003",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1101",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "stack_var_-8",
+					"realName" : "stack_var_-8",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -8
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_0",
+					"realName" : "stack_var_0",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : 0
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"name" : "function_10c3",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x10c3",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1119",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "function_1113",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1113",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x11c5",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "stack_var_-16",
+					"realName" : "stack_var_-16",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -16
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_-24",
+					"realName" : "stack_var_-24",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -24
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_-32",
+					"realName" : "stack_var_-32",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -32
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_-40",
+					"realName" : "stack_var_-40",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -40
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_-48",
+					"realName" : "stack_var_-48",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -48
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_-56",
+					"realName" : "stack_var_-56",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -56
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_-8",
+					"realName" : "stack_var_-8",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -8
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_0",
+					"realName" : "stack_var_0",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : 0
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"name" : "function_1163",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "arg1",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "arg2",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "arg3",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1163",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x11d5",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "function_11d3",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x11d3",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x11e5",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "stack_var_-8",
+					"realName" : "stack_var_-8",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -8
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_0",
+					"realName" : "stack_var_0",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : 0
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"name" : "function_11db",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x11db",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x1158",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "r12.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r12"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r13.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r13"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r14.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r14"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "r15.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "r15"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbp.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbp"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rbx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rbx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdx.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdx"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "stack_var_-8",
+					"realName" : "stack_var_-8",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : -8
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				},
+				{
+					"name" : "stack_var_0",
+					"realName" : "stack_var_0",
+					"storage" : 
+					{
+						"type" : "stack",
+						"value" : 0
+					},
+					"type" : 
+					{
+						"llvmIr" : "i64*"
+					}
+				}
+			],
+			"name" : "main",
+			"parameters" : 
+			[
+				{
+					"isFromDebug" : true,
+					"name" : "argc",
+					"realName" : "argc",
+					"type" : 
+					{
+						"llvmIr" : "i64"
+					}
+				},
+				{
+					"isFromDebug" : true,
+					"name" : "argv",
+					"realName" : "argv",
+					"type" : 
+					{
+						"llvmIr" : "i8**"
+					}
+				}
+			],
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1143",
+			"usedCryptoConstants" : []
+		},
+		{
+			"callingConvention" : "unknown",
+			"endAddr" : "0x10b9",
+			"fncType" : "userDefined",
+			"locals" : 
+			[
+				{
+					"name" : "rax.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rax"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rdi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rdi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				},
+				{
+					"name" : "rsi.global-to-local",
+					"storage" : 
+					{
+						"type" : "register",
+						"value" : "rsi"
+					},
+					"type" : 
+					{
+						"llvmIr" : "i32"
+					}
+				}
+			],
+			"name" : "register_tm_clones",
+			"returnType" : 
+			{
+				"llvmIr" : "i32"
+			},
+			"startAddr" : "0x1080",
+			"usedCryptoConstants" : []
+		}
+	],
+	"globals" : 
+	[
+		{
+			"name" : "global_var_3df8.3",
+			"storage" : 
+			{
+				"type" : "global",
+				"value" : "0x3df8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "global_var_3e00.4",
+			"storage" : 
+			{
+				"type" : "global",
+				"value" : "0x3e00"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "global_var_3ff8.2",
+			"storage" : 
+			{
+				"type" : "global",
+				"value" : "0x3ff8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "global_var_4020",
+			"storage" : 
+			{
+				"type" : "global",
+				"value" : "0x4020"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "global_var_4028.1",
+			"storage" : 
+			{
+				"type" : "global",
+				"value" : "0x4028"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		}
+	],
+	"inputFile" : "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/code_analysis/misc/simple2",
+	"languages" : 
+	[
+		{
+			"bytecode" : false,
+			"name" : "C++"
+		}
+	],
+	"patterns" : [],
+	"registers" : 
+	[
+		{
+			"name" : "ac",
+			"realName" : "ac",
+			"storage" : 
+			{
+				"registerNumber" : 256,
+				"type" : "register",
+				"value" : "ac"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "az",
+			"realName" : "az",
+			"storage" : 
+			{
+				"registerNumber" : 245,
+				"type" : "register",
+				"value" : "az"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "cf",
+			"realName" : "cf",
+			"storage" : 
+			{
+				"registerNumber" : 243,
+				"type" : "register",
+				"value" : "cf"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "cr0",
+			"realName" : "cr0",
+			"storage" : 
+			{
+				"registerNumber" : 50,
+				"type" : "register",
+				"value" : "cr0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr1",
+			"realName" : "cr1",
+			"storage" : 
+			{
+				"registerNumber" : 51,
+				"type" : "register",
+				"value" : "cr1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr10",
+			"realName" : "cr10",
+			"storage" : 
+			{
+				"registerNumber" : 60,
+				"type" : "register",
+				"value" : "cr10"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr11",
+			"realName" : "cr11",
+			"storage" : 
+			{
+				"registerNumber" : 61,
+				"type" : "register",
+				"value" : "cr11"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr12",
+			"realName" : "cr12",
+			"storage" : 
+			{
+				"registerNumber" : 62,
+				"type" : "register",
+				"value" : "cr12"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr13",
+			"realName" : "cr13",
+			"storage" : 
+			{
+				"registerNumber" : 63,
+				"type" : "register",
+				"value" : "cr13"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr14",
+			"realName" : "cr14",
+			"storage" : 
+			{
+				"registerNumber" : 64,
+				"type" : "register",
+				"value" : "cr14"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr15",
+			"realName" : "cr15",
+			"storage" : 
+			{
+				"registerNumber" : 65,
+				"type" : "register",
+				"value" : "cr15"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr2",
+			"realName" : "cr2",
+			"storage" : 
+			{
+				"registerNumber" : 52,
+				"type" : "register",
+				"value" : "cr2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr3",
+			"realName" : "cr3",
+			"storage" : 
+			{
+				"registerNumber" : 53,
+				"type" : "register",
+				"value" : "cr3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr4",
+			"realName" : "cr4",
+			"storage" : 
+			{
+				"registerNumber" : 54,
+				"type" : "register",
+				"value" : "cr4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr5",
+			"realName" : "cr5",
+			"storage" : 
+			{
+				"registerNumber" : 55,
+				"type" : "register",
+				"value" : "cr5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr6",
+			"realName" : "cr6",
+			"storage" : 
+			{
+				"registerNumber" : 56,
+				"type" : "register",
+				"value" : "cr6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr7",
+			"realName" : "cr7",
+			"storage" : 
+			{
+				"registerNumber" : 57,
+				"type" : "register",
+				"value" : "cr7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr8",
+			"realName" : "cr8",
+			"storage" : 
+			{
+				"registerNumber" : 58,
+				"type" : "register",
+				"value" : "cr8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cr9",
+			"realName" : "cr9",
+			"storage" : 
+			{
+				"registerNumber" : 59,
+				"type" : "register",
+				"value" : "cr9"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "cs",
+			"realName" : "cs",
+			"storage" : 
+			{
+				"registerNumber" : 11,
+				"type" : "register",
+				"value" : "cs"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i16"
+			}
+		},
+		{
+			"name" : "df",
+			"realName" : "df",
+			"storage" : 
+			{
+				"registerNumber" : 250,
+				"type" : "register",
+				"value" : "df"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "dr0",
+			"realName" : "dr0",
+			"storage" : 
+			{
+				"registerNumber" : 66,
+				"type" : "register",
+				"value" : "dr0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr1",
+			"realName" : "dr1",
+			"storage" : 
+			{
+				"registerNumber" : 67,
+				"type" : "register",
+				"value" : "dr1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr10",
+			"realName" : "dr10",
+			"storage" : 
+			{
+				"registerNumber" : 76,
+				"type" : "register",
+				"value" : "dr10"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr11",
+			"realName" : "dr11",
+			"storage" : 
+			{
+				"registerNumber" : 77,
+				"type" : "register",
+				"value" : "dr11"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr12",
+			"realName" : "dr12",
+			"storage" : 
+			{
+				"registerNumber" : 78,
+				"type" : "register",
+				"value" : "dr12"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr13",
+			"realName" : "dr13",
+			"storage" : 
+			{
+				"registerNumber" : 79,
+				"type" : "register",
+				"value" : "dr13"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr14",
+			"realName" : "dr14",
+			"storage" : 
+			{
+				"registerNumber" : 80,
+				"type" : "register",
+				"value" : "dr14"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr15",
+			"realName" : "dr15",
+			"storage" : 
+			{
+				"registerNumber" : 81,
+				"type" : "register",
+				"value" : "dr15"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr2",
+			"realName" : "dr2",
+			"storage" : 
+			{
+				"registerNumber" : 68,
+				"type" : "register",
+				"value" : "dr2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr3",
+			"realName" : "dr3",
+			"storage" : 
+			{
+				"registerNumber" : 69,
+				"type" : "register",
+				"value" : "dr3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr4",
+			"realName" : "dr4",
+			"storage" : 
+			{
+				"registerNumber" : 70,
+				"type" : "register",
+				"value" : "dr4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr5",
+			"realName" : "dr5",
+			"storage" : 
+			{
+				"registerNumber" : 71,
+				"type" : "register",
+				"value" : "dr5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr6",
+			"realName" : "dr6",
+			"storage" : 
+			{
+				"registerNumber" : 72,
+				"type" : "register",
+				"value" : "dr6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr7",
+			"realName" : "dr7",
+			"storage" : 
+			{
+				"registerNumber" : 73,
+				"type" : "register",
+				"value" : "dr7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr8",
+			"realName" : "dr8",
+			"storage" : 
+			{
+				"registerNumber" : 74,
+				"type" : "register",
+				"value" : "dr8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "dr9",
+			"realName" : "dr9",
+			"storage" : 
+			{
+				"registerNumber" : 75,
+				"type" : "register",
+				"value" : "dr9"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "ds",
+			"realName" : "ds",
+			"storage" : 
+			{
+				"registerNumber" : 17,
+				"type" : "register",
+				"value" : "ds"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i16"
+			}
+		},
+		{
+			"name" : "es",
+			"realName" : "es",
+			"storage" : 
+			{
+				"registerNumber" : 28,
+				"type" : "register",
+				"value" : "es"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i16"
+			}
+		},
+		{
+			"name" : "fp0",
+			"realName" : "fp0",
+			"storage" : 
+			{
+				"registerNumber" : 82,
+				"type" : "register",
+				"value" : "fp0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp1",
+			"realName" : "fp1",
+			"storage" : 
+			{
+				"registerNumber" : 83,
+				"type" : "register",
+				"value" : "fp1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp2",
+			"realName" : "fp2",
+			"storage" : 
+			{
+				"registerNumber" : 84,
+				"type" : "register",
+				"value" : "fp2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp3",
+			"realName" : "fp3",
+			"storage" : 
+			{
+				"registerNumber" : 85,
+				"type" : "register",
+				"value" : "fp3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp4",
+			"realName" : "fp4",
+			"storage" : 
+			{
+				"registerNumber" : 86,
+				"type" : "register",
+				"value" : "fp4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp5",
+			"realName" : "fp5",
+			"storage" : 
+			{
+				"registerNumber" : 87,
+				"type" : "register",
+				"value" : "fp5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp6",
+			"realName" : "fp6",
+			"storage" : 
+			{
+				"registerNumber" : 88,
+				"type" : "register",
+				"value" : "fp6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fp7",
+			"realName" : "fp7",
+			"storage" : 
+			{
+				"registerNumber" : 89,
+				"type" : "register",
+				"value" : "fp7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "double"
+			}
+		},
+		{
+			"name" : "fpsw",
+			"realName" : "fpsw",
+			"storage" : 
+			{
+				"registerNumber" : 31,
+				"type" : "register",
+				"value" : "fpsw"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "fpu_control_DM",
+			"realName" : "fpu_control_DM",
+			"storage" : 
+			{
+				"registerNumber" : 275,
+				"type" : "register",
+				"value" : "fpu_control_DM"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_control_IM",
+			"realName" : "fpu_control_IM",
+			"storage" : 
+			{
+				"registerNumber" : 274,
+				"type" : "register",
+				"value" : "fpu_control_IM"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_control_OM",
+			"realName" : "fpu_control_OM",
+			"storage" : 
+			{
+				"registerNumber" : 277,
+				"type" : "register",
+				"value" : "fpu_control_OM"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_control_PC",
+			"realName" : "fpu_control_PC",
+			"storage" : 
+			{
+				"registerNumber" : 280,
+				"type" : "register",
+				"value" : "fpu_control_PC"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_control_PM",
+			"realName" : "fpu_control_PM",
+			"storage" : 
+			{
+				"registerNumber" : 279,
+				"type" : "register",
+				"value" : "fpu_control_PM"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_control_RC",
+			"realName" : "fpu_control_RC",
+			"storage" : 
+			{
+				"registerNumber" : 281,
+				"type" : "register",
+				"value" : "fpu_control_RC"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_control_UM",
+			"realName" : "fpu_control_UM",
+			"storage" : 
+			{
+				"registerNumber" : 278,
+				"type" : "register",
+				"value" : "fpu_control_UM"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_control_X",
+			"realName" : "fpu_control_X",
+			"storage" : 
+			{
+				"registerNumber" : 282,
+				"type" : "register",
+				"value" : "fpu_control_X"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_control_ZM",
+			"realName" : "fpu_control_ZM",
+			"storage" : 
+			{
+				"registerNumber" : 276,
+				"type" : "register",
+				"value" : "fpu_control_ZM"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_B",
+			"realName" : "fpu_stat_B",
+			"storage" : 
+			{
+				"registerNumber" : 273,
+				"type" : "register",
+				"value" : "fpu_stat_B"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_C0",
+			"realName" : "fpu_stat_C0",
+			"storage" : 
+			{
+				"registerNumber" : 268,
+				"type" : "register",
+				"value" : "fpu_stat_C0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_C1",
+			"realName" : "fpu_stat_C1",
+			"storage" : 
+			{
+				"registerNumber" : 269,
+				"type" : "register",
+				"value" : "fpu_stat_C1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_C2",
+			"realName" : "fpu_stat_C2",
+			"storage" : 
+			{
+				"registerNumber" : 270,
+				"type" : "register",
+				"value" : "fpu_stat_C2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_C3",
+			"realName" : "fpu_stat_C3",
+			"storage" : 
+			{
+				"registerNumber" : 271,
+				"type" : "register",
+				"value" : "fpu_stat_C3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_DE",
+			"realName" : "fpu_stat_DE",
+			"storage" : 
+			{
+				"registerNumber" : 261,
+				"type" : "register",
+				"value" : "fpu_stat_DE"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_ES",
+			"realName" : "fpu_stat_ES",
+			"storage" : 
+			{
+				"registerNumber" : 267,
+				"type" : "register",
+				"value" : "fpu_stat_ES"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_IE",
+			"realName" : "fpu_stat_IE",
+			"storage" : 
+			{
+				"registerNumber" : 260,
+				"type" : "register",
+				"value" : "fpu_stat_IE"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_OE",
+			"realName" : "fpu_stat_OE",
+			"storage" : 
+			{
+				"registerNumber" : 263,
+				"type" : "register",
+				"value" : "fpu_stat_OE"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_PE",
+			"realName" : "fpu_stat_PE",
+			"storage" : 
+			{
+				"registerNumber" : 265,
+				"type" : "register",
+				"value" : "fpu_stat_PE"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_SF",
+			"realName" : "fpu_stat_SF",
+			"storage" : 
+			{
+				"registerNumber" : 266,
+				"type" : "register",
+				"value" : "fpu_stat_SF"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_TOP",
+			"realName" : "fpu_stat_TOP",
+			"storage" : 
+			{
+				"registerNumber" : 272,
+				"type" : "register",
+				"value" : "fpu_stat_TOP"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i3"
+			}
+		},
+		{
+			"name" : "fpu_stat_UE",
+			"realName" : "fpu_stat_UE",
+			"storage" : 
+			{
+				"registerNumber" : 264,
+				"type" : "register",
+				"value" : "fpu_stat_UE"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_stat_ZE",
+			"realName" : "fpu_stat_ZE",
+			"storage" : 
+			{
+				"registerNumber" : 262,
+				"type" : "register",
+				"value" : "fpu_stat_ZE"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "fpu_tag_0",
+			"realName" : "fpu_tag_0",
+			"storage" : 
+			{
+				"registerNumber" : 283,
+				"type" : "register",
+				"value" : "fpu_tag_0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_1",
+			"realName" : "fpu_tag_1",
+			"storage" : 
+			{
+				"registerNumber" : 284,
+				"type" : "register",
+				"value" : "fpu_tag_1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_2",
+			"realName" : "fpu_tag_2",
+			"storage" : 
+			{
+				"registerNumber" : 285,
+				"type" : "register",
+				"value" : "fpu_tag_2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_3",
+			"realName" : "fpu_tag_3",
+			"storage" : 
+			{
+				"registerNumber" : 286,
+				"type" : "register",
+				"value" : "fpu_tag_3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_4",
+			"realName" : "fpu_tag_4",
+			"storage" : 
+			{
+				"registerNumber" : 287,
+				"type" : "register",
+				"value" : "fpu_tag_4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_5",
+			"realName" : "fpu_tag_5",
+			"storage" : 
+			{
+				"registerNumber" : 288,
+				"type" : "register",
+				"value" : "fpu_tag_5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_6",
+			"realName" : "fpu_tag_6",
+			"storage" : 
+			{
+				"registerNumber" : 289,
+				"type" : "register",
+				"value" : "fpu_tag_6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fpu_tag_7",
+			"realName" : "fpu_tag_7",
+			"storage" : 
+			{
+				"registerNumber" : 290,
+				"type" : "register",
+				"value" : "fpu_tag_7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "fs",
+			"realName" : "fs",
+			"storage" : 
+			{
+				"registerNumber" : 32,
+				"type" : "register",
+				"value" : "fs"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i16"
+			}
+		},
+		{
+			"name" : "gs",
+			"realName" : "gs",
+			"storage" : 
+			{
+				"registerNumber" : 33,
+				"type" : "register",
+				"value" : "gs"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i16"
+			}
+		},
+		{
+			"name" : "id",
+			"realName" : "id",
+			"storage" : 
+			{
+				"registerNumber" : 259,
+				"type" : "register",
+				"value" : "id"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "if",
+			"realName" : "if",
+			"storage" : 
+			{
+				"registerNumber" : 249,
+				"type" : "register",
+				"value" : "if"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "iopl",
+			"realName" : "iopl",
+			"storage" : 
+			{
+				"registerNumber" : 252,
+				"type" : "register",
+				"value" : "iopl"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i2"
+			}
+		},
+		{
+			"name" : "k0",
+			"realName" : "k0",
+			"storage" : 
+			{
+				"registerNumber" : 90,
+				"type" : "register",
+				"value" : "k0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k1",
+			"realName" : "k1",
+			"storage" : 
+			{
+				"registerNumber" : 91,
+				"type" : "register",
+				"value" : "k1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k2",
+			"realName" : "k2",
+			"storage" : 
+			{
+				"registerNumber" : 92,
+				"type" : "register",
+				"value" : "k2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k3",
+			"realName" : "k3",
+			"storage" : 
+			{
+				"registerNumber" : 93,
+				"type" : "register",
+				"value" : "k3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k4",
+			"realName" : "k4",
+			"storage" : 
+			{
+				"registerNumber" : 94,
+				"type" : "register",
+				"value" : "k4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k5",
+			"realName" : "k5",
+			"storage" : 
+			{
+				"registerNumber" : 95,
+				"type" : "register",
+				"value" : "k5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k6",
+			"realName" : "k6",
+			"storage" : 
+			{
+				"registerNumber" : 96,
+				"type" : "register",
+				"value" : "k6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "k7",
+			"realName" : "k7",
+			"storage" : 
+			{
+				"registerNumber" : 97,
+				"type" : "register",
+				"value" : "k7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm0",
+			"realName" : "mm0",
+			"storage" : 
+			{
+				"registerNumber" : 98,
+				"type" : "register",
+				"value" : "mm0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm1",
+			"realName" : "mm1",
+			"storage" : 
+			{
+				"registerNumber" : 99,
+				"type" : "register",
+				"value" : "mm1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm2",
+			"realName" : "mm2",
+			"storage" : 
+			{
+				"registerNumber" : 100,
+				"type" : "register",
+				"value" : "mm2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm3",
+			"realName" : "mm3",
+			"storage" : 
+			{
+				"registerNumber" : 101,
+				"type" : "register",
+				"value" : "mm3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm4",
+			"realName" : "mm4",
+			"storage" : 
+			{
+				"registerNumber" : 102,
+				"type" : "register",
+				"value" : "mm4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm5",
+			"realName" : "mm5",
+			"storage" : 
+			{
+				"registerNumber" : 103,
+				"type" : "register",
+				"value" : "mm5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm6",
+			"realName" : "mm6",
+			"storage" : 
+			{
+				"registerNumber" : 104,
+				"type" : "register",
+				"value" : "mm6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "mm7",
+			"realName" : "mm7",
+			"storage" : 
+			{
+				"registerNumber" : 105,
+				"type" : "register",
+				"value" : "mm7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "nt",
+			"realName" : "nt",
+			"storage" : 
+			{
+				"registerNumber" : 253,
+				"type" : "register",
+				"value" : "nt"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "of",
+			"realName" : "of",
+			"storage" : 
+			{
+				"registerNumber" : 251,
+				"type" : "register",
+				"value" : "of"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "pf",
+			"realName" : "pf",
+			"storage" : 
+			{
+				"registerNumber" : 244,
+				"type" : "register",
+				"value" : "pf"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "r10",
+			"realName" : "r10",
+			"storage" : 
+			{
+				"registerNumber" : 108,
+				"type" : "register",
+				"value" : "r10"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r11",
+			"realName" : "r11",
+			"storage" : 
+			{
+				"registerNumber" : 109,
+				"type" : "register",
+				"value" : "r11"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r12",
+			"realName" : "r12",
+			"storage" : 
+			{
+				"registerNumber" : 110,
+				"type" : "register",
+				"value" : "r12"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r13",
+			"realName" : "r13",
+			"storage" : 
+			{
+				"registerNumber" : 111,
+				"type" : "register",
+				"value" : "r13"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r14",
+			"realName" : "r14",
+			"storage" : 
+			{
+				"registerNumber" : 112,
+				"type" : "register",
+				"value" : "r14"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r15",
+			"realName" : "r15",
+			"storage" : 
+			{
+				"registerNumber" : 113,
+				"type" : "register",
+				"value" : "r15"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r8",
+			"realName" : "r8",
+			"storage" : 
+			{
+				"registerNumber" : 106,
+				"type" : "register",
+				"value" : "r8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "r9",
+			"realName" : "r9",
+			"storage" : 
+			{
+				"registerNumber" : 107,
+				"type" : "register",
+				"value" : "r9"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rax",
+			"realName" : "rax",
+			"storage" : 
+			{
+				"registerNumber" : 35,
+				"type" : "register",
+				"value" : "rax"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rbp",
+			"realName" : "rbp",
+			"storage" : 
+			{
+				"registerNumber" : 36,
+				"type" : "register",
+				"value" : "rbp"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rbx",
+			"realName" : "rbx",
+			"storage" : 
+			{
+				"registerNumber" : 37,
+				"type" : "register",
+				"value" : "rbx"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rcx",
+			"realName" : "rcx",
+			"storage" : 
+			{
+				"registerNumber" : 38,
+				"type" : "register",
+				"value" : "rcx"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rdi",
+			"realName" : "rdi",
+			"storage" : 
+			{
+				"registerNumber" : 39,
+				"type" : "register",
+				"value" : "rdi"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rdx",
+			"realName" : "rdx",
+			"storage" : 
+			{
+				"registerNumber" : 40,
+				"type" : "register",
+				"value" : "rdx"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rf",
+			"realName" : "rf",
+			"storage" : 
+			{
+				"registerNumber" : 254,
+				"type" : "register",
+				"value" : "rf"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "rflags",
+			"realName" : "rflags",
+			"storage" : 
+			{
+				"registerNumber" : 25,
+				"type" : "register",
+				"value" : "rflags"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rip",
+			"realName" : "rip",
+			"storage" : 
+			{
+				"registerNumber" : 41,
+				"type" : "register",
+				"value" : "rip"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "riz",
+			"realName" : "riz",
+			"storage" : 
+			{
+				"registerNumber" : 42,
+				"type" : "register",
+				"value" : "riz"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rsi",
+			"realName" : "rsi",
+			"storage" : 
+			{
+				"registerNumber" : 43,
+				"type" : "register",
+				"value" : "rsi"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "rsp",
+			"realName" : "rsp",
+			"storage" : 
+			{
+				"registerNumber" : 44,
+				"type" : "register",
+				"value" : "rsp"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i64"
+			}
+		},
+		{
+			"name" : "sf",
+			"realName" : "sf",
+			"storage" : 
+			{
+				"registerNumber" : 247,
+				"type" : "register",
+				"value" : "sf"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "ss",
+			"realName" : "ss",
+			"storage" : 
+			{
+				"registerNumber" : 49,
+				"type" : "register",
+				"value" : "ss"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i16"
+			}
+		},
+		{
+			"name" : "st0",
+			"realName" : "st0",
+			"storage" : 
+			{
+				"registerNumber" : 114,
+				"type" : "register",
+				"value" : "st0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st1",
+			"realName" : "st1",
+			"storage" : 
+			{
+				"registerNumber" : 115,
+				"type" : "register",
+				"value" : "st1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st2",
+			"realName" : "st2",
+			"storage" : 
+			{
+				"registerNumber" : 116,
+				"type" : "register",
+				"value" : "st2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st3",
+			"realName" : "st3",
+			"storage" : 
+			{
+				"registerNumber" : 117,
+				"type" : "register",
+				"value" : "st3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st4",
+			"realName" : "st4",
+			"storage" : 
+			{
+				"registerNumber" : 118,
+				"type" : "register",
+				"value" : "st4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st5",
+			"realName" : "st5",
+			"storage" : 
+			{
+				"registerNumber" : 119,
+				"type" : "register",
+				"value" : "st5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st6",
+			"realName" : "st6",
+			"storage" : 
+			{
+				"registerNumber" : 120,
+				"type" : "register",
+				"value" : "st6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "st7",
+			"realName" : "st7",
+			"storage" : 
+			{
+				"registerNumber" : 121,
+				"type" : "register",
+				"value" : "st7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "x86_fp80"
+			}
+		},
+		{
+			"name" : "tf",
+			"realName" : "tf",
+			"storage" : 
+			{
+				"registerNumber" : 248,
+				"type" : "register",
+				"value" : "tf"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "vif",
+			"realName" : "vif",
+			"storage" : 
+			{
+				"registerNumber" : 257,
+				"type" : "register",
+				"value" : "vif"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "vip",
+			"realName" : "vip",
+			"storage" : 
+			{
+				"registerNumber" : 258,
+				"type" : "register",
+				"value" : "vip"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "vm",
+			"realName" : "vm",
+			"storage" : 
+			{
+				"registerNumber" : 255,
+				"type" : "register",
+				"value" : "vm"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "xmm0",
+			"realName" : "xmm0",
+			"storage" : 
+			{
+				"registerNumber" : 122,
+				"type" : "register",
+				"value" : "xmm0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm1",
+			"realName" : "xmm1",
+			"storage" : 
+			{
+				"registerNumber" : 123,
+				"type" : "register",
+				"value" : "xmm1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm10",
+			"realName" : "xmm10",
+			"storage" : 
+			{
+				"registerNumber" : 132,
+				"type" : "register",
+				"value" : "xmm10"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm11",
+			"realName" : "xmm11",
+			"storage" : 
+			{
+				"registerNumber" : 133,
+				"type" : "register",
+				"value" : "xmm11"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm12",
+			"realName" : "xmm12",
+			"storage" : 
+			{
+				"registerNumber" : 134,
+				"type" : "register",
+				"value" : "xmm12"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm13",
+			"realName" : "xmm13",
+			"storage" : 
+			{
+				"registerNumber" : 135,
+				"type" : "register",
+				"value" : "xmm13"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm14",
+			"realName" : "xmm14",
+			"storage" : 
+			{
+				"registerNumber" : 136,
+				"type" : "register",
+				"value" : "xmm14"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm15",
+			"realName" : "xmm15",
+			"storage" : 
+			{
+				"registerNumber" : 137,
+				"type" : "register",
+				"value" : "xmm15"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm16",
+			"realName" : "xmm16",
+			"storage" : 
+			{
+				"registerNumber" : 138,
+				"type" : "register",
+				"value" : "xmm16"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm17",
+			"realName" : "xmm17",
+			"storage" : 
+			{
+				"registerNumber" : 139,
+				"type" : "register",
+				"value" : "xmm17"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm18",
+			"realName" : "xmm18",
+			"storage" : 
+			{
+				"registerNumber" : 140,
+				"type" : "register",
+				"value" : "xmm18"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm19",
+			"realName" : "xmm19",
+			"storage" : 
+			{
+				"registerNumber" : 141,
+				"type" : "register",
+				"value" : "xmm19"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm2",
+			"realName" : "xmm2",
+			"storage" : 
+			{
+				"registerNumber" : 124,
+				"type" : "register",
+				"value" : "xmm2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm20",
+			"realName" : "xmm20",
+			"storage" : 
+			{
+				"registerNumber" : 142,
+				"type" : "register",
+				"value" : "xmm20"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm21",
+			"realName" : "xmm21",
+			"storage" : 
+			{
+				"registerNumber" : 143,
+				"type" : "register",
+				"value" : "xmm21"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm22",
+			"realName" : "xmm22",
+			"storage" : 
+			{
+				"registerNumber" : 144,
+				"type" : "register",
+				"value" : "xmm22"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm23",
+			"realName" : "xmm23",
+			"storage" : 
+			{
+				"registerNumber" : 145,
+				"type" : "register",
+				"value" : "xmm23"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm24",
+			"realName" : "xmm24",
+			"storage" : 
+			{
+				"registerNumber" : 146,
+				"type" : "register",
+				"value" : "xmm24"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm25",
+			"realName" : "xmm25",
+			"storage" : 
+			{
+				"registerNumber" : 147,
+				"type" : "register",
+				"value" : "xmm25"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm26",
+			"realName" : "xmm26",
+			"storage" : 
+			{
+				"registerNumber" : 148,
+				"type" : "register",
+				"value" : "xmm26"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm27",
+			"realName" : "xmm27",
+			"storage" : 
+			{
+				"registerNumber" : 149,
+				"type" : "register",
+				"value" : "xmm27"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm28",
+			"realName" : "xmm28",
+			"storage" : 
+			{
+				"registerNumber" : 150,
+				"type" : "register",
+				"value" : "xmm28"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm29",
+			"realName" : "xmm29",
+			"storage" : 
+			{
+				"registerNumber" : 151,
+				"type" : "register",
+				"value" : "xmm29"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm3",
+			"realName" : "xmm3",
+			"storage" : 
+			{
+				"registerNumber" : 125,
+				"type" : "register",
+				"value" : "xmm3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm30",
+			"realName" : "xmm30",
+			"storage" : 
+			{
+				"registerNumber" : 152,
+				"type" : "register",
+				"value" : "xmm30"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm31",
+			"realName" : "xmm31",
+			"storage" : 
+			{
+				"registerNumber" : 153,
+				"type" : "register",
+				"value" : "xmm31"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm4",
+			"realName" : "xmm4",
+			"storage" : 
+			{
+				"registerNumber" : 126,
+				"type" : "register",
+				"value" : "xmm4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm5",
+			"realName" : "xmm5",
+			"storage" : 
+			{
+				"registerNumber" : 127,
+				"type" : "register",
+				"value" : "xmm5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm6",
+			"realName" : "xmm6",
+			"storage" : 
+			{
+				"registerNumber" : 128,
+				"type" : "register",
+				"value" : "xmm6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm7",
+			"realName" : "xmm7",
+			"storage" : 
+			{
+				"registerNumber" : 129,
+				"type" : "register",
+				"value" : "xmm7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm8",
+			"realName" : "xmm8",
+			"storage" : 
+			{
+				"registerNumber" : 130,
+				"type" : "register",
+				"value" : "xmm8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "xmm9",
+			"realName" : "xmm9",
+			"storage" : 
+			{
+				"registerNumber" : 131,
+				"type" : "register",
+				"value" : "xmm9"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i128"
+			}
+		},
+		{
+			"name" : "ymm0",
+			"realName" : "ymm0",
+			"storage" : 
+			{
+				"registerNumber" : 154,
+				"type" : "register",
+				"value" : "ymm0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm1",
+			"realName" : "ymm1",
+			"storage" : 
+			{
+				"registerNumber" : 155,
+				"type" : "register",
+				"value" : "ymm1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm10",
+			"realName" : "ymm10",
+			"storage" : 
+			{
+				"registerNumber" : 164,
+				"type" : "register",
+				"value" : "ymm10"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm11",
+			"realName" : "ymm11",
+			"storage" : 
+			{
+				"registerNumber" : 165,
+				"type" : "register",
+				"value" : "ymm11"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm12",
+			"realName" : "ymm12",
+			"storage" : 
+			{
+				"registerNumber" : 166,
+				"type" : "register",
+				"value" : "ymm12"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm13",
+			"realName" : "ymm13",
+			"storage" : 
+			{
+				"registerNumber" : 167,
+				"type" : "register",
+				"value" : "ymm13"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm14",
+			"realName" : "ymm14",
+			"storage" : 
+			{
+				"registerNumber" : 168,
+				"type" : "register",
+				"value" : "ymm14"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm15",
+			"realName" : "ymm15",
+			"storage" : 
+			{
+				"registerNumber" : 169,
+				"type" : "register",
+				"value" : "ymm15"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm16",
+			"realName" : "ymm16",
+			"storage" : 
+			{
+				"registerNumber" : 170,
+				"type" : "register",
+				"value" : "ymm16"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm17",
+			"realName" : "ymm17",
+			"storage" : 
+			{
+				"registerNumber" : 171,
+				"type" : "register",
+				"value" : "ymm17"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm18",
+			"realName" : "ymm18",
+			"storage" : 
+			{
+				"registerNumber" : 172,
+				"type" : "register",
+				"value" : "ymm18"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm19",
+			"realName" : "ymm19",
+			"storage" : 
+			{
+				"registerNumber" : 173,
+				"type" : "register",
+				"value" : "ymm19"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm2",
+			"realName" : "ymm2",
+			"storage" : 
+			{
+				"registerNumber" : 156,
+				"type" : "register",
+				"value" : "ymm2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm20",
+			"realName" : "ymm20",
+			"storage" : 
+			{
+				"registerNumber" : 174,
+				"type" : "register",
+				"value" : "ymm20"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm21",
+			"realName" : "ymm21",
+			"storage" : 
+			{
+				"registerNumber" : 175,
+				"type" : "register",
+				"value" : "ymm21"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm22",
+			"realName" : "ymm22",
+			"storage" : 
+			{
+				"registerNumber" : 176,
+				"type" : "register",
+				"value" : "ymm22"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm23",
+			"realName" : "ymm23",
+			"storage" : 
+			{
+				"registerNumber" : 177,
+				"type" : "register",
+				"value" : "ymm23"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm24",
+			"realName" : "ymm24",
+			"storage" : 
+			{
+				"registerNumber" : 178,
+				"type" : "register",
+				"value" : "ymm24"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm25",
+			"realName" : "ymm25",
+			"storage" : 
+			{
+				"registerNumber" : 179,
+				"type" : "register",
+				"value" : "ymm25"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm26",
+			"realName" : "ymm26",
+			"storage" : 
+			{
+				"registerNumber" : 180,
+				"type" : "register",
+				"value" : "ymm26"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm27",
+			"realName" : "ymm27",
+			"storage" : 
+			{
+				"registerNumber" : 181,
+				"type" : "register",
+				"value" : "ymm27"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm28",
+			"realName" : "ymm28",
+			"storage" : 
+			{
+				"registerNumber" : 182,
+				"type" : "register",
+				"value" : "ymm28"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm29",
+			"realName" : "ymm29",
+			"storage" : 
+			{
+				"registerNumber" : 183,
+				"type" : "register",
+				"value" : "ymm29"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm3",
+			"realName" : "ymm3",
+			"storage" : 
+			{
+				"registerNumber" : 157,
+				"type" : "register",
+				"value" : "ymm3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm30",
+			"realName" : "ymm30",
+			"storage" : 
+			{
+				"registerNumber" : 184,
+				"type" : "register",
+				"value" : "ymm30"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm31",
+			"realName" : "ymm31",
+			"storage" : 
+			{
+				"registerNumber" : 185,
+				"type" : "register",
+				"value" : "ymm31"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm4",
+			"realName" : "ymm4",
+			"storage" : 
+			{
+				"registerNumber" : 158,
+				"type" : "register",
+				"value" : "ymm4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm5",
+			"realName" : "ymm5",
+			"storage" : 
+			{
+				"registerNumber" : 159,
+				"type" : "register",
+				"value" : "ymm5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm6",
+			"realName" : "ymm6",
+			"storage" : 
+			{
+				"registerNumber" : 160,
+				"type" : "register",
+				"value" : "ymm6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm7",
+			"realName" : "ymm7",
+			"storage" : 
+			{
+				"registerNumber" : 161,
+				"type" : "register",
+				"value" : "ymm7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm8",
+			"realName" : "ymm8",
+			"storage" : 
+			{
+				"registerNumber" : 162,
+				"type" : "register",
+				"value" : "ymm8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "ymm9",
+			"realName" : "ymm9",
+			"storage" : 
+			{
+				"registerNumber" : 163,
+				"type" : "register",
+				"value" : "ymm9"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i256"
+			}
+		},
+		{
+			"name" : "zf",
+			"realName" : "zf",
+			"storage" : 
+			{
+				"registerNumber" : 246,
+				"type" : "register",
+				"value" : "zf"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i1"
+			}
+		},
+		{
+			"name" : "zmm0",
+			"realName" : "zmm0",
+			"storage" : 
+			{
+				"registerNumber" : 186,
+				"type" : "register",
+				"value" : "zmm0"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm1",
+			"realName" : "zmm1",
+			"storage" : 
+			{
+				"registerNumber" : 187,
+				"type" : "register",
+				"value" : "zmm1"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm10",
+			"realName" : "zmm10",
+			"storage" : 
+			{
+				"registerNumber" : 196,
+				"type" : "register",
+				"value" : "zmm10"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm11",
+			"realName" : "zmm11",
+			"storage" : 
+			{
+				"registerNumber" : 197,
+				"type" : "register",
+				"value" : "zmm11"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm12",
+			"realName" : "zmm12",
+			"storage" : 
+			{
+				"registerNumber" : 198,
+				"type" : "register",
+				"value" : "zmm12"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm13",
+			"realName" : "zmm13",
+			"storage" : 
+			{
+				"registerNumber" : 199,
+				"type" : "register",
+				"value" : "zmm13"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm14",
+			"realName" : "zmm14",
+			"storage" : 
+			{
+				"registerNumber" : 200,
+				"type" : "register",
+				"value" : "zmm14"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm15",
+			"realName" : "zmm15",
+			"storage" : 
+			{
+				"registerNumber" : 201,
+				"type" : "register",
+				"value" : "zmm15"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm16",
+			"realName" : "zmm16",
+			"storage" : 
+			{
+				"registerNumber" : 202,
+				"type" : "register",
+				"value" : "zmm16"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm17",
+			"realName" : "zmm17",
+			"storage" : 
+			{
+				"registerNumber" : 203,
+				"type" : "register",
+				"value" : "zmm17"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm18",
+			"realName" : "zmm18",
+			"storage" : 
+			{
+				"registerNumber" : 204,
+				"type" : "register",
+				"value" : "zmm18"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm19",
+			"realName" : "zmm19",
+			"storage" : 
+			{
+				"registerNumber" : 205,
+				"type" : "register",
+				"value" : "zmm19"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm2",
+			"realName" : "zmm2",
+			"storage" : 
+			{
+				"registerNumber" : 188,
+				"type" : "register",
+				"value" : "zmm2"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm20",
+			"realName" : "zmm20",
+			"storage" : 
+			{
+				"registerNumber" : 206,
+				"type" : "register",
+				"value" : "zmm20"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm21",
+			"realName" : "zmm21",
+			"storage" : 
+			{
+				"registerNumber" : 207,
+				"type" : "register",
+				"value" : "zmm21"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm22",
+			"realName" : "zmm22",
+			"storage" : 
+			{
+				"registerNumber" : 208,
+				"type" : "register",
+				"value" : "zmm22"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm23",
+			"realName" : "zmm23",
+			"storage" : 
+			{
+				"registerNumber" : 209,
+				"type" : "register",
+				"value" : "zmm23"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm24",
+			"realName" : "zmm24",
+			"storage" : 
+			{
+				"registerNumber" : 210,
+				"type" : "register",
+				"value" : "zmm24"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm25",
+			"realName" : "zmm25",
+			"storage" : 
+			{
+				"registerNumber" : 211,
+				"type" : "register",
+				"value" : "zmm25"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm26",
+			"realName" : "zmm26",
+			"storage" : 
+			{
+				"registerNumber" : 212,
+				"type" : "register",
+				"value" : "zmm26"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm27",
+			"realName" : "zmm27",
+			"storage" : 
+			{
+				"registerNumber" : 213,
+				"type" : "register",
+				"value" : "zmm27"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm28",
+			"realName" : "zmm28",
+			"storage" : 
+			{
+				"registerNumber" : 214,
+				"type" : "register",
+				"value" : "zmm28"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm29",
+			"realName" : "zmm29",
+			"storage" : 
+			{
+				"registerNumber" : 215,
+				"type" : "register",
+				"value" : "zmm29"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm3",
+			"realName" : "zmm3",
+			"storage" : 
+			{
+				"registerNumber" : 189,
+				"type" : "register",
+				"value" : "zmm3"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm30",
+			"realName" : "zmm30",
+			"storage" : 
+			{
+				"registerNumber" : 216,
+				"type" : "register",
+				"value" : "zmm30"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm31",
+			"realName" : "zmm31",
+			"storage" : 
+			{
+				"registerNumber" : 217,
+				"type" : "register",
+				"value" : "zmm31"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm4",
+			"realName" : "zmm4",
+			"storage" : 
+			{
+				"registerNumber" : 190,
+				"type" : "register",
+				"value" : "zmm4"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm5",
+			"realName" : "zmm5",
+			"storage" : 
+			{
+				"registerNumber" : 191,
+				"type" : "register",
+				"value" : "zmm5"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm6",
+			"realName" : "zmm6",
+			"storage" : 
+			{
+				"registerNumber" : 192,
+				"type" : "register",
+				"value" : "zmm6"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm7",
+			"realName" : "zmm7",
+			"storage" : 
+			{
+				"registerNumber" : 193,
+				"type" : "register",
+				"value" : "zmm7"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm8",
+			"realName" : "zmm8",
+			"storage" : 
+			{
+				"registerNumber" : 194,
+				"type" : "register",
+				"value" : "zmm8"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		},
+		{
+			"name" : "zmm9",
+			"realName" : "zmm9",
+			"storage" : 
+			{
+				"registerNumber" : 195,
+				"type" : "register",
+				"value" : "zmm9"
+			},
+			"type" : 
+			{
+				"llvmIr" : "i512"
+			}
+		}
+	],
+	"segments" : [],
+	"structures" : [],
+	"time" : "15:27:02",
+	"tools" : 
+	[
+		{
+			"heuristics" : true,
+			"identicalSignificantNibbles" : 0,
+			"name" : "gcc",
+			"percentage" : 0.0,
+			"totalSignificantNibbles" : 0,
+			"type" : "compiler",
+			"version" : "9.2.0"
+		},
+		{
+			"additional" : "RHEL",
+			"heuristics" : false,
+			"identicalSignificantNibbles" : 18,
+			"name" : "gcc",
+			"percentage" : 18.0,
+			"totalSignificantNibbles" : 100,
+			"type" : "compiler",
+			"version" : "4.7.0"
+		}
+	],
+	"vtables" : []
+}
