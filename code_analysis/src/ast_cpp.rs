@@ -1,30 +1,62 @@
 use clang::*;
 
-pub fn printelem(e: clang::Entity, indent: u32) {
+fn printelem(e: clang::Entity, indent: u32) -> usize {
+    let mut sum: usize = e.get_children().len();
     for i in 0..indent {
         print!(" ");
     }
-    println!("{:?}", e); //, e.get_mangled_name());
+    println!("{:?}", e.get_kind()); //, e.get_mangled_name());
     for j in e.get_children().into_iter() {
         let kind = j.get_kind();
+        let mut children: usize = 0;
         match kind {
-            EntityKind::TypedefDecl  => print!(""),
+            EntityKind::TypedefDecl  => children = 0,
             //EntityKind::FunctionDecl => printelem(j, indent + 2),
             //EntityKind::StructDecl   => printelem(j, indent + 2),
             //EntityKind::VarDecl      => printelem(j, indent + 2),
             //EntityKind::ParmDecl     => printelem(j, indent + 2),
             //EntityKind::ClassDecl    => printelem(j, indent + 2),
-            _                        => printelem(j, indent + 2),
+            _                        => children = printelem(j, indent + 2),
         }
+        sum += children;
         //if j.get_kind() == EntityKind::FunctionDecl {
         //    printelem(j, indent + 2);
         //}
     }
+//    for i in 0..indent {
+//        print!(" ");
+//    }
+//    println!("{:?}, {:?}", e.get_kind(), sum);
+    return sum;
 }
 
-pub fn serialize_ast(e1: clang::Entity) -> Vec<(clang::EntityKind, u32)> {
+//fn serialize_tail(e: clang::Entity, x: Vec<(clang::EntityKind, u32)) 
+//                                    -> Vec<(clang::EntityKind, u32)> {
+//    for i in e.get_children().into_iter() {
+//        let kind = i.get_kind();
+//        match kind {
+//            EntityKind::TypedefDecl => return serialize_tail(i, x),
+//            _                       => return serialize_tail(i, x.push((kind, )))
+//        }
+//    }
+//    return 
+//}
+//
+fn serialize_ast<'a>(e: clang::Entity, xs: &'a mut Vec<(clang::EntityKind, usize)>) 
+                                    -> &'a mut Vec<(clang::EntityKind, usize)> {
+    let mut sum: usize = e.get_children().len();
 
-    //for 
+    for i in e.get_children().into_iter() {
+        let kind = i.get_kind();
+        let mut children: usize = 0;
+        match kind {
+            EntityKind::TypedefDecl => children = 0,
+            _                       => children = serialize_ast(i, xs).last().unwrap().1,
+        }
+        sum += children;
+    }
+    xs.push((e.get_kind(), sum));
+    return xs
 }
 
 pub fn parsecpp() {
@@ -37,21 +69,26 @@ pub fn parsecpp() {
 
     // Parse a source file into a translation unit
     //println!("{:?}", get_version()); // 9.0.0
-    let tu1 = index1.parser("misc/simple.c").parse().unwrap();
+    let tu1 = index1.parser("misc/simple.cpp").parse().unwrap();
     let tu2 = index2.parser("misc/simple2.c").parse().unwrap();
     //let tu = index.parser("misc/prime-number.cpp").parse().unwrap();
 
-    //printelem(tu.get_entity(), 0);
+    printelem(tu1.get_entity(), 0);
 
-    let serial1 = serialize_ast(tu1.get_entity());
+    let mut tmp: Vec<(clang::EntityKind, usize)> = Vec::new();
+
+    let serial1 = serialize_ast(tu1.get_entity(), &mut tmp);
+    for i in serial1.into_iter().rev() {
+        println!("{:?}", i);
+    }
 
     // Get the structs in this translation unit
     //let tree = tu.get_entity().get_children().into_iter().collect::<Vec<_>>(); //.filter(|e| {
-    let tree = tu1.get_entity().get_children().into_iter().collect::<Vec<_>>(); //.filter(|e| {
-    let tree = tu2.get_entity().get_children().into_iter().collect::<Vec<_>>(); //.filter(|e| {
-        //e.get_kind() == EntityKind::StructDecl
-    //}).collect::<Vec<_>>();
-    //println!("{:?}", tree);
+//    let tree = tu1.get_entity().get_children().into_iter().collect::<Vec<_>>(); //.filter(|e| {
+//    let tree = tu1.get_entity().get_children().into_iter().filter(|e| { // .collect::<Vec<_>>()
+//        e.get_kind() != EntityKind::TypedefDecl
+//    }).collect::<Vec<_>>();
+//    println!("{:?}", tree);
 
     //for e_ in tree {
     //    let type_ =  e_.get_type().unwrap();
