@@ -60,7 +60,7 @@ fn printelem(e: clang::Entity) { //, indent: u32) {
 fn serialize_ast(e: clang::Entity) -> Vec<(clang::Entity, usize)> {
 
     let mut stack: Vec<clang::Entity> = Vec::new();
-    let mut out: Vec<(clang::Entity>, usize)> = Vec::new();
+    let mut out: Vec<(clang::Entity, usize)> = Vec::new();
     stack.push(e);
     let mut sum: usize = e.get_children().len();
 
@@ -73,6 +73,7 @@ fn serialize_ast(e: clang::Entity) -> Vec<(clang::Entity, usize)> {
             stack.push(i);
         }
     }
+    return out
 
     //for i in e.get_children().into_iter().rev() {
     //    let kind = i.get_kind();
@@ -112,9 +113,9 @@ pub fn parsecpp() {
     //printelem(tu1.get_entity(), 0);
     //printelem(tu1.get_entity());
 
-    let mut tmp: Vec<(clang::Entity, usize)> = Vec::new();
+    //let mut tmp: Vec<(clang::Entity, usize)> = Vec::new();
 
-    let serial1 = serialize_ast(tu1.get_entity(), &mut tmp);
+    let serial1 = serialize_ast(tu1.get_entity());// , &mut tmp);
     //println!("{:?}", serial1);
     for i in serial1.into_iter().rev() {
         if i.0.evaluate() != Some(clang::EvaluationResult::Unexposed) {
