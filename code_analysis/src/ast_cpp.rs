@@ -54,28 +54,43 @@ fn printelem(e: clang::Entity) { //, indent: u32) {
 //    }
 //    return 
 //}
-//
-fn serialize_ast<'a>(e: clang::Entity, xs: &'a mut Vec<(clang::EntityKind, usize)>) 
-                                        -> &'a mut Vec<(clang::EntityKind, usize)> {
+
+//fn serialize_ast<'a>(e: clang::Entity<'a>, xs: &'a mut Vec<(clang::Entity<'a>, usize)>) 
+//                                            -> &'a mut Vec<(clang::Entity<'a>, usize)> {
+fn serialize_ast(e: clang::Entity) -> Vec<(clang::Entity, usize)> {
+
+    let mut stack: Vec<clang::Entity> = Vec::new();
+    let mut out: Vec<(clang::Entity>, usize)> = Vec::new();
+    stack.push(e);
     let mut sum: usize = e.get_children().len();
 
-    for i in e.get_children().into_iter().rev() {
-        let kind = i.get_kind();
-        let mut children: usize = 0;
-        match kind {
-            //EntityKind::TypedefDecl  => children = 0,
-            //EntityKind::ObjCProtocolExpr => children = 0,
-            //EntityKind::FunctionDecl => children = serialize_ast(i, xs).last().unwrap().1,
-            //EntityKind::StructDecl   => children = serialize_ast(i, xs).last().unwrap().1,
-            //EntityKind::VarDecl      => children = serialize_ast(i, xs).last().unwrap().1,
-            //EntityKind::ParmDecl     => children = serialize_ast(i, xs).last().unwrap().1,
-            //EntityKind::ClassDecl    => children = serialize_ast(i, xs).last().unwrap().1,
-            _                        => children = serialize_ast(i, xs).last().unwrap().1,
+    while stack.is_empty() == false {
+        let node: clang::Entity = *stack.last().unwrap();
+        stack.pop();
+        //println!("{:?}", node.get_kind());
+
+        for i in node.get_children().into_iter().rev() {
+            stack.push(i);
         }
-        sum += children;
     }
-    xs.push((e.get_kind(), sum));
-    return xs
+
+    //for i in e.get_children().into_iter().rev() {
+    //    let kind = i.get_kind();
+    //    let mut children: usize = 0;
+    //    match kind {
+    //        //EntityKind::TypedefDecl  => children = 0,
+    //        //EntityKind::ObjCProtocolExpr => children = 0,
+    //        //EntityKind::FunctionDecl => children = serialize_ast(i, xs).last().unwrap().1,
+    //        //EntityKind::StructDecl   => children = serialize_ast(i, xs).last().unwrap().1,
+    //        //EntityKind::VarDecl      => children = serialize_ast(i, xs).last().unwrap().1,
+    //        //EntityKind::ParmDecl     => children = serialize_ast(i, xs).last().unwrap().1,
+    //        //EntityKind::ClassDecl    => children = serialize_ast(i, xs).last().unwrap().1,
+    //        _                        => children = serialize_ast(i, &mut *xs).last().unwrap().1,
+    //    }
+    //    sum += children;
+    //}
+    //xs.push((e, sum));
+    //return xs
 }
 
 pub fn parsecpp() {
@@ -97,12 +112,14 @@ pub fn parsecpp() {
     //printelem(tu1.get_entity(), 0);
     //printelem(tu1.get_entity());
 
-    let mut tmp: Vec<(clang::EntityKind, usize)> = Vec::new();
+    let mut tmp: Vec<(clang::Entity, usize)> = Vec::new();
 
     let serial1 = serialize_ast(tu1.get_entity(), &mut tmp);
     //println!("{:?}", serial1);
     for i in serial1.into_iter().rev() {
-        println!("{:?}", i);
+        if i.0.evaluate() != Some(clang::EvaluationResult::Unexposed) {
+            println!("{:?}", i.1);
+        }
     }
 
     // Get the structs in this translation unit
