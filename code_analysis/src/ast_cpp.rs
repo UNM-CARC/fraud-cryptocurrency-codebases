@@ -1,33 +1,46 @@
 use clang::*;
 
-fn printelem(e: clang::Entity, indent: u32) -> usize {
-    let mut sum: usize = e.get_children().len();
-    for i in 0..indent {
-        print!(" ");
-    }
-    println!("{:?}", e.get_kind()); //, e.get_mangled_name());
-    for j in e.get_children().into_iter() {
-        let kind = j.get_kind();
-        let mut children: usize = 0;
-        match kind {
-            EntityKind::TypedefDecl  => children = 0,
-            //EntityKind::FunctionDecl => printelem(j, indent + 2),
-            //EntityKind::StructDecl   => printelem(j, indent + 2),
-            //EntityKind::VarDecl      => printelem(j, indent + 2),
-            //EntityKind::ParmDecl     => printelem(j, indent + 2),
-            //EntityKind::ClassDecl    => printelem(j, indent + 2),
-            _                        => children = printelem(j, indent + 2),
+fn printelem(e: clang::Entity) { //, indent: u32) {
+    let mut stack: Vec<clang::Entity> = Vec::new();
+    stack.push(e);
+
+    //let mut sum: usize = e.get_children().len();
+    while stack.is_empty() == false {
+        let node: clang::Entity = *stack.last().unwrap();
+        stack.pop();
+        println!("{:?}", node.get_kind());
+        for i in node.get_children().into_iter().rev() {
+            stack.push(i);
         }
-        sum += children;
-        //if j.get_kind() == EntityKind::FunctionDecl {
-        //    printelem(j, indent + 2);
+        //for i in 0..indent {
+        //    print!(" ");
         //}
+        //println!("{:?}", e.get_kind()); //, e.get_mangled_name());
+
     }
+//    for j in e.get_children().into_iter() {
+//        let kind = j.get_kind();
+//        //let mut children: usize = 0;
+//        match kind {
+//            EntityKind::TypedefDecl  => print!(""),
+//            //EntityKind::FunctionDecl => printelem(j, indent + 2),
+//            //EntityKind::StructDecl   => printelem(j, indent + 2),
+//            //EntityKind::VarDecl      => printelem(j, indent + 2),
+//            //EntityKind::ParmDecl     => printelem(j, indent + 2),
+//            //EntityKind::ClassDecl    => printelem(j, indent + 2),
+//            _                        => printelem(j, indent + 2),
+//        }
+//        //sum += children;
+//        //if j.get_kind() == EntityKind::FunctionDecl {
+//        //    printelem(j, indent + 2);
+//        //}
+//    }
+
 //    for i in 0..indent {
 //        print!(" ");
 //    }
 //    println!("{:?}, {:?}", e.get_kind(), sum);
-    return sum;
+    //return sum;
 }
 
 //fn serialize_tail(e: clang::Entity, x: Vec<(clang::EntityKind, u32)) 
@@ -43,15 +56,21 @@ fn printelem(e: clang::Entity, indent: u32) -> usize {
 //}
 //
 fn serialize_ast<'a>(e: clang::Entity, xs: &'a mut Vec<(clang::EntityKind, usize)>) 
-                                    -> &'a mut Vec<(clang::EntityKind, usize)> {
+                                        -> &'a mut Vec<(clang::EntityKind, usize)> {
     let mut sum: usize = e.get_children().len();
 
-    for i in e.get_children().into_iter() {
+    for i in e.get_children().into_iter().rev() {
         let kind = i.get_kind();
         let mut children: usize = 0;
         match kind {
-            EntityKind::TypedefDecl => children = 0,
-            _                       => children = serialize_ast(i, xs).last().unwrap().1,
+            //EntityKind::TypedefDecl  => children = 0,
+            //EntityKind::ObjCProtocolExpr => children = 0,
+            //EntityKind::FunctionDecl => children = serialize_ast(i, xs).last().unwrap().1,
+            //EntityKind::StructDecl   => children = serialize_ast(i, xs).last().unwrap().1,
+            //EntityKind::VarDecl      => children = serialize_ast(i, xs).last().unwrap().1,
+            //EntityKind::ParmDecl     => children = serialize_ast(i, xs).last().unwrap().1,
+            //EntityKind::ClassDecl    => children = serialize_ast(i, xs).last().unwrap().1,
+            _                        => children = serialize_ast(i, xs).last().unwrap().1,
         }
         sum += children;
     }
@@ -65,19 +84,23 @@ pub fn parsecpp() {
 
     // Create a new `Index`
     let index1 = Index::new(&clang, false, false);
-    let index2 = Index::new(&clang, false, false);
+    //let index2 = Index::new(&clang, false, false);
 
     // Parse a source file into a translation unit
     //println!("{:?}", get_version()); // 9.0.0
-    let tu1 = index1.parser("misc/simple.cpp").parse().unwrap();
-    let tu2 = index2.parser("misc/simple2.c").parse().unwrap();
-    //let tu = index.parser("misc/prime-number.cpp").parse().unwrap();
+    //let tu1 = index1.parser("misc/simple.cpp").parse().unwrap();
+    //let tu1 = index1.parser("/tmp/bitcoin/src/chain.cpp").parse().unwrap();
+    let tu1 = index1.parser("misc/prime-number.cpp").parse().unwrap();
+    //let tu1 = index1.parser("/tmp/bitcoin/src/hash.cpp").parse().unwrap();
+    //let tu2 = index2.parser("misc/simple2.c").parse().unwrap();
 
-    printelem(tu1.get_entity(), 0);
+    //printelem(tu1.get_entity(), 0);
+    //printelem(tu1.get_entity());
 
     let mut tmp: Vec<(clang::EntityKind, usize)> = Vec::new();
 
     let serial1 = serialize_ast(tu1.get_entity(), &mut tmp);
+    //println!("{:?}", serial1);
     for i in serial1.into_iter().rev() {
         println!("{:?}", i);
     }
