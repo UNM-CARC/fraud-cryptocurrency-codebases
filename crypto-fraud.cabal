@@ -29,11 +29,11 @@ library
   exposed-modules:
       Lib
       Util
-      ParseC
+      --ParseC
       --DotSyntax
       --DotPretty
       --DotParser
-      --ParseTrees
+      ParseTrees
   other-modules:
       Paths_crypto_fraud
   hs-source-dirs:

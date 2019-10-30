@@ -62,16 +62,23 @@ fn serialize_ast(e: clang::Entity) -> Vec<(clang::Entity, usize)> {
     let mut stack: Vec<clang::Entity> = Vec::new();
     let mut out: Vec<(clang::Entity, usize)> = Vec::new();
     stack.push(e);
+    //out.push((e, 0));
+
     let mut sum: usize = e.get_children().len();
 
     while stack.is_empty() == false {
         let node: clang::Entity = *stack.last().unwrap();
         stack.pop();
+        out.push((node, node.get_children().len()));
         //println!("{:?}", node.get_kind());
 
         for i in node.get_children().into_iter().rev() {
             stack.push(i);
         }
+    }
+    for i in 0..out.len() {
+        out[i].1
+
     }
     return out
 
@@ -104,9 +111,9 @@ pub fn parsecpp() {
 
     // Parse a source file into a translation unit
     //println!("{:?}", get_version()); // 9.0.0
-    //let tu1 = index1.parser("misc/simple.cpp").parse().unwrap();
+    let tu1 = index1.parser("misc/simple.cpp").parse().unwrap();
     //let tu1 = index1.parser("/tmp/bitcoin/src/chain.cpp").parse().unwrap();
-    let tu1 = index1.parser("misc/prime-number.cpp").parse().unwrap();
+    //let tu1 = index1.parser("misc/prime-number.cpp").parse().unwrap();
     //let tu1 = index1.parser("/tmp/bitcoin/src/hash.cpp").parse().unwrap();
     //let tu2 = index2.parser("misc/simple2.c").parse().unwrap();
 
@@ -117,11 +124,11 @@ pub fn parsecpp() {
 
     let serial1 = serialize_ast(tu1.get_entity());// , &mut tmp);
     //println!("{:?}", serial1);
-    for i in serial1.into_iter().rev() {
-        if i.0.evaluate() != Some(clang::EvaluationResult::Unexposed) {
-            println!("{:?}", i.1);
-        }
-    }
+    //for i in serial1.into_iter().rev() {
+    //    if i.0.evaluate() != Some(clang::EvaluationResult::Unexposed) {
+    //        println!("{:?}", i.1);
+    //    }
+    //}
 
     // Get the structs in this translation unit
     //let tree = tu.get_entity().get_children().into_iter().collect::<Vec<_>>(); //.filter(|e| {
