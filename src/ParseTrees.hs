@@ -53,7 +53,7 @@ pair [x, y] = (x, y)
 
 writeTreeToFile :: FilePath -> String -> IO ()
 writeTreeToFile file tree = do
-  let fileNew = "code_analysis/data/" ++ (dropExtension $ takeFileName file) ++ ".ast" 
+  let fileNew = "misc/" ++ (dropExtension $ takeFileName file) ++ ".ast" 
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew WriteMode
   hPutStr h tree
