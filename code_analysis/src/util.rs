@@ -21,7 +21,7 @@ pub fn runcsv() -> Result<(), Error> {
     Ok(())
 }
 
-pub fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest, Error> {
+fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest, Error> {
     let mut context = Context::new(&SHA256);
     let mut buffer = [0; 1024];
 

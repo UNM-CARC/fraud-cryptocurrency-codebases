@@ -19,6 +19,7 @@ data-encoding = "2.1.2"
 ring = "0.16.9"
 reqwest = "0.9.19"
 select.rs = "0.4.3"
+kmpsearch = "1.0.0"
 #clang = "0.23.0"
 
 [dependencies.clang]

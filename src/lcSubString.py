@@ -3,22 +3,24 @@
 import sys, getopt
 import argparse
 
-def iter_string_compare(s, t):
+def iter_substring_match(s, t, m, n):
     C, s, t = {}," " + s, " " + t
-    for j in range(len(t)):
-        C[0, j] = j
-    for i in range(1, len(s)):
+    for j in range(n):
+        C[0, j] = 0
+    for i in range(1, m):
         C[i, 0] = i
-    for i in range(1, len(s)):
-        for j in range(1, len(t)):
+    for i in range(1, m):
+        for j in range(1, n):
             if s[i] == t[j]: c_match = C[i-1, j-1]
             else: c_match = C[i-1, j-1] + 1
             c_ins = C[i, j-1] + 1
             c_del = C[i-1, j] + 1
             c_min = min(c_match, c_ins, c_del)
             C[i, j] = c_min
-    return C[i, j]
+    finj = min([(C[i, k], k) for k in range(1, n - 1)])
+    return finj
 
+""" https://www.geeksforgeeks.org/longest-common-substring-dp-29/ """
 def LCSubStr(X, Y, m, n): 
       
     # Create a table to store lengths of 
@@ -51,32 +53,38 @@ def LCSubStr(X, Y, m, n):
                 LCSuff[i][j] = 0
     return result 
 
+def substrings(tree, l):
+    n = 80
+    return [tree[i:i+n] for i in range(0, l, n)]
+
+
 def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("tree1")
     parser.add_argument("tree2")
 
     args = parser.parse_args()
+    out = 0
     print(args.tree1)
     print(args.tree2)
-    #inputfile = ''
-    #try:
-    #   opts, args = getopt.getopt(argv,"hi::",["ifile=","ofile="])
-    #except:
-    #    print('edit_dist.py ')
 
-    with open('misc/simple.ast', 'r') as file1:
+    with open(args.tree1, 'r') as file1:
         tree1 = file1.read()
-    with open('misc/simple2.ast', 'r') as file2:
+    with open(args.tree2, 'r') as file2:
         tree2 = file2.read()
 
-    #x = len(data)
-
     #print(data)
-    out = LCSubStr(tree1, tree2, len(tree1), len(tree2))
+
+    subs = substrings(tree1, len(tree1))
+    for i in range(0, len(subs)):
+        #out = iter_substring_match(subs[i], tree2, len(tree1), len(tree2))
+        out += LCSubStr(subs[i], tree2, len(subs[i]), len(tree2))
     print(len(tree1))
     print(len(tree2))
     print(out)
+
+#    for i in range(0, len(subs)):
+#        print(subs[i])
 
 if __name__ == "__main__":
    main(sys.argv[1:])

@@ -9,6 +9,7 @@ extern crate ring;
 extern crate reqwest;
 extern crate select;
 extern crate clang;
+extern crate kmpsearch;
 
 //use std::io;
 //use std::io::prelude::*;
@@ -20,6 +21,9 @@ extern crate clang;
 
 #[warn(unused_imports)]
 use walkdir::{DirEntry, WalkDir};
+use std::env;
+use std::fs;
+///use crate::Haystack;
 
 pub mod util;
 pub mod scrape;
@@ -42,10 +46,10 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
 }
 
 fn main() {
-//    let universe = mpi::initialize().unwrap();
-//    let world = universe.world();
-//    let size = world.size();
-//    let rank = world.rank();
+    //let universe = mpi::initialize().unwrap();
+    //let world = universe.world();
+    //let size = world.size();
+    //let rank = world.rank();
 
     //scrape::scraper("https://coinmarketcap.com/all/views/all/")
 
@@ -65,5 +69,14 @@ fn main() {
     //    .filter_map(|y| util::runhash(y))
     //    .filter_map(|v| v.ok())
     //    .for_each(|x| println!("{}", x.path().display()));
-    ast_cpp::parsecpp();
+    //ast_cpp::parsecpp();
+    let args: Vec<String>  = env::args().collect();
+    let file1 = &args[1];
+    let file2 = &args[2];
+    let tree1 = fs::read_to_string(file1)
+        .expect("No file for tree 1.");
+    let tree2 = fs::read_to_string(file2)
+        .expect("No file for tree 2.");
+
+
 }

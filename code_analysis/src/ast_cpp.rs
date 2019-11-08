@@ -77,7 +77,7 @@ fn serialize_ast(e: clang::Entity) -> Vec<(clang::Entity, usize)> {
         }
     }
     for i in 0..out.len() {
-        out[i].1
+        // out[i].1
 
     }
     return out
