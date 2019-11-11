@@ -84,7 +84,17 @@ treeToString file = do
       --hsh  = foldl (\acc y -> Map.lookup ) "" str
   return str
 
-filterOut = ["TypedefDecl", "TypeRef"]
+filterOut = [ "TypedefDecl"
+            , "TypeRef"
+            , "FirstExpr"
+            , "ParmDecl"
+            , "UsingDeclaration"
+            , "OverloadedDeclRef"
+            , "Namespace"
+            , "DeclRefExpr"
+            , "ParenExpr"
+            , "CStyleCastExpr"
+            ]
 
 serialize :: Cursor -> String
 serialize root = '(' : (let x = Map.lookup (show $ cursorKind root) kindHash in

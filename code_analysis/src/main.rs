@@ -77,6 +77,4 @@ fn main() {
         .expect("No file for tree 1.");
     let tree2 = fs::read_to_string(file2)
         .expect("No file for tree 2.");
-
-
 }
