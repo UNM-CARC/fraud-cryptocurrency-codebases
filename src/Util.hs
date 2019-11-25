@@ -27,7 +27,7 @@ import           System.Directory.Tree (
 import           System.FilePath (takeExtension)
 
 import Lib
-
+import ParseTrees
 
 -- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
@@ -69,9 +69,9 @@ compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
 --                            head x then (y : fst a, snd a + 1)
 --                                     else (fst a, snd a)) ([], 0.0) ys))
   where
-   fun = (foldr (\y a -> if head y ==
-                            head x then (y : fst a, snd a + 1)
-                                     else (fst a, snd a)) ([], 0) ys)
+    fun = (foldr (\y a -> if head y ==
+                             head x then (y : fst a, snd a + 1)
+                                    else (fst a, snd a)) ([], 0) ys)
 
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
@@ -92,6 +92,12 @@ traverseDir validDir transition =
            state' <- foldM transition state filePaths -- process current dir
            foldM go state' (filter validDir dirPaths) -- process subdirs
            in go
+
+cloneRepos :: [[String]] -> IO b
+cloneRepos (x:xs) = do
+  cloneRepo x
+  print $ head $ tail x
+  cloneRepos xs
 
 --allFiles :: String -> IO (DirTree FilePath)
 --allFiles dir = do

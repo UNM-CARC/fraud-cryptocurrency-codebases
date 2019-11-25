@@ -33,18 +33,10 @@ import           Data.Traversable (traverse)
 
 import Lib
 import Util
---import ParseTrees
-
---runExperiment (n:names) acc = runExperiment names (foldr (\y ac -> ))
-
-cloneRepos :: [[String]] -> IO b
-cloneRepos (x:xs) = do
-  cloneRepo x
-  print $ head $ tail x
-  cloneRepos xs
+import ParseTrees
 
 
-
+-- Compare repositories both original and after removal of whitespace and comments.
 compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do
 

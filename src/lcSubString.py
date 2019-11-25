@@ -134,10 +134,11 @@ def main(argv):
 
     #print(data)
 
-    subs = substrings(tree1, len(tree1))
-    for i in range(0, len(subs)):
+    #subs = substrings(tree1, len(tree1))
+    #for i in range(0, len(subs)):
     #    #out = iter_substring_match(subs[i], tree2, len(tree1), len(tree2))
-        out += LCSubStr(subs[i], tree2, len(subs[i]), len(tree2))
+    #    out += LCSubStr(subs[i], tree2, len(subs[i]), len(tree2))
+    out = LCSubStr(tree1, tree2, len(tree1), len(tree2))
     #KMPSearch(tree1, tree2)
     print(len(tree1))
     print(len(tree2))

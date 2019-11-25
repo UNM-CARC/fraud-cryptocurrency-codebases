@@ -6,8 +6,10 @@ import qualified Data.GraphViz.Types as T
 import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.Map.Strict as Map
+import qualified Data.Set as S
 --import           Data.Array
-import           Data.List
+import qualified Data.List as L
+import           Data.Set hiding (map, drop)
 import           Data.Function
 import           Data.Ord (comparing)
 import           Data.GraphViz.Types.Generalised
@@ -19,8 +21,37 @@ import           Language.C.Clang
 import           Language.C.Clang.Cursor
 import           Data.Map.Strict (Map)
 
---import DotParser
---import DotPretty
+import Util
+
+
+-- "https://codereview.stackexchange.com/questions/164889/finding-the
+-- -longest-common-substring-of-multiple-strings-in-haskell"
+-- find all the substrings of length n
+ngrams :: Int -> String -> [String]
+ngrams n s | n > length s = []
+           | otherwise    = L.take n s : ngrams n (drop 1 s)
+
+-- find the longest common substring of multiple strings
+longestCommonSubstring :: [String] -> String
+longestCommonSubstring xs = go 0 $ length (head xs) + 1
+ where
+  -- find a substring of a given length n that is common to all strings
+  commonSubstrings n = foldr1 S.intersection (map (S.fromList . ngrams n) xs)
+  go l r
+    -- if the binary search ended, pick one common substring
+    | r - l == 1 = S.findMin $ commonSubstrings l
+    | otherwise
+    = if S.null $ commonSubstrings m
+      then go l m    -- the length is too big, try a smaller one
+      else go m r    -- try longer length to find longer substring
+   where
+    m = (l + r) `div` 2    -- the middle point
+
+
+
+--lcstr xs ys = maximumBy (compare `on` length) . concat $ [f xs' ys | xs' <- tails xs] ++ [f xs ys' | ys' <- drop 1 $ tails ys]
+--  where f xs ys = scanl g [] $ zip xs ys
+--        g z (x, y) = if x == y then z ++ [x] else []
 
 -- Rosetta Code: Longest Common Substring
 -- So far seems to be too inefficient
@@ -37,8 +68,8 @@ import           Data.Map.Strict (Map)
 
 longestCommon :: Eq a => [a] -> [a] -> [a]
 longestCommon a b =
-  maximumBy (comparing length) $
-  (uncurry intersect . pair) $ [tail . inits <=< tails] <*> [a, b]
+  L.maximumBy (comparing length) $
+  (uncurry L.intersect . pair) $ [tail . L.inits <=< L.tails] <*> [a, b]
 
 pair :: [a] -> (a, a)
 pair [x, y] = (x, y)
@@ -60,19 +91,22 @@ writeTreeToFile file tree = do
   hClose h
                                        
 
-parseCPP :: FilePath -> IO ()
+parseCPP :: FilePath -> IO String
 parseCPP file = do
     idx <- createIndex
     tu  <- parseTranslationUnit idx file ["-I/usr/local/include"]
     let root = translationUnitCursor tu
         --children = cursorChildren root
-        children = cursorDescendants root
+        --children = L.foldr (\y x -> if (L.foldr (\yy xx -> if (show $ cursorKind y)
+        --                                             == yy then False else xx) True filterOut)
+        --                           then y : x else x) [] (cursorDescendants root)
+        children = serialize2 root
         --functionDecls = filter (\c -> cursorKind c == FunctionDecl) children
     --forM_ children (print . cursorSpelling)
     --print root
     --print $ map cursorKind children
     --mapM_ print $ map cursorKind children
-    mapM_ print children
+    return children
 
 treeToString :: FilePath -> IO String
 treeToString file = do
@@ -84,51 +118,111 @@ treeToString file = do
       --hsh  = foldl (\acc y -> Map.lookup ) "" str
   return str
 
+keep :: [String]
+keep = [ "FunctionDecl" 
+       , "ParmDecl"
+       , "StructDecl"
+       , "UnexposedDecl"
+       , "UnexposedExpr"
+       , "IntegerLiteral"
+       ]
+
+filterOut :: [String]
 filterOut = [ "TypedefDecl"
             , "TypeRef"
-            , "FirstExpr"
-            , "ParmDecl"
+            , "TypeAliasDecl"
             , "UsingDeclaration"
+            , "UsingDirective"
+            , "TemplateRef" 
+            , "TemplateTypeParameter" 
+            , "FunctionTemplate" 
+            , "ClassTemplate"
+            , "TemplateTemplateParameter"
+            --, "FirstExpr"
+            --, "LastExpr"
+            --, "FunctionDecl"
+            --, "IntegerLiteral"
+            --, "ParmDecl"
+            , "UsingDeclaration"
+            , "FirstAttr"
             , "OverloadedDeclRef"
-            , "Namespace"
+            , "Namespace" 
+            , "NamespaceRef"
             , "DeclRefExpr"
-            , "ParenExpr"
-            , "CStyleCastExpr"
+            --, "ParenExpr"
+            --, "CStyleCastExpr"
+            --, "UnexposedDecl" 
+            --, "UnexposedExpr"
+            , "FirstRef" 
+            , "LastRef"
+            , "MemberRefExpr"
+            , "EnumConstantDecl"
+            , "NamespaceAlias"
+            , "ModuleImportDecl"
+            , "CXXBaseSpecifier" 
+            , "FieldDecl"
             ]
 
 serialize :: Cursor -> String
 serialize root = '(' : (let x = Map.lookup (show $ cursorKind root) kindHash in
                            case x of Just o  -> o     -- Replace CursorKind with 2 letter string.
                                      Nothing -> "zz") 
-                    ++ (foldl (\acc y -> if (foldr (\yy xx -> if (show $ cursorKind y) 
+                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y) 
                                                                 == yy then False
                                                                         else xx) True filterOut)
                                             then acc ++ serialize y 
                                               else acc) "" (cursorChildren root))
                     ++ ")"
 
-compareTrees :: FilePath -> FilePath -> IO ()
+serialize2 :: Cursor -> String
+serialize2 root = '(' : (show $ cursorKind root)
+                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y) 
+                                                                == yy then False
+                                                                        else xx) True filterOut)
+                                            then acc ++ serialize2 y 
+                                              else acc) "" (cursorChildren root))
+                    ++ ")"
+
+compareTrees :: FilePath -> FilePath -> IO (String, String, Int, Int, Int) -- IO ()
 compareTrees file1 file2 = do
   x <- treeToString file1 
   y <- treeToString file2
-  let out = longestCommon x y
-  print $ "Size of tree x: " ++ (show $ length x)
-  print $ "Size of tree y: " ++ (show $ length y)
-  print $ "Size of subtree: " ++ (show $ length out)
+  let out = longestCommonSubstring $ x : [y]
+  return (file1, file2, length x, length y, out)
+  --print $ "Size of tree x: " ++ (show $ length x)
+  --print $ "Size of tree y: " ++ (show $ length y)
+  --print $ "Size of subtree: " ++ (show $ length out)
+  --print out
 
-{-
-serializeCPP file = do
-    idx <- createIndex
-    tu  <- parseTranslationUnit idx file ["-I/usr/local/include"]
-    let root = translationUnitCursor tu
-        children = cursorChildren root
-        
-        --functionDecls = filter (\c -> cursorKind c == FunctionDecl) children
-    --forM_ children (print . cursorSpelling)
-    --print root
-    --print $ map cursorKind children
-    mapM_ print $ map cursorKind children
--}
+get3rd :: (a, b, c, d, e) -> c
+get3rd (_,_,x,_,_) = x
+
+get4th :: (a, b, c, d, e) -> d
+get4th (_,_,_,x,_) = x
+
+get5th :: (a, b, c, d, e) -> e
+get5th (_,_,_,_,x) = x
+
+compareAllParseTrees :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)] 
+                                                 -> [(String, String, Int, Int, Int)]
+compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys
+  ((fst fun, snd fun, get3rd fun, get4th fun, get5th fun) : acc)
+  where
+    fun = foldr (\y acc -> )
+
+compareParseTreesRepos :: String -> String -> IO ()
+compareParseTreesRepos repo1 repo2 = do
+  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
+  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
+  let dirs1 = map (\x -> x ++ " ") dirlist1
+  let dirs2 = map (\x -> x ++ " ") dirlist2
+  
+  let inter1 = map init $ filterFileType ".cpp " dirs1 
+                       ++ filterFileType ".c "   dirs1
+  let inter2 = map init $ filterFileType ".cpp " dirs2
+                       ++ filterFileType ".c "   dirs2
+  
+  --print inter1
 
 generateAST repo file = do
   DIR.createDirectoryIfMissing True ("/tmp/AST/" ++ repo ++ "/")
@@ -153,13 +247,14 @@ generateAST repo file = do
 --  let x = DOT.readDotFile ("/tmp/AST/" ++ repo ++ "/" ++ (dropExtension $ takeFileName file) ++ ".ast") -- :: DotGraph a
 --  let y = x
 --  DOT.putDot y
+
 kindHash :: Map String String
-kindHash = Map.fromList $ zip kind $ take 189 [z | x <- alph, y <- alph, let z = x:[y]]
+kindHash = Map.fromList $ zip kind $ L.take 189 [z | x <- alph, y <- alph, let z = x:[y]]
   where 
     alph = "abcdefghijklmnopqrstuvwxyz"
     kind = 
         [ "UnexposedDecl",
-          "StructDecl ",
+          "StructDecl",
           "UnionDecl",
           "ClassDecl",
           "EnumDecl",
