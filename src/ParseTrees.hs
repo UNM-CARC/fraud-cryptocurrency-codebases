@@ -188,7 +188,7 @@ compareTrees file1 file2 = do
   x <- treeToString file1 
   y <- treeToString file2
   let out = longestCommonSubstring $ x : [y]
-  return (file1, file2, length x, length y, out)
+  return (file1, file2, length x, length y, length out)
   --print $ "Size of tree x: " ++ (show $ length x)
   --print $ "Size of tree y: " ++ (show $ length y)
   --print $ "Size of subtree: " ++ (show $ length out)
@@ -205,10 +205,9 @@ get5th (_,_,_,_,x) = x
 
 compareAllParseTrees :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)] 
                                                  -> [(String, String, Int, Int, Int)]
-compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys
-  ((fst fun, snd fun, get3rd fun, get4th fun, get5th fun) : acc)
+compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
   where
-    fun = foldr (\y acc -> )
+    fun = L.foldr (\y a -> (compareTrees f y) : a) [] ys
 
 compareParseTreesRepos :: String -> String -> IO ()
 compareParseTreesRepos repo1 repo2 = do
@@ -221,6 +220,7 @@ compareParseTreesRepos repo1 repo2 = do
                        ++ filterFileType ".c "   dirs1
   let inter2 = map init $ filterFileType ".cpp " dirs2
                        ++ filterFileType ".c "   dirs2
+  print inter1
   
   --print inter1
 

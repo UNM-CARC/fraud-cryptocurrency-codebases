@@ -27,7 +27,7 @@ import           System.Directory.Tree (
 import           System.FilePath (takeExtension)
 
 import Lib
-import ParseTrees
+--import ParseTrees
 
 -- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
