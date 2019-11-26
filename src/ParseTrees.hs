@@ -203,11 +203,15 @@ get4th (_,_,_,x,_) = x
 get5th :: (a, b, c, d, e) -> e
 get5th (_,_,_,_,x) = x
 
-compareAllParseTrees :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)] 
-                                                 -> [(String, String, Int, Int, Int)]
+compareAllParseTrees :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)] 
+                                                 -> [IO (String, String, Int, Int, Int)]
 compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
   where
-    fun = L.foldr (\y a -> (compareTrees f y) : a) [] ys
+    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
+    --xx f2 = do
+    --  m <- compareTrees f f2
+    --  let yy = m
+    --  yy
 
 compareParseTreesRepos :: String -> String -> IO ()
 compareParseTreesRepos repo1 repo2 = do
