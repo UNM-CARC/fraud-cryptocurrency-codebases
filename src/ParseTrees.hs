@@ -213,7 +213,7 @@ compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
     --  let yy = m
     --  yy
 
-compareParseTreesRepos :: String -> String -> IO ()
+compareParseTreesRepos :: String -> String -> IO (String, String, Int, Int, Int)
 compareParseTreesRepos repo1 repo2 = do
   dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
   dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
@@ -224,7 +224,7 @@ compareParseTreesRepos repo1 repo2 = do
                        ++ filterFileType ".c "   dirs1
   let inter2 = map init $ filterFileType ".cpp " dirs2
                        ++ filterFileType ".c "   dirs2
-  print inter1
+  foldr1 (\y _ -> y) $ compareAllParseTrees inter1 inter2 []
   
   --print inter1
 
