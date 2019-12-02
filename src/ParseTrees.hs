@@ -1,8 +1,8 @@
 module ParseTrees where
 
-import qualified Data.GraphViz.Commands.IO as DOT
+--import qualified Data.GraphViz.Commands.IO as DOT
 import qualified System.Directory as DIR
-import qualified Data.GraphViz.Types as T
+-- import qualified Data.GraphViz.Types as T
 import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.Map.Strict as Map
@@ -12,7 +12,7 @@ import qualified Data.List as L
 import           Data.Set hiding (map, drop)
 import           Data.Function
 import           Data.Ord (comparing)
-import           Data.GraphViz.Types.Generalised
+-- import           Data.GraphViz.Types.Generalised
 import           System.Process
 import           System.IO
 import           System.FilePath.Posix
@@ -187,33 +187,41 @@ compareTrees :: FilePath -> FilePath -> IO (String, String, Int, Int, Int) -- IO
 compareTrees file1 file2 = do
   x <- treeToString file1 
   y <- treeToString file2
-  let out = longestCommonSubstring $ x : [y]
-  return (file1, file2, length x, length y, length out)
+  let out  = longestCommonSubstring $ x : [y]
+  let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
+  return test
   --print $ "Size of tree x: " ++ (show $ length x)
   --print $ "Size of tree y: " ++ (show $ length y)
   --print $ "Size of subtree: " ++ (show $ length out)
   --print out
 
-get3rd :: (a, b, c, d, e) -> c
+--get3rd :: (a, b, c, d, e) -> c
 get3rd (_,_,x,_,_) = x
 
-get4th :: (a, b, c, d, e) -> d
+--get4th :: (a, b, c, d, e) -> d
 get4th (_,_,_,x,_) = x
 
-get5th :: (a, b, c, d, e) -> e
+--get5th :: (a, b, c, d, e) -> e
 get5th (_,_,_,_,x) = x
 
-compareAllParseTrees :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)] 
-                                                 -> [IO (String, String, Int, Int, Int)]
-compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
+compareAllParseTrees :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)] 
+compareAllParseTrees xs ys = helper xs ys []
   where
-    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
+    helper :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)]
+                                       -> [(String, String, Int, Int, Int)]
+    helper (f:fs) ms acc = do
+      fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
+      let xx = L.foldr (\(a,b,c,d,e) m -> (a, b, c, d, e) : m) [] fun
+      helper fs ms (acc ++ xx)
+--compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
+--  where
+--    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
     --xx f2 = do
     --  m <- compareTrees f f2
     --  let yy = m
     --  yy
 
-compareParseTreesRepos :: String -> String -> IO (String, String, Int, Int, Int)
+compareParseTreesRepos :: String -> String -> IO [(String, String, Int, Int, Int)]
 compareParseTreesRepos repo1 repo2 = do
   dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
   dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
@@ -224,10 +232,12 @@ compareParseTreesRepos repo1 repo2 = do
                        ++ filterFileType ".c "   dirs1
   let inter2 = map init $ filterFileType ".cpp " dirs2
                        ++ filterFileType ".c "   dirs2
-  foldr1 (\y _ -> y) $ compareAllParseTrees inter1 inter2 []
+  let out = compareAllParseTrees inter1 inter2
+  return out
   
   --print inter1
 
+generateAST :: String -> String -> IO ()
 generateAST repo file = do
   DIR.createDirectoryIfMissing True ("/tmp/AST/" ++ repo ++ "/")
   let command = prefix ++ suffix

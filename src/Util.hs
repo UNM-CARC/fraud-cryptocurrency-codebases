@@ -18,7 +18,7 @@ import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
-import           Text.Regex.TDFA
+-- import           Text.Regex.TDFA
 --import           Text.Regex.PCRE
 import           System.Directory.Tree (
                    AnchoredDirTree(..), DirTree(..),
