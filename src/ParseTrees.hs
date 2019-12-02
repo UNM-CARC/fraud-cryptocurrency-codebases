@@ -204,15 +204,17 @@ get4th (_,_,_,x,_) = x
 --get5th :: (a, b, c, d, e) -> e
 get5th (_,_,_,_,x) = x
 
-compareAllParseTrees :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)] 
-compareAllParseTrees xs ys = helper xs ys []
+compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)] 
+compareAllParseTrees xs ys = sequence $ helper xs ys []
   where
-    helper :: [FilePath] -> [FilePath] -> [(String, String, Int, Int, Int)]
-                                       -> [(String, String, Int, Int, Int)]
+    helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
+                                       -> [IO (String, String, Int, Int, Int)]
+    helper []     _  acc = acc
     helper (f:fs) ms acc = do
       fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
-      let xx = L.foldr (\(a,b,c,d,e) m -> (a, b, c, d, e) : m) [] fun
-      helper fs ms (acc ++ xx)
+      --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
+      --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
+      helper fs ms (acc ++ [fun])
 --compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
 --  where
 --    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
@@ -233,7 +235,7 @@ compareParseTreesRepos repo1 repo2 = do
   let inter2 = map init $ filterFileType ".cpp " dirs2
                        ++ filterFileType ".c "   dirs2
   let out = compareAllParseTrees inter1 inter2
-  return out
+  out
   
   --print inter1
 
