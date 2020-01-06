@@ -210,11 +210,12 @@ compareAllParseTrees xs ys = sequence $ helper xs ys []
     helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
                                        -> [IO (String, String, Int, Int, Int)]
     helper []     _  acc = acc
-    helper (f:fs) ms acc = do
-      fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
+    helper (f:fs) ms acc = let
+      --fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ms
+      fun = map (\y -> [(compareTrees f y)]) ms in 
       --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
-      helper fs ms (acc ++ [fun])
+      helper fs ms (acc ++ (concat fun))
 --compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
 --  where
 --    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
@@ -231,9 +232,11 @@ compareParseTreesRepos repo1 repo2 = do
   let dirs2 = map (\x -> x ++ " ") dirlist2
   
   let inter1 = map init $ filterFileType ".cpp " dirs1 
-                       ++ filterFileType ".c "   dirs1
+                       -- ++ filterFileType ".c "   dirs1
   let inter2 = map init $ filterFileType ".cpp " dirs2
-                       ++ filterFileType ".c "   dirs2
+                       -- ++ filterFileType ".c "   dirs2
+  print inter1
+  print inter2
   let out = compareAllParseTrees inter1 inter2
   out
   

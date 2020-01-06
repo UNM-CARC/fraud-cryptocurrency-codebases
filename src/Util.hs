@@ -77,6 +77,7 @@ filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
 --filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs -- Old
 
+-- Remove duplicate files
 compressFiles :: [[String]] -> [[String]]
 compressFiles files = foldr (\b a -> if a == []
   then b:a else if (head b) == (head $ head a)
