@@ -7,12 +7,10 @@ import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.Map.Strict as Map
 import qualified Data.Set as S
---import           Data.Array
 import qualified Data.List as L
 import           Data.Set hiding (map, drop)
 import           Data.Function
 import           Data.Ord (comparing)
--- import           Data.GraphViz.Types.Generalised
 import           System.Process
 import           System.IO
 import           System.FilePath.Posix
@@ -20,6 +18,7 @@ import           Control.Monad
 import           Language.C.Clang
 import           Language.C.Clang.Cursor
 import           Data.Map.Strict (Map)
+import           Control.Exception
 
 import Util
 
@@ -48,7 +47,6 @@ longestCommonSubstring xs = go 0 $ length (head xs) + 1
     m = (l + r) `div` 2    -- the middle point
 
 
-
 --lcstr xs ys = maximumBy (compare `on` length) . concat $ [f xs' ys | xs' <- tails xs] ++ [f xs ys' | ys' <- drop 1 $ tails ys]
 --  where f xs ys = scanl g [] $ zip xs ys
 --        g z (x, y) = if x == y then z ++ [x] else []
@@ -59,9 +57,9 @@ longestCommonSubstring xs = go 0 $ length (head xs) + 1
 --subStrings s =
 --  let intChars = length s
 --  in [ take n $ drop i s
---     | i <- [0..intChars - 1] 
+--     | i <- [0..intChars - 1]
 --     , n <- [1..intChars - i] ]
--- 
+--
 --longestCommon :: Eq a => [a] -> [a] -> [a]
 --longestCommon a b =
 --  maximumBy (comparing length) (subStrings a `intersect` subStrings b)
@@ -80,16 +78,15 @@ pair [x, y] = (x, y)
 --
 --longestCommon :: String -> String -> Int
 --longestCommon a b
---  where lcSuff = 
+--  where lcSuff =
 
-writeTreeToFile :: FilePath -> String -> IO ()
-writeTreeToFile file tree = do
-  let fileNew = "misc/" ++ (dropExtension $ takeFileName file) ++ ".ast" 
+writeTreeToFile :: FilePath -> String -> String -> IO ()
+writeTreeToFile file tree num = do
+  let fileNew = "asts/" ++ (takeBaseName file) ++ num ++ ".ast"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew WriteMode
   hPutStr h tree
   hClose h
-                                       
 
 parseCPP :: FilePath -> IO String
 parseCPP file = do
@@ -111,21 +108,25 @@ parseCPP file = do
 treeToString :: FilePath -> IO String
 treeToString file = do
   idx <- createIndex
-  tu  <- parseTranslationUnit idx file ["-I/usr/local/include"]
-  let root = translationUnitCursor tu
-      str  = serialize root
+  tu  <- try (parseTranslationUnit idx file ["-I/usr/local/include"])
+                                            :: IO (Either SomeException TranslationUnit)
+  case tu of
+    Left ex -> return $ "Caught: " ++ show ex
+    Right trans -> do
+      let root = translationUnitCursor trans
+          str  = serialize root
       --filt = filter (not . (`elem` "abcdefghijklmnopqrstuvwxyz")) str
       --hsh  = foldl (\acc y -> Map.lookup ) "" str
-  return str
+      return str
 
 keep :: [String]
-keep = [ "FunctionDecl" 
-       , "ParmDecl"
-       , "StructDecl"
-       , "UnexposedDecl"
-       , "UnexposedExpr"
-       , "IntegerLiteral"
-       ]
+keep =      [ "FunctionDecl"
+            , "ParmDecl"
+            , "StructDecl"
+            , "UnexposedDecl"
+            , "UnexposedExpr"
+            , "IntegerLiteral"
+            ]
 
 filterOut :: [String]
 filterOut = [ "TypedefDecl"
@@ -133,9 +134,9 @@ filterOut = [ "TypedefDecl"
             , "TypeAliasDecl"
             , "UsingDeclaration"
             , "UsingDirective"
-            , "TemplateRef" 
-            , "TemplateTypeParameter" 
-            , "FunctionTemplate" 
+            , "TemplateRef"
+            , "TemplateTypeParameter"
+            , "FunctionTemplate"
             , "ClassTemplate"
             , "TemplateTemplateParameter"
             --, "FirstExpr"
@@ -146,47 +147,49 @@ filterOut = [ "TypedefDecl"
             , "UsingDeclaration"
             , "FirstAttr"
             , "OverloadedDeclRef"
-            , "Namespace" 
+            , "Namespace"
             , "NamespaceRef"
             , "DeclRefExpr"
             --, "ParenExpr"
             --, "CStyleCastExpr"
-            --, "UnexposedDecl" 
+            --, "UnexposedDecl"
             --, "UnexposedExpr"
-            , "FirstRef" 
+            , "FirstRef"
             , "LastRef"
             , "MemberRefExpr"
             , "EnumConstantDecl"
             , "NamespaceAlias"
             , "ModuleImportDecl"
-            , "CXXBaseSpecifier" 
+            , "CXXBaseSpecifier"
             , "FieldDecl"
             ]
 
 serialize :: Cursor -> String
 serialize root = '(' : (let x = Map.lookup (show $ cursorKind root) kindHash in
                            case x of Just o  -> o     -- Replace CursorKind with 2 letter string.
-                                     Nothing -> "zz") 
-                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y) 
+                                     Nothing -> "zz")
+                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y)
                                                                 == yy then False
                                                                         else xx) True filterOut)
-                                            then acc ++ serialize y 
+                                            then acc ++ serialize y
                                               else acc) "" (cursorChildren root))
                     ++ ")"
 
 serialize2 :: Cursor -> String
 serialize2 root = '(' : (show $ cursorKind root)
-                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y) 
+                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y)
                                                                 == yy then False
                                                                         else xx) True filterOut)
-                                            then acc ++ serialize2 y 
+                                            then acc ++ serialize2 y
                                               else acc) "" (cursorChildren root))
                     ++ ")"
 
 compareTrees :: FilePath -> FilePath -> IO (String, String, Int, Int, Int) -- IO ()
 compareTrees file1 file2 = do
-  x <- treeToString file1 
+  x <- treeToString file1
   y <- treeToString file2
+  writeTreeToFile file1 x "1"
+  writeTreeToFile file2 y "2"
   let out  = longestCommonSubstring $ x : [y]
   let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
   return test
@@ -195,16 +198,28 @@ compareTrees file1 file2 = do
   --print $ "Size of subtree: " ++ (show $ length out)
   --print out
 
---get3rd :: (a, b, c, d, e) -> c
-get3rd (_,_,x,_,_) = x
+buildTrees :: FilePath -> FilePath -> IO ()
+buildTrees file1 file2 = do
+  x <- evaluate $ treeToString file1
+  y <- evaluate $ treeToString file2
+  m <- x
+  n <- y
+  writeTreeToFile file1 m "1"
+  writeTreeToFile file2 n "2"
+  --let out  = longestCommonSubstring $ x : [y]
+  --let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
+  --return test
 
---get4th :: (a, b, c, d, e) -> d
-get4th (_,_,_,x,_) = x
+g3rd :: (a, b, c, d, e) -> c
+g3rd (_,_,x,_,_) = x
 
---get5th :: (a, b, c, d, e) -> e
-get5th (_,_,_,_,x) = x
+g4th :: (a, b, c, d, e) -> d
+g4th (_,_,_,x,_) = x
 
-compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)] 
+g5th  :: (a, b, c, d, e) -> e
+g5th (_,_,_,_,x) = x
+
+compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)]
 compareAllParseTrees xs ys = sequence $ helper xs ys []
   where
     helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
@@ -212,10 +227,11 @@ compareAllParseTrees xs ys = sequence $ helper xs ys []
     helper []     _  acc = acc
     helper (f:fs) ms acc = let
       --fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ms
-      fun = map (\y -> [(compareTrees f y)]) ms in 
+      fun = map (\y -> [(compareTrees f y)]) ms in
       --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
       helper fs ms (acc ++ (concat fun))
+
 --compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
 --  where
 --    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
@@ -224,23 +240,42 @@ compareAllParseTrees xs ys = sequence $ helper xs ys []
     --  let yy = m
     --  yy
 
+buildAllParseTrees :: [FilePath] -> [FilePath] -> IO [()]
+buildAllParseTrees xs ys = sequence $ helper xs ys []
+  where
+    helper :: [FilePath] -> [FilePath] -> [IO ()]
+                                       -> [IO ()]
+    helper []     _  acc = acc
+    helper (f:fs) ms acc = let
+      fun = map (\y -> [(buildTrees f y)]) ms in
+      helper fs ms (acc ++ (concat fun))
+
 compareParseTreesRepos :: String -> String -> IO [(String, String, Int, Int, Int)]
 compareParseTreesRepos repo1 repo2 = do
-  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
-  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
-  let dirs1 = map (\x -> x ++ " ") dirlist1
-  let dirs2 = map (\x -> x ++ " ") dirlist2
-  
-  let inter1 = map init $ filterFileType ".cpp " dirs1 
-                       -- ++ filterFileType ".c "   dirs1
+  dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
+  dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
+  let dirs1  = map (\x -> x ++ " ") dirlist1
+  let dirs2  = map (\x -> x ++ " ") dirlist2
+  let inter1 = map init $ filterFileType ".cpp " dirs1
   let inter2 = map init $ filterFileType ".cpp " dirs2
-                       -- ++ filterFileType ".c "   dirs2
-  print inter1
-  print inter2
-  let out = compareAllParseTrees inter1 inter2
-  out
-  
   --print inter1
+  --print inter2
+  let out    = compareAllParseTrees inter1 inter2
+  out
+  --print inter1
+
+buildParseTreesRepos :: String -> String -> IO [()]
+buildParseTreesRepos repo1 repo2 = do
+  dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
+  dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
+  let dirs1  = map (\x -> x ++ " ") dirlist1
+  let dirs2  = map (\x -> x ++ " ") dirlist2
+  let inter1 = map init $ filterFileType ".cpp " dirs1
+  let inter2 = map init $ filterFileType ".cpp " dirs2
+  --print inter1
+  --print inter2
+  let out    = buildAllParseTrees inter1 inter2
+  out
 
 generateAST :: String -> String -> IO ()
 generateAST repo file = do
@@ -269,9 +304,9 @@ generateAST repo file = do
 
 kindHash :: Map String String
 kindHash = Map.fromList $ zip kind $ L.take 189 [z | x <- alph, y <- alph, let z = x:[y]]
-  where 
+  where
     alph = "abcdefghijklmnopqrstuvwxyz"
-    kind = 
+    kind =
         [ "UnexposedDecl",
           "StructDecl",
           "UnionDecl",
@@ -460,5 +495,5 @@ kindHash = Map.fromList $ zip kind $ L.take 189 [z | x <- alph, y <- alph, let z
           "LastPreprocessing",
           "ModuleImportDecl",
           "FirstExtraDecl",
-          "LastExtraDecl" 
+          "LastExtraDecl"
         ]
