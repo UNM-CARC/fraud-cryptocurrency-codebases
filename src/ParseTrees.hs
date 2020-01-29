@@ -88,6 +88,14 @@ writeTreeToFile file tree num = do
   hPutStr h tree
   hClose h
 
+writeDataToFile :: FilePath -> String -> IO ()
+writeDataToFile file dat = do
+  let fileNew = "data/" ++ (takeBaseName file) ++ ".csv"
+  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
+  h <- openFile fileNew WriteMode
+  hPutStr h dat
+  hClose h
+
 parseCPP :: FilePath -> IO String
 parseCPP file = do
     idx <- createIndex
@@ -210,6 +218,9 @@ buildTrees file1 file2 = do
   --let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
   --return test
 
+g1st :: (String, String, Int, Int, Int) -> String
+g1st (x,_,_,_,_) = x
+
 g3rd :: (a, b, c, d, e) -> c
 g3rd (_,_,x,_,_) = x
 
@@ -227,10 +238,25 @@ compareAllParseTrees xs ys = sequence $ helper xs ys []
     helper []     _  acc = acc
     helper (f:fs) ms acc = let
       --fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ms
-      fun = map (\y -> [(compareTrees f y)]) ms in
+      fun = map (\y -> if (takeFileName f) == (takeFileName y) then 
+                         [(compareTrees f y)] 
+                       else ([return ("NULL","NULL",0,0,0)])) ms in
       --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
-      helper fs ms (acc ++ (concat fun))
+        helper fs ms (acc ++ (concat fun))
+
+--compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)]
+--compareAllParseTrees xs ys = sequence $ helper xs ys []
+--  where
+--    helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
+--                                       -> [IO (String, String, Int, Int, Int)]
+--    helper []     _  acc = acc
+--    helper (f:fs) ms acc = let
+--      --fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ms
+--      fun = map (\y -> [(compareTrees f y)]) ms in
+--      --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
+--      --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
+--      helper fs ms (acc ++ (concat fun))
 
 --compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
 --  where
@@ -250,7 +276,7 @@ buildAllParseTrees xs ys = sequence $ helper xs ys []
       fun = map (\y -> [(buildTrees f y)]) ms in
       helper fs ms (acc ++ (concat fun))
 
-compareParseTreesRepos :: String -> String -> IO [(String, String, Int, Int, Int)]
+compareParseTreesRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
 compareParseTreesRepos repo1 repo2 = do
   dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo1)
   dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ repo2)
@@ -260,8 +286,14 @@ compareParseTreesRepos repo1 repo2 = do
   let inter2 = map init $ filterFileType ".cpp " dirs2
   --print inter1
   --print inter2
-  let out    = compareAllParseTrees inter1 inter2
-  out
+  let subset1 = inter1 -- L.take 100 inter1
+  let subset2 = inter2 -- L.take 100 inter2
+  --print subset1
+  out    <- compareAllParseTrees subset1 subset2
+  let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
+  let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
+  writeDataToFile (repo1 ++ "-" ++ repo2) out2
+  --out
   --print inter1
 
 buildParseTreesRepos :: String -> String -> IO [()]
@@ -276,6 +308,15 @@ buildParseTreesRepos repo1 repo2 = do
   --print inter2
   let out    = buildAllParseTrees inter1 inter2
   out
+
+convertToCSVLine :: (String, String, Int, Int, Int) -> String
+convertToCSVLine (a, b, c, d, e) = a ++ "," ++ 
+                                   b ++ "," ++ 
+                                   (show c) ++ "," ++ 
+                                   (show d) ++ "," ++ 
+                                   (show e)
+
+--determineSimilarity :: 
 
 generateAST :: String -> String -> IO ()
 generateAST repo file = do

@@ -45,23 +45,23 @@ compareRepos name1 name2 flag = do
   let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
 
-  let inter = filterFileType ".c "    dirs
-           ++ filterFileType ".go "   dirs
-           ++ filterFileType ".py "   dirs
-           ++ filterFileType ".cpp "  dirs
-           ++ filterFileType ".sh "   dirs
-           ++ filterFileType ".html " dirs
-           ++ filterFileType ".h "    dirs
-           ++ filterFileType ".js "   dirs
+  let inter = --filterFileType ".c "    dirs
+           -- ++ filterFileType ".go "   dirs
+           -- ++ filterFileType ".py "   dirs
+              filterFileType ".cpp "  dirs
+           -- ++ filterFileType ".sh "   dirs
+           -- ++ filterFileType ".html " dirs
+           -- ++ filterFileType ".h "    dirs
+           -- ++ filterFileType ".js "   dirs
 
-  let intera = filterFileType ".c "   dirs2
-            ++ filterFileType ".go "  dirs2
-            ++ filterFileType ".py "  dirs2
-            ++ filterFileType ".cpp " dirs2
-            ++ filterFileType ".sh "  dirs2
-            ++ filterFileType "html " dirs2
-            ++ filterFileType ".h "   dirs2
-            ++ filterFileType ".js "  dirs2
+  let intera = -- filterFileType ".c "   dirs2
+            -- ++ filterFileType ".go "  dirs2
+            -- ++ filterFileType ".py "  dirs2
+               filterFileType ".cpp " dirs2
+            -- ++ filterFileType ".sh "  dirs2
+            -- ++ filterFileType "html " dirs2
+            -- ++ filterFileType ".h "   dirs2
+            -- ++ filterFileType ".js "  dirs2
 
   let inter1  = map init inter
   let inter1a = map init intera
@@ -172,6 +172,6 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  print tmp
+  --print tmp
   --cloneRepos tmp
-  --compareRepos "bitcoin" "MicroBitcoin" 0
+  compareRepos "bitcoin" "bitcoin0.14" 0
