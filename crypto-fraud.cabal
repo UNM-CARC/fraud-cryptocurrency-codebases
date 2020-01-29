@@ -34,6 +34,7 @@ library
       --DotPretty
       --DotParser
       ParseTrees
+      Basic
   other-modules:
       Paths_crypto_fraud
   hs-source-dirs:

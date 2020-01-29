@@ -286,8 +286,8 @@ compareParseTreesRepos repo1 repo2 = do
   let inter2 = map init $ filterFileType ".cpp " dirs2
   --print inter1
   --print inter2
-  let subset1 = inter1 -- L.take 100 inter1
-  let subset2 = inter2 -- L.take 100 inter2
+  let subset1 = L.take 200 inter1
+  let subset2 = L.take 200 inter2
   --print subset1
   out    <- compareAllParseTrees subset1 subset2
   let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
