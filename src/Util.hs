@@ -60,7 +60,8 @@ inString (x:xs) = x : inString xs
 --    using git log for this.
 --
 --compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Float) -> ([[String]], Float)
-compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Int) -> ([[String]], Int)
+compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Int) 
+                                                            -> ([[String]], Int)
 --compareCoinHashes []     ys lx ly acc = (fst acc, if lx > ly then snd acc / fromIntegral lx else snd acc / fromIntegral ly)
 compareCoinHashes []     ys lx ly acc = (fst acc, snd acc)
 compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
@@ -108,7 +109,6 @@ cloneRepos (x:xs) = do
 --    return x
 --  where prd (Dir ('.':_) _) = False
 --        prd _ = True
-
 
 -- Split a list of a into a list of lists every n values.
 splitEvery :: Int -> [a] -> [[a]]

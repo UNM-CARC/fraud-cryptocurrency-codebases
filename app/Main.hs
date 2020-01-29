@@ -20,7 +20,6 @@ import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
 import           Data.Traversable (traverse)
 
-
 import Lib
 import Util
 import ParseTrees
