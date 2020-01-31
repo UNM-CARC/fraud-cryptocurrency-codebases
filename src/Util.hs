@@ -59,7 +59,8 @@ inString (x:xs) = x : inString xs
 --    are more concerned with which repository is older. We will look into
 --    using git log for this.
 --
---compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Float) -> ([[String]], Float)
+--compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Float) 
+--                                                            -> ([[String]], Float)
 compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Int) 
                                                             -> ([[String]], Int)
 --compareCoinHashes []     ys lx ly acc = (fst acc, if lx > ly then snd acc / fromIntegral lx else snd acc / fromIntegral ly)
@@ -85,6 +86,7 @@ compressFiles files = foldr (\b a -> if a == []
                   then (head a ++ [last b]) : tail a
                     else b : a) [] files
 
+-- https://stackoverflow.com/questions/51712083/recursively-search-directories-for-all-files-matching-name-criteria-in-haskell
 traverseDir :: (FilePath -> Bool) -> (b -> FilePath -> IO b) -> b -> FilePath -> IO b
 traverseDir validDir transition =
   let go state dirPath =
@@ -123,4 +125,28 @@ cloneRepo coin = do
   let str = "git clone --recursive " ++ last coin ++ " /tmp/" ++ head coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
+
+
+writeDataToFile :: FilePath -> String -> IO ()
+writeDataToFile file dat = do
+  let fileNew = "data/" ++ (takeBaseName file) ++ ".csv"
+  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
+  h <- openFile fileNew WriteMode
+  hPutStr h dat
+  hClose h
+
+writeTreeToFile :: FilePath -> String -> String -> IO ()
+writeTreeToFile file tree num = do
+  let fileNew = "asts/" ++ (takeBaseName file) ++ num ++ ".ast"
+  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
+  h <- openFile fileNew WriteMode
+  hPutStr h tree
+  hClose h
+
+convertToCSVLine :: (String, String, Int, Int, Int) -> String
+convertToCSVLine (a, b, c, d, e) = a ++ "," ++ 
+                                   b ++ "," ++ 
+                                   (show c) ++ "," ++ 
+                                   (show d) ++ "," ++ 
+                                   (show e)
 

@@ -1,10 +1,60 @@
 BTC,Bitcoin,https://github.com/bitcoin/bitcoin
-ETH,Ethereum,https://github.com/ethereum/go-ethereum
 XRP,XRP,https://github.com/ripple/rippled
 EOS,EOS,https://github.com/EOSIO/eos
 LTC,Litecoin,https://github.com/litecoin-project/litecoin
 BCH,Bitcoin Cash,https://github.com/Bitcoin-ABC/bitcoin-abc
-BNB,Binance Coin,https://github.com/binance-exchange/binance-official-api-docs
-XLM,Stellar,https://github.com/stellar/stellar-core
-ADA,Cardano,https://github.com/input-output-hk/cardano-sl
-TRX,TRON,https://github.com/tronprotocol/java-tron
+BSV,Bitcoin SV,https://github.com/bitcoin-sv/bitcoin-sv
+XMR,Monero,https://github.com/monero-project/monero
+DASH,Dash,https://github.com/dashpay/dash
+ZEC,Zcash,https://github.com/zcash/zcash
+DOGE,Dogecoin,https://github.com/dogecoin/dogecoin
+BTG,Bitcoin Gold,https://github.com/BTCGPU/BTCGPU
+QTUM,Qtum,https://github.com/qtumproject/qtum
+ZIL,Zilliqa,https://github.com/Zilliqa/Zilliqa
+BTS,BitShares,https://github.com/bitshares/bitshares-core
+BCD,Bitcoin Diamond,https://github.com/eveybcd/BitcoinDiamond
+DGB,DigiByte,https://github.com/digibyte/digibyte
+BCN,Bytecoin,https://github.com/bcndev/bytecoin
+STEEM,Steem,https://github.com/steemit/steem
+NANO,Nano,https://github.com/nanocurrency/raiblocks
+XVG,Verge,https://github.com/vergecurrency/verge
+ETN,Electroneum,https://github.com/electroneum/electroneum
+PIVX,PIVX,https://github.com/PIVX-Project/PIVX
+ETP,Metaverse ETP,https://github.com/mvs-org/metaverse
+ZEN,Horizen,https://github.com/ZencashOfficial/zen
+RDD,Reddcoin,https://github.com/reddcoin-project/reddcoin
+SYS,Syscoin,https://github.com/syscoin/syscoin2
+MONA,MonaCoin,https://github.com/monacoinproject/monacoin
+GRS,Groestlcoin,https://github.com/GroestlCoin/GroestlCoin
+VTC,Vertcoin,https://github.com/vertcoin-project/vertcoin-core
+SMART,SmartCash,https://github.com/SmartCash/Core-Smart
+PART,Particl,https://github.com/particl/particl-core
+NEBL,Neblio,https://github.com/NeblioTeam/neblio
+WICC,WaykiChain,https://github.com/WaykiChain/WaykiChain
+TOSC,T.OS,https://github.com/tos-project/TOSC
+CLAM,Clams,https://github.com/nochowderforyou/clams
+ETNXP,Electronero Pulse,https://github.com/electronero-pulse/electroneropulse
+EMC2,Einsteinium,https://github.com/emc2foundation/einsteinium
+NAV,NavCoin,https://github.com/NAVCoin/navcoin-core
+PPC,Peercoin,https://github.com/peercoin/peercoin
+BLOCK,Blocknet,https://github.com/BlocknetDX/blocknet
+EMC,EmerCoin,https://github.com/emercoin/emercoin
+VIA,Viacoin,https://github.com/viacoin/viacoin
+BLZ,Bluzelle,https://github.com/njmurarka/bluzelle
+FLO,FLO,https://github.com/flo-blockchain/florincoin
+NMC,Namecoin,https://github.com/Namecoin/namecoin-core
+QRL,Quantum Resistant Ledger,https://github.com/theQRL/qrllib
+ACT,Achain,https://github.com/Achain-Dev/Achain
+LEO,LEOcoin,https://github.com/Leocoin-project/LEOcoin
+XSN,Stakenet,https://github.com/X9Developers/XSN
+BEAM,BEAM,https://github.com/BeamMW/beam
+GRFT,Graft Blockchain,https://github.com/graft-project/GraftNetwork
+MANNA,Manna,https://github.com/mannacurrency/manna-legacy
+NLG,Gulden,https://github.com/Gulden/gulden-official
+UT,Ulord,https://github.com/UlordChain/UlordChain
+BAY,BitBay,https://github.com/dzimbeck/BitBay
+GAME,GameCredits,https://github.com/gamers-coin/GameCredits
+DERO,Dero,https://github.com/deroproject/dero
+LCC,Litecoin Cash,https://github.com/litecoincash-project/litecoincash
+ONION,DeepOnion,https://github.com/deeponion/deeponion
+LOKI,Loki Network,https://github.com/loki-project/loki

@@ -32,12 +32,23 @@ import           System.Directory.Tree (
 
 import Util
 
+compareAllBasicRepos :: Int -> IO ()
+compareAllBasicRepos flag = do
+  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+  let clean = fmap (\x -> fmap Txt.unpack x) $
+              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+            . filter (/= '\r')) $ concat clean
+  let repos = concat $ map (tail . tail) tmp
+  print repos
+  
+
 -- Compare repositories both original and after removal of whitespace and comments.
 compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do
 
-  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
-  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name2)
+  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] (name1)
+  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] (name2)
   let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
 
@@ -83,7 +94,7 @@ compareRepos name1 name2 flag = do
       let x = map (MD.md5 . BLU.fromString . Txt.unpack) m
       let o = map (toText . fromBytes . MD.md5DigestBytes) x
       let z = zip3 o n inter1
-      LB.writeFile ("data/" ++ name1 ++ ".csv") $ encode z
+      LB.writeFile ("inter/" ++ name1 ++ ".csv") $ encode z
 
       -- Second iteration
       -- Get number of lines per file.
@@ -94,10 +105,10 @@ compareRepos name1 name2 flag = do
       let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) m2
       let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
       let z2 = zip3 o2 n2 inter1a
-      LB.writeFile ("data/" ++ name2 ++ ".csv") $ encode z2
+      LB.writeFile ("inter/" ++ name2 ++ ".csv") $ encode z2
 
-      csv <- parseFromFile CSV.csvFile ("data/" ++ name1 ++ ".csv")
-      csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ ".csv")
+      csv <- parseFromFile CSV.csvFile ("inter/" ++ name1 ++ ".csv")
+      csv2 <- parseFromFile CSV.csvFile ("inter/" ++ name2 ++ ".csv")
 
       let p  = rights [csv]
       let p2 = rights [csv2]
@@ -123,7 +134,7 @@ compareRepos name1 name2 flag = do
       let x = map (MD.md5 . BLU.fromString . Txt.unpack) a
       let o = map (toText . fromBytes . MD.md5DigestBytes) x
       let z = zip3 o n inter1
-      LB.writeFile ("data/" ++ name1 ++ "pre.csv") $ encode z
+      LB.writeFile ("inter/" ++ name1 ++ "pre.csv") $ encode z
 
       -- Second iteration
       -- Get number of lines per file.
@@ -134,10 +145,10 @@ compareRepos name1 name2 flag = do
       let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) b
       let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
       let z2 = zip3 o2 n2 inter1a
-      LB.writeFile ("data/" ++ name2 ++ "pre.csv") $ encode z2
+      LB.writeFile ("inter/" ++ name2 ++ "pre.csv") $ encode z2
 
-      csv <- parseFromFile CSV.csvFile ("data/" ++ name1 ++ "pre.csv")
-      csv2 <- parseFromFile CSV.csvFile ("data/" ++ name2 ++ "pre.csv")
+      csv <- parseFromFile CSV.csvFile ("inter/" ++ name1 ++ "pre.csv")
+      csv2 <- parseFromFile CSV.csvFile ("inter/" ++ name2 ++ "pre.csv")
 
       let p  = rights [csv]
       let p2 = rights [csv2]

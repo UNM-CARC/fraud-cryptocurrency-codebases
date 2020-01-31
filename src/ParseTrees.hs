@@ -80,22 +80,6 @@ pair [x, y] = (x, y)
 --longestCommon a b
 --  where lcSuff =
 
-writeTreeToFile :: FilePath -> String -> String -> IO ()
-writeTreeToFile file tree num = do
-  let fileNew = "asts/" ++ (takeBaseName file) ++ num ++ ".ast"
-  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
-  h <- openFile fileNew WriteMode
-  hPutStr h tree
-  hClose h
-
-writeDataToFile :: FilePath -> String -> IO ()
-writeDataToFile file dat = do
-  let fileNew = "data/" ++ (takeBaseName file) ++ ".csv"
-  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
-  h <- openFile fileNew WriteMode
-  hPutStr h dat
-  hClose h
-
 parseCPP :: FilePath -> IO String
 parseCPP file = do
     idx <- createIndex
@@ -308,15 +292,6 @@ buildParseTreesRepos repo1 repo2 = do
   --print inter2
   let out    = buildAllParseTrees inter1 inter2
   out
-
-convertToCSVLine :: (String, String, Int, Int, Int) -> String
-convertToCSVLine (a, b, c, d, e) = a ++ "," ++ 
-                                   b ++ "," ++ 
-                                   (show c) ++ "," ++ 
-                                   (show d) ++ "," ++ 
-                                   (show e)
-
---determineSimilarity :: 
 
 generateAST :: String -> String -> IO ()
 generateAST repo file = do
