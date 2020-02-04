@@ -32,7 +32,7 @@ import           System.Directory.Tree (
 
 import Util
 
-compareAllBasicRepos :: Int -> IO ()
+compareAllBasicRepos :: Int -> IO [a]
 compareAllBasicRepos flag = do
   input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
@@ -40,8 +40,13 @@ compareAllBasicRepos flag = do
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
   let repos = concat $ map (tail . tail) tmp
-  print repos
-  
+  sequence $ foldRepos repos 
+  --print repos
+
+foldRepos :: [String] -> [b]
+foldRepos (x:xs) = do
+  map (\y -> compareRepos x y) xs
+  foldRepos xs
 
 -- Compare repositories both original and after removal of whitespace and comments.
 compareRepos :: String -> String -> Int -> IO ()
@@ -122,11 +127,16 @@ compareRepos name1 name2 flag = do
       let aa = snd yy
       let bb = fst yy
 
-      print $ map last bb -- Only print file names here
+      let dat = convertToCSVLine (name1, name2, length k, length k2, length bb)
+      writeDataToFile "level1" dat
+
+      --print $ map last bb -- Only print file names here
+      --
       --print $ Numeric.showFFloat Nothing aa ""
-      print $ "Length of " ++ name1 ++ ": " ++ (show $ length k)
-      print $ "Length of " ++ name2 ++ ": " ++ (show $ length k2)
-      print $ "Number of matching files " ++ (show $ length bb)
+      --
+      --print $ "Length of " ++ name1 ++ ": " ++ (show $ length k)
+      --print $ "Length of " ++ name2 ++ ": " ++ (show $ length k2)
+      --print $ "Number of matching files " ++ (show $ length bb)
 
     -- Test preprocessed
     1 -> do
@@ -162,10 +172,15 @@ compareRepos name1 name2 flag = do
       let aa = snd yy
       let bb = fst yy
 
-      print $ map last bb -- Only print file names here
-      --print $ Numeric.showFFloat Nothing aa ""
-      print $ "Length of " ++ name1 ++ ": " ++ (show $ length k)
-      print $ "Length of " ++ name2 ++ ": " ++ (show $ length k2)
-      print $ "Number of matching files " ++ (show $ length bb)
+      let dat = convertToCSVLine (name1, name2, length k, length k2, length bb)
+      writeDataToFile "level2" dat
+
+      --print $ map last bb -- Only print file names here
+      --
+      ----print $ Numeric.showFFloat Nothing aa ""
+      --
+      --print $ "Length of " ++ name1 ++ ": " ++ (show $ length k)
+      --print $ "Length of " ++ name2 ++ ": " ++ (show $ length k2)
+      --print $ "Number of matching files " ++ (show $ length bb)
 
     _ -> error "invalid flag value..."

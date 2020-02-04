@@ -131,7 +131,7 @@ writeDataToFile :: FilePath -> String -> IO ()
 writeDataToFile file dat = do
   let fileNew = "data/" ++ (takeBaseName file) ++ ".csv"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
-  h <- openFile fileNew WriteMode
+  h <- openFile fileNew AppendMode
   hPutStr h dat
   hClose h
 
