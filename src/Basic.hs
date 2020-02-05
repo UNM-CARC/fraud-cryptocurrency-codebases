@@ -32,28 +32,29 @@ import           System.Directory.Tree (
 
 import Util
 
-compareAllBasicRepos :: Int -> IO [a]
+compareAllBasicRepos :: Int -> IO ()
 compareAllBasicRepos flag = do
   input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  let repos = concat $ map (tail . tail) tmp
-  sequence $ foldRepos repos 
+  let repos = map takeFileName $ concat $ map (tail . tail) tmp
+  foldRepos repos flag
   --print repos
 
-foldRepos :: [String] -> [b]
-foldRepos (x:xs) = do
-  map (\y -> compareRepos x y) xs
-  foldRepos xs
+foldRepos :: [String] -> Int -> IO ()
+foldRepos    []  _   = return ()
+foldRepos (x:xs) num = do
+  mapM (\y -> compareRepos x y num) xs
+  foldRepos xs num
 
 -- Compare repositories both original and after removal of whitespace and comments.
 compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do
 
-  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] (name1)
-  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] (name2)
+  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
+  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name2)
   let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
 
@@ -78,7 +79,7 @@ compareRepos name1 name2 flag = do
   let inter1  = map init inter
   let inter1a = map init intera
 
---  print inter1
+  -- print inter1
 
   out <- traverse Txt.readFile inter1 --19
   out2 <- traverse Txt.readFile inter1a --19a
@@ -128,7 +129,7 @@ compareRepos name1 name2 flag = do
       let bb = fst yy
 
       let dat = convertToCSVLine (name1, name2, length k, length k2, length bb)
-      writeDataToFile "level1" dat
+      writeDataToFile "level1" (dat ++ "\n")
 
       --print $ map last bb -- Only print file names here
       --
@@ -173,7 +174,7 @@ compareRepos name1 name2 flag = do
       let bb = fst yy
 
       let dat = convertToCSVLine (name1, name2, length k, length k2, length bb)
-      writeDataToFile "level2" dat
+      writeDataToFile "level2" (dat ++ "\n")
 
       --print $ map last bb -- Only print file names here
       --
