@@ -97,8 +97,18 @@ traverseDir validDir transition =
            foldM go state' (filter validDir dirPaths) -- process subdirs
            in go
 
+files :: IO ()
+files = do
+  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+  let clean = fmap (\x -> fmap Txt.unpack x) $
+              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+            . filter (/= '\r')) $ concat clean
+  cloneRepos tmp
+
 cloneRepos :: [[String]] -> IO b
 cloneRepos (x:xs) = do
+
   cloneRepo x
   print $ head $ tail x
   cloneRepos xs
@@ -122,8 +132,8 @@ splitEvery n xs = as : splitEvery n bs
 -- ["BTC", "bitcoin", "https..."]
 cloneRepo :: [String] -> IO ()
 cloneRepo coin = do
-  let str = "git clone --recursive " ++ last coin ++ " /tmp/" ++ head coin
-  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
+  let str = "git clone --recursive " ++ last coin ++ " /tmp/" ++ (takeFileName $ last coin)
+  --(errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
 
 

@@ -41,7 +41,7 @@ compareAllBasicRepos flag = do
             . filter (/= '\r')) $ concat clean
   let repos = map takeFileName $ concat $ map (tail . tail) tmp
   foldRepos repos flag
-  --print repos
+  --return tmp
 
 foldRepos :: [String] -> Int -> IO ()
 foldRepos    []  _   = return ()
@@ -58,15 +58,7 @@ compareRepos name1 name2 flag = do
   let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
 
-  let inter = --filterFileType ".c "    dirs
-           -- ++ filterFileType ".go "   dirs
-           -- ++ filterFileType ".py "   dirs
-              filterFileType ".cpp "  dirs
-           -- ++ filterFileType ".sh "   dirs
-           -- ++ filterFileType ".html " dirs
-           -- ++ filterFileType ".h "    dirs
-           -- ++ filterFileType ".js "   dirs
-
+  let inter  = filterFileType ".cpp "  dirs
   let intera = -- filterFileType ".c "   dirs2
             -- ++ filterFileType ".go "  dirs2
             -- ++ filterFileType ".py "  dirs2
