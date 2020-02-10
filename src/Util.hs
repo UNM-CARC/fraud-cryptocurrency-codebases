@@ -106,7 +106,9 @@ files = do
             . filter (/= '\r')) $ concat clean
   cloneRepos tmp
 
-cloneRepos :: [[String]] -> IO b
+cloneRepos :: [[String]] -> IO ()
+cloneRepos []     = do
+  print ""
 cloneRepos (x:xs) = do
   cloneRepo x
   print $ head $ tail x
@@ -131,7 +133,7 @@ splitEvery n xs = as : splitEvery n bs
 -- ["BTC", "bitcoin", "https..."]
 cloneRepo :: [String] -> IO ()
 cloneRepo coin = do
-  let str = "git clone --recursive " ++ last coin ++ " /tmp/" ++ (takeFileName $ last coin)
+  let str = "git clone --recursive " ++ last coin ++ " /wheeler/scratch/khaskins/" ++ (takeFileName $ last coin)
   --(errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
 

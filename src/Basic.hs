@@ -53,8 +53,8 @@ foldRepos (x:xs) num = do
 compareRepos :: String -> String -> Int -> IO ()
 compareRepos name1 name2 flag = do
 
-  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name1)
-  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/tmp/" ++ name2)
+  dirlist1 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/wheeler/scratch/khaskins/" ++ name1)
+  dirlist2 <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/wheeler/scratch/khaskins/" ++ name2)
   let dirs  = map (\x -> x ++ " ") dirlist1
   let dirs2 = map (\x -> x ++ " ") dirlist2
 

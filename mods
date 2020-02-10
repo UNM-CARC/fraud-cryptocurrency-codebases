@@ -1,0 +1,2 @@
+module load haskell-stack-stable-gcc-4.8.5-exczvin
+module load llvm-9.0.0-gcc-7.3.0-python2-xbyh7lm
