@@ -111,7 +111,7 @@ cloneRepos []     = do
   print ""
 cloneRepos (x:xs) = do
   cloneRepo x
-  print $ head $ tail x
+  -- print $ head $ tail x
   cloneRepos xs
 
 --allFiles :: String -> IO (DirTree FilePath)
@@ -134,7 +134,7 @@ splitEvery n xs = as : splitEvery n bs
 cloneRepo :: [String] -> IO ()
 cloneRepo coin = do
   let str = "git clone --recursive " ++ last coin ++ " /wheeler/scratch/khaskins/" ++ (takeFileName $ last coin)
-  --(errc, out', err') <- readCreateProcessWithExitCode (shell str) []
+  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
 
 
