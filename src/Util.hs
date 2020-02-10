@@ -108,7 +108,6 @@ files = do
 
 cloneRepos :: [[String]] -> IO b
 cloneRepos (x:xs) = do
-
   cloneRepo x
   print $ head $ tail x
   cloneRepos xs
