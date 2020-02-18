@@ -260,6 +260,9 @@ buildAllParseTrees xs ys = sequence $ helper xs ys []
       fun = map (\y -> [(buildTrees f y)]) ms in
       helper fs ms (acc ++ (concat fun))
 
+compareAllRepos :: IO ()
+compareAllRepos
+
 compareParseTreesRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
 compareParseTreesRepos repo1 repo2 = do
   dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/wheeler/scratch/khaskins/" ++ repo1)

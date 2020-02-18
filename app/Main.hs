@@ -35,5 +35,6 @@ main = do
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
   --print tmp
-  cloneRepos tmp
+  --cloneRepos tmp
   --compareRepos "bitcoin" "bitcoin0.14" 0
+  compareAllBasicRepos 0
