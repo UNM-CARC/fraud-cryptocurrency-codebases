@@ -261,7 +261,20 @@ buildAllParseTrees xs ys = sequence $ helper xs ys []
       helper fs ms (acc ++ (concat fun))
 
 compareAllRepos :: IO ()
-compareAllRepos
+compareAllRepos = do
+  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+  let clean = fmap (\x -> fmap Txt.unpack x) $
+              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  let tmp   = splitEvery 3 $ fmap (L.filter (/= '\n')
+            . L.filter (/= '\r')) $ concat clean
+  let repos = map takeFileName $ concat $ map (tail . tail) tmp
+  mapRepos repos
+
+mapRepos :: [String] -> IO ()
+mapRepos    []  = return ()
+mapRepos (x:xs) = do
+  mapM (\y -> compareParseTreesRepos x y) xs
+  mapRepos xs
 
 compareParseTreesRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
 compareParseTreesRepos repo1 repo2 = do
