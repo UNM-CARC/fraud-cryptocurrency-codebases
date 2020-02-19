@@ -37,4 +37,5 @@ main = do
   --print tmp
   --cloneRepos tmp
   --compareRepos "bitcoin" "bitcoin0.14" 0
-  compareAllBasicRepos 0
+  --compareAllBasicRepos 0
+  compareAllRepos

@@ -269,6 +269,7 @@ compareAllRepos = do
             . L.filter (/= '\r')) $ concat clean
   let repos = map takeFileName $ concat $ map (tail . tail) tmp
   mapRepos repos
+  --print repos
 
 mapRepos :: [String] -> IO ()
 mapRepos    []  = return ()
