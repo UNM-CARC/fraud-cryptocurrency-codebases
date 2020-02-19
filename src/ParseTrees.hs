@@ -180,8 +180,8 @@ compareTrees :: FilePath -> FilePath -> IO (String, String, Int, Int, Int) -- IO
 compareTrees file1 file2 = do
   x <- treeToString file1
   y <- treeToString file2
-  writeTreeToFile file1 x "1"
-  writeTreeToFile file2 y "2"
+  --writeTreeToFile file1 x "1"
+  --writeTreeToFile file2 y "2"
   let out  = longestCommonSubstring $ x : [y]
   let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
   return test
