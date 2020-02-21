@@ -274,12 +274,12 @@ compareAllRepos = do
 mapRepos :: [String] -> IO ()
 mapRepos    []  = return ()
 mapRepos (x:xs) = do
-  --mapM (\y -> compareParseTreesRepos x y) xs
+  --mapM (\y -> compareRepos x y) xs
   mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
   mapRepos xs
 
-compareParseTreesRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
-compareParseTreesRepos repo1 repo2 = do
+compareRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
+compareRepos repo1 repo2 = do
   dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/wheeler/scratch/khaskins/" ++ repo1)
   dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("/wheeler/scratch/khaskins/" ++ repo2)
   let dirs1  = map (\x -> x ++ " ") dirlist1
