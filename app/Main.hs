@@ -27,6 +27,7 @@ import Basic
 
 main :: IO ()
 main = do
+  args <- getArgs
   let flag = 1
 
   input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
@@ -38,4 +39,5 @@ main = do
   --cloneRepos tmp
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0
-  compareAllRepos
+  --compareAllRepos
+  compareParseTreesRepos (head args) (head (tail args))

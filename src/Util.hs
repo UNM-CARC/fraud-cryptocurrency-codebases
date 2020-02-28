@@ -137,6 +137,25 @@ cloneRepo coin = do
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
 
+listAllRepos :: IO ()
+listAllRepos = do
+  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+  let clean = fmap (\x -> fmap Txt.unpack x) $
+              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  let tmp   = splitEvery 3 $ fmap (L.filter (/= '\n')
+            . L.filter (/= '\r')) $ concat clean
+  let repos = map takeFileName $ concat $ map (tail . tail) tmp
+  x <- buildRepos repos
+  --print repos
+  
+buildRepos :: [String] -> IO [String]
+buildRepos    [] acc  = return acc
+buildRepos (x:xs) acc = do
+  let m = map (\y -> convertToCSVTwo x y) xs
+  --mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
+  buildRepos xs (acc ++ m)
+  
+
 
 writeDataToFile :: FilePath -> String -> IO ()
 writeDataToFile file dat = do
@@ -160,4 +179,7 @@ convertToCSVLine (a, b, c, d, e) = a ++ "," ++
                                    (show c) ++ "," ++ 
                                    (show d) ++ "," ++ 
                                    (show e)
+
+convertToCSVTwo :: (String, String) -> String
+convertToCSVTwo (a, b) = a ++ "," ++ b
 

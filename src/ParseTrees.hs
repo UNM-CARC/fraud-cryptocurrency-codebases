@@ -274,8 +274,8 @@ compareAllRepos = do
 mapRepos :: [String] -> IO ()
 mapRepos    []  = return ()
 mapRepos (x:xs) = do
-  --mapM (\y -> compareParseTreesRepos x y) xs
-  mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
+  mapM (\y -> compareParseTreesRepos x y) xs
+  --mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
   mapRepos xs
 
 compareParseTreesRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
