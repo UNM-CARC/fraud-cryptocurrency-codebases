@@ -5,10 +5,10 @@ extern crate walkdir;
 extern crate sha2;
 extern crate data_encoding;
 extern crate ring;
-//extern crate mpi;
+extern crate mpi;
 extern crate reqwest;
 extern crate select;
-extern crate clang;
+//extern crate clang;
 extern crate kmpsearch;
 
 //use std::io;
@@ -16,18 +16,21 @@ extern crate kmpsearch;
 //use std::fs::File;
 //use csv::Error;
 //use std::process;
-//use mpi::traits::*;
-//use mpi::request::WaitGuard;
+use mpi::traits::*;
+use mpi::request::WaitGuard;
+use mpi::topology::{Rank};
 
 #[warn(unused_imports)]
 use walkdir::{DirEntry, WalkDir};
 use std::env;
 use std::fs;
+use csv::ReaderBuilder;
+use csv::Error;
 ///use crate::Haystack;
 
 pub mod util;
 pub mod scrape;
-pub mod ast_cpp;
+//pub mod ast_cpp;
 
 //#[derive(Deserialize)]
 //struct Record {
@@ -35,6 +38,21 @@ pub mod ast_cpp;
 //    name: String,
 //    repo: String,
 //}
+
+//fn example() -> Result<(), Box<Error>> {
+//     let data = 
+//     let mut rdr = ReaderBuilder::new()
+//         .delimiter(b';')
+//         .from_reader(data.as_bytes());
+//
+//     if let Some(result) = rdr.records().next() {
+//         let record = result?;
+//         assert_eq!(record, vec!["Boston", "United States", "4628910"]);
+//         Ok(())
+//     } else {
+//         Err(From::from("expected at least one record but got none"))
+//     }
+// }
 
 #[warn(dead_code)]
 fn is_not_hidden(entry: &DirEntry) -> bool {
@@ -46,35 +64,33 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
 }
 
 fn main() {
-    //let universe = mpi::initialize().unwrap();
-    //let world = universe.world();
-    //let size = world.size();
-    //let rank = world.rank();
+    let universe = mpi::initialize().unwrap();
+    let world = universe.world();
+    let size = world.size();
+    let rank = world.rank();
 
-    //scrape::scraper("https://coinmarketcap.com/all/views/all/")
+    if size != 2 {
+        panic!("Size of MPI_COMM_WORLD must be 2, but is {}!", size);
+     }
 
-    //if let Err(err) = util::runcsv() {
-    //    println!("{}", err);
-    //    process::exit(1);
-    //}
-    //WalkDir::new("/tmp/BTC")
-    //    .into_iter()
-    //    .filter_entry(|e| is_not_hidden(e))
-    //    .filter_map(|v| v.ok())
-    //    .for_each(|x| println!("{}", x.path().display()));
-
-    //WalkDir::new("/tmp/BTC")
-    //    .into_iter()
-    //    .filter_entry(|e| is_not_hidden(e))
-    //    .filter_map(|y| util::runhash(y))
-    //    .filter_map(|v| v.ok())
-    //    .for_each(|x| println!("{}", x.path().display()));
-    //ast_cpp::parsecpp();
     let args: Vec<String>  = env::args().collect();
-    let file1 = &args[1];
-    let file2 = &args[2];
-    let tree1 = fs::read_to_string(file1)
-        .expect("No file for tree 1.");
-    let tree2 = fs::read_to_string(file2)
-        .expect("No file for tree 2.");
+    //let file1 = &args[1];
+    //let file2 = &args[2];
+    let file  = String::from("../data/repo-pairs.csv");
+    let pairs = util::runcsv(file);
+
+    match rank {
+        0 => {
+
+        }
+    }
+    //println!("{:?}", pairs.len());
+    //for r in pairs {
+    //    println!("{:?}", r);
+    //}
+
+    //let tree1 = fs::read_to_string(file1)
+    //    .expect("No file for tree 1.");
+    //let tree2 = fs::read_to_string(file2)
+    //    .expect("No file for tree 2.");
 }

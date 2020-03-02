@@ -137,19 +137,20 @@ cloneRepo coin = do
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ head coin
 
-listAllRepos :: IO ()
+listAllRepos :: IO [()]
 listAllRepos = do
   input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 3 $ fmap (L.filter (/= '\n')
-            . L.filter (/= '\r')) $ concat clean
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+            . filter (/= '\r')) $ concat clean
   let repos = map takeFileName $ concat $ map (tail . tail) tmp
-  x <- buildRepos repos
+  let pairs = buildRepos repos []
+  mapM (writeDataToFile "misc/repo-pairs.csv") pairs
   --print repos
   
-buildRepos :: [String] -> IO [String]
-buildRepos    [] acc  = return acc
+buildRepos :: [String] -> [String]-> [String]
+buildRepos    [] acc  = acc
 buildRepos (x:xs) acc = do
   let m = map (\y -> convertToCSVTwo x y) xs
   --mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
@@ -161,7 +162,7 @@ writeDataToFile :: FilePath -> String -> IO ()
 writeDataToFile file dat = do
   let fileNew = "data/" ++ (takeBaseName file) ++ ".csv"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
-  h <- openFile fileNew WriteMode
+  h <- openFile fileNew AppendMode
   hPutStr h dat
   hClose h
 
@@ -180,6 +181,6 @@ convertToCSVLine (a, b, c, d, e) = a ++ "," ++
                                    (show d) ++ "," ++ 
                                    (show e)
 
-convertToCSVTwo :: (String, String) -> String
-convertToCSVTwo (a, b) = a ++ "," ++ b
+convertToCSVTwo :: String -> String -> String
+convertToCSVTwo a b = a ++ "," ++ b ++ "\n"
 

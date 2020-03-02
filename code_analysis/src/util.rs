@@ -9,16 +9,18 @@ use walkdir::DirEntry;
 use data_encoding::HEXUPPER;
 use ring::digest::{Context, Digest, SHA256};
 
-type Record = (String, String, String);
+type Record = (String, String);
 
-pub fn runcsv() -> Result<(), Error> {
-    let file = File::open("names.csv")?;
+pub fn runcsv(f: String) -> Result<Vec<Record>, Error> {
+    let file = File::open(f)?;
     let mut reader = csv::Reader::from_reader(file);
+    let mut data: Vec<Record> = Vec::new();
     for result in reader.deserialize() {
-        let record: Record = result?;
-        println!("{:?}", record);
+        //let record: Record = result?;
+        //println!("{:?}", record);
+        data.push(result?);
     }
-    Ok(())
+    Ok(data)
 }
 
 fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest, Error> {
