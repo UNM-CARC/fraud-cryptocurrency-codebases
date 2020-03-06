@@ -1,0 +1,7 @@
+client.cpp,client.cpp,20,220,6
+server.cpp,server.cpp,164,640,36
+sha1.cpp,sha1.cpp,8,908,5
+block.cpp,block.cpp,8,4,3
+transaction.cpp,transaction.cpp,8,4,3
+wallet.cpp,wallet.cpp,692,540,52
+wallet_tests.cpp,wallet_tests.cpp,8,200,5

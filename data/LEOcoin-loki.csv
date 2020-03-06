@@ -1,0 +1,13 @@
+checkpoints.cpp,checkpoints.cpp,45988,436,34
+main.cpp,main.cpp,87064,820,45
+main.cpp,main.cpp,87064,1496,65
+main.cpp,main.cpp,87064,244,49
+main.cpp,main.cpp,87064,1128,46
+main.cpp,main.cpp,87064,1796,41
+main.cpp,main.cpp,87064,2156,908
+main.cpp,main.cpp,87064,120,41
+miner.cpp,miner.cpp,62308,2120,1323
+net.cpp,net.cpp,66908,1100,32
+protocol.cpp,protocol.cpp,20368,4,3
+wallet.cpp,wallet.cpp,88092,4,3
+transaction_tests.cpp,transaction_tests.cpp,16,348,6

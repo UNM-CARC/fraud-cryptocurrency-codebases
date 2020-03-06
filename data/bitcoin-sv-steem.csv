@@ -1,0 +1,13 @@
+sha1.cpp,sha1.cpp,4,8,3
+block.cpp,block.cpp,4,4,4
+transaction.cpp,transaction.cpp,12,4,3
+client.cpp,client.cpp,760,20,7
+server.cpp,server.cpp,964,164,44
+main.cpp,main.cpp,7964,364,37
+main.cpp,main.cpp,7964,56,15
+main.cpp,main.cpp,7964,92,19
+main.cpp,main.cpp,7964,232,25
+main.cpp,main.cpp,7964,4,3
+main.cpp,main.cpp,7964,4,3
+undo_tests.cpp,undo_tests.cpp,100,4,3
+wallet.cpp,wallet.cpp,240,692,21

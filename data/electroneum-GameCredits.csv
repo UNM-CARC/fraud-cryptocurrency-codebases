@@ -1,0 +1,17 @@
+miner.cpp,miner.cpp,868,29216,85
+main.cpp,main.cpp,820,42988,43
+protocol.cpp,protocol.cpp,4,9744,3
+wallet.cpp,wallet.cpp,4,36500,3
+wallet.cpp,wallet.cpp,4,260,3
+transaction_tests.cpp,transaction_tests.cpp,348,112,19
+main.cpp,main.cpp,1504,42988,65
+main.cpp,main.cpp,244,42988,45
+block.cpp,block.cpp,172,4,3
+transaction.cpp,transaction.cpp,172,4,3
+main.cpp,main.cpp,1120,42988,40
+main.cpp,main.cpp,1796,42988,35
+main.cpp,main.cpp,2048,42988,908
+main.cpp,main.cpp,76,42988,34
+net.cpp,net.cpp,1092,30292,33
+random.cpp,random.cpp,80,10296,19
+sha256.cpp,sha256.cpp,68,908,12

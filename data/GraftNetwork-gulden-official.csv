@@ -1,0 +1,6 @@
+miner.cpp,miner.cpp,2292,1280,36
+blockchain.cpp,blockchain.cpp,68,2288,8
+wallet.cpp,wallet.cpp,4,356,3
+transaction_tests.cpp,transaction_tests.cpp,356,128,31
+block.cpp,block.cpp,172,12,5
+transaction.cpp,transaction.cpp,172,12,5

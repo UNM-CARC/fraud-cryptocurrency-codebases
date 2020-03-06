@@ -1,0 +1,15 @@
+base58.cpp,base58.cpp,23520,3620,906
+base58.cpp,base58.cpp,23520,3164,31
+checkpoints.cpp,checkpoints.cpp,41684,152,37
+checkpoints.cpp,checkpoints.cpp,41684,52,20
+main.cpp,main.cpp,60768,560,42
+main.cpp,main.cpp,60768,1512,68
+main.cpp,main.cpp,60768,244,45
+main.cpp,main.cpp,60768,488,43
+main.cpp,main.cpp,60768,1788,46
+main.cpp,main.cpp,60768,784,33
+main.cpp,main.cpp,60768,28,22
+miner.cpp,miner.cpp,43252,2268,1323
+util.cpp,util.cpp,32236,20,15
+wallet.cpp,wallet.cpp,51560,4,3
+transaction_tests.cpp,transaction_tests.cpp,16,356,6

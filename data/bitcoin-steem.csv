@@ -1,0 +1,13 @@
+client.cpp,client.cpp,176,20,6
+server.cpp,server.cpp,568,164,36
+main.cpp,main.cpp,4,364,3
+main.cpp,main.cpp,4,56,3
+main.cpp,main.cpp,4,92,3
+main.cpp,main.cpp,4,232,3
+main.cpp,main.cpp,4,4,4
+main.cpp,main.cpp,4,4,4
+block.cpp,block.cpp,196,4,3
+transaction.cpp,transaction.cpp,236,4,3
+wallet.cpp,wallet.cpp,8,692,5
+error.cpp,error.cpp,36,8,5
+wallet.cpp,wallet.cpp,580,692,52

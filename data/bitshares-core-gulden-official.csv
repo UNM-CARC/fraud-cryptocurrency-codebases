@@ -1,0 +1,8 @@
+client.cpp,client.cpp,20,176,6
+server.cpp,server.cpp,164,616,36
+witness.cpp,witness.cpp,28,560,10
+block.cpp,block.cpp,8,12,5
+transaction.cpp,transaction.cpp,8,12,5
+witness.cpp,witness.cpp,4,560,3
+wallet.cpp,wallet.cpp,692,356,52
+wallet_tests.cpp,wallet_tests.cpp,8,216,7

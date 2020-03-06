@@ -1,0 +1,12 @@
+client.cpp,client.cpp,20,144,6
+server.cpp,server.cpp,164,548,35
+sha1.cpp,sha1.cpp,8,908,5
+block.cpp,block.cpp,4,12,3
+transaction.cpp,transaction.cpp,4,12,3
+wallet.cpp,wallet.cpp,692,260,52
+main.cpp,main.cpp,364,55864,61
+main.cpp,main.cpp,56,55864,20
+main.cpp,main.cpp,92,55864,24
+main.cpp,main.cpp,232,55864,28
+main.cpp,main.cpp,4,55864,3
+main.cpp,main.cpp,4,55864,3

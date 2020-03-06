@@ -1,0 +1,14 @@
+protocol.cpp,protocol.cpp,13876,4,3
+random.cpp,random.cpp,11612,80,19
+sha256.cpp,sha256.cpp,908,68,12
+main.cpp,main.cpp,5096,820,22
+main.cpp,main.cpp,5096,1496,65
+main.cpp,main.cpp,5096,244,37
+main.cpp,main.cpp,5096,1128,22
+main.cpp,main.cpp,5096,1796,27
+main.cpp,main.cpp,5096,2156,640
+main.cpp,main.cpp,5096,120,21
+block.cpp,block.cpp,4,172,3
+transaction.cpp,transaction.cpp,4,172,3
+transaction_tests.cpp,transaction_tests.cpp,112,348,19
+wallet.cpp,wallet.cpp,236,4,3

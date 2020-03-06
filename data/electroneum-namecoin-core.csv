@@ -1,0 +1,17 @@
+blockchain.cpp,blockchain.cpp,68,2272,8
+main.cpp,main.cpp,820,4,3
+error.cpp,error.cpp,4,36,3
+error.cpp,error.cpp,4,36,3
+wallet.cpp,wallet.cpp,4,8,3
+wallet.cpp,wallet.cpp,4,580,3
+transaction_tests.cpp,transaction_tests.cpp,348,128,31
+main.cpp,main.cpp,1504,4,3
+main.cpp,main.cpp,244,4,3
+block.cpp,block.cpp,172,196,20
+transaction.cpp,transaction.cpp,172,236,20
+main.cpp,main.cpp,1120,4,3
+main.cpp,main.cpp,1796,4,3
+main.cpp,main.cpp,2048,4,3
+logging.cpp,logging.cpp,244,72,8
+main.cpp,main.cpp,76,4,3
+net.cpp,net.cpp,1092,836,35

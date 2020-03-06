@@ -1,0 +1,6 @@
+ripemd160.cpp,ripemd160.cpp,908,8,5
+sha256.cpp,sha256.cpp,1124,8,5
+sha512.cpp,sha512.cpp,908,8,5
+blockchain.cpp,blockchain.cpp,2808,4,3
+protocol.cpp,protocol.cpp,384,4,3
+protocol.cpp,protocol.cpp,384,4,3
