@@ -1,29 +1,8 @@
-For the time being we divide the number of matching files with
-the largest set of total files and consider the matching files
-to be a subset of the bigger repository.
+** Thoughts on research.
 
-# No longer valid values with #
-#* bitcoin vs bitcoin2:
-#    - original     :: 6.386293e-2
-#    - preprocessed :: 7.644306e-2
-#
-#* bitcoin 0.14 vs MicroBitcoin
-#    - original     :: 0.10918775
-#    - preprocessed :: 0.12916112
-#
-#* bitcoin vs Vitae
-#    - original     :: 6.25e-2
-#    - preprocessed :: 7.366771e-2
-#
-#* bitcoin vs bitcoin 0.14
-#    - original     :: 0.9607843
-#    - preprocessed :: 0.9618163
-#
-
-* bitcion vs MicroBitcoin
-    - original     :: 0.08650875
-    - preprocessed :: 0.10195675
-
-* bitcoin MicroBitcoin again
-    - original     :: 0.13683127 matching 133 out of 972
-    - preprocessed :: 0.1399177  matching 136 out of 972
+ * So right of based on what we talked about previously, it seems as though there are three directions that
+   we can take in terms of analyzing our data for parse trees
+   - First off we consider comparing the smaller of the two trees against the longest common substring
+   - Second, we compare the larger of the two trees against the longest common substring
+   - Thirdly, we consider the average of the two trees compared against the longest common substring
+ * We also need to consider exactly what we want our final analysis to look like: Do we want 

@@ -97,14 +97,14 @@ traverseDir validDir transition =
            foldM go state' (filter validDir dirPaths) -- process subdirs
            in go
 
-files :: IO ()
-files = do
-  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+readDataCSV :: String -> IO [[String]]
+readDataCSV dat = do
+  input <- fmap Txt.lines $ Txt.readFile ("data/" ++ dat)
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+  let tmp   = splitEvery 5 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  cloneRepos tmp
+  return tmp
 
 cloneRepos :: [[String]] -> IO ()
 cloneRepos []     = do
@@ -175,12 +175,59 @@ writeTreeToFile file tree num = do
   hClose h
 
 convertToCSVLine :: (String, String, Int, Int, Int) -> String
-convertToCSVLine (a, b, c, d, e) = a ++ "," ++ 
-                                   b ++ "," ++ 
-                                   (show c) ++ "," ++ 
-                                   (show d) ++ "," ++ 
-                                   (show e)
+convertToCSVLine (a, b, c, d, e) = a ++ "," ++
+                                   b ++ "," ++
+                                   show c ++ "," ++
+                                   show d ++ "," ++
+                                   show e
 
 convertToCSVTwo :: String -> String -> String
 convertToCSVTwo a b = a ++ "," ++ b ++ "\n"
 
+lessThan :: [String] -> Float
+lessThan (_:_:x:y:[z]) = do
+  let xx = read x :: Float
+  let yy = read y :: Float
+  let zz = read z :: Float
+  if yy < xx then
+       zz / yy
+  else
+       zz / xx
+
+greaterThan :: [String] -> Float
+greaterThan (_:_:x:y:[z]) = do
+  let xx = read x :: Float
+  let yy = read y :: Float
+  let zz = read z :: Float
+  if yy > xx then
+       zz / yy
+  else
+       zz / xx
+
+average :: [String] -> Float
+average (_:_:x:y:[z]) = do
+  let xx = read x :: Float
+  let yy = read y :: Float
+  let zz = read z :: Float
+  zz / ((xx + yy) / 2)
+
+  
+
+--  Process individual data files. For now compute average of AST sizes.
+--  [[String]] list of lists where each sublist contains the names of the two files being compared
+--  along with the respective size of each AST and the length of the combined longest substring 
+--  AST.
+processDataFile :: [[String]] -> [String]
+processDataFile ys = func ys []
+  where
+    func [] acc     = map show acc
+    func (x:xs) acc =
+      func xs (acc ++ [lessThan x])
+
+
+analyzeAllData :: IO ()
+analyzeAllData = do
+  dat <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("data/")
+  read_files <- traverse readDataCSV dat
+  let processed = map processDataFile read_files
+  writeDataToFile "cumulative_data" processed
