@@ -218,16 +218,25 @@ average (_:_:x:y:[z]) = do
 --  along with the respective size of each AST and the length of the combined longest substring 
 --  AST.
 processDataFile :: [[String]] -> [String]
-processDataFile ys = func ys []
+processDataFile ys = do 
+  funcLess ys []
+  funcGrea ys []
+  funcAvg  ys []
   where
-    func [] acc     = map show acc
-    func (x:xs) acc =
-      func xs (acc ++ [lessThan x])
+    funcLess [] acc     = map show acc
+    funcLess (x:xs) acc =
+      funcLess xs (acc ++ [lessThan x])
+    funcGrea [] acc     = map show acc
+    funcGrea (x:xs) acc =
+      funcGrea xs (acc ++ [greaterThan x])
+    funcAvg [] acc     = map show acc
+    funcAvg (x:xs) acc =
+      funcAvg xs (acc ++ [average x])
 
 
 analyzeAllData :: IO ()
 analyzeAllData = do
-  dat <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("data/")
+  dat <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("data2/")
   read_files <- traverse readDataCSV dat
   let processed = map processDataFile read_files
   writeDataToFile "cumulative_data" processed

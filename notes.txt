@@ -5,4 +5,7 @@
    - First off we consider comparing the smaller of the two trees against the longest common substring
    - Second, we compare the larger of the two trees against the longest common substring
    - Thirdly, we consider the average of the two trees compared against the longest common substring
- * We also need to consider exactly what we want our final analysis to look like: Do we want 
+ * We also need to consider exactly what we want our final analysis to look like: Do we want to keep all of our
+   data in sub-formats as we process it? For now I am going to create a second data directory to write stats
+   to for each file. 
+ * In terms of starting out 
