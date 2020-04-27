@@ -234,9 +234,9 @@ processDataFile ys = do
       funcAvg xs (acc ++ [average x])
 
 
-analyzeAllData :: IO ()
-analyzeAllData = do
-  dat <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("data2/")
-  read_files <- traverse readDataCSV dat
-  let processed = map processDataFile read_files
-  writeDataToFile "cumulative_data" processed
+--analyzeAllData :: IO ()
+--analyzeAllData = do
+--  dat <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] ("data2/")
+--  read_files <- traverse readDataCSV dat
+--  let processed = map processDataFile read_files
+--  writeDataToFile "cumulative_data" processed

@@ -1,10 +1,4 @@
-(1.) We hypothesize that there exist numerous newer coins which directly copy or borrow code from older 
-     coins. (Lacking, not where we want to end up) 
-(2.) We hypothesize that on average newer coins copy and or borrow code from older coins at a rate which
-     is significant, say at least 75%.
-(3.) We hypothesize that we will find that there will be a lot of code from newer coins that share overlap 
-     with code with other coins, we will be able to show this by demonstrating partial matches, where code
-     may be 75% similar or more but not exact matches. In these cases it is likely that the files will not
-     necessarily be the same size. We are interested in varying levels of overlap in these cases: When 
-     the files are of similar length and when they are very different in terms of length.
-(4.) We hypothesize that 
+(1.) We hypothesize that on average coins copy and or borrow code from newer coins over older coins.
+(2.) We hypothesize that coins copy code in pieces rather than entire codebases.
+(3.) We hypothesize that coins copy code from coins which have desirable traits or features. (More secure/modern cryptography, smart contract options, enhanced anonymity)
+(4.) We hypothesize that coins copy code from less well-known coins (Depends on whether or not it is desired to keep code copying more or less obvious, possibly not)

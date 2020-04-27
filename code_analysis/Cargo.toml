@@ -9,7 +9,7 @@ edition = "2018"
 #libclang = ["clang_8_0"]
 
 [dependencies]
-mpi = "0.5"
+#mpi = "0.5"
 csv = "1"
 serde = "1"
 serde_derive = "1"

@@ -5,7 +5,7 @@ extern crate walkdir;
 extern crate sha2;
 extern crate data_encoding;
 extern crate ring;
-extern crate mpi;
+//extern crate mpi;
 extern crate reqwest;
 extern crate select;
 //extern crate clang;
@@ -16,9 +16,10 @@ extern crate kmpsearch;
 //use std::fs::File;
 //use csv::Error;
 //use std::process;
-use mpi::traits::*;
-use mpi::request::WaitGuard;
-use mpi::topology::{Rank};
+//use mpi::traits::*;
+//use mpi::request::WaitGuard;
+//use mpi::topology::{Rank};
+use std::iter::FilterMap;
 
 #[warn(unused_imports)]
 use walkdir::{DirEntry, WalkDir};
@@ -64,26 +65,34 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
 }
 
 fn main() {
-    let universe = mpi::initialize().unwrap();
-    let world = universe.world();
-    let size = world.size();
-    let rank = world.rank();
+    //let universe = mpi::initialize().unwrap();
+    //let world = universe.world();
+    //let size = world.size();
+    //let rank = world.rank();
 
-    if size != 2 {
-        panic!("Size of MPI_COMM_WORLD must be 2, but is {}!", size);
-     }
+    //if size != 2 {
+    //    panic!("Size of MPI_COMM_WORLD must be 2, but is {}!", size);
+    //}
 
-    let args: Vec<String>  = env::args().collect();
+    //let args: Vec<String>  = env::args().collect();
     //let file1 = &args[1];
     //let file2 = &args[2];
-    let file  = String::from("../data/repo-pairs.csv");
-    let pairs = util::runcsv(file);
-
-    match rank {
-        0 => {
-
-        }
+    //let file  = String::from("../data/repo-pairs.csv");
+    //let pairs = util::runcsv(file);
+    let base_url           = "https://coinmarketcap.com";
+    let links: Vec<String> = scrape::scraper("https://coinmarketcap.com/coins/views/all/");
+    let mut links_coins: Vec<Vec<String>> = Vec::new();
+    for x in links {
+        //println!("{:?}", x);
+        let y: &str = &x[..];
+        links_coins.push(scrape::scraper_coins(base_url + y));
     }
+
+    //match rank {
+    //    0 => {
+
+    //    }
+    //}
     //println!("{:?}", pairs.len());
     //for r in pairs {
     //    println!("{:?}", r);
