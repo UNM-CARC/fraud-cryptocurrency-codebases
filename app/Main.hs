@@ -35,9 +35,9 @@ main = do
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  --print tmp
+  print tmp
   --cloneRepos tmp
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0
   --compareAllRepos
-  compareParseTreesRepos (head args) (head (tail args))
+  --compareParseTreesRepos (head args) (head (tail args))
