@@ -109,11 +109,15 @@ readDataCSV dat = do
 select :: (t1 -> Bool) -> [t1] -> [t] -> [t]
 select p xs ys = [y | (x,y) <- zip xs ys, p x]
 
+-- Use for repos.csv
 filterSelected :: [[String]] -> [(String, String)]
 filterSelected repos = 
   let x = select (=="1") (map (head . tail . tail . tail . tail) repos) repos in 
     map (\y -> ((head . tail . tail) y, (head . tail . tail . tail) y)) x
   
+transferToTuple :: [[String]] -> [(String, String)]
+transferToTuple repos =
+  map (\x -> (head x, (head . tail . tail) x)) repos
 
 cloneRepos :: [[String]] -> IO ()
 cloneRepos []     = do
