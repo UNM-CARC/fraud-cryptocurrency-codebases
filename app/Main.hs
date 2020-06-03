@@ -34,12 +34,14 @@ main = do
   --input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+  let tmp   = splitEvery 5 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-  print (map snd $ filterSelected tmp)
+
+  let filtered = filterSelected tmp
   --print (map snd $ transferToTuple tmp)
   --print tmp
-  --cloneRepos tmp
+  print $ length $ (map snd $ filtered)
+  --cloneRepos (\x -> snd x) filtered
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0
   --compareAllRepos

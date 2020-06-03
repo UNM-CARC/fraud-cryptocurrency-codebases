@@ -115,17 +115,17 @@ filterSelected repos =
   let x = select (=="1") (map (head . tail . tail . tail . tail) repos) repos in 
     map (\y -> ((head . tail . tail) y, (head . tail . tail . tail) y)) x
   
-transferToTuple :: [[String]] -> [(String, String)]
-transferToTuple repos =
-  map (\x -> (head x, (head . tail . tail) x)) repos
+--transferToTuple :: [[String]] -> [(String, String)]
+--transferToTuple repos =
+--  map (\x -> (head x, (head . tail . tail) x)) repos
 
-cloneRepos :: [[String]] -> IO ()
-cloneRepos []     = do
+--cloneRepos :: (a -> String) -> [a] -> IO ()
+cloneRepos fun []     = do
   print ""
-cloneRepos (x:xs) = do
-  cloneRepo x
+cloneRepos fun (x:xs) = do
+  cloneRepo fun x
   -- print $ head $ tail x
-  cloneRepos xs
+  cloneRepos fun xs
 
 --allFiles :: String -> IO (DirTree FilePath)
 --allFiles dir = do
@@ -144,11 +144,12 @@ splitEvery n xs = as : splitEvery n bs
 
 -- Clone a given repository based upon a list of three values:
 -- ["BTC", "bitcoin", "https..."]
-cloneRepo :: [String] -> IO ()
-cloneRepo coin = do
-  let str = "git clone --recursive " ++ last coin ++ " /wheeler/scratch/khaskins/" ++ (takeFileName $ last coin)
+-- NEW :: Takes a tuple of ("Coin", "repo") and clones repo.
+cloneRepo :: ((String, String) -> String) -> (String, String) -> IO ()
+cloneRepo fun coin = do
+  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/" ++ (takeFileName $ snd coin)
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
-  print $ head coin
+  print $ fst coin
 
 listAllRepos :: IO [()]
 listAllRepos = do
