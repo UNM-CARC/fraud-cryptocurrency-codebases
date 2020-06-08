@@ -114,6 +114,17 @@ filterSelected :: [[String]] -> [(String, String)]
 filterSelected repos = 
   let x = select (=="1") (map (head . tail . tail . tail . tail) repos) repos in 
     map (\y -> ((head . tail . tail) y, (head . tail . tail . tail) y)) x
+
+generateFileList :: FilePath -> IO [FilePath]
+generateFileList repo = do
+  dirlist  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
+                          ("/wheeler/scratch/khaskins/" ++ repo)
+  let dirs     = map (\x -> x ++ " ") dirlist
+  let filtered = map init $ filterFileType ".cpp " dirs
+  return filtered
+
+--printPercentCPP :: [String] -> IO ()
+--printPercentCPP repos = 
   
 --transferToTuple :: [[String]] -> [(String, String)]
 --transferToTuple repos =
