@@ -110,6 +110,7 @@ select :: (t1 -> Bool) -> [t1] -> [t] -> [t]
 select p xs ys = [y | (x,y) <- zip xs ys, p x]
 
 -- Use for repos.csv
+-- [(repo, git link)]
 filterSelected :: [[String]] -> [(String, String)]
 filterSelected repos = 
   let x = select (=="1") (map (head . tail . tail . tail . tail) repos) repos in 
@@ -123,20 +124,26 @@ generateFileList repo = do
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
 
---printPercentCPP :: [String] -> IO ()
---printPercentCPP repos = 
+removeRepo :: (String, String) -> IO ()
+removeRepo coin = do
+  let str = "rm -rf /wheeler/scratch/khaskins/" ++ fst coin
+  (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
+  print $ "Removed " ++ fst coin
+
+pruneRepos :: [String] -> IO ()
+pruneRepos repos = 
   
 --transferToTuple :: [[String]] -> [(String, String)]
 --transferToTuple repos =
 --  map (\x -> (head x, (head . tail . tail) x)) repos
 
---cloneRepos :: (a -> String) -> [a] -> IO ()
-cloneRepos fun []     = do
+cloneRepos :: [(String, String)] -> IO ()
+cloneRepos []     = do
   print ""
-cloneRepos fun (x:xs) = do
-  cloneRepo fun x
+cloneRepos (x:xs) = do
+  cloneRepo x
   -- print $ head $ tail x
-  cloneRepos fun xs
+  cloneRepos xs
 
 --allFiles :: String -> IO (DirTree FilePath)
 --allFiles dir = do
@@ -156,9 +163,9 @@ splitEvery n xs = as : splitEvery n bs
 -- Clone a given repository based upon a list of three values:
 -- ["BTC", "bitcoin", "https..."]
 -- NEW :: Takes a tuple of ("Coin", "repo") and clones repo.
-cloneRepo :: ((String, String) -> String) -> (String, String) -> IO ()
-cloneRepo fun coin = do
-  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/" ++ (takeFileName $ snd coin)
+cloneRepo :: (String, String) -> IO ()
+cloneRepo coin = do
+  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/" ++ fst coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ fst coin
 

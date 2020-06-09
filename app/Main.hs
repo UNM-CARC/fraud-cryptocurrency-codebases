@@ -40,8 +40,8 @@ main = do
   let filtered = filterSelected tmp
   --print (map snd $ transferToTuple tmp)
   --print tmp
-  print $ length $ (map snd $ filtered)
-  --cloneRepos (\x -> snd x) filtered
+  --print $ length $ (map snd $ filtered)
+  --cloneRepos filtered
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0
   --compareAllRepos
