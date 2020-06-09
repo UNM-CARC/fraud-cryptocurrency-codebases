@@ -41,6 +41,7 @@ main = do
   --print (map snd $ transferToTuple tmp)
   --print tmp
   --print $ length $ (map snd $ filtered)
+  print filtered
   --cloneRepos filtered
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0

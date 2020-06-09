@@ -116,7 +116,7 @@ filterSelected repos =
   let x = select (=="1") (map (head . tail . tail . tail . tail) repos) repos in 
     map (\y -> ((head . tail . tail) y, (head . tail . tail . tail) y)) x
 
-generateFileList :: FilePath -> IO [FilePath]
+generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
   dirlist  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                           ("/wheeler/scratch/khaskins/" ++ repo)
@@ -124,14 +124,28 @@ generateFileList repo = do
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
 
-removeRepo :: (String, String) -> IO ()
-removeRepo coin = do
-  let str = "rm -rf /wheeler/scratch/khaskins/" ++ fst coin
+removeRepo :: String -> IO ()
+removeRepo repo = do
+  let str = "rm -rf /wheeler/scratch/khaskins/" ++ repo
   (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
-  print $ "Removed " ++ fst coin
+  print $ "Removed " ++ repo
 
-pruneRepos :: [String] -> IO ()
-pruneRepos repos = 
+pruneRepo :: String -> IO ()
+pruneRepo repo = do
+  fileList <- generateFileList repo
+  let len = length fileList
+  if len > 0 
+    then
+      print $ "Keeping " ++ repo
+    else
+      removeRepo repo
+
+pruneRepos :: [(String, String)] -> IO ()
+pruneRepos []     = do
+  print ""
+pruneRepos (x:xs) = do
+  pruneRepo $ fst x
+  pruneRepos xs
   
 --transferToTuple :: [[String]] -> [(String, String)]
 --transferToTuple repos =
