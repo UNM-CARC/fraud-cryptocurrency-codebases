@@ -118,6 +118,8 @@ filterSelected repos =
 
 generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
+  let str = "mkdir /wheeler/scratch/khaskins/" ++ repo
+  (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
   dirlist  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
                           ("/wheeler/scratch/khaskins/" ++ repo)
   let dirs     = map (\x -> x ++ " ") dirlist
