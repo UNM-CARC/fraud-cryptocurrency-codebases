@@ -1947,7 +1947,7 @@ rank,coin,repo,link,selected
 61,Bitcoin Private,utxo-dump,https://github.com/BTCPrivate/utxo-dump,0
 61,Bitcoin Private,walletaid,https://github.com/BTCPrivate/walletaid,0
 61,Bitcoin Private,z-nomp,https://github.com/BTCPrivate/z-nomp,0
-62,Ardor,Ardor,https://bitbucket.org/Jelurida/ardor/src,1
+62,Ardor,Ardor,https://bitbucket.org/Jelurida/ardor/src,0
 64,MOAC,chain3,https://github.com/MOACChain/chain3,0
 64,MOAC,moac-core,https://github.com/MOACChain/moac-core,1
 64,MOAC,MOAC-DOCS,https://github.com/MOACChain/MOAC-DOCS,0
@@ -2476,7 +2476,7 @@ rank,coin,repo,link,selected
 87,ZenCash,zencashjs,https://github.com/ZencashOfficial/zencashjs,0
 87,ZenCash,zenchat,https://github.com/ZencashOfficial/zenchat,0
 87,ZenCash,zen_archived,https://github.com/ZencashOfficial/zen_archived,0
-89,Nxt,Nxt,https://bitbucket.org/JeanLucPicard/nxt/src,1
+89,Nxt,Nxt,https://bitbucket.org/JeanLucPicard/nxt/src,0
 91,PIVX,bitcore-lib-pivx,https://github.com/PIVX-Project/bitcore-lib-pivx,0
 91,PIVX,bitcore-wallet-client-pivx,https://github.com/PIVX-Project/bitcore-wallet-client-pivx,0
 91,PIVX,bitcore-wallet-service-pivx,https://github.com/PIVX-Project/bitcore-wallet-service-pivx,0
@@ -5332,7 +5332,7 @@ rank,coin,repo,link,selected
 330,Tierion,chainpoint-cli,https://github.com/chainpoint/chainpoint-cli,0
 330,Tierion,chainpoint-client-js,https://github.com/chainpoint/chainpoint-client-js,0
 330,Tierion,chainpoint-node,https://github.com/chainpoint/chainpoint-node,0
-330,Tierion,chainpoint-node-src,https://github.com/chainpoint/chainpoint-node-src,0
+330,Tierion,chainpoint-node-src,https://github.com/chainpoint/chainpoint-node-src,1
 330,Tierion,chainpoint-ntpd,https://github.com/chainpoint/chainpoint-ntpd,0
 330,Tierion,chainpoint-org,https://github.com/chainpoint/chainpoint-org,0
 330,Tierion,chainpoint-parse,https://github.com/chainpoint/chainpoint-parse,0
@@ -7209,7 +7209,7 @@ rank,coin,repo,link,selected
 589,OKCash,okcash,https://github.com/okcashpro/okcash,1
 589,OKCash,okcash-documentation,https://github.com/okcashpro/okcash-documentation,0
 589,OKCash,okcash-graphics,https://github.com/okcashpro/okcash-graphics,0
-589,OKCash,okcash-oldsrc-history,https://github.com/okcashpro/okcash-oldsrc-history,0
+589,OKCash,okcash-oldsrc-history,https://github.com/okcashpro/okcash-oldsrc-history,1
 589,OKCash,okcash.info.website,https://github.com/okcashpro/okcash.info.website,0
 589,OKCash,okcash.org.website,https://github.com/okcashpro/okcash.org.website,0
 589,OKCash,okcash.paperwallets,https://github.com/okcashpro/okcash.paperwallets,0
@@ -10015,7 +10015,7 @@ rank,coin,repo,link,selected
 966,Growers International,BlockchainSolutions,https://github.com/growersintl/BlockchainSolutions,0
 966,Growers International,growers,https://github.com/growersintl/growers,1
 966,Growers International,GRWIToken,https://github.com/growersintl/GRWIToken,0
-967,NuShares,NuShares,https://bitbucket.org/JordanLeePeershares/nubit/src,1
+967,NuShares,NuShares,https://bitbucket.org/JordanLeePeershares/nubit/src,0
 968,Zetacoin,zetacoin,https://github.com/zetacoin/zetacoin,1
 968,Zetacoin,zetaweb,https://github.com/zetacoin/zetaweb,0
 971,Bata,Bata-Bitcoin-Paper-Wallet-Generator,https://github.com/BTA-BATA/Bata-Bitcoin-Paper-Wallet-Generator,1
@@ -10889,7 +10889,7 @@ rank,coin,repo,link,selected
 1064,Monkey Project,Monkey,https://github.com/MONKEYPROJECT/Monkey,1
 1064,Monkey Project,MonkeyV2,https://github.com/MONKEYPROJECT/MonkeyV2,0
 1067,Opus,contracts,https://github.com/Opus-foundation/contracts,1
-1069,Digix Gold Token,Digix Gold Token,https://gist.github.com/mrenoon/2582fba7b4d457d80f7d37520aabbc08,1
+1069,Digix Gold Token,Digix Gold Token,https://gist.github.com/mrenoon/2582fba7b4d457d80f7d37520aabbc08,0
 1070,E-coin,ecoin,https://github.com/ecoinclub/ecoin,1
 1072,Ethorse,Betting,https://github.com/ethorse/Betting,0
 1072,Ethorse,Bounty,https://github.com/ethorse/Bounty,0
@@ -12389,7 +12389,7 @@ rank,coin,repo,link,selected
 1272,Zurcoin,website,https://github.com/zurcoin/website,0
 1272,Zurcoin,zurcoin,https://github.com/zurcoin/zurcoin,1
 1272,Zurcoin,zurparty-lib,https://github.com/zurcoin/zurparty-lib,0
-1274,8Bit,8Bit,https://bitbucket.org/8bitcoin/8bit/src,1
+1274,8Bit,8Bit,https://bitbucket.org/8bitcoin/8bit/src,0
 1275,Money,money,https://github.com/moneyfoundation/money,1
 1275,Money,moneypage,https://github.com/moneyfoundation/moneypage,0
 1275,Money,moneywallets,https://github.com/moneyfoundation/moneywallets,0
@@ -12566,7 +12566,7 @@ rank,coin,repo,link,selected
 1314,YENTEN,yenten,https://github.com/conan-equal-newone/yenten,1
 1315,CompuCoin,compucoin,https://github.com/compucoin/compucoin,1
 1315,CompuCoin,Compucoin-source-code,https://github.com/compucoin/Compucoin-source-code,0
-1317,FuzzBalls,FuzzBalls,https://bitbucket.org/aminerminer/fuzzcoin/src,1
+1317,FuzzBalls,FuzzBalls,https://bitbucket.org/aminerminer/fuzzcoin/src,0
 1318,SoonCoin,Corgicoinnew,https://github.com/SoonCoin/Corgicoinnew,0
 1318,SoonCoin,genstake,https://github.com/SoonCoin/genstake,0
 1318,SoonCoin,granitecoin,https://github.com/SoonCoin/granitecoin,0
@@ -13371,7 +13371,7 @@ rank,coin,repo,link,selected
 1575,Quotient,Sapience,https://github.com/CedricProfit/Sapience,0
 1578,High Gain,highgain,https://github.com/highgainqubit/highgain,1
 1579,Magnetcoin,MagnetCoin,https://github.com/magnetcoindev/MagnetCoin,1
-1580,RabbitCoin,RabbitCoin,https://bitbucket.org/rabbitcoin/rabbitcoin/src,1
+1580,RabbitCoin,RabbitCoin,https://bitbucket.org/rabbitcoin/rabbitcoin/src,0
 1582,MarxCoin,MARX,https://github.com/MARXCOIN01/MARX,0
 1582,MarxCoin,MarxCoin,https://github.com/MARXCOIN01/MarxCoin,1
 1588,Storjcoin X,android-libstorj,https://github.com/storj/android-libstorj,0
@@ -13621,7 +13621,7 @@ rank,coin,repo,link,selected
 1634,Hyper,hyper,https://github.com/CryptoDatabase/hyper,1
 1635,EggCoin,eggcoin,https://github.com/eastercoindev/eggcoin,1
 1635,EggCoin,eggcoinwindows,https://github.com/eastercoindev/eggcoinwindows,0
-1636,ShellCoin,ShellCoin,https://bitbucket.org/shellnode/shell/src,1
+1636,ShellCoin,ShellCoin,https://bitbucket.org/shellnode/shell/src,0
 1640,Bitok,android-async-http,https://github.com/bitokproject/android-async-http,0
 1640,Bitok,azure-quickstart-templates,https://github.com/bitokproject/azure-quickstart-templates,0
 1640,Bitok,billiard,https://github.com/bitokproject/billiard,1
