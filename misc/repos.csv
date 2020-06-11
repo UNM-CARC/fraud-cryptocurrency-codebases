@@ -179,7 +179,7 @@ rank,coin,repo,link,selected
 3,XRP,Downloads,https://github.com/ripple/Downloads,0
 3,XRP,grafana-file-datasource,https://github.com/ripple/grafana-file-datasource,0
 3,XRP,hbase-client,https://github.com/ripple/hbase-client,0
-3,XRP,ilp-plugin-xrp-paychan,https://github.com/ripple/ilp-plugin-xrp-paychan,1
+3,XRP,ilp-plugin-xrp-paychan,https://github.com/ripple/ilp-plugin-xrp-paychan,0
 3,XRP,javascript-style-guide,https://github.com/ripple/javascript-style-guide,0
 3,XRP,js-ilp-plugin-ripple,https://github.com/ripple/js-ilp-plugin-ripple,0
 3,XRP,ldap,https://github.com/ripple/ldap,0
@@ -194,7 +194,7 @@ rank,coin,repo,link,selected
 3,XRP,ripple-authd,https://github.com/ripple/ripple-authd,0
 3,XRP,ripple-binary-codec,https://github.com/ripple/ripple-binary-codec,0
 3,XRP,ripple-blobvault,https://github.com/ripple/ripple-blobvault,0
-3,XRP,ripple-client,https://github.com/ripple/ripple-client,1
+3,XRP,ripple-client,https://github.com/ripple/ripple-client,0
 3,XRP,ripple-client-desktop,https://github.com/ripple/ripple-client-desktop,0
 3,XRP,ripple-data-api,https://github.com/ripple/ripple-data-api,0
 3,XRP,ripple-demurrage-tool,https://github.com/ripple/ripple-demurrage-tool,0
@@ -210,12 +210,12 @@ rank,coin,repo,link,selected
 3,XRP,ripple-lib-java,https://github.com/ripple/ripple-lib-java,0
 3,XRP,ripple-libpp,https://github.com/ripple/ripple-libpp,0
 3,XRP,ripple-orderbook,https://github.com/ripple/ripple-orderbook,0
-3,XRP,ripple-rest,https://github.com/ripple/ripple-rest,1
-3,XRP,ripple-vault-client,https://github.com/ripple/ripple-vault-client,1
+3,XRP,ripple-rest,https://github.com/ripple/ripple-rest,0
+3,XRP,ripple-vault-client,https://github.com/ripple/ripple-vault-client,0
 3,XRP,ripple.github.io,https://github.com/ripple/ripple.github.io,0
-3,XRP,ripplecharts-frontend,https://github.com/ripple/ripplecharts-frontend,1
+3,XRP,ripplecharts-frontend,https://github.com/ripple/ripplecharts-frontend,0
 3,XRP,rippled,https://github.com/ripple/rippled,1
-3,XRP,rippled-historical-database,https://github.com/ripple/rippled-historical-database,1
+3,XRP,rippled-historical-database,https://github.com/ripple/rippled-historical-database,0
 3,XRP,rippled-network-crawler,https://github.com/ripple/rippled-network-crawler,0
 3,XRP,rippled-package-builder,https://github.com/ripple/rippled-package-builder,0
 3,XRP,rippled-peers-api,https://github.com/ripple/rippled-peers-api,0
@@ -248,8 +248,8 @@ rank,coin,repo,link,selected
 5,EOS,clang,https://github.com/EOSIO/clang,0
 5,EOS,Documentation,https://github.com/EOSIO/Documentation,0
 5,EOS,eos,https://github.com/EOSIO/eos,1
-5,EOS,eos-token-distribution,https://github.com/EOSIO/eos-token-distribution,1
-5,EOS,eos-wallet-app,https://github.com/EOSIO/eos-wallet-app,1
+5,EOS,eos-token-distribution,https://github.com/EOSIO/eos-token-distribution,0
+5,EOS,eos-wallet-app,https://github.com/EOSIO/eos-wallet-app,0
 5,EOS,eosio.contracts,https://github.com/EOSIO/eosio.contracts,0
 5,EOS,eosio.exchange,https://github.com/EOSIO/eosio.exchange,0
 5,EOS,eosio.forum,https://github.com/EOSIO/eosio.forum,0
