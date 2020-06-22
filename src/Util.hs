@@ -4,6 +4,7 @@ import qualified Data.ByteString.Lazy as B
 import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
+import qualified Data.List.Split as SP
 
 import           Data.List
 import           Data.Char
@@ -18,7 +19,7 @@ import           System.Directory (doesDirectoryExist, listDirectory)
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
--- import           Text.Regex.TDFA
+--import           Text.Regex.TDFA
 --import           Text.Regex.PCRE
 import           System.Directory.Tree (
                    AnchoredDirTree(..), DirTree(..),
@@ -170,17 +171,17 @@ cloneRepos (x:xs) = do
   -- print $ head $ tail x
   cloneRepos xs
 
-getTags :: (String, String) -> IO [String]
+getTags :: String -> IO [String]
 getTags coin = do
-  let str = "cd /wheeler/scratch/khaskins/" ++ fst coin
+  let str = "cd /wheeler/scratch/khaskins/" ++ coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc, out', err') <- readCreateProcessWithExitCode (shell str2) []
-  return out'
+  return $ SP.splitOn "\n" out'
 
-cloneRepositoryByYears :: (String, String) -> IO ()
-cloneRepositoryByYears coin = do
-  taglist <- getTags coin
+--cloneRepositoryByYears :: (String, String) -> IO ()
+--cloneRepositoryByYears coin = do
+--  taglist <- getTags $ fst coin
 
 
 --allFiles :: String -> IO (DirTree FilePath)
