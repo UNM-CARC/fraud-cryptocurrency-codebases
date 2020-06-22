@@ -4,7 +4,6 @@ import qualified Data.ByteString.Lazy as B
 import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
-import qualified Data.List.Split as SP
 
 import           Data.List
 import           Data.Char
@@ -177,7 +176,7 @@ getTags coin = do
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc, out', err') <- readCreateProcessWithExitCode (shell str2) []
-  return $ SP.splitOn "\n" out'
+  return $ map Txt.unpack $ Txt.splitOn (Txt.pack "\n") (Txt.pack out')
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
