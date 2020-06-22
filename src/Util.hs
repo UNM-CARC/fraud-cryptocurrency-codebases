@@ -153,6 +153,15 @@ pruneRepos (x:xs) = do
 --transferToTuple repos =
 --  map (\x -> (head x, (head . tail . tail) x)) repos
 
+-- Clone a given repository based upon a list of three values:
+-- ["BTC", "bitcoin", "https..."]
+-- NEW :: Takes a tuple of ("Coin", "repo") and clones repo.
+cloneRepo :: (String, String) -> IO ()
+cloneRepo coin = do
+  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/" ++ fst coin
+  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
+  print $ fst coin
+
 cloneRepos :: [(String, String)] -> IO ()
 cloneRepos []     = do
   print ""
@@ -160,6 +169,19 @@ cloneRepos (x:xs) = do
   cloneRepo x
   -- print $ head $ tail x
   cloneRepos xs
+
+getTags :: (String, String) -> IO [String]
+getTags coin = do
+  let str = "cd /wheeler/scratch/khaskins/" ++ fst coin
+  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
+  let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
+  (errc, out', err') <- readCreateProcessWithExitCode (shell str2) []
+  return out'
+
+cloneRepositoryByYears :: (String, String) -> IO ()
+cloneRepositoryByYears coin = do
+  taglist <- getTags coin
+
 
 --allFiles :: String -> IO (DirTree FilePath)
 --allFiles dir = do
@@ -175,15 +197,6 @@ splitEvery :: Int -> [a] -> [[a]]
 splitEvery _ [] = []
 splitEvery n xs = as : splitEvery n bs
   where (as,bs) = splitAt n xs
-
--- Clone a given repository based upon a list of three values:
--- ["BTC", "bitcoin", "https..."]
--- NEW :: Takes a tuple of ("Coin", "repo") and clones repo.
-cloneRepo :: (String, String) -> IO ()
-cloneRepo coin = do
-  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/" ++ fst coin
-  (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
-  print $ fst coin
 
 listAllRepos :: IO [()]
 listAllRepos = do
