@@ -172,8 +172,8 @@ cloneRepos (x:xs) = do
 
 getTags :: String -> IO [String]
 getTags coin = do
-  --let str = "cd /wheeler/scratch/khaskins/" ++ coin
-  let str = "cd /home/ghostbird/Hacking/cybersecurity/" ++ coin ++ " ; "
+  let str = "cd /wheeler/scratch/khaskins/" ++ coin ++ " ; "
+  --let str = "cd /home/ghostbird/Hacking/cybersecurity/" ++ coin ++ " ; "
   let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
   return $ map Txt.unpack $ Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
