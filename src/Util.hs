@@ -170,13 +170,18 @@ cloneRepos (x:xs) = do
   -- print $ head $ tail x
   cloneRepos xs
 
-getTags :: String -> IO [String]
+getTags :: String -> IO () --[(String, String)]
 getTags coin = do
   let str = "cd /wheeler/scratch/khaskins/" ++ coin ++ " ; "
   --let str = "cd /home/ghostbird/Hacking/cybersecurity/" ++ coin ++ " ; "
   let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
-  return $ map Txt.unpack $ Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
+  let complete = Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
+  let tuples   = init $ map (\x -> (head x, last x)) $ map (Txt.splitOn (Txt.pack "/")) complete
+  let filtered = map (\(x, y) -> (head $ Txt.splitOn (Txt.pack "\\") x, y)) tuples
+  --return $ map Txt.unpack 
+  print filtered
+
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
