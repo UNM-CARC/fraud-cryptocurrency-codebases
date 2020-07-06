@@ -5,12 +5,12 @@
 
 packages:
 - completed:
-    hackage: clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
+    hackage: clang-pure-0.2.0.6@sha256:c418f87154acc69fb8257379953a32215c518151d39b6fe1da61994495039b26,3766
     pantry-tree:
       size: 1293
-      sha256: a946ade0b7f7cf8138d2411ac36be23f31a23dcd3c5b22dc645034ecd5caf3ea
+      sha256: ca33cb1a1f7d69f676b75a1d66fb20612ef5d8a9434f0079057728dca624db84
   original:
-    hackage: clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
+    hackage: clang-pure-0.2.0.6@sha256:c418f87154acc69fb8257379953a32215c518151d39b6fe1da61994495039b26,3766
 snapshots:
 - completed:
     size: 523448

@@ -202,18 +202,6 @@ buildTrees file1 file2 = do
   --let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
   --return test
 
-g1st :: (String, String, Int, Int, Int) -> String
-g1st (x,_,_,_,_) = x
-
-g3rd :: (a, b, c, d, e) -> c
-g3rd (_,_,x,_,_) = x
-
-g4th :: (a, b, c, d, e) -> d
-g4th (_,_,_,x,_) = x
-
-g5th  :: (a, b, c, d, e) -> e
-g5th (_,_,_,_,x) = x
-
 compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)]
 compareAllParseTrees xs ys = sequence $ helper xs ys []
   where

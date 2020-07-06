@@ -29,6 +29,30 @@ import           System.FilePath (takeExtension)
 import Lib
 --import ParseTrees
 
+first :: (a, b, c) -> a
+first (x,_,_) = x
+
+second :: (a, b, c) -> b
+second (_,x,_) = x
+
+third :: (a, b, c) -> c
+third (_,_,x) = x
+
+g1st :: (a, b, c, d, e) -> a
+g1st (x,_,_,_,_) = x
+
+g2nd :: (a, b, c, d, e) -> b
+g2nd (_,x,_,_,_) = x
+
+g3rd :: (a, b, c, d, e) -> c
+g3rd (_,_,x,_,_) = x
+
+g4th :: (a, b, c, d, e) -> d
+g4th (_,_,_,x,_) = x
+
+g5th  :: (a, b, c, d, e) -> e
+g5th (_,_,_,_,x) = x
+
 -- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
 stripComments [] = []
@@ -170,17 +194,44 @@ cloneRepos (x:xs) = do
   -- print $ head $ tail x
   cloneRepos xs
 
-getTags :: String -> IO () --[(String, String)]
-getTags coin = do
-  let str = "cd /wheeler/scratch/khaskins/" ++ coin ++ " ; "
-  --let str = "cd /home/ghostbird/Hacking/cybersecurity/" ++ coin ++ " ; "
+getTags :: String -> IO [(String, String, String)]
+getTags repo = do
+  --let str = "cd /wheeler/scratch/khaskins/" ++ coin ++ " ; "
+  let str = "cd /home/ghostbird/Hacking/cybersecurity/coins/" ++ repo ++ " ; "
   let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
   let complete = Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
-  let tuples   = init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x)) $ map (Txt.splitOn (Txt.pack "/")) complete
+  let tuples   = init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) $ map (Txt.splitOn (Txt.pack "/")) complete
   --let filtered = map (\(x, y) -> (head $ Txt.splitOn (Txt.pack "\\") x, y)) tuples
   --return $ map Txt.unpack 
-  print tuples --filtered
+  return $ map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
+
+-- Used to initially make new top-level directory.
+initialCopy :: (String, String, String) -> IO String
+initialCopy dat = do
+  --let str1 = "mkdir /wheeler/scratch/khaskins/" ++ third data ++ "-tags"
+  let str = "/home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ "-tags/"
+  (errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ str)) []
+  return str
+  
+  
+
+makeCopy :: (String, String, String) -> IO ()
+makeCopy dat = do
+  new_path <- initialCopy dat
+  --let str = "cp -r /wheeler/scratch/khaskins/" ++ third dat ++ " " ++ new_path ++ snd dat
+  let str  = "cp -r /home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ " " ++ new_path ++ second dat
+  let str2 = " ; cd " ++ new_path ++ second dat ++ " ; git checkout " ++ first dat
+  (errc, out, err) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
+  print $ "Copied and initialized " ++ third dat ++ " " ++ second dat
+
+
+makeCopies :: [(String, String, String)] -> IO ()
+makeCopies[]   = do
+  print ""
+makeCopies (x:xs) = do
+  makeCopy x
+  makeCopies xs
 
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
