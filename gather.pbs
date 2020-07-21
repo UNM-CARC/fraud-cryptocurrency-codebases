@@ -1,0 +1,16 @@
+## Copyright (c) 2018 The Center for Advanced Research Computing
+## The University of New Mexico
+####################################################
+## The next lines specify what resources you are requesting.
+## Starting with 1 node, 8 processors per node, and 48 hours of walltime.
+#PBS -lnodes=1:ppn=8
+#PBS -lwalltime=48:00:00
+## All other instructions to TORQUE are here as well and are preceded by a single #, note that normal comments can also be preceded by a single #
+## Specify the shell to be bash
+#PBS -S /bin/bash
+## Change to directory the PBS script was submitted from
+cd $PBS_O_WORKDIR
+source mods
+#export THIS_HOST=$(hostname)
+stack run "bitcoin" "eos"
+####################################################
