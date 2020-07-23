@@ -29,12 +29,16 @@ main :: IO ()
 main = do
   args <- getArgs
   let flag = 1
+  handle <- openFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/names.csv" ReadMode
+  hSetEncoding handle utf8_bom
+  input <- fmap Txt.lines $ Txt.hGetContents handle
 
   --input <- fmap Txt.lines $ Txt.readFile "misc/repos.csv"
   --input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/repos.csv"
-  input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/names.csv"
+  --input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+  hClose handle
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
   --print tmp
