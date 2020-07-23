@@ -212,10 +212,10 @@ pruneRepos (x:xs) = do
 
 -- Clone a given repository based upon a list of three values:
 -- ["BTC", "bitcoin", "https..."]
--- NEW :: Takes a tuple of ("Coin", "repo") and clones repo.
+-- NEW :: Takes a tuple of ("Coin", "repo-link") and clones repo.
 cloneRepo :: (String, String) -> IO ()
 cloneRepo coin = do
-  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/" ++ fst coin
+  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/coins/" ++ fst coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ fst coin
 
