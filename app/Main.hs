@@ -31,7 +31,8 @@ main = do
   let flag = 1
 
   --input <- fmap Txt.lines $ Txt.readFile "misc/repos.csv"
-  input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
+  --input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/repos.csv"
+  input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
   let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
@@ -43,13 +44,9 @@ main = do
   let filtered = filterRepoLinks tmp
   --print (map snd $ transferToTuple tmp)
   --print $ length $ (map snd $ filtered)
-  print filtered
-  --cloneRepos filtered
-  --pruneRepos filtered
-  --x <- getTags "/wheeler/scratch/khaskins/coins/acoin"
-  --print x
-  --let test = makeCopies x
-  --test
+  --print filtered
+  cloneRepos filtered
+  pruneRepos filtered
   --getAllTags
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0

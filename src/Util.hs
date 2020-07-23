@@ -168,10 +168,10 @@ filterRepoLinks repos =
 
 generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
-  let str = "mkdir /wheeler/scratch/khaskins/" ++ repo
+  let str = "mkdir /wheeler/scratch/khaskins/coins/" ++ repo
   (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
   dirlist  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
-                          ("/wheeler/scratch/khaskins/" ++ repo)
+                          ("/wheeler/scratch/khaskins/coins/" ++ repo)
   let dirs     = map (\x -> x ++ " ") dirlist
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
@@ -185,7 +185,7 @@ generateRepoList = do
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
-  let str = "rm -rf /wheeler/scratch/khaskins/" ++ repo
+  let str = "rm -rf /wheeler/scratch/khaskins/coins/" ++ repo
   (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
   print $ "Removed " ++ repo
 
