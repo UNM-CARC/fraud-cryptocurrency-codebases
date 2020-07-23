@@ -12,5 +12,5 @@
 cd $PBS_O_WORKDIR
 source mods
 #export THIS_HOST=$(hostname)
-stack run "bitcoin" "eos"
+stack run 
 ####################################################

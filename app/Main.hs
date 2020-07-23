@@ -41,11 +41,14 @@ main = do
   --print (map snd $ transferToTuple tmp)
   --print tmp
   --print $ length $ (map snd $ filtered)
-  print filtered
+  --print filtered
   --cloneRepos filtered
   --pruneRepos filtered
-  x <- getTags "aleth"
-  print x
+  --x <- getTags "/wheeler/scratch/khaskins/coins/acoin"
+  --print x
+  --let test = makeCopies x
+  --test
+  getAllTags
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0
   --compareAllRepos

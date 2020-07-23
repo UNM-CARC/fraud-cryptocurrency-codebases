@@ -14,7 +14,7 @@ import           Control.Applicative
 import           System.Process
 import           Data.Digest.Pure.MD5
 --import           Control.Monad (foldM)
-import           System.Directory (doesDirectoryExist, listDirectory) 
+import           System.Directory (doesDirectoryExist, listDirectory, getDirectoryContents) 
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
 import           Control.Monad.Extra (partitionM)
@@ -121,6 +121,25 @@ traverseDir validDir transition =
            foldM go state' (filter validDir dirPaths) -- process subdirs
            in go
 
+-- https://stackoverflow.com/questions/51712083/recursively-search-directories-for-all-files-matching-name-criteria-in-haskell
+traverseDir2 :: (FilePath -> Bool) -> (b -> FilePath -> IO b) -> b -> FilePath -> IO b
+traverseDir2 validDir transition =
+  let go state dirPath =
+        do names <- listDirectory dirPath
+           let paths = map (dirPath </>) names
+           (dirPaths, filePaths) <- partitionM doesDirectoryExist paths
+           state' <- foldM transition state dirPaths -- process current dir
+           return state'
+           in go
+
+
+walkDir :: FilePath -> IO [FilePath]
+walkDir r = contents >>= fmap concat . traverse helper
+    where contents = fmap (r </>) . filter ((&&) . (/=) "." <*> (/=) "..") <$> getDirectoryContents r
+          helper x = do e <- doesDirectoryExist x
+                        if e then walkDir x else return [x]
+
+
 readDataCSV :: String -> IO [[String]]
 readDataCSV dat = do
   input <- fmap Txt.lines $ Txt.readFile ("data/" ++ dat)
@@ -149,6 +168,13 @@ generateFileList repo = do
   let dirs     = map (\x -> x ++ " ") dirlist
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
+
+generateRepoList :: IO [FilePath]
+generateRepoList = do
+  dirlist  <- traverseDir2 (\_ -> True) (\fs f -> pure (f : fs)) [] 
+                          ("/wheeler/scratch/khaskins/coins/")
+  --dirlist <- walkDir "/wheeler/scratch/khaskins/coins/"
+  return dirlist
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
@@ -196,8 +222,9 @@ cloneRepos (x:xs) = do
 
 getTags :: String -> IO [(String, String, String)]
 getTags repo = do
-  --let str = "cd /wheeler/scratch/khaskins/" ++ coin ++ " ; "
-  let str = "cd /home/ghostbird/Hacking/cybersecurity/coins/" ++ repo ++ " ; "
+  let str = "cd " ++ repo ++ " ; "
+  --let str = "cd /wheeler/scratch/khaskins/coins/" ++ repo ++ " ; "
+  --let str = "cd /home/ghostbird/Hacking/cybersecurity/coins/" ++ repo ++ " ; "
   let str2 = "git ls-remote --tags origin | grep -v rc | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
   let complete = Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
@@ -209,30 +236,45 @@ getTags repo = do
 -- Used to initially make new top-level directory.
 initialCopy :: (String, String, String) -> IO String
 initialCopy dat = do
-  --let str1 = "mkdir /wheeler/scratch/khaskins/" ++ third data ++ "-tags"
-  let str = "/home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ "-tags/"
+  --let str = "mkdir /wheeler/scratch/khaskins/" ++ third data ++ "-tags"
+  let str = third dat ++ "-tags/"
+  --let str = "/home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ "-tags/"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ str)) []
   return str
   
   
-
-makeCopy :: (String, String, String) -> IO ()
-makeCopy dat = do
-  new_path <- initialCopy dat
+makeCopy :: (String, String, String) -> String -> IO ()
+makeCopy dat new_path = do
   --let str = "cp -r /wheeler/scratch/khaskins/" ++ third dat ++ " " ++ new_path ++ snd dat
-  let str  = "cp -r /home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ " " ++ new_path ++ second dat
+  --let str  = "cp -r /home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ " " ++ new_path ++ second dat
+  let str  = "cp -r " ++ third dat ++ " " ++ new_path ++ second dat
   let str2 = " ; cd " ++ new_path ++ second dat ++ " ; git checkout " ++ first dat
   (errc, out, err) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
-  print $ "Copied and initialized " ++ third dat ++ " " ++ second dat
+  putStrLn $ "Copied and initialized " ++ third dat ++ " " ++ second dat
 
 
 makeCopies :: [(String, String, String)] -> IO ()
-makeCopies[]   = do
+makeCopies []   = do
   print ""
 makeCopies (x:xs) = do
-  makeCopy x
+  new_path <- initialCopy x
+  makeCopy x new_path
   makeCopies xs
 
+makeAllCopies :: [[(String, String, String)]] -> IO ()
+makeAllCopies [[]] = do
+  print ""
+makeAllCopies (x:xs) = do
+  makeCopies x
+  makeAllCopies xs
+
+-- Get all tags and make all repo copies to <repo>-tag.
+getAllTags :: IO ()
+getAllTags = do
+  repos <- generateRepoList 
+  tags  <- traverse getTags repos
+  print tags
+  --makeAllCopies tags
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
