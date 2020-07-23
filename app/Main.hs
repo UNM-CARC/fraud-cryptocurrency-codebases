@@ -30,25 +30,27 @@ main = do
   args <- getArgs
   let flag = 1
 
-  input <- fmap Txt.lines $ Txt.readFile "misc/repos.csv"
-  --input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
+  --input <- fmap Txt.lines $ Txt.readFile "misc/repos.csv"
+  input <- fmap Txt.lines $ Txt.readFile "misc/names.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 5 $ fmap (filter (/= '\n')
+  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
             . filter (/= '\r')) $ concat clean
-
-  let filtered = filterSelected tmp
-  --print (map snd $ transferToTuple tmp)
   --print tmp
+  --print $ map (takeBaseName . last) tmp
+
+  --let filtered = filterSelected tmp
+  let filtered = filterRepoLinks tmp
+  --print (map snd $ transferToTuple tmp)
   --print $ length $ (map snd $ filtered)
-  --print filtered
+  print filtered
   --cloneRepos filtered
   --pruneRepos filtered
   --x <- getTags "/wheeler/scratch/khaskins/coins/acoin"
   --print x
   --let test = makeCopies x
   --test
-  getAllTags
+  --getAllTags
   --compareRepos "bitcoin" "bitcoin0.14" 0
   --compareAllBasicRepos 0
   --compareAllRepos

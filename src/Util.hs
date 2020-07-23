@@ -159,6 +159,13 @@ filterSelected repos =
   let x = select (=="1") (map (head . tail . tail . tail . tail) repos) repos in 
     map (\y -> ((head . tail . tail) y, (head . tail . tail . tail) y)) x
 
+-- Use for names.csv
+-- [(repo, git-link)]
+filterRepoLinks :: [[String]] -> [(String, String)]
+filterRepoLinks repos =
+  let x = select (\z -> length z /= 0) (map last repos) repos in
+      map (\y -> ((takeBaseName . last) y, last y)) x
+
 generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
   let str = "mkdir /wheeler/scratch/khaskins/" ++ repo
@@ -269,6 +276,7 @@ makeAllCopies (x:xs) = do
   makeAllCopies xs
 
 -- Get all tags and make all repo copies to <repo>-tag.
+-- ** Function to call when generating copies of repos.
 getAllTags :: IO ()
 getAllTags = do
   repos <- generateRepoList 
