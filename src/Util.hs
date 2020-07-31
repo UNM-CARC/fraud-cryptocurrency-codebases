@@ -6,6 +6,7 @@ import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
 
 import           Data.List
+--import           Data.List.Split
 import           Data.Char
 import           Data.String
 import           System.IO
@@ -248,26 +249,69 @@ getTags repo = do
   --return $ map Txt.unpack
   return $ map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
 
+type KeepState = ([Int], [(String, String, String)])
+
 --keepVersion :: String -> State String String -> Bool
-keepVersion :: String -> State String Bool
-keepVersion currentVersion = do
-  lastVersion <- get
-  let last    = filter (/= 'v') lastVersion
-  let current = filter (/= 'v') currentVersion
-  put current
+keepVersions :: [(String, String, String)] -> State KeepState [(String, String, String)]
+keepVersions [] = do
+  (_, acc) <- get
+  return acc
+keepVersions (x:xs) = do
+  (oldVersion, acc) <- get
+  --let last    = filter (/= 'v') lastVersion
+  let currentVersion = filter (/= 'v') $ second x
+  --let verOld = map (foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1)) $ wordsWhen (=='.') lastVersion
+  --let verOld = toInts $ wordsWhen (=='.') lastVersion
+  let newVersion = toInts [] $ wordsWhen (=='.') currentVersion
   -- Remove all but numeric digits and convert to integer values.
-  let las  = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit last]
-  let curr = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit current]
+  --let las  = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit lastVersion]
+  --let curr = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit current]
+  let version = if head newVersion == 
+                   head oldVersion 
+                then if head (tail newVersion) == 
+                        head (tail oldVersion)
+                     then if head (tail (tail newVersion)) >
+                             head (tail (tail oldVersion))
+                          then x
+                          else ("","","")
+                     else if head (tail newVersion) <
+                             head (tail oldVersion)
+                          then x
+                          else ("","","")
+                else if head newVersion <
+                        head oldVersion
+                     then x
+                     else ("","","")
+
+  if length (first version) /= 0 then
+    put (newVersion, acc ++ [version])
+  else
+    put (newVersion, acc)
+  keepVersions xs
+  where
+    toInts :: [Int] -> [String] -> [Int]
+    toInts acc []     = acc
+    toInts acc (y:ys) = toInts (acc ++ [fst $ foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1) [y]]) ys
+  --return $ curr > las
   -- Decide whether to keep current version or not based on previous version.
-  return $ curr > las
+  --let test = curr > las
+  --test
   
   --return True
   --putStrLn current
 
 -- (SHA1, Version, Directory)
-filterMinorVersions :: [(String, String, String)] -> State String [(String, String, String)]
-filterMinorVersions =
-  filterM (\(_, y, _) -> keepVersion y)
+-- Called once per coin
+filterMinorVersions :: [(String, String, String)] -> [(String, String, String)]
+filterMinorVersions y =
+  --filter (\(_, y, _) -> evalState (keepVersion y) "0.0.0")
+  reverse $ evalState (keepVersions $ reverse y) ([0,0,0], [])
+
+wordsWhen :: (Char -> Bool) -> String -> [String]
+wordsWhen p s =  case dropWhile p s of
+                      "" -> []
+                      s' -> w : wordsWhen p s''
+                            where (w, s'') = break p s'
 
 --getDate :: (String, String, String) -> (String, String, String, String)
 --getDate
@@ -321,8 +365,8 @@ getAllTags :: IO ()
 getAllTags = do
   repos <- generateRepoList
   tags  <- traverse getTags repos
-  print tags
-  --makeAllCopies tags
+  let x = map filterMinorVersions tags
+  print x
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
