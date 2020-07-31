@@ -27,7 +27,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      --Lib
       Util
       --ParseC
       --DotSyntax
@@ -79,7 +79,8 @@ library
     --, fgl >= 5.7.0.0 && <= 5.8.0.0
     , clang-pure >= 0.2.0.4 && <= 0.2.0.7
     --, language-c >= 0.8.1 && <= 0.8.5
-    --, pretty >= 1.1.3.5 && <= 1.1.4.0
+    , pretty >= 1.1.3.5 && <= 1.1.4.0
+    , mtl >= 2.2.2 && <= 3.0.0
   default-language: Haskell2010
 
 executable crypto-fraud-exe
@@ -130,6 +131,7 @@ executable crypto-fraud-exe
     , clang-pure >= 0.2.0.4 && <= 0.2.0.7
     --, language-c >= 0.8.1 && <= 0.8.5
     , pretty >= 1.1.3.5 && <= 1.1.4.0
+    , mtl >= 2.2.2 && <= 3.0.0
     , crypto-fraud
   default-language: Haskell2010
 
@@ -181,6 +183,7 @@ test-suite crypto-fraud-test
     --, fgl >= 5.7.0.0 && <= 5.8.0.0
     , clang-pure >= 0.2.0.4 && <= 0.2.0.7
     --, language-c >= 0.8.1 && <= 0.8.5
-    --, pretty >= 1.1.3.5 && <= 1.1.4.0
+    , pretty >= 1.1.3.5 && <= 1.1.4.0
+    , mtl >= 2.2.2 && <= 3.0.0
     , crypto-fraud
   default-language: Haskell2010

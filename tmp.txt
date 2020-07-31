@@ -254,3 +254,15 @@ Date:   Mon Aug 19 08:29:14 2019 -0600
   * Machinecoin ***
   * InsaneCoin
 
+
+--input <- fmap Txt.lines $ Txt.readFile "misc/repos.csv"
+--input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/repos.csv"
+--input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/names.csv"
+
+--print (map snd $ transferToTuple tmp)
+--print $ length $ (map snd $ filtered)
+--print filtered
+
+--print $ map (takeBaseName . last) tmp
+
+--compareParseTreesRepos (head args) (head (tail args))

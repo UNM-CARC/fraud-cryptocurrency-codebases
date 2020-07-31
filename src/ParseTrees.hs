@@ -210,8 +210,8 @@ compareAllParseTrees xs ys = sequence $ helper xs ys []
     helper []     _  acc = acc
     helper (f:fs) ms acc = let
       --fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ms
-      fun = map (\y -> if (takeFileName f) == (takeFileName y) then 
-                         [(compareTrees f y)] 
+      fun = map (\y -> if (takeFileName f) == (takeFileName y) then
+                         [(compareTrees f y)]
                        else ([return ("NULL","NULL",0,0,0)])) ms in
       --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
@@ -248,8 +248,8 @@ buildAllParseTrees xs ys = sequence $ helper xs ys []
       fun = map (\y -> [(buildTrees f y)]) ms in
       helper fs ms (acc ++ (concat fun))
 
-compareAllRepos :: IO ()
-compareAllRepos = do
+compareAllParseTreeRepos :: IO ()
+compareAllParseTreeRepos = do
   input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
   let clean = fmap (\x -> fmap Txt.unpack x) $
               fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
@@ -268,9 +268,9 @@ mapRepos (x:xs) = do
 
 compareParseTreesRepos :: String -> String -> IO () -- [(String, String, Int, Int, Int)]
 compareParseTreesRepos repo1 repo2 = do
-  dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
+  dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) []
                            ("/tmp/" ++ repo1)
-  dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] 
+  dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) []
                            ("/tmp/" ++ repo2)
   let dirs1  = map (\x -> x ++ " ") dirlist1
   let dirs2  = map (\x -> x ++ " ") dirlist2
