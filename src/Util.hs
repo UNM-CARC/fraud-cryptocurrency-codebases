@@ -239,7 +239,7 @@ getTags repo = do
   --let str2 = "git for-each-ref --sort=taggerdate --format '%(tag) %(taggerdate:raw)' refs/tags"
   --let str2 = "git show-ref --tags"
   --let str2 = "git ls-remote --tags origin | grep -v -e rc -e {} -e alpha -e dev -e build -e poc -e test -e release -e Tester -e noversion"
-  let str2 = "git ls-remote --tags origin | grep -vE 'rc|{}|alpha|dev|build|poc|test|release|Tester|noversion'"
+  let str2 = "git ls-remote --tags origin | grep -vE 'rc|{}|alpha|dev|build|poc|test|release|Tester|noversion|+'"
   --let str2 = "git log --oneline --decorate --tags --no-walk"
   -- | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
@@ -259,10 +259,10 @@ keepVersions [] = do
 keepVersions (x:xs) = do
   (oldVersion, acc) <- get
   --let last    = filter (/= 'v') lastVersion
-  let currentVersion = filter (/= 'v') $ second x
+  let currentVersion = map (filter isDigit) $ wordsWhen (=='.') $ filter (/= 'v') $ second x
   --let verOld = map (foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1)) $ wordsWhen (=='.') lastVersion
   --let verOld = toInts $ wordsWhen (=='.') lastVersion
-  let newVersion = toInts [] $ wordsWhen (=='.') currentVersion
+  let newVersion = toInts [] currentVersion
   -- Remove all but numeric digits and convert to integer values.
   --let las  = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit lastVersion]
   --let curr = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit current]
