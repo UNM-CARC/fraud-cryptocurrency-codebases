@@ -181,8 +181,9 @@ generateFileList repo = do
 
 generateRepoList :: IO [FilePath]
 generateRepoList = do
-  dirlist  <- traverseDir2 (\_ -> True) (\fs f -> pure (f : fs)) []
-                          ("/wheeler/scratch/khaskins/coins/")
+  dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  --dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] 
+  --            "/home/ghostbird/Hacking/cybersecurity/coins/"
   --dirlist <- walkDir "/wheeler/scratch/khaskins/coins/"
   return dirlist
 
@@ -239,7 +240,7 @@ getTags repo = do
   --let str2 = "git for-each-ref --sort=taggerdate --format '%(tag) %(taggerdate:raw)' refs/tags"
   --let str2 = "git show-ref --tags"
   --let str2 = "git ls-remote --tags origin | grep -v -e rc -e {} -e alpha -e dev -e build -e poc -e test -e release -e Tester -e noversion"
-  let str2 = "git ls-remote --tags origin | grep -vE 'rc|{}|alpha|dev|build|poc|test|release|Tester|noversion|+'"
+  let str2 = "git ls-remote --tags origin | grep -vE 'debug|ref|rc|{}|alpha|dev|build|poc|test|release|Tester|noversion|+'"
   --let str2 = "git log --oneline --decorate --tags --no-walk"
   -- | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
@@ -247,7 +248,13 @@ getTags repo = do
   let tuples   = init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) $ map (Txt.splitOn (Txt.pack "/")) complete
   --let filtered = map (\(x, y) -> (head $ Txt.splitOn (Txt.pack "\\") x, y)) tuples
   --return $ map Txt.unpack
-  return $ map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
+  let unfiltered = map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
+  let filtered1  = map (\(a, b, c) -> (a, filter (/= 'v') $ b, c)) unfiltered
+  --let tmp        = filter (\= '.') $ second 
+  let tmp        = map second filtered1
+  let filtered2  = filter (\(i,j,k) -> foldr (\x acc -> acc && isDigit x) True $ (filter (/= '.')) j) filtered1
+  --let filtered1  = map (\x -> filter (/= 'v') $ second x) unfiltered
+  return filtered2
 
 type KeepState = ([Int], [(String, String, String)])
 
@@ -365,8 +372,8 @@ getAllTags :: IO ()
 getAllTags = do
   repos <- generateRepoList
   tags  <- traverse getTags repos
-  let x = map filterMinorVersions tags
-  print x
+  --let x = map filterMinorVersions tags
+  print tags
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
