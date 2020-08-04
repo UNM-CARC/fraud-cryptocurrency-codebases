@@ -5,7 +5,7 @@ import qualified Data.Text    as Txt
 import qualified Data.Text.IO as Txt
 import qualified Data.ByteString.Char8 as C
 
-import           Data.List
+import qualified Data.List as L
 --import           Data.List.Split
 import           Data.Char
 import           Data.String
@@ -102,7 +102,7 @@ compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
                                     else (fst a, snd a)) ([], 0) ys)
 
 filterFileType :: String -> [String] -> [String]
-filterFileType s xs = filter (\x -> if isInfixOf s x then True else False) xs
+filterFileType s xs = filter (\x -> if L.isInfixOf s x then True else False) xs
 --filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs -- Old
 
 -- Remove duplicate files
@@ -181,9 +181,9 @@ generateFileList repo = do
 
 generateRepoList :: IO [FilePath]
 generateRepoList = do
-  dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  --dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] 
-  --            "/home/ghostbird/Hacking/cybersecurity/coins/"
+  --dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] 
+              "/home/ghostbird/Hacking/cybersecurity/coins/"
   --dirlist <- walkDir "/wheeler/scratch/khaskins/coins/"
   return dirlist
 
@@ -240,21 +240,25 @@ getTags repo = do
   --let str2 = "git for-each-ref --sort=taggerdate --format '%(tag) %(taggerdate:raw)' refs/tags"
   --let str2 = "git show-ref --tags"
   --let str2 = "git ls-remote --tags origin | grep -v -e rc -e {} -e alpha -e dev -e build -e poc -e test -e release -e Tester -e noversion"
-  let str2 = "git ls-remote --tags origin | grep -vE 'debug|ref|rc|{}|alpha|dev|build|poc|test|release|Tester|noversion|+'"
+  --let str2 = "git ls-remote --tags origin | grep -vE 'debug|ref|rc|{}|alpha|dev|build|poc|test|release|Tester|noversion|+'"
+  let str2 = "git ls-remote --tags origin"
   --let str2 = "git log --oneline --decorate --tags --no-walk"
   -- | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
   let complete = Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
-  let tuples   = init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) $ map (Txt.splitOn (Txt.pack "/")) complete
+  let tuples = case length complete of
+                 1 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)] 
+                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) $ map (Txt.splitOn (Txt.pack "/")) complete
   --let filtered = map (\(x, y) -> (head $ Txt.splitOn (Txt.pack "\\") x, y)) tuples
   --return $ map Txt.unpack
   let unfiltered = map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
+  --print unfiltered
   let filtered1  = map (\(a, b, c) -> (a, filter (/= 'v') $ b, c)) unfiltered
   --let tmp        = filter (\= '.') $ second 
-  let tmp        = map second filtered1
-  let filtered2  = filter (\(i,j,k) -> foldr (\x acc -> acc && isDigit x) True $ (filter (/= '.')) j) filtered1
+  --let tmp        = map second filtered1
+  let filtered2  = filter (\(i,j,k) -> foldr (\x acc -> acc && isDigit x) True $ filter (/= '.') j) filtered1
   --let filtered1  = map (\x -> filter (/= 'v') $ second x) unfiltered
-  return filtered2
+  return $ filter (\x -> not $ L.isSuffixOf "-tags" $ third x)  filtered2
 
 type KeepState = ([Int], [(String, String, String)])
 
@@ -266,29 +270,14 @@ keepVersions [] = do
 keepVersions (x:xs) = do
   (oldVersion, acc) <- get
   --let last    = filter (/= 'v') lastVersion
-  let currentVersion = map (filter isDigit) $ wordsWhen (=='.') $ filter (/= 'v') $ second x
+  --let currentVersion = wordsWhen (=='.') $ second x
   --let verOld = map (foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1)) $ wordsWhen (=='.') lastVersion
   --let verOld = toInts $ wordsWhen (=='.') lastVersion
-  let newVersion = toInts [] currentVersion
+  let newVersion = addZeroes $ toInts [] (wordsWhen (=='.') $ second x)
   -- Remove all but numeric digits and convert to integer values.
   --let las  = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit lastVersion]
   --let curr = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit current]
-  let version = if head newVersion == 
-                   head oldVersion 
-                then if head (tail newVersion) == 
-                        head (tail oldVersion)
-                     then if head (tail (tail newVersion)) >
-                             head (tail (tail oldVersion))
-                          then x
-                          else ("","","")
-                     else if head (tail newVersion) <
-                             head (tail oldVersion)
-                          then x
-                          else ("","","")
-                else if head newVersion <
-                        head oldVersion
-                     then x
-                     else ("","","")
+  let version = determineVersion newVersion oldVersion x
 
   if length (first version) /= 0 then
     put (newVersion, acc ++ [version])
@@ -299,20 +288,30 @@ keepVersions (x:xs) = do
     toInts :: [Int] -> [String] -> [Int]
     toInts acc []     = acc
     toInts acc (y:ys) = toInts (acc ++ [fst $ foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1) [y]]) ys
-  --return $ curr > las
-  -- Decide whether to keep current version or not based on previous version.
-  --let test = curr > las
-  --test
-  
-  --return True
-  --putStrLn current
+ 
+    addZeroes :: [Int] -> [Int]
+    addZeroes xs = case length xs of
+                     1 -> xs ++ [0,0,0]
+                     2 -> xs ++ [0,0]
+                     3 -> xs ++ [0]
+                     _ -> xs
+    
+    determineVersion :: [Int] -> [Int] -> (String, String, String) -> (String, String, String)
+    determineVersion xs ys version
+      | head xs == head ys && head (tail xs) == head (tail ys) 
+                           && head (tail $ tail xs) < head (tail $ tail ys) = ("","","")
+      | head xs == head ys && head (tail xs) == head (tail ys) 
+                           && head (tail $ tail xs) == head (tail $ tail ys) 
+                           && head (tail $ tail xs) < head (tail $ tail ys) = ("","","")
+      | head xs < head ys || head (tail xs) < head (tail ys) = version
+      | otherwise = ("","","")
 
 -- (SHA1, Version, Directory)
 -- Called once per coin
 filterMinorVersions :: [(String, String, String)] -> [(String, String, String)]
 filterMinorVersions y =
   --filter (\(_, y, _) -> evalState (keepVersion y) "0.0.0")
-  reverse $ evalState (keepVersions $ reverse y) ([0,0,0], [])
+  reverse $ evalState (keepVersions $ reverse y) ([99,99,99,99], [])
 
 wordsWhen :: (Char -> Bool) -> String -> [String]
 wordsWhen p s =  case dropWhile p s of
@@ -372,8 +371,10 @@ getAllTags :: IO ()
 getAllTags = do
   repos <- generateRepoList
   tags  <- traverse getTags repos
-  --let x = map filterMinorVersions tags
-  print tags
+  let x = map filterMinorVersions tags
+  -- Remove empty directories
+  let out = filter (/=[]) x
+  print out
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
