@@ -181,9 +181,9 @@ generateFileList repo = do
 
 generateRepoList :: IO [FilePath]
 generateRepoList = do
-  --dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] 
-              "/home/ghostbird/Hacking/cybersecurity/coins/"
+  dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  --dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] 
+  --            "/home/ghostbird/Hacking/cybersecurity/coins/"
   --dirlist <- walkDir "/wheeler/scratch/khaskins/coins/"
   return dirlist
 
@@ -247,6 +247,7 @@ getTags repo = do
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
   let complete = Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
   let tuples = case length complete of
+                 0 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)] 
                  1 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)] 
                  _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) $ map (Txt.splitOn (Txt.pack "/")) complete
   --let filtered = map (\(x, y) -> (head $ Txt.splitOn (Txt.pack "\\") x, y)) tuples
@@ -291,6 +292,7 @@ keepVersions (x:xs) = do
  
     addZeroes :: [Int] -> [Int]
     addZeroes xs = case length xs of
+                     0 -> xs ++ [0,0,0,0]
                      1 -> xs ++ [0,0,0]
                      2 -> xs ++ [0,0]
                      3 -> xs ++ [0]
