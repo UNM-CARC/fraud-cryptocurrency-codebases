@@ -29,6 +29,7 @@ library
   exposed-modules:
       --Lib
       Util
+      Logging
       --ParseC
       --DotSyntax
       --DotPretty

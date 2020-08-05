@@ -1,1194 +1,1201 @@
 ## Final list of coins with date and time pulled: 1192 coins total C++
 ## 
-drwxr-xr-x  7 khaskins users  195 Jul 23 17:00 1337
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:21 1X2coin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:58 2acoin
-drwxr-xr-x  5 khaskins users 4.0K Jul 23 16:59 2GIVE
-drwxr-xr-x  8 khaskins users  254 Jul 23 17:02 42
-drwxr-xr-x  8 khaskins users  229 Jul 23 18:40 808
-drwxr-xr-x  8 khaskins users  265 Jul 23 19:05 aaa
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:58 abet
-drwxr-xr-x 16 khaskins users 4.0K Jul 23 17:37 absolute
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:40 AceD
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 15:45 Achain
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:28 acoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:22 acrecoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:20 Actinium
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:59 AdCoin
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 19:13 adeptio
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:31 Adirondack
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:07 AdultChain
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:35 advance
-drwxr-xr-x  6 khaskins users  226 Jul 23 17:21 adzcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:44 aegeus
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:19 aeon
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:11 AeriumX
-drwxr-xr-x  7 khaskins users  171 Jul 23 19:42 aevocoin
-drwxr-xr-x  7 khaskins users  267 Jul 23 19:15 afro
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:53 AGDN
-drwxr-xr-x  8 khaskins users  217 Jul 23 19:02 AgeTron
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:35 agni
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:03 Agouti
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:11 AgrolotCoin
-drwxr-xr-x  4 khaskins users  159 Jul 23 17:58 aiascoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:02 aib
-drwxr-xr-x 37 khaskins users 4.0K Jul 23 15:23 aion
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:36 airin
-drwxr-xr-x 40 khaskins users 4.0K Jul 23 19:11 akroma
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:05 alloy
-drwxr-xr-x  7 khaskins users  158 Jul 23 17:13 Allsafe2
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:16 AlphaCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:25 Amero
-drwxr-xr-x  8 khaskins users  198 Jul 23 19:44 amigacoin
-drwxr-xr-x  7 khaskins users  164 Jul 23 18:46 AmmoReloaded
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:28 amnesia
-drwxr-xr-x  7 khaskins users  273 Jul 23 19:46 Animality_Master
-drwxr-xr-x  7 khaskins users  179 Jul 23 18:32 Animecoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:30 anodoscoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:51 anon
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:25 anoncoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:17 apeiron
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:11 ApollonCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:23 AppleByte
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:06 AquilaX
-drwxr-xr-x  5 khaskins users  147 Jul 23 18:10 ARbit
-drwxr-xr-x  7 khaskins users  277 Jul 23 17:22 ARCO
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:34 arcticcoin
-drwxr-xr-x  7 khaskins users  252 Jul 23 17:44 Arepacoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:21 argentum
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:33 argo
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 20:03 argoneum
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:41 aricoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:51 arioncoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:45 arqma
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:49 Artax
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:55 artiqox
-drwxr-xr-x  7 khaskins users  267 Jul 23 19:56 AscensionCoin
-drwxr-xr-x  7 khaskins users  140 Jul 23 18:29 AsiaCoinFix
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:03 atbcoin
-drwxr-xr-x  4 khaskins users   50 Jul 23 18:33 atmostemp
-drwxr-xr-x  8 khaskins users  223 Jul 23 17:08 audiocoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:52 AuniteBlockchain
-drwxr-xr-x 16 khaskins users 4.0K Jul 23 17:00 auroracoin
-drwxr-xr-x  7 khaskins users  241 Jul 23 18:49 Aurumcoin_AU
-drwxr-xr-x  6 khaskins users  204 Jul 23 18:25 Avoncoin-Project
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:46 azart
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:26 b2bcoin
-drwxr-xr-x  7 khaskins users  271 Jul 23 16:58 B3-CoinV2
-drwxr-xr-x  7 khaskins users  213 Jul 23 17:40 bagcoin3
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:08 balkancoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:59 ballast
-drwxr-xr-x 18 khaskins users 4.0K Jul 23 16:56 banano
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:30 banq
-drwxr-xr-x  9 khaskins users  229 Jul 23 18:23 Bash
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:35 Bataoshi
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:02 BatCoin
-drwxr-xr-x  7 khaskins users  181 Jul 23 19:31 baxur
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:00 bbscoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:24 BCARD
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 19:48 BCRM
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:37 beacon
-drwxr-xr-x 18 khaskins users 4.0K Jul 23 15:50 beam
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:15 beldex
-drwxr-xr-x  6 khaskins users  136 Jul 23 17:47 BERNcash
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:03 bettexcoin
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 17:09 biblepay
-drwxr-xr-x  7 khaskins users  247 Jul 23 18:10 BillaryCoinSource
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:54 birakecoin
-drwxr-xr-x  7 khaskins users  261 Jul 23 17:20 BitBar
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 15:54 BitBay
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:18 bitbean-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:44 BitBlocks
-drwxr-xr-x  8 khaskins users  283 Jul 23 16:54 BitClassic
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:31 Bitcloud
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 13:44 bitcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:32 bitcoin2
-drwxr-xr-x  9 khaskins users  279 Jul 23 17:49 bitcoin2network
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:31 bitcoin2x
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 14:58 bitcoin-abc
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:29 BitcoinAdult-Source-Code
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 19:52 bitcoincandy
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 19:13 bitcoin-cored
-drwxr-xr-x  7 khaskins users  178 Jul 23 19:50 BitcoinCure
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 15:12 BitcoinDiamond
-drwxr-xr-x  8 khaskins users  236 Jul 23 17:41 bitcoinfast
-drwxr-xr-x  5 khaskins users   86 Jul 23 19:08 bitcoinfile
-drwxr-xr-x  4 khaskins users  119 Jul 23 19:28 BitcoinFinal
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:05 BitcoinInterest
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:48 Bitcoinote-Core
-drwxr-xr-x  8 khaskins users  247 Jul 23 19:54 bitcoinpositive
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:56 BitcoinPrivate
-drwxr-xr-x  7 khaskins users  237 Jul 23 18:07 BitcoinPro
-drwxr-xr-x  9 khaskins users  255 Jul 23 17:09 bitcoin-scrypt
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:00 bitcoin-sv
-drwxr-xr-x  8 khaskins users  195 Jul 23 18:26 bitcoinultra
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:51 bitcoinz
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:00 BitCore
-drwxr-xr-x  7 khaskins users  199 Jul 23 17:18 bitcurrency
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:36 bitdeal
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 19:34 Bithold
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:51 BitHost
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:49 bitmark
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:54 BitMoneyV2
-drwxr-xr-x  8 khaskins users  211 Jul 23 19:24 bitnewcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:06 bitnodespro
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:14 Bitradio
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:38 BitRewards
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:31 BitSend
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 20:01 bitsex
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:12 bitshares-core
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:00 BitSpace
-drwxr-xr-x  6 khaskins users  225 Jul 23 18:22 bitstakesource
-drwxr-xr-x  8 khaskins users  234 Jul 23 17:34 bitstar
-drwxr-xr-x  7 khaskins users  226 Jul 23 17:04 bitswift
-drwxr-xr-x  7 khaskins users  226 Jul 23 18:47 BitToken
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 20:02 Bittorium
-drwxr-xr-x  7 khaskins users  176 Jul 23 19:24 bitvier
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:29 bitzeny
-drwxr-xr-x  7 khaskins users  245 Jul 23 16:06 blackcoin
-drwxr-xr-x  7 khaskins users  211 Jul 23 16:31 BlakeBitcoin
-drwxr-xr-x  7 khaskins users  227 Jul 23 17:52 Blakecoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:48 blast-core
-drwxr-xr-x  7 khaskins users  253 Jul 23 19:11 blazecoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 19:27 BLISS
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:38 BLOC
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:41 blocknet
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:38 blocknode
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:08 bltg
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:20 bluecoin
-drwxr-xr-x 26 khaskins users 4.0K Jul 23 15:42 bluzelle
-drwxr-xr-x  8 khaskins users  287 Jul 23 17:59 boatcoinfinal
-drwxr-xr-x  7 khaskins users  205 Jul 23 18:04 bold
-drwxr-xr-x  6 khaskins users  204 Jul 23 17:48 bolivarcoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:44 bongger
-drwxr-xr-x  8 khaskins users  258 Jul 23 18:26 boolberry
-drwxr-xr-x  8 khaskins users  283 Jul 23 17:57 boostcoin-core
-drwxr-xr-x  7 khaskins users  198 Jul 23 18:24 bottlecaps
-drwxr-xr-x  7 khaskins users  178 Jul 23 18:01 bowscoin
-drwxr-xr-x  7 khaskins users  275 Jul 23 18:08 braveneworld
-drwxr-xr-x  4 khaskins users   43 Jul 23 19:30 bravo
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:42 Brazio
-drwxr-xr-x  7 khaskins users  200 Jul 23 18:25 Breakout-Chain-Client
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:36 bridgecoin
-drwxr-xr-x  7 khaskins users  200 Jul 23 18:22 britcoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:44 brixcoin6
-drwxr-xr-x  7 khaskins users  230 Jul 23 19:02 bryllite-ico
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:03 BTCGPU
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:56 BTCMonster
-drwxr-xr-x  7 khaskins users  247 Jul 23 17:35 BTCtalkcoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:56 btcx
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:08 buck
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:02 bullion
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:27 Bulwark
-drwxr-xr-x  5 khaskins users  168 Jul 23 18:49 bumbacoin2-source
-drwxr-xr-x  8 khaskins users  265 Jul 23 19:37 bumo
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:29 bunnycoin
-drwxr-xr-x  8 khaskins users  251 Jul 23 19:54 BurnCoinWallet
-drwxr-xr-x  8 khaskins users  242 Jul 23 18:15 buysellcoin
-drwxr-xr-x  8 khaskins users  280 Jul 23 17:42 BWS-POS
-drwxr-xr-x  8 khaskins users  256 Jul 23 15:13 bytecoin
-drwxr-xr-x 35 khaskins users 4.0K Jul 23 15:12 bytom
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:02 bzlcoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:58 c25
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:57 c2pcore
-drwxr-xr-x  7 khaskins users  178 Jul 23 18:07 c3x
-drwxr-xr-x  6 khaskins users  189 Jul 23 17:55 CACHeCoin
-drwxr-xr-x  7 khaskins users  178 Jul 23 18:21 cagecoin
-drwxr-xr-x  8 khaskins users  187 Jul 23 18:52 Californium
-drwxr-xr-x  7 khaskins users  177 Jul 23 18:12 Caluracoin
-drwxr-xr-x  7 khaskins users  178 Jul 23 18:11 Calvarycoin
-drwxr-xr-x  8 khaskins users  198 Jul 23 17:23 canadaecoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:49 cannabiscoin420
-drwxr-xr-x  8 khaskins users  241 Jul 23 17:39 Cannacoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:54 canonchain
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:33 capracoin
-drwxr-xr-x  7 khaskins users  228 Jul 23 16:58 CapriCoin
-drwxr-xr-x  8 khaskins users  251 Jul 23 19:37 car
-drwxr-xr-x  6 khaskins users  212 Jul 23 19:48 CARATSmartContract
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:11 CarboncoinCore
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:49 carebitcoin
-drwxr-xr-x  7 khaskins users  213 Jul 23 17:49 cash
-drwxr-xr-x  7 khaskins users  260 Jul 23 20:03 cash2
-drwxr-xr-x  7 khaskins users  248 Jul 23 17:11 cashberycoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:18 CastleMN
-drwxr-xr-x  7 khaskins users  244 Jul 23 18:06 CatcoinRelease
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:43 CatoCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:09 cazcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:09 C-Bit
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:46 cbitcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:14 CC
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:05 CCBC
-drwxr-xr-x  6 khaskins users  220 Jul 23 17:41 cdc-core
-drwxr-xr-x  6 khaskins users  102 Jul 23 20:00 CENTERCOIN
-drwxr-xr-x  6 khaskins users 4.0K Jul 23 18:20 centurion
-drwxr-xr-x  8 khaskins users  209 Jul 23 18:29 cerium
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:08 cgencore
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 17:06 chaincoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:05 chancoin
-drwxr-xr-x  7 khaskins users  265 Jul 23 17:32 chesscoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:57 ChristmasCoin-Core
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:50 Citadel
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:47 Civitas
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:36 clams
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:10 CloakCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:23 ClubCoin
-drwxr-xr-x  8 khaskins users  258 Jul 23 20:00 clx-wallet
-drwxr-xr-x  5 khaskins users  148 Jul 23 19:51 CobraBytes
-drwxr-xr-x  5 khaskins users  210 Jul 23 18:01 coimatic-master
-drwxr-xr-x  7 khaskins users  177 Jul 23 19:45 coin
-drwxr-xr-x  9 khaskins users  288 Jul 23 18:45 COIN
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:19 Coin2
-drwxr-xr-x  7 khaskins users  249 Jul 23 17:30 coin2goproject
-drwxr-xr-x  8 khaskins users  209 Jul 23 19:26 coinlegacy
-drwxr-xr-x  8 khaskins users  257 Jul 23 18:16 coino
-drwxr-xr-x  7 khaskins users  195 Jul 23 18:13 CoinonatX
-drwxr-xr-x  7 khaskins users  193 Jul 23 17:03 ColossusCoin2
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:05 ColossusCoinXT
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:32 communitycoin
-drwxr-xr-x  5 khaskins users  212 Jul 23 17:27 Compound-Coin
-drwxr-xr-x  7 khaskins users  179 Jul 23 17:57 compucoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:01 conceal-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:22 CondominiumCore
-drwxr-xr-x  8 khaskins users  264 Jul 23 18:04 Coppercoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 15:32 Core-Smart
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:16 corez
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:57 Cosmos
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:28 cottoncoin
-drwxr-xr-x  9 khaskins users  246 Jul 23 17:36 CpaPay
-drwxr-xr-x 29 khaskins users 4.0K Jul 23 16:01 cpp-ethereum
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:35 Crave-NG
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:32 cream
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:07 creativechain-core
-drwxr-xr-x  6 khaskins users  239 Jul 23 17:39 creditbit
-drwxr-xr-x  5 khaskins users  103 Jul 23 18:21 creva
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:13 Croat
-drwxr-xr-x  4 khaskins users   89 Jul 23 18:02 CropDev
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 16:10 Crowdcoin
-drwxr-xr-x  8 khaskins users  256 Jul 23 15:38 crowdsale
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 16:10 crown-core
-drwxr-xr-x  8 khaskins users  212 Jul 23 18:55 crtcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:53 CruxCoin
-drwxr-xr-x  6 khaskins users  257 Jul 23 17:39 cryptcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:50 CrypticCoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:50 CryptoDezireCash
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:35 CryptoFlowCoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:19 Cryptonite
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:11 cryptonodes-core
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:42 cryptradecoin-core
-drwxr-xr-x  6 khaskins users  183 Jul 23 18:40 CubitsV3
-drwxr-xr-x  6 khaskins users  263 Jul 23 16:30 CurecoinSource
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:09 curium
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:30 curve
-drwxr-xr-x  5 khaskins users  171 Jul 23 18:57 CWXT
-drwxr-xr-x  5 khaskins users  159 Jul 23 18:32 cyder
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 20:01 CyprusCoin
-drwxr-xr-x  8 khaskins users  234 Jul 23 18:20 CYTN
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:04 dacash
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:11 darkpaycoin
-drwxr-xr-x  7 khaskins users  208 Jul 23 18:49 Darsek
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:11 dascoin-blockchain
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:02 dash
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:12 dashgreen
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:11 daviescoin
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 18:34 daxxcore
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 15:38 dcrm-go
-drwxr-xr-x  7 khaskins users  219 Jul 23 18:46 debitcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:57 deeponion
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:14 deimos
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:31 DemosPay
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:29 denarius
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 15:56 dero
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:36 Desire
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:44 deuscoin-core
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:33 dextro
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:38 DFSCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:11 Diamond
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:13 digibyte
-drwxr-xr-x  5 khaskins users  107 Jul 23 18:06 digimoney
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:46 digitalcoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:46 DigitalCoinBRL
-drwxr-xr-x  4 khaskins users   72 Jul 23 17:04 DigitalPrice
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:43 digiwage
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:08 dimecoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 16:05 DIONS
-drwxr-xr-x  6 khaskins users  118 Jul 23 18:47 disk
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 19:14 ditcoin-gui
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:11 dividendcash
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:29 Dixicoin
-drwxr-xr-x  4 khaskins users   61 Jul 23 17:59 DMB-project
-drwxr-xr-x  7 khaskins users  266 Jul 23 16:30 DNotes2
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:08 dogecash
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:03 dogecoin
-drwxr-xr-x  6 khaskins users  181 Jul 23 18:49 DOLLAR
-drwxr-xr-x  7 khaskins users  218 Jul 23 16:55 DopeCoinV3
-drwxr-xr-x  8 khaskins users  239 Jul 23 18:27 DOT
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:14 draftcoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:13 dravite
-drwxr-xr-x  7 khaskins users  261 Jul 23 17:50 Dreamcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:12 DropCoin
-drwxr-xr-x  8 khaskins users  245 Jul 23 18:09 DSC
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:49 dstra
-drwxr-xr-x  7 khaskins users  254 Jul 23 18:08 Ducat-Coin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:50 DUDGX
-drwxr-xr-x  7 khaskins users  271 Jul 23 19:54 dv8coin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:24 Dynamic
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:39 eacore
-drwxr-xr-x  7 khaskins users  189 Jul 23 19:37 EarnzCoin
-drwxr-xr-x  8 khaskins users  239 Jul 23 16:29 earthcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:33 eazynode
-drwxr-xr-x  7 khaskins users  151 Jul 23 18:34 EBIT
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:31 EBSCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:20 ECCoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:04 edcash
-drwxr-xr-x  7 khaskins users  221 Jul 23 17:59 EddieCoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:01 edinarcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:06 edollar
-drwxr-xr-x  7 khaskins users  213 Jul 23 16:01 EDRcoin-src
-drwxr-xr-x  7 khaskins users  223 Jul 23 18:31 egoldcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:11 egulden
-drwxr-xr-x  7 khaskins users  226 Jul 23 17:56 Electron-ELT
-drwxr-xr-x  9 khaskins users  250 Jul 23 16:38 electronero
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:39 electroneropulse
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:21 electroneum
-drwxr-xr-x  6 khaskins users  121 Jul 23 19:44 Elements-master
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:24 elicoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:18 Elleriumv2
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:55 elli
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:13 elyacoin
-drwxr-xr-x  7 khaskins users  246 Jul 23 19:06 EmaratCoinProject
-drwxr-xr-x  8 khaskins users  259 Jul 23 17:26 eMark
-drwxr-xr-x  7 khaskins users  223 Jul 23 17:14 Ember
-drwxr-xr-x  8 khaskins users  239 Jul 23 17:33 Emerald
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 15:41 emercoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:11 emergencycoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:15 emrals
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:48 Enceladus_Coin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 20:04 EndocoinV2
-drwxr-xr-x  7 khaskins users  198 Jul 23 18:26 energycoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 19:14 enumivo
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 14:55 eos
-drwxr-xr-x  3 khaskins users  195 Jul 23 19:53 eosdice
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 19:38 eosforce
-drwxr-xr-x  6 khaskins users  146 Jul 23 16:18 eos-karma-tokens
-drwxr-xr-x  7 khaskins users  263 Jul 23 18:33 EOTCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:39 Epic
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:12 Equitrade
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:58 ESBC2
-drwxr-xr-x  7 khaskins users  224 Jul 23 16:32 Espers
-drwxr-xr-x  8 khaskins users  191 Jul 23 19:46 ESRcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:02 eternity
-drwxr-xr-x 35 khaskins users 4.0K Jul 23 18:33 EtherDoge
-drwxr-xr-x  5 khaskins users  107 Jul 23 17:35 ethereumcash
-drwxr-xr-x  7 khaskins users  278 Jul 23 17:06 EverGreenCoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:14 Everipedia
-drwxr-xr-x  6 khaskins users  199 Jul 23 17:50 EvilCoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:51 ExclusiveCoin
-drwxr-xr-x  7 khaskins users  193 Jul 23 20:02 EXISTv2
-drwxr-xr-x  6 khaskins users  117 Jul 23 19:44 exmcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:16 exosis
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:52 experiencecoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:12 ext-wallet
-drwxr-xr-x  5 khaskins users  161 Jul 23 18:05 exus
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:08 fabcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:30 fair-coin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:16 FantasyGold-Core
-drwxr-xr-x  9 khaskins users  273 Jul 23 17:09 fantomcoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:21 fastcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 16:10 Feathercoin
-drwxr-xr-x  8 khaskins users  244 Jul 23 16:30 fedoracoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:09 feirm
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:25 FIMFL
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 19:59 FinChain-core
-drwxr-xr-x  7 khaskins users  177 Jul 23 18:22 fitcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:43 florincoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:25 fluttercoin
-drwxr-xr-x  6 khaskins users  205 Jul 23 16:30 fnkcore
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:09 foin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:58 folm
-drwxr-xr-x  7 khaskins users  238 Jul 23 19:42 FootyCashV2
-drwxr-xr-x  7 khaskins users  260 Jul 23 19:46 force
-drwxr-xr-x  7 khaskins users  140 Jul 23 18:38 frazCoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:56 FRED
-drwxr-xr-x  7 khaskins users  227 Jul 23 18:14 Freedom-Coin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:59 freicoin
-drwxr-xr-x  8 khaskins users  270 Jul 23 18:17 friendshipcoin-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:31 frozen
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:30 fujicoin
-drwxr-xr-x  7 khaskins users  191 Jul 23 20:04 Fuloos
-drwxr-xr-x  9 khaskins users  278 Jul 23 18:49 funcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:05 Futuro
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 19:57 fxtc
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:59 gainercoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:26 galactrum
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:54 galaxycash
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:31 galilel
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:35 galluscoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 16:18 gambit
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:23 GambleCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:54 gamecoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 15:54 GameCredits
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:52 gapcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:48 Garlicoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:15 GDNC
-drwxr-xr-x  4 khaskins users   70 Jul 23 19:43 GDW
-drwxr-xr-x  9 khaskins users  260 Jul 23 18:27 Geertcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:27 geldum
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:34 genesis
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:01 genesis-x
-drwxr-xr-x  8 khaskins users  148 Jul 23 16:07 GeneSourceCodeDAG
-drwxr-xr-x  7 khaskins users  244 Jul 23 17:46 genstake
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:27 gentarium
-drwxr-xr-x  6 khaskins users  199 Jul 23 18:01 geysercoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:32 GiantCore
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:49 GigaCash
-drwxr-xr-x  7 khaskins users  222 Jul 23 18:11 Gives-Source
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:24 glbcore
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:27 gldcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:38 GlobalBoost-Y
-drwxr-xr-x  7 khaskins users  161 Jul 23 18:49 Globalcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:41 globaltoken
-drwxr-xr-x  7 khaskins users  183 Jul 23 18:21 glowshares
-drwxr-xr-x  7 khaskins users  248 Jul 23 19:13 GLPN
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:56 gobyte
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:14 GoCash-Core
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 18:26 go-dubaicoin
-drwxr-xr-x 36 khaskins users 4.0K Jul 23 18:31 go-elementrem
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 16:52 go-esn
-drwxr-xr-x 39 khaskins users 4.0K Jul 23 19:00 go-etherinc
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 15:33 go-etherzero
-drwxr-xr-x  8 khaskins users  182 Jul 23 18:26 goldblocks
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:50 GoldKash
-drwxr-xr-x  9 khaskins users  280 Jul 23 18:20 goldmaxcoin-source
-drwxr-xr-x  6 khaskins users  227 Jul 23 18:01 GoldPieces-Wallet
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:26 GoldPoker-coin
-drwxr-xr-x  6 khaskins users  154 Jul 23 18:51 Gold-Pressed-Latinum
-drwxr-xr-x  7 khaskins users  196 Jul 23 18:45 GoldReserve
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:29 golos
-drwxr-xr-x 40 khaskins users 4.0K Jul 23 19:20 go-metadium
-drwxr-xr-x 39 khaskins users 4.0K Jul 23 16:33 go-musicoin
-drwxr-xr-x 26 khaskins users 4.0K Jul 23 15:25 go-nebulas
-drwxr-xr-x 37 khaskins users 4.0K Jul 23 18:41 go-nekonium
-drwxr-xr-x 34 khaskins users 4.0K Jul 23 19:02 go-Pegascoin
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 17:02 go-tcc
-drwxr-xr-x 40 khaskins users 4.0K Jul 23 17:53 go-themis
-drwxr-xr-x 37 khaskins users 4.0K Jul 23 15:46 go-ubiq
-drwxr-xr-x 27 khaskins users 4.0K Jul 23 19:23 go-victorium
-drwxr-xr-x 47 khaskins users 4.0K Jul 23 15:24 go-wanchain
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:52 GPU-Coin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:52 GraftNetwork
-drwxr-xr-x  6 khaskins users  158 Jul 23 18:11 granite
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:07 GravityCoin
-drwxr-xr-x  7 khaskins users  249 Jul 23 18:40 greencoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:21 Gridcoin-Research
-drwxr-xr-x  8 khaskins users  277 Jul 23 17:58 GRIM
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 15:30 GroestlCoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:23 growers
-drwxr-xr-x  7 khaskins users  198 Jul 23 19:44 growthcoin
-drwxr-xr-x  8 khaskins users  271 Jul 23 17:36 GRZ0
-drwxr-xr-x  7 khaskins users  270 Jul 23 18:21 GSMcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:53 gulden-official
-drwxr-xr-x  7 khaskins users  226 Jul 23 18:34 gulfcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:10 guncoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:18 gxb-core
-drwxr-xr-x  5 khaskins users  190 Jul 23 18:46 Halcyon
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:31 Happycoin
-drwxr-xr-x  7 khaskins users  239 Jul 23 18:03 Harvestcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:06 haven
-drwxr-xr-x  5 khaskins users  124 Jul 23 18:40 HBC
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:22 hdac
-drwxr-xr-x  7 khaskins users  201 Jul 23 19:32 HeldCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:23 helium
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:36 helix
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:45 Helpico
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:16 HeraCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:32 herb
-drwxr-xr-x  7 khaskins users  204 Jul 23 19:08 Highcoin
-drwxr-xr-x  7 khaskins users  220 Jul 23 18:36 highgain
-drwxr-xr-x  9 khaskins users  285 Jul 23 18:06 highlandcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:10 hilux
-drwxr-xr-x  6 khaskins users  198 Jul 23 18:28 HitCoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:51 HNDC
-drwxr-xr-x  7 khaskins users  181 Jul 23 17:04 HoboNickels
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:31 HOdlcoin
-drwxr-xr-x  7 khaskins users  249 Jul 23 16:22 hollywood_team
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 20:01 hostmasternode
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 17:49 HTH
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:42 HTMLCOIN
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:35 htrcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:55 HTS
-drwxr-xr-x  6 khaskins users  252 Jul 23 19:06 huncoin
-drwxr-xr-x  7 khaskins users  239 Jul 23 18:29 huntercoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:26 hush
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:35 HUZU
-drwxr-xr-x  8 khaskins users  237 Jul 23 19:50 HWI-Source
-drwxr-xr-x  7 khaskins users  241 Jul 23 18:23 Hyper
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:21 HyperStake
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:46 i0coin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 20:03 iancoin
-drwxr-xr-x  8 khaskins users  191 Jul 23 18:53 Ibank
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:45 IdealCash-DEAL
-drwxr-xr-x  7 khaskins users  226 Jul 23 19:37 IdealGold-DEALT
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 20:03 Iex
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:36 ignitioncoin
-drwxr-xr-x 37 khaskins users 4.0K Jul 23 16:28 iichain-core
-drwxr-xr-x 16 khaskins users 4.0K Jul 23 17:26 ImageCash
-drwxr-xr-x 18 khaskins users 4.0K Jul 23 17:07 ImageCoin
-drwxr-xr-x  8 khaskins users  251 Jul 23 19:43 in
-drwxr-xr-x  6 khaskins users 4.0K Jul 23 17:23 IncaKoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:45 incognito
-drwxr-xr-x  7 khaskins users  241 Jul 23 18:41 india
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:44 indigen
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:27 indinode
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:12 Infinex
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:19 infinipay
-drwxr-xr-x  7 khaskins users  243 Jul 23 16:22 infinitecoin
-drwxr-xr-x  5 khaskins users  111 Jul 23 20:00 infiniverse-eos
-drwxr-xr-x  8 khaskins users  202 Jul 23 18:39 inflationcoin
-drwxr-xr-x  8 khaskins users  263 Jul 23 18:02 Influxcoin
-drwxr-xr-x  7 khaskins users  220 Jul 23 17:51 INFO
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:31 innoket-master
-drwxr-xr-x 11 khaskins users  190 Jul 23 18:33 innova
-drwxr-xr-x  7 khaskins users  286 Jul 23 17:31 INSN
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:12 InstaDEX
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:24 InterCrone
-drwxr-xr-x 21 khaskins users 4.0K Jul 23 16:14 ion
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:56 IONOS
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:52 iop-core
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:48 iotnexus
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:10 ips
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:39 iridium
-drwxr-xr-x  7 khaskins users  227 Jul 23 17:51 IrishCoin
-drwxr-xr-x  4 khaskins users   91 Jul 23 15:49 itc-blockchain
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:46 iti
-drwxr-xr-x  7 khaskins users  285 Jul 23 19:28 Ititanium-coin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:14 ITZ
-drwxr-xr-x  8 khaskins users  190 Jul 23 17:13 ixcoin
-drwxr-xr-x  7 khaskins users  219 Jul 23 17:45 Jin-Coin-source
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:56 jiyo-core
-drwxr-xr-x  8 khaskins users  212 Jul 23 18:28 jobscoin-source
-drwxr-xr-x  7 khaskins users  178 Jul 23 17:51 joincoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:15 Jolt-Gas
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:30 joulecoin
-drwxr-xr-x  5 khaskins users  128 Jul 23 19:15 Joystick
-drwxr-xr-x  6 khaskins users  204 Jul 23 17:26 jumpcoin
-drwxr-xr-x  6 khaskins users  255 Jul 23 18:06 junson-ming-chan-coin
-drwxr-xr-x  6 khaskins users  249 Jul 23 17:01 kaicoin-full-node
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:53 Kalkicoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:02 karbowanec
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:20 karma-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:29 kashhcoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:54 kazucoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:06 kekcoin-segwit
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:08 keyco
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:55 kicksoccer
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:03 KINGSCOIN
-drwxr-xr-x  6 khaskins users  150 Jul 23 20:03 kittycoin-1
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:15 klks
-drwxr-xr-x  5 khaskins users 4.0K Jul 23 17:42 Kobocoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:30 kodcoin
-drwxr-xr-x  6 khaskins users  177 Jul 23 16:27 KoreCoin
-drwxr-xr-x  7 khaskins users  212 Jul 23 19:28 KORUNA
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 19:49 koto
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:29 Krait
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 19:34 Kraken
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:26 kreds-core
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:06 Kronecoin
-drwxr-xr-x  9 khaskins users  270 Jul 23 19:43 kumacoin
-drwxr-xr-x  8 khaskins users  193 Jul 23 18:23 Kurrent
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:36 kzcash
-drwxr-xr-x  7 khaskins users  244 Jul 23 19:50 labh
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:24 lanacoin
-drwxr-xr-x  7 khaskins users  244 Jul 23 18:46 landcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:28 LasVegasCoin2
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:39 lbtc-core
-drwxr-xr-x  7 khaskins users  226 Jul 23 19:44 leafcoin
-drwxr-xr-x  6 khaskins users  148 Jul 23 19:30 League
-drwxr-xr-x  7 khaskins users  199 Jul 23 19:26 Legion
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 18:53 lele
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:37 lemoncoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 15:46 LEOcoin
-drwxr-xr-x  6 khaskins users  245 Jul 23 18:21 LePenCoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:31 lethean
-drwxr-xr-x  7 khaskins users  264 Jul 23 18:57 letitride
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:17 Levoplus-Cryptocurrency-Source
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:28 libjl777
-drwxr-xr-x  6 khaskins users  106 Jul 23 16:18 lightchain
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:09 LightPayCoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:06 Linda
-drwxr-xr-x  8 khaskins users  277 Jul 23 19:13 lines
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:03 Linker-Coin-Project
-drwxr-xr-x 37 khaskins users 4.0K Jul 23 16:13 linkeye
-drwxr-xr-x  8 khaskins users  210 Jul 23 17:38 linX
-drwxr-xr-x  7 khaskins users  244 Jul 23 18:14 litebar
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:51 litebitcoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:12 liteblocks
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 14:58 litecoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:14 Litecoin-Black
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:56 litecoincash
-drwxr-xr-x  4 khaskins users   46 Jul 23 19:52 LitecoinCash
-drwxr-xr-x  8 khaskins users  288 Jul 23 17:41 litecoinplus
-drwxr-xr-x  7 khaskins users  266 Jul 23 18:34 LiteCoinUltra
-drwxr-xr-x  8 khaskins users  286 Jul 23 19:51 litegoldcoin
-drwxr-xr-x  7 khaskins users  225 Jul 23 18:04 lithium
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:51 Litkoin
-drwxr-xr-x  6 khaskins users  165 Jul 23 18:55 lizus-core
-drwxr-xr-x  8 khaskins users  257 Jul 23 18:08 lkrcoin
-drwxr-xr-x  8 khaskins users  217 Jul 23 19:31 Lobitcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:34 lobstex
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:25 LogisCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:58 loki
-drwxr-xr-x  7 khaskins users  199 Jul 23 18:14 lomocoin-qt
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:58 LRMcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:10 lunarium
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:16 LuniqueCoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:15 lux
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:46 lycancoin-release
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:15 lynx
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:05 machinecoin-core
-drwxr-xr-x  7 khaskins users  164 Jul 23 18:41 Macro
-drwxr-xr-x  7 khaskins users  215 Jul 23 17:25 magi
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:30 MagnaCoin
-drwxr-xr-x  8 khaskins users  241 Jul 23 17:00 MagnetCoin
-drwxr-xr-x  9 khaskins users  272 Jul 23 20:02 main-chain
-drwxr-xr-x  5 khaskins users 4.0K Jul 23 18:15 MainNet
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:30 maketrip-MTRIP
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:42 mangacoin
-drwxr-xr-x  9 khaskins users  260 Jul 23 15:52 manna-legacy
-drwxr-xr-x  8 khaskins users  210 Jul 23 18:17 mantracoin
-drwxr-xr-x  5 khaskins users  124 Jul 23 17:15 mao-zedong
-drwxr-xr-x  6 khaskins users  224 Jul 23 18:29 MAPCOIN
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:55 MARCcore
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:48 marscoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:44 martexcoin
-drwxr-xr-x  6 khaskins users  200 Jul 23 19:43 MARX
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:48 masari
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:22 MassGrid
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:30 masterbit
-drwxr-xr-x  7 khaskins users  273 Jul 23 18:32 masternodecoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 19:07 matrixcoin
-drwxr-xr-x  8 khaskins users  246 Jul 23 16:55 maxcoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:35 MBC
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:28 Mbitbooks
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:35 mccproject
-drwxr-xr-x  7 khaskins users  209 Jul 23 17:37 MedicCoin
-drwxr-xr-x  7 khaskins users  252 Jul 23 17:22 megacoin
-drwxr-xr-x  7 khaskins users  270 Jul 23 16:11 MeritcoinsMaster
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:19 mero
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 15:22 metaverse
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:27 MFCoin
-drwxr-xr-x  8 khaskins users  238 Jul 23 18:08 miacoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:43 MicroBitcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:05 midas_coin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:51 MidoriCore
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:25 mincoin
-drwxr-xr-x  8 khaskins users  213 Jul 23 18:55 MindCoin
-drwxr-xr-x  7 khaskins users  154 Jul 23 18:44 MINEUM
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:53 minexcoin
-drwxr-xr-x  8 khaskins users  267 Jul 23 18:26 Mintcoin-Desktop-Wallet
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:59 Mirai-Master
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:52 mktcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:33 mmocoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:59 MNPCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:14 mobitglobal
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:12 mogwai
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:26 MOIN
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:23 mojocoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:30 monacoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:00 monero
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:12 monerov
-drwxr-xr-x  8 khaskins users  267 Jul 23 18:23 moneta
-drwxr-xr-x  7 khaskins users  223 Jul 23 18:52 money
-drwxr-xr-x  7 khaskins users  186 Jul 23 18:58 MoneyBagCoin
-drwxr-xr-x  7 khaskins users  238 Jul 23 17:11 Monkey
-drwxr-xr-x  6 khaskins users  214 Jul 23 19:09 MontBlanc
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:00 motion
-drwxr-xr-x  8 khaskins users  284 Jul 23 18:45 motocoin
-drwxr-xr-x  5 khaskins users  166 Jul 23 17:59 mst-v3
-drwxr-xr-x  7 khaskins users  209 Jul 23 18:12 MTI-Coin
-drwxr-xr-x  8 khaskins users  240 Jul 23 18:19 MTLMCV3
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:51 muayfitcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:17 MUE
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:57 muncoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:43 MVP
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:22 myce
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:49 mymn
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 18:04 mynt
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 16:20 myriadcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:44 namecoin-core
-drwxr-xr-x  5 khaskins users  162 Jul 23 18:34 NamoCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:59 nanucoin
-drwxr-xr-x  8 khaskins users  270 Jul 23 19:24 Nasdacoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:40 navcoin-core
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:32 neblio
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:46 NEETCOIN
-drwxr-xr-x  7 khaskins users  261 Jul 23 18:24 netcoin
-drwxr-xr-x  7 khaskins users  228 Jul 23 18:51 neurocoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:14 neutron
-drwxr-xr-x  7 khaskins users  269 Jul 23 18:00 nevacoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:31 newpiggycoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:23 NewPowerCoin
-drwxr-xr-x  6 khaskins users  211 Jul 23 19:24 newschain
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:23 Newton
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:11 NextON
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 15:31 Nexus
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 20:01 NIKO
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:56 niobio-node-daemon
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:34 nitrous
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 15:55 NixCore
-drwxr-xr-x  7 khaskins users  279 Jul 23 17:14 NobleCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:55 noir
-drwxr-xr-x  8 khaskins users  198 Jul 23 18:25 NoLimitCoin
-drwxr-xr-x 16 khaskins users 4.0K Jul 23 16:49 NOSnode
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 20:02 NPay
-drwxr-xr-x  7 khaskins users  195 Jul 23 19:06 npcoin-core
-drwxr-xr-x  6 khaskins users  159 Jul 23 19:56 Nuaxes
-drwxr-xr-x  8 khaskins users  234 Jul 23 17:30 nyancoin-client
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:23 nycoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:24 nyerium
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:09 nyx
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:40 Oasis
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:09 ocean
-drwxr-xr-x  8 khaskins users  271 Jul 23 18:02 OCP
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:28 octocoin
-drwxr-xr-x  6 khaskins users  215 Jul 23 19:52 OctopusCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:58 Odin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:04 oduwacoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:47 ohmcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 20:00 ohwe
-drwxr-xr-x  7 khaskins users  218 Jul 23 16:31 okcash
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:54 OlympicCoin
-drwxr-xr-x  7 khaskins users  196 Jul 23 19:51 omencoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 16:22 omnicore
-drwxr-xr-x  7 khaskins users  197 Jul 23 18:18 onetimer
-drwxr-xr-x  7 khaskins users  177 Jul 23 17:48 onixcoin
-drwxr-xr-x 22 khaskins users 4.0K Jul 23 15:02 ontology
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:32 OpalCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:10 OPCoinX
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:56 Openbit
-drwxr-xr-x  7 khaskins users  226 Jul 23 18:21 Orbitcoin
-drwxr-xr-x  5 khaskins users  210 Jul 23 18:57 Orlycoin
-drwxr-xr-x  6 khaskins users  215 Jul 23 19:44 OSC
-drwxr-xr-x  8 khaskins users  239 Jul 23 18:45 OSMIUMCOIN_OS76
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:13 otrchain
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:49 OurCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:36 oyster
-drwxr-xr-x  8 khaskins users  196 Jul 23 16:58 ozziecoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:01 PAC
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 19:12 paicoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:35 pakcoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:14 pandacoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:49 pandemia
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:29 papelcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 20:02 ParadiseCoin-source-code
-drwxr-xr-x  5 khaskins users  106 Jul 23 17:59 ParkByte
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:12 parsicoin
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 15:32 particl-core
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:45 patexshares
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:02 PAWS-Core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:03 Paxex
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:03 PayDayCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:15 paymon-ios
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:33 PBSCoin
-drwxr-xr-x 20 khaskins users 4.0K Jul 23 15:49 pchain-pub
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:18 Peepcoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:40 peercoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:08 peerplays-profitshare
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:12 penguincore
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:11 Peony
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:34 people
-drwxr-xr-x  7 khaskins users  244 Jul 23 16:50 pepecoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:56 peps
-drwxr-xr-x  8 khaskins users  286 Jul 23 17:01 Pesetacoin-0.9
-drwxr-xr-x  7 khaskins users  273 Jul 23 18:20 pesobit-source
-drwxr-xr-x  8 khaskins users  200 Jul 23 18:35 petrodollar
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:06 phantomx
-drwxr-xr-x  7 khaskins users  242 Jul 23 18:13 phc
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:44 PhoneCoinCore
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:09 Phore
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:43 picpotocoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:56 Pink2
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:16 PinkstarcoinV2
-drwxr-xr-x  6 khaskins users  200 Jul 23 18:10 PIONEERCOIN
-drwxr-xr-x  9 khaskins users  268 Jul 23 18:18 Pipcoin
-drwxr-xr-x  8 khaskins users  194 Jul 23 17:48 piratecash
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 15:22 PIVX
-drwxr-xr-x  8 khaskins users  229 Jul 23 19:55 PKCli
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:59 placeh
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 19:03 platincoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:37 Plexus
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:59 pluracoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:15 plusonecoin
-drwxr-xr-x  8 khaskins users  222 Jul 23 18:47 pod
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 15:59 polis
-drwxr-xr-x  3 khaskins users  163 Jul 23 20:00 poorswap
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:46 PopChain
-drwxr-xr-x  8 khaskins users  255 Jul 23 17:13 PopularCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:02 posq
-drwxr-xr-x  7 khaskins users  178 Jul 23 18:41 PostCoin
-drwxr-xr-x  8 khaskins users  217 Jul 23 16:00 potcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:31 Pr
-drwxr-xr-x  8 khaskins users  264 Jul 23 16:05 primecoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:50 PrimeStone
-drwxr-xr-x  9 khaskins users  286 Jul 23 18:47 Prime-xi
-drwxr-xr-x  7 khaskins users  246 Jul 23 18:44 Printerium-project
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:00 printex-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:10 privcy
-drwxr-xr-x  5 khaskins users  131 Jul 23 18:22 procurrency
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:05 project
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:55 ProjectCoin
-drwxr-xr-x  7 khaskins users  209 Jul 23 19:12 PROUDmoney
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:46 proxynode
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:57 PURA
-drwxr-xr-x  4 khaskins users   85 Jul 23 17:51 pure
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:05 PWRcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:14 pyloncoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 15:20 pyquarkchain
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:41 Pyrex
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:17 pyro
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:09 pzdc
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:08 QBase-Core
-drwxr-xr-x  6 khaskins users  161 Jul 23 18:53 qbc
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:52 qbic
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 19:48 QMC
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:04 qtum
-drwxr-xr-x  7 khaskins users  200 Jul 23 15:40 qt-wallet-emc2
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:18 QuantisNet-Fork-New-Chain
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:19 quark
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:32 quasar
-drwxr-xr-x  8 khaskins users  170 Jul 23 18:21 quatloo
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:20 quazarcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:31 QubitCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:31 quix
-drwxr-xr-x  7 khaskins users  244 Jul 23 17:39 Quotient
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:51 qwertycoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:45 qynocoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:11 RabbitCore
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:29 racecoin
-drwxr-xr-x  7 khaskins users  271 Jul 23 16:12 radium-0
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:33 Ragnarok
-drwxr-xr-x 21 khaskins users 4.0K Jul 23 15:13 raiblocks
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:36 rain
-drwxr-xr-x  7 khaskins users  209 Jul 23 19:23 Rampant
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:06 Rapture
-drwxr-xr-x  7 khaskins users  218 Jul 23 18:19 ratecoin
-drwxr-xr-x 18 khaskins users 4.0K Jul 23 15:08 Ravencoin
-drwxr-xr-x  7 khaskins users  243 Jul 23 18:53 rawcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 20:00 rea
-drwxr-xr-x  7 khaskins users  243 Jul 23 18:46 redcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 15:27 reddcoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:47 Reecoin-Project
-drwxr-xr-x  8 khaskins users  217 Jul 23 19:10 Rel
-drwxr-xr-x  5 khaskins users  100 Jul 23 18:01 RenosCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:49 Respawn
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:59 revolvercoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:09 Rhenium
-drwxr-xr-x  7 khaskins users  249 Jul 23 18:57 RideMyCar-Coin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:09 riecoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:12 rilcoin
-drwxr-xr-x  8 khaskins users  264 Jul 23 18:08 Rippedcoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 14:48 rippled
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 19:58 Ritocoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:17 ROIcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:58 ROIyalCoin
-drwxr-xr-x  7 khaskins users  225 Jul 23 17:58 ronpaulcoin
-drwxr-xr-x  7 khaskins users  260 Jul 23 18:41 roofs
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 19:06 Rovercoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:33 RoyaltiesCLI
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:54 rpicore
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:53 rstr
-drwxr-xr-x  7 khaskins users  243 Jul 23 18:35 runners-source
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:38 rupx
-drwxr-xr-x  6 khaskins users  206 Jul 23 18:45 RussiaCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:03 ryo-currency
-drwxr-xr-x 38 khaskins users 4.0K Jul 23 19:25 SAC
-drwxr-xr-x  8 khaskins users  251 Jul 23 20:03 Sacoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:09 safe
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:29 safecoin
-drwxr-xr-x  7 khaskins users  249 Jul 23 17:52 SafeTradeCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:04 safexcore
-drwxr-xr-x  7 khaskins users  182 Jul 23 18:45 SagaCoin
-drwxr-xr-x  8 khaskins users  239 Jul 23 18:28 sakuracoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:27 salus
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 18:10 sanchezium
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:13 saros
-drwxr-xr-x  6 khaskins users  165 Jul 23 17:58 sativacoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:19 SatoshiCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:50 SaveNodeCore
-drwxr-xr-x  7 khaskins users  265 Jul 23 19:52 savle-source
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:49 sbccoin-source
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:02 scashcpp
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:26 schillingcoin
-drwxr-xr-x  8 khaskins users  281 Jul 23 19:55 scolcoin
-drwxr-xr-x  7 khaskins users  260 Jul 23 18:46 Scorecoin
-drwxr-xr-x 17 khaskins users 4.0K Jul 23 17:08 Scorum
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:23 scriv
-drwxr-xr-x  6 khaskins users   92 Jul 23 16:14 SDChain-Core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:56 SecureCloud
-drwxr-xr-x  6 khaskins users  165 Jul 23 18:01 Securecoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 19:45 securetag
-drwxr-xr-x  8 khaskins users  230 Jul 23 18:00 Seedcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:54 sekopay
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:17 semux-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:00 Sequence
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:22 sexcoin
-drwxr-xr-x  6 khaskins users  210 Jul 23 17:05 SHACoin-Dead
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:00 shard
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:26 sharingmarketcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:32 SHIELD
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:02 Shilling
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:05 shopzcoin
-drwxr-xr-x  5 khaskins users  160 Jul 23 18:54 shorty
-drwxr-xr-x  8 khaskins users  200 Jul 23 19:34 shrooms
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 16:32 sibcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:48 sierra
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:15 Simple
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:00 sins-coin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:27 sirius
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:41 sixeleven
-drwxr-xr-x  8 khaskins users  286 Jul 23 19:38 sjwcoin-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:49 skeincoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:33 skyhub
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:22 sld
-drwxr-xr-x  5 khaskins users  160 Jul 23 18:31 slevin
-drwxr-xr-x  6 khaskins users 4.0K Jul 23 17:41 Slothcoin
-drwxr-xr-x  7 khaskins users  204 Jul 23 17:43 smartcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:43 smartfox
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:51 smrtc
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:22 snode-coin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:49 Snowgem
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:56 SocialCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:01 SocialSend
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:03 SolaceCoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:16 solarcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:53 Solaris
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:05 solarium-XLRC
-drwxr-xr-x  8 khaskins users  240 Jul 23 18:51 Songcoin
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:32 sonoa
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:29 soom-core
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:19 SophiaTX
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:54 source
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:37 Source
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:28 SovCoin
-drwxr-xr-x  8 khaskins users  164 Jul 23 16:04 SpaceChainOS
-drwxr-xr-x  7 khaskins users  250 Jul 23 18:15 spacecoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:47 sparks
-drwxr-xr-x  7 khaskins users  203 Jul 23 19:37 spartancoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:07 spectre
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 17:30 Spectrum-Coin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:32 spedo
-drwxr-xr-x  8 khaskins users  208 Jul 23 16:27 sphere
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:22 sprouts
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:50 SproutsClassic
-drwxr-xr-x  7 khaskins users  229 Jul 23 18:52 SproutsExtreme
-drwxr-xr-x  7 khaskins users  196 Jul 23 19:31 sqrcoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:41 stack1
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:42 stakecube
-drwxr-xr-x  7 khaskins users  199 Jul 23 17:21 startcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 20:01 startlife
-drwxr-xr-x  7 khaskins users  214 Jul 23 16:08 Stealth
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:13 steem
-drwxr-xr-x  6 khaskins users  193 Jul 23 17:24 SteepCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 14:58 stellar-core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:59 Stellite
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 20:00 stelo
-drwxr-xr-x  7 khaskins users  203 Jul 23 17:31 Sterlingcoin-1.5.1
-drwxr-xr-x  7 khaskins users  256 Jul 23 18:54 stipend
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 18:07 Stonecoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:26 straks
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:38 StrayaCoin-Core
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:23 stronghands
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:06 StrongHandsMasterNode
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:03 sucrecoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:47 SucreCore
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:02 sumokoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:39 SuperBitcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:14 supro
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:19 SUQA-CORE
-drwxr-xr-x  7 khaskins users  175 Jul 23 18:11 swapcash
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 15:59 swarm-psim
-drwxr-xr-x  8 khaskins users  286 Jul 23 19:34 SWATCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:09 swiftcash
-drwxr-xr-x  9 khaskins users  225 Jul 23 17:38 Swing
-drwxr-xr-x  6 khaskins users  261 Jul 23 17:34 swippcore
-drwxr-xr-x  8 khaskins users  251 Jul 23 16:50 Swiscoin-Master
-drwxr-xr-x  8 khaskins users  214 Jul 23 17:47 SwisscoinNode
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:52 SyndicateQT
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 15:29 syscoin2
-drwxr-xr-x  5 khaskins users  219 Jul 23 18:57 tagrcoin
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:58 tajcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:01 taler
-drwxr-xr-x  8 khaskins users  243 Jul 23 19:13 talium
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:27 tao-core
-drwxr-xr-x  8 khaskins users  283 Jul 23 18:30 Tattoocoin-TLE
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:30 tau
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:45 TenUp
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:01 terracoin
-drwxr-xr-x  5 khaskins users  181 Jul 23 18:27 TerraNova
-drwxr-xr-x  7 khaskins users  219 Jul 23 17:22 teslacoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:52 tfchain
-drwxr-xr-x  6 khaskins users  177 Jul 23 16:15 THC
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:10 The-Cypherfunks
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 16:07 TheGCCcoin-source-code
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 19:42 The-Midas-Touch-Gold
-drwxr-xr-x  6 khaskins users  178 Jul 23 18:00 TheresaMayCoin-v1.0.1
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:54 TheSuperiorCoin
-drwxr-xr-x 25 khaskins users 4.0K Jul 23 15:16 theta-protocol-ledger
-drwxr-xr-x  7 khaskins users  179 Jul 23 18:46 Tigercoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:13 timecoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:54 tincoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:55 titcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:42 tittiecoin-2-0
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:32 TiValue
-drwxr-xr-x  7 khaskins users  288 Jul 23 16:27 TOA
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:04 tokugawa
-drwxr-xr-x  8 khaskins users  234 Jul 23 17:41 tokyocoinsrc
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:27 torcoin
-drwxr-xr-x 15 khaskins users 4.0K Jul 23 16:22 tos
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:36 TOSC
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:48 traidcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:21 transcendence
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 16:20 Transfercoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:10 TrezarCoin
-drwxr-xr-x  7 khaskins users  248 Jul 23 17:42 triangles
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:55 trittium
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:59 trivechain
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:39 trocaninja
-drwxr-xr-x  7 khaskins users  200 Jul 23 17:13 TrollCoin-2
-drwxr-xr-x  7 khaskins users  186 Jul 23 17:33 Truckcoin
-drwxr-xr-x  6 khaskins users  193 Jul 23 19:31 truegalaxycash
-drwxr-xr-x  7 khaskins users  120 Jul 23 17:33 TRUMP
-drwxr-xr-x  6 khaskins users  178 Jul 23 17:30 TrustPlus
-drwxr-xr-x  6 khaskins users  255 Jul 23 19:46 TulipManiaCoin
-drwxr-xr-x  7 khaskins users  225 Jul 23 17:32 TurboStake
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 16:02 turtlecoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:57 tuxcoin-V2
-drwxr-xr-x  7 khaskins users  226 Jul 23 18:27 tyrocoin
-drwxr-xr-x 12 khaskins users  232 Jul 23 17:21 Uchain-Master
-drwxr-xr-x  6 khaskins users  174 Jul 23 18:21 ucoinx11
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:22 ucom
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 19:16 uec
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 16:57 ufo
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 20:04 UlatechGroup
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:54 UlordChain
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:50 UltimateSecureCash
-drwxr-xr-x  9 khaskins users  282 Jul 23 18:27 ultracoin-2
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:08 ultranatum
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 17:43 UltraNote
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:59 unetwork
-drwxr-xr-x  6 khaskins users  206 Jul 23 17:00 unicoin
-drwxr-xr-x  8 khaskins users  237 Jul 23 18:46 unify-source
-drwxr-xr-x  7 khaskins users  221 Jul 23 18:19 Unioncoin
-drwxr-xr-x  8 khaskins users  219 Jul 23 18:31 unitcurrency
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:40 UnitedBitcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:28 unitus
-drwxr-xr-x  8 khaskins users 4.0K Jul 23 18:09 universalmol
-drwxr-xr-x  7 khaskins users  253 Jul 23 17:26 Universe-UNI
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:29 Unobtanium
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:19 uplexa
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:57 UraniumX
-drwxr-xr-x  8 khaskins users  265 Jul 23 17:47 USDEX
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:11 uservcoin
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:44 valorbit
-drwxr-xr-x  9 khaskins users  224 Jul 23 19:37 vantaur
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:56 vaperscoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 18:16 Vapex
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:05 varius
-drwxr-xr-x  8 khaskins users  204 Jul 23 18:25 vash
-drwxr-xr-x  8 khaskins users  251 Jul 23 19:06 vclassiccoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:26 venox
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:15 verge
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:23 vericoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:54 verium
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:31 vertcoin-core
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:53 VerusCoin
-drwxr-xr-x 16 khaskins users 4.0K Jul 23 19:51 vest-token
-drwxr-xr-x  7 khaskins users  221 Jul 23 19:33 Vestx
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:41 viacoin
-drwxr-xr-x  6 khaskins users  208 Jul 23 20:02 videogamescoinwallet
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:52 vidulum
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:12 VIOG
-drwxr-xr-x  6 khaskins users  251 Jul 23 17:46 virtacoinplus
-drwxr-xr-x  7 khaskins users  261 Jul 23 18:23 visioX
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:25 Vitae
-drwxr-xr-x  8 khaskins users  239 Jul 23 16:31 Vites
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:42 vividcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:36 vivo
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:32 VoteCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:36 VSX
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:03 Vulcano
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 16:19 wallet
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:27 Wallet
-drwxr-xr-x  7 khaskins users  253 Jul 23 18:40 WalletBuildersCoin
-drwxr-xr-x  6 khaskins users  200 Jul 23 19:44 wallets
-drwxr-xr-x 34 khaskins users 4.0K Jul 23 19:53 WASpace
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:17 wavi
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 19:44 WayaWolfCoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 15:33 WaykiChain
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:05 wealthsilo
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 16:17 WeAreSatoshi2
-drwxr-xr-x  6 khaskins users  158 Jul 23 18:22 wexcoin
-drwxr-xr-x 37 khaskins users 4.0K Jul 23 18:37 WhaleCoin
-drwxr-xr-x  7 khaskins users  227 Jul 23 18:22 whitecoin
-drwxr-xr-x  7 khaskins users  244 Jul 23 18:10 widecash-project
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:30 wincoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:46 wire-core
-drwxr-xr-x  7 khaskins users  137 Jul 23 17:01 WithCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:21 wixlar
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:48 wizbl
-drwxr-xr-x  8 khaskins users  277 Jul 23 17:48 WOKEcash
-drwxr-xr-x  7 khaskins users 4.0K Jul 23 17:36 womencoin
-drwxr-xr-x  7 khaskins users  241 Jul 23 18:24 woodcoin
-drwxr-xr-x  8 khaskins users  235 Jul 23 19:02 worktipscoin
-drwxr-xr-x  6 khaskins users  141 Jul 23 17:02 WorldcoinDaemon
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:34 worx
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:32 wownero
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:27 x12-core
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:34 Xano-Coin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:01 Xavander-coin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:53 xaya
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:00 xbcwalletsource
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:30 xc
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:50 X-CASH
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:47 xcoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 16:20 xdag
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:36 XDNA
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 16:13 xel-lite-wallet
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 19:56 xeonbit
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:28 xflea
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:45 XGalaxy
-drwxr-xr-x  7 khaskins users  222 Jul 23 17:32 xgox
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 16:00 xmax-mainchain
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:45 XORN
-drwxr-xr-x  8 khaskins users  233 Jul 23 16:23 XPCoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:49 XSN
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:33 XUEZ
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:00 xuma-core
-drwxr-xr-x  9 khaskins users 4.0K Jul 23 18:52 yacoin
-drwxr-xr-x  8 khaskins users  251 Jul 23 18:27 YashCoin-Source
-drwxr-xr-x  7 khaskins users  216 Jul 23 18:30 ybcoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:47 yenten
-drwxr-xr-x  5 khaskins users  136 Jul 23 19:30 Yi
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:37 yibitcoin
-drwxr-xr-x  8 khaskins users  238 Jul 23 18:18 yocoin
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 15:02 zcash
-drwxr-xr-x  7 khaskins users  198 Jul 23 17:09 zccoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:22 zcoin
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 17:50 Zealium
-drwxr-xr-x  7 khaskins users  218 Jul 23 17:02 zeitcoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 16:24 zelcash
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:26 zen
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:12 zenad_v2
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:10 ZENZO-Core
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 17:11 Zero
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 17:57 zeroonecoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 17:34 ZestCoin
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 17:20 zetacoin
-drwxr-xr-x  7 khaskins users  230 Jul 23 20:01 zettelkasten
-drwxr-xr-x 10 khaskins users 4.0K Jul 23 19:57 zijacoin
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 15:09 Zilliqa
-drwxr-xr-x 12 khaskins users 4.0K Jul 23 18:08 zixxcore
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 19:29 zNodium
-drwxr-xr-x  7 khaskins users  244 Jul 23 18:28 Zonecoin
-drwxr-xr-x 14 khaskins users 4.0K Jul 23 18:07 zoomba
-drwxr-xr-x 13 khaskins users 4.0K Jul 23 18:31 ZoZo-blockchain
-drwxr-xr-x 11 khaskins users 4.0K Jul 23 18:59 zSub1x
+## Attempted to pull from:        2451
+## Actually kept:                 1271 (According to log)
+## Failed to pull from:           79
+## Actually pulled from and kept: 1192
+
+## Date and time for each repository:
+##
+Jul 23 17:00 1337
+Jul 23 17:21 1X2coin
+Jul 23 17:58 2acoin
+Jul 23 16:59 2GIVE
+Jul 23 17:02 42
+Jul 23 18:40 808
+Jul 23 19:05 aaa
+Jul 23 16:58 abet
+Jul 23 17:37 absolute
+Jul 23 17:40 AceD
+Jul 23 15:45 Achain
+Jul 23 18:28 acoin
+Jul 23 19:22 acrecoin
+Jul 23 17:20 Actinium
+Jul 23 16:59 AdCoin
+Jul 23 19:13 adeptio
+Jul 23 19:31 Adirondack
+Jul 23 19:07 AdultChain
+Jul 23 19:35 advance
+Jul 23 17:21 adzcoin
+Jul 23 17:44 aegeus
+Jul 23 18:19 aeon
+Jul 23 18:11 AeriumX
+Jul 23 19:42 aevocoin
+Jul 23 19:15 afro
+Jul 23 19:53 AGDN
+Jul 23 19:02 AgeTron
+Jul 23 19:35 agni
+Jul 23 18:03 Agouti
+Jul 23 19:11 AgrolotCoin
+Jul 23 17:58 aiascoin
+Jul 23 18:02 aib
+Jul 23 15:23 aion
+Jul 23 19:36 airin
+Jul 23 19:11 akroma
+Jul 23 19:05 alloy
+Jul 23 17:13 Allsafe2
+Jul 23 18:16 AlphaCoin
+Jul 23 19:25 Amero
+Jul 23 19:44 amigacoin
+Jul 23 18:46 AmmoReloaded
+Jul 23 19:28 amnesia
+Jul 23 19:46 Animality_Master
+Jul 23 18:32 Animecoin
+Jul 23 19:30 anodoscoin
+Jul 23 16:51 anon
+Jul 23 18:25 anoncoin
+Jul 23 18:17 apeiron
+Jul 23 17:11 ApollonCoin
+Jul 23 18:23 AppleByte
+Jul 23 19:06 AquilaX
+Jul 23 18:10 ARbit
+Jul 23 17:22 ARCO
+Jul 23 17:34 arcticcoin
+Jul 23 17:44 Arepacoin
+Jul 23 17:21 argentum
+Jul 23 19:33 argo
+Jul 23 20:03 argoneum
+Jul 23 18:41 aricoin
+Jul 23 17:51 arioncoin
+Jul 23 17:45 arqma
+Jul 23 17:49 Artax
+Jul 23 17:55 artiqox
+Jul 23 19:56 AscensionCoin
+Jul 23 18:29 AsiaCoinFix
+Jul 23 17:03 atbcoin
+Jul 23 18:33 atmostemp
+Jul 23 17:08 audiocoin
+Jul 23 19:52 AuniteBlockchain
+Jul 23 17:00 auroracoin
+Jul 23 18:49 Aurumcoin_AU
+Jul 23 18:25 Avoncoin-Project
+Jul 23 19:46 azart
+Jul 23 19:26 b2bcoin
+Jul 23 16:58 B3-CoinV2
+Jul 23 17:40 bagcoin3
+Jul 23 18:08 balkancoin
+Jul 23 19:59 ballast
+Jul 23 16:56 banano
+Jul 23 19:30 banq
+Jul 23 18:23 Bash
+Jul 23 17:35 Bataoshi
+Jul 23 19:02 BatCoin
+Jul 23 19:31 baxur
+Jul 23 19:00 bbscoin
+Jul 23 19:24 BCARD
+Jul 23 19:48 BCRM
+Jul 23 17:37 beacon
+Jul 23 15:50 beam
+Jul 23 19:15 beldex
+Jul 23 17:47 BERNcash
+Jul 23 17:03 bettexcoin
+Jul 23 17:09 biblepay
+Jul 23 18:10 BillaryCoinSource
+Jul 23 16:54 birakecoin
+Jul 23 17:20 BitBar
+Jul 23 15:54 BitBay
+Jul 23 18:18 bitbean-core
+Jul 23 17:44 BitBlocks
+Jul 23 16:54 BitClassic
+Jul 23 17:31 Bitcloud
+Jul 23 13:44 bitcoin
+Jul 23 19:32 bitcoin2
+Jul 23 17:49 bitcoin2network
+Jul 23 18:31 bitcoin2x
+Jul 23 14:58 bitcoin-abc
+Jul 23 19:29 BitcoinAdult-Source-Code
+Jul 23 19:52 bitcoincandy
+Jul 23 19:13 bitcoin-cored
+Jul 23 19:50 BitcoinCure
+Jul 23 15:12 BitcoinDiamond
+Jul 23 17:41 bitcoinfast
+Jul 23 19:08 bitcoinfile
+Jul 23 19:28 BitcoinFinal
+Jul 23 19:05 BitcoinInterest
+Jul 23 17:48 Bitcoinote-Core
+Jul 23 19:54 bitcoinpositive
+Jul 23 18:56 BitcoinPrivate
+Jul 23 18:07 BitcoinPro
+Jul 23 17:09 bitcoin-scrypt
+Jul 23 15:00 bitcoin-sv
+Jul 23 18:26 bitcoinultra
+Jul 23 16:51 bitcoinz
+Jul 23 16:00 BitCore
+Jul 23 17:18 bitcurrency
+Jul 23 18:36 bitdeal
+Jul 23 19:34 Bithold
+Jul 23 17:51 BitHost
+Jul 23 17:49 bitmark
+Jul 23 17:54 BitMoneyV2
+Jul 23 19:24 bitnewcoin
+Jul 23 19:06 bitnodespro
+Jul 23 17:14 Bitradio
+Jul 23 17:38 BitRewards
+Jul 23 16:31 BitSend
+Jul 23 20:01 bitsex
+Jul 23 15:12 bitshares-core
+Jul 23 18:00 BitSpace
+Jul 23 18:22 bitstakesource
+Jul 23 17:34 bitstar
+Jul 23 17:04 bitswift
+Jul 23 18:47 BitToken
+Jul 23 20:02 Bittorium
+Jul 23 19:24 bitvier
+Jul 23 18:29 bitzeny
+Jul 23 16:06 blackcoin
+Jul 23 16:31 BlakeBitcoin
+Jul 23 17:52 Blakecoin
+Jul 23 17:48 blast-core
+Jul 23 19:11 blazecoin
+Jul 23 19:27 BLISS
+Jul 23 17:38 BLOC
+Jul 23 15:41 blocknet
+Jul 23 17:38 blocknode
+Jul 23 17:08 bltg
+Jul 23 18:20 bluecoin
+Jul 23 15:42 bluzelle
+Jul 23 17:59 boatcoinfinal
+Jul 23 18:04 bold
+Jul 23 17:48 bolivarcoin
+Jul 23 19:44 bongger
+Jul 23 18:26 boolberry
+Jul 23 17:57 boostcoin-core
+Jul 23 18:24 bottlecaps
+Jul 23 18:01 bowscoin
+Jul 23 18:08 braveneworld
+Jul 23 19:30 bravo
+Jul 23 17:42 Brazio
+Jul 23 18:25 Breakout-Chain-Client
+Jul 23 18:36 bridgecoin
+Jul 23 18:22 britcoin
+Jul 23 17:44 brixcoin6
+Jul 23 19:02 bryllite-ico
+Jul 23 15:03 BTCGPU
+Jul 23 17:56 BTCMonster
+Jul 23 17:35 BTCtalkcoin
+Jul 23 17:56 btcx
+Jul 23 18:08 buck
+Jul 23 17:02 bullion
+Jul 23 16:27 Bulwark
+Jul 23 18:49 bumbacoin2-source
+Jul 23 19:37 bumo
+Jul 23 18:29 bunnycoin
+Jul 23 19:54 BurnCoinWallet
+Jul 23 18:15 buysellcoin
+Jul 23 17:42 BWS-POS
+Jul 23 15:13 bytecoin
+Jul 23 15:12 bytom
+Jul 23 18:02 bzlcoin
+Jul 23 19:58 c25
+Jul 23 17:57 c2pcore
+Jul 23 18:07 c3x
+Jul 23 17:55 CACHeCoin
+Jul 23 18:21 cagecoin
+Jul 23 18:52 Californium
+Jul 23 18:12 Caluracoin
+Jul 23 18:11 Calvarycoin
+Jul 23 17:23 canadaecoin
+Jul 23 16:49 cannabiscoin420
+Jul 23 17:39 Cannacoin
+Jul 23 15:54 canonchain
+Jul 23 19:33 capracoin
+Jul 23 16:58 CapriCoin
+Jul 23 19:37 car
+Jul 23 19:48 CARATSmartContract
+Jul 23 17:11 CarboncoinCore
+Jul 23 17:49 carebitcoin
+Jul 23 17:49 cash
+Jul 23 20:03 cash2
+Jul 23 17:11 cashberycoin
+Jul 23 18:18 CastleMN
+Jul 23 18:06 CatcoinRelease
+Jul 23 17:43 CatoCoin
+Jul 23 19:09 cazcoin
+Jul 23 18:09 C-Bit
+Jul 23 19:46 cbitcoin
+Jul 23 17:14 CC
+Jul 23 18:05 CCBC
+Jul 23 17:41 cdc-core
+Jul 23 20:00 CENTERCOIN
+Jul 23 18:20 centurion
+Jul 23 18:29 cerium
+Jul 23 19:08 cgencore
+Jul 23 17:06 chaincoin
+Jul 23 18:05 chancoin
+Jul 23 17:32 chesscoin
+Jul 23 19:57 ChristmasCoin-Core
+Jul 23 17:50 Citadel
+Jul 23 17:47 Civitas
+Jul 23 15:36 clams
+Jul 23 16:10 CloakCoin
+Jul 23 18:23 ClubCoin
+Jul 23 20:00 clx-wallet
+Jul 23 19:51 CobraBytes
+Jul 23 18:01 coimatic-master
+Jul 23 19:45 coin
+Jul 23 18:45 COIN
+Jul 23 18:19 Coin2
+Jul 23 17:30 coin2goproject
+Jul 23 19:26 coinlegacy
+Jul 23 18:16 coino
+Jul 23 18:13 CoinonatX
+Jul 23 17:03 ColossusCoin2
+Jul 23 16:05 ColossusCoinXT
+Jul 23 19:32 communitycoin
+Jul 23 17:27 Compound-Coin
+Jul 23 17:57 compucoin
+Jul 23 17:01 conceal-core
+Jul 23 17:22 CondominiumCore
+Jul 23 18:04 Coppercoin
+Jul 23 15:32 Core-Smart
+Jul 23 18:16 corez
+Jul 23 18:57 Cosmos
+Jul 23 19:28 cottoncoin
+Jul 23 17:36 CpaPay
+Jul 23 16:01 cpp-ethereum
+Jul 23 17:35 Crave-NG
+Jul 23 18:32 cream
+Jul 23 17:07 creativechain-core
+Jul 23 17:39 creditbit
+Jul 23 18:21 creva
+Jul 23 17:13 Croat
+Jul 23 18:02 CropDev
+Jul 23 16:10 Crowdcoin
+Jul 23 15:38 crowdsale
+Jul 23 16:10 crown-core
+Jul 23 18:55 crtcoin
+Jul 23 19:53 CruxCoin
+Jul 23 17:39 cryptcoin
+Jul 23 19:50 CrypticCoin
+Jul 23 16:50 CryptoDezireCash
+Jul 23 19:35 CryptoFlowCoin
+Jul 23 18:19 Cryptonite
+Jul 23 18:11 cryptonodes-core
+Jul 23 17:42 cryptradecoin-core
+Jul 23 18:40 CubitsV3
+Jul 23 16:30 CurecoinSource
+Jul 23 18:09 curium
+Jul 23 19:30 curve
+Jul 23 18:57 CWXT
+Jul 23 18:32 cyder
+Jul 23 20:01 CyprusCoin
+Jul 23 18:20 CYTN
+Jul 23 18:04 dacash
+Jul 23 17:11 darkpaycoin
+Jul 23 18:49 Darsek
+Jul 23 19:11 dascoin-blockchain
+Jul 23 15:02 dash
+Jul 23 17:12 dashgreen
+Jul 23 18:11 daviescoin
+Jul 23 18:34 daxxcore
+Jul 23 15:38 dcrm-go
+Jul 23 18:46 debitcoin
+Jul 23 15:57 deeponion
+Jul 23 18:14 deimos
+Jul 23 19:31 DemosPay
+Jul 23 18:29 denarius
+Jul 23 15:56 dero
+Jul 23 18:36 Desire
+Jul 23 19:44 deuscoin-core
+Jul 23 17:33 dextro
+Jul 23 18:38 DFSCoin
+Jul 23 16:11 Diamond
+Jul 23 15:13 digibyte
+Jul 23 18:06 digimoney
+Jul 23 17:46 digitalcoin
+Jul 23 17:46 DigitalCoinBRL
+Jul 23 17:04 DigitalPrice
+Jul 23 17:43 digiwage
+Jul 23 16:08 dimecoin
+Jul 23 16:05 DIONS
+Jul 23 18:47 disk
+Jul 23 19:14 ditcoin-gui
+Jul 23 18:11 dividendcash
+Jul 23 19:29 Dixicoin
+Jul 23 17:59 DMB-project
+Jul 23 16:30 DNotes2
+Jul 23 17:08 dogecash
+Jul 23 15:03 dogecoin
+Jul 23 18:49 DOLLAR
+Jul 23 16:55 DopeCoinV3
+Jul 23 18:27 DOT
+Jul 23 17:14 draftcoin
+Jul 23 18:13 dravite
+Jul 23 17:50 Dreamcoin
+Jul 23 18:12 DropCoin
+Jul 23 18:09 DSC
+Jul 23 19:49 dstra
+Jul 23 18:08 Ducat-Coin
+Jul 23 19:50 DUDGX
+Jul 23 19:54 dv8coin
+Jul 23 18:24 Dynamic
+Jul 23 18:39 eacore
+Jul 23 19:37 EarnzCoin
+Jul 23 16:29 earthcoin
+Jul 23 17:33 eazynode
+Jul 23 18:34 EBIT
+Jul 23 19:31 EBSCoin
+Jul 23 16:20 ECCoin
+Jul 23 18:04 edcash
+Jul 23 17:59 EddieCoin
+Jul 23 16:01 edinarcoin
+Jul 23 19:06 edollar
+Jul 23 16:01 EDRcoin-src
+Jul 23 18:31 egoldcoin
+Jul 23 17:11 egulden
+Jul 23 17:56 Electron-ELT
+Jul 23 16:38 electronero
+Jul 23 15:39 electroneropulse
+Jul 23 15:21 electroneum
+Jul 23 19:44 Elements-master
+Jul 23 19:24 elicoin
+Jul 23 18:18 Elleriumv2
+Jul 23 17:55 elli
+Jul 23 19:13 elyacoin
+Jul 23 19:06 EmaratCoinProject
+Jul 23 17:26 eMark
+Jul 23 17:14 Ember
+Jul 23 17:33 Emerald
+Jul 23 15:41 emercoin
+Jul 23 18:11 emergencycoin
+Jul 23 18:15 emrals
+Jul 23 19:48 Enceladus_Coin
+Jul 23 20:04 EndocoinV2
+Jul 23 18:26 energycoin
+Jul 23 19:14 enumivo
+Jul 23 14:55 eos
+Jul 23 19:53 eosdice
+Jul 23 19:38 eosforce
+Jul 23 16:18 eos-karma-tokens
+Jul 23 18:33 EOTCoin
+Jul 23 17:39 Epic
+Jul 23 17:12 Equitrade
+Jul 23 16:58 ESBC2
+Jul 23 16:32 Espers
+Jul 23 19:46 ESRcoin
+Jul 23 18:02 eternity
+Jul 23 18:33 EtherDoge
+Jul 23 17:35 ethereumcash
+Jul 23 17:06 EverGreenCoin
+Jul 23 19:14 Everipedia
+Jul 23 17:50 EvilCoin
+Jul 23 16:51 ExclusiveCoin
+Jul 23 20:02 EXISTv2
+Jul 23 19:44 exmcoin
+Jul 23 17:16 exosis
+Jul 23 17:52 experiencecoin
+Jul 23 19:12 ext-wallet
+Jul 23 18:05 exus
+Jul 23 19:08 fabcoin
+Jul 23 18:30 fair-coin
+Jul 23 17:16 FantasyGold-Core
+Jul 23 17:09 fantomcoin
+Jul 23 18:21 fastcoin
+Jul 23 16:10 Feathercoin
+Jul 23 16:30 fedoracoin
+Jul 23 18:09 feirm
+Jul 23 19:25 FIMFL
+Jul 23 19:59 FinChain-core
+Jul 23 18:22 fitcoin
+Jul 23 15:43 florincoin
+Jul 23 18:25 fluttercoin
+Jul 23 16:30 fnkcore
+Jul 23 19:09 foin
+Jul 23 17:58 folm
+Jul 23 19:42 FootyCashV2
+Jul 23 19:46 force
+Jul 23 18:38 frazCoin
+Jul 23 19:56 FRED
+Jul 23 18:14 Freedom-Coin
+Jul 23 16:59 freicoin
+Jul 23 18:17 friendshipcoin-core
+Jul 23 19:31 frozen
+Jul 23 17:30 fujicoin
+Jul 23 20:04 Fuloos
+Jul 23 18:49 funcoin
+Jul 23 19:05 Futuro
+Jul 23 19:57 fxtc
+Jul 23 17:59 gainercoin
+Jul 23 17:26 galactrum
+Jul 23 19:54 galaxycash
+Jul 23 17:31 galilel
+Jul 23 19:35 galluscoin
+Jul 23 16:18 gambit
+Jul 23 19:23 GambleCoin
+Jul 23 19:54 gamecoin
+Jul 23 15:54 GameCredits
+Jul 23 17:52 gapcoin
+Jul 23 18:48 Garlicoin
+Jul 23 19:15 GDNC
+Jul 23 19:43 GDW
+Jul 23 18:27 Geertcoin
+Jul 23 19:27 geldum
+Jul 23 17:34 genesis
+Jul 23 17:01 genesis-x
+Jul 23 16:07 GeneSourceCodeDAG
+Jul 23 17:46 genstake
+Jul 23 16:27 gentarium
+Jul 23 18:01 geysercoin
+Jul 23 16:32 GiantCore
+Jul 23 19:49 GigaCash
+Jul 23 18:11 Gives-Source
+Jul 23 19:24 glbcore
+Jul 23 16:27 gldcoin
+Jul 23 16:38 GlobalBoost-Y
+Jul 23 18:49 Globalcoin
+Jul 23 17:41 globaltoken
+Jul 23 18:21 glowshares
+Jul 23 19:13 GLPN
+Jul 23 16:56 gobyte
+Jul 23 18:14 GoCash-Core
+Jul 23 18:26 go-dubaicoin
+Jul 23 18:31 go-elementrem
+Jul 23 16:52 go-esn
+Jul 23 19:00 go-etherinc
+Jul 23 15:33 go-etherzero
+Jul 23 18:26 goldblocks
+Jul 23 19:50 GoldKash
+Jul 23 18:20 goldmaxcoin-source
+Jul 23 18:01 GoldPieces-Wallet
+Jul 23 19:26 GoldPoker-coin
+Jul 23 18:51 Gold-Pressed-Latinum
+Jul 23 18:45 GoldReserve
+Jul 23 16:29 golos
+Jul 23 19:20 go-metadium
+Jul 23 16:33 go-musicoin
+Jul 23 15:25 go-nebulas
+Jul 23 18:41 go-nekonium
+Jul 23 19:02 go-Pegascoin
+Jul 23 17:02 go-tcc
+Jul 23 17:53 go-themis
+Jul 23 15:46 go-ubiq
+Jul 23 19:23 go-victorium
+Jul 23 15:24 go-wanchain
+Jul 23 18:52 GPU-Coin
+Jul 23 15:52 GraftNetwork
+Jul 23 18:11 granite
+Jul 23 17:07 GravityCoin
+Jul 23 18:40 greencoin
+Jul 23 16:21 Gridcoin-Research
+Jul 23 17:58 GRIM
+Jul 23 15:30 GroestlCoin
+Jul 23 17:23 growers
+Jul 23 19:44 growthcoin
+Jul 23 17:36 GRZ0
+Jul 23 18:21 GSMcoin
+Jul 23 15:53 gulden-official
+Jul 23 18:34 gulfcoin
+Jul 23 17:10 guncoin
+Jul 23 15:18 gxb-core
+Jul 23 18:46 Halcyon
+Jul 23 18:31 Happycoin
+Jul 23 18:03 Harvestcoin
+Jul 23 16:06 haven
+Jul 23 18:40 HBC
+Jul 23 19:22 hdac
+Jul 23 19:32 HeldCoin
+Jul 23 17:23 helium
+Jul 23 17:36 helix
+Jul 23 19:45 Helpico
+Jul 23 18:16 HeraCoin
+Jul 23 19:32 herb
+Jul 23 19:08 Highcoin
+Jul 23 18:36 highgain
+Jul 23 18:06 highlandcoin
+Jul 23 18:10 hilux
+Jul 23 18:28 HitCoin
+Jul 23 17:51 HNDC
+Jul 23 17:04 HoboNickels
+Jul 23 17:31 HOdlcoin
+Jul 23 16:22 hollywood_team
+Jul 23 20:01 hostmasternode
+Jul 23 17:49 HTH
+Jul 23 18:42 HTMLCOIN
+Jul 23 19:35 htrcoin
+Jul 23 19:55 HTS
+Jul 23 19:06 huncoin
+Jul 23 18:29 huntercoin
+Jul 23 18:26 hush
+Jul 23 17:35 HUZU
+Jul 23 19:50 HWI-Source
+Jul 23 18:23 Hyper
+Jul 23 18:21 HyperStake
+Jul 23 18:46 i0coin
+Jul 23 20:03 iancoin
+Jul 23 18:53 Ibank
+Jul 23 17:45 IdealCash-DEAL
+Jul 23 19:37 IdealGold-DEALT
+Jul 23 20:03 Iex
+Jul 23 17:36 ignitioncoin
+Jul 23 16:28 iichain-core
+Jul 23 17:26 ImageCash
+Jul 23 17:07 ImageCoin
+Jul 23 19:43 in
+Jul 23 17:23 IncaKoin
+Jul 23 19:45 incognito
+Jul 23 18:41 india
+Jul 23 17:44 indigen
+Jul 23 19:27 indinode
+Jul 23 19:12 Infinex
+Jul 23 19:19 infinipay
+Jul 23 16:22 infinitecoin
+Jul 23 20:00 infiniverse-eos
+Jul 23 18:39 inflationcoin
+Jul 23 18:02 Influxcoin
+Jul 23 17:51 INFO
+Jul 23 19:31 innoket-master
+Jul 23 18:33 innova
+Jul 23 17:31 INSN
+Jul 23 18:12 InstaDEX
+Jul 23 19:24 InterCrone
+Jul 23 16:14 ion
+Jul 23 19:56 IONOS
+Jul 23 16:52 iop-core
+Jul 23 19:48 iotnexus
+Jul 23 18:10 ips
+Jul 23 17:39 iridium
+Jul 23 17:51 IrishCoin
+Jul 23 15:49 itc-blockchain
+Jul 23 18:46 iti
+Jul 23 19:28 Ititanium-coin
+Jul 23 18:14 ITZ
+Jul 23 17:13 ixcoin
+Jul 23 17:45 Jin-Coin-source
+Jul 23 18:56 jiyo-core
+Jul 23 18:28 jobscoin-source
+Jul 23 17:51 joincoin
+Jul 23 18:15 Jolt-Gas
+Jul 23 17:30 joulecoin
+Jul 23 19:15 Joystick
+Jul 23 17:26 jumpcoin
+Jul 23 18:06 junson-ming-chan-coin
+Jul 23 17:01 kaicoin-full-node
+Jul 23 19:53 Kalkicoin
+Jul 23 17:02 karbowanec
+Jul 23 18:20 karma-core
+Jul 23 18:29 kashhcoin
+Jul 23 19:54 kazucoin
+Jul 23 17:06 kekcoin-segwit
+Jul 23 18:08 keyco
+Jul 23 19:55 kicksoccer
+Jul 23 18:03 KINGSCOIN
+Jul 23 20:03 kittycoin-1
+Jul 23 17:15 klks
+Jul 23 17:42 Kobocoin
+Jul 23 17:30 kodcoin
+Jul 23 16:27 KoreCoin
+Jul 23 19:28 KORUNA
+Jul 23 19:49 koto
+Jul 23 19:29 Krait
+Jul 23 19:34 Kraken
+Jul 23 17:26 kreds-core
+Jul 23 18:06 Kronecoin
+Jul 23 19:43 kumacoin
+Jul 23 18:23 Kurrent
+Jul 23 17:36 kzcash
+Jul 23 19:50 labh
+Jul 23 17:24 lanacoin
+Jul 23 18:46 landcoin
+Jul 23 19:28 LasVegasCoin2
+Jul 23 18:39 lbtc-core
+Jul 23 19:44 leafcoin
+Jul 23 19:30 League
+Jul 23 19:26 Legion
+Jul 23 18:53 lele
+Jul 23 19:37 lemoncoin
+Jul 23 15:46 LEOcoin
+Jul 23 18:21 LePenCoin
+Jul 23 16:31 lethean
+Jul 23 18:57 letitride
+Jul 23 18:17 Levoplus-Cryptocurrency-Source
+Jul 23 18:28 libjl777
+Jul 23 16:18 lightchain
+Jul 23 19:09 LightPayCoin
+Jul 23 16:06 Linda
+Jul 23 19:13 lines
+Jul 23 19:03 Linker-Coin-Project
+Jul 23 16:13 linkeye
+Jul 23 17:38 linX
+Jul 23 18:14 litebar
+Jul 23 17:51 litebitcoin
+Jul 23 18:12 liteblocks
+Jul 23 14:58 litecoin
+Jul 23 18:14 Litecoin-Black
+Jul 23 15:56 litecoincash
+Jul 23 19:52 LitecoinCash
+Jul 23 17:41 litecoinplus
+Jul 23 18:34 LiteCoinUltra
+Jul 23 19:51 litegoldcoin
+Jul 23 18:04 lithium
+Jul 23 19:51 Litkoin
+Jul 23 18:55 lizus-core
+Jul 23 18:08 lkrcoin
+Jul 23 19:31 Lobitcoin
+Jul 23 17:34 lobstex
+Jul 23 19:25 LogisCoin
+Jul 23 15:58 loki
+Jul 23 18:14 lomocoin-qt
+Jul 23 16:58 LRMcoin
+Jul 23 18:10 lunarium
+Jul 23 18:16 LuniqueCoin
+Jul 23 16:15 lux
+Jul 23 19:46 lycancoin-release
+Jul 23 17:15 lynx
+Jul 23 18:05 machinecoin-core
+Jul 23 18:41 Macro
+Jul 23 17:25 magi
+Jul 23 19:30 MagnaCoin
+Jul 23 17:00 MagnetCoin
+Jul 23 20:02 main-chain
+Jul 23 18:15 MainNet
+Jul 23 19:30 maketrip-MTRIP
+Jul 23 17:42 mangacoin
+Jul 23 15:52 manna-legacy
+Jul 23 18:17 mantracoin
+Jul 23 17:15 mao-zedong
+Jul 23 18:29 MAPCOIN
+Jul 23 19:55 MARCcore
+Jul 23 18:48 marscoin
+Jul 23 17:44 martexcoin
+Jul 23 19:43 MARX
+Jul 23 16:48 masari
+Jul 23 19:22 MassGrid
+Jul 23 19:30 masterbit
+Jul 23 18:32 masternodecoin
+Jul 23 19:07 matrixcoin
+Jul 23 16:55 maxcoin
+Jul 23 19:35 MBC
+Jul 23 18:28 Mbitbooks
+Jul 23 19:35 mccproject
+Jul 23 17:37 MedicCoin
+Jul 23 17:22 megacoin
+Jul 23 16:11 MeritcoinsMaster
+Jul 23 19:19 mero
+Jul 23 15:22 metaverse
+Jul 23 17:27 MFCoin
+Jul 23 18:08 miacoin
+Jul 23 19:43 MicroBitcoin
+Jul 23 17:05 midas_coin
+Jul 23 19:51 MidoriCore
+Jul 23 18:25 mincoin
+Jul 23 18:55 MindCoin
+Jul 23 18:44 MINEUM
+Jul 23 16:53 minexcoin
+Jul 23 18:26 Mintcoin-Desktop-Wallet
+Jul 23 17:59 Mirai-Master
+Jul 23 18:52 mktcoin
+Jul 23 17:33 mmocoin
+Jul 23 16:59 MNPCoin
+Jul 23 18:14 mobitglobal
+Jul 23 18:12 mogwai
+Jul 23 17:26 MOIN
+Jul 23 18:23 mojocoin
+Jul 23 15:30 monacoin
+Jul 23 15:00 monero
+Jul 23 19:12 monerov
+Jul 23 18:23 moneta
+Jul 23 18:52 money
+Jul 23 18:58 MoneyBagCoin
+Jul 23 17:11 Monkey
+Jul 23 19:09 MontBlanc
+Jul 23 18:00 motion
+Jul 23 18:45 motocoin
+Jul 23 17:59 mst-v3
+Jul 23 18:12 MTI-Coin
+Jul 23 18:19 MTLMCV3
+Jul 23 19:51 muayfitcoin
+Jul 23 16:17 MUE
+Jul 23 18:57 muncoin
+Jul 23 15:43 MVP
+Jul 23 17:22 myce
+Jul 23 19:49 mymn
+Jul 23 18:04 mynt
+Jul 23 16:20 myriadcoin
+Jul 23 15:44 namecoin-core
+Jul 23 18:34 NamoCoin
+Jul 23 17:59 nanucoin
+Jul 23 19:24 Nasdacoin
+Jul 23 15:40 navcoin-core
+Jul 23 15:32 neblio
+Jul 23 17:46 NEETCOIN
+Jul 23 18:24 netcoin
+Jul 23 18:51 neurocoin
+Jul 23 17:14 neutron
+Jul 23 18:00 nevacoin
+Jul 23 17:31 newpiggycoin
+Jul 23 19:23 NewPowerCoin
+Jul 23 19:24 newschain
+Jul 23 17:23 Newton
+Jul 23 18:11 NextON
+Jul 23 15:31 Nexus
+Jul 23 20:01 NIKO
+Jul 23 18:56 niobio-node-daemon
+Jul 23 19:34 nitrous
+Jul 23 15:55 NixCore
+Jul 23 17:14 NobleCoin
+Jul 23 16:55 noir
+Jul 23 18:25 NoLimitCoin
+Jul 23 16:49 NOSnode
+Jul 23 20:02 NPay
+Jul 23 19:06 npcoin-core
+Jul 23 19:56 Nuaxes
+Jul 23 17:30 nyancoin-client
+Jul 23 18:23 nycoin
+Jul 23 19:24 nyerium
+Jul 23 18:09 nyx
+Jul 23 17:40 Oasis
+Jul 23 16:09 ocean
+Jul 23 18:02 OCP
+Jul 23 18:28 octocoin
+Jul 23 19:52 OctopusCoin
+Jul 23 19:58 Odin
+Jul 23 16:04 oduwacoin
+Jul 23 17:47 ohmcoin
+Jul 23 20:00 ohwe
+Jul 23 16:31 okcash
+Jul 23 17:54 OlympicCoin
+Jul 23 19:51 omencoin
+Jul 23 16:22 omnicore
+Jul 23 18:18 onetimer
+Jul 23 17:48 onixcoin
+Jul 23 15:02 ontology
+Jul 23 17:32 OpalCoin
+Jul 23 19:10 OPCoinX
+Jul 23 19:56 Openbit
+Jul 23 18:21 Orbitcoin
+Jul 23 18:57 Orlycoin
+Jul 23 19:44 OSC
+Jul 23 18:45 OSMIUMCOIN_OS76
+Jul 23 18:13 otrchain
+Jul 23 19:49 OurCoin
+Jul 23 19:36 oyster
+Jul 23 16:58 ozziecoin
+Jul 23 16:01 PAC
+Jul 23 19:12 paicoin
+Jul 23 17:35 pakcoin
+Jul 23 16:14 pandacoin
+Jul 23 19:49 pandemia
+Jul 23 19:29 papelcoin
+Jul 23 20:02 ParadiseCoin-source-code
+Jul 23 17:59 ParkByte
+Jul 23 18:12 parsicoin
+Jul 23 15:32 particl-core
+Jul 23 17:45 patexshares
+Jul 23 17:02 PAWS-Core
+Jul 23 18:03 Paxex
+Jul 23 18:03 PayDayCoin
+Jul 23 17:15 paymon-ios
+Jul 23 19:33 PBSCoin
+Jul 23 15:49 pchain-pub
+Jul 23 18:18 Peepcoin
+Jul 23 15:40 peercoin
+Jul 23 16:08 peerplays-profitshare
+Jul 23 17:12 penguincore
+Jul 23 19:11 Peony
+Jul 23 18:34 people
+Jul 23 16:50 pepecoin
+Jul 23 17:56 peps
+Jul 23 17:01 Pesetacoin-0.9
+Jul 23 18:20 pesobit-source
+Jul 23 18:35 petrodollar
+Jul 23 18:06 phantomx
+Jul 23 18:13 phc
+Jul 23 17:44 PhoneCoinCore
+Jul 23 16:09 Phore
+Jul 23 17:43 picpotocoin
+Jul 23 16:56 Pink2
+Jul 23 19:16 PinkstarcoinV2
+Jul 23 18:10 PIONEERCOIN
+Jul 23 18:18 Pipcoin
+Jul 23 17:48 piratecash
+Jul 23 15:22 PIVX
+Jul 23 19:55 PKCli
+Jul 23 19:59 placeh
+Jul 23 19:03 platincoin
+Jul 23 19:37 Plexus
+Jul 23 17:59 pluracoin
+Jul 23 17:15 plusonecoin
+Jul 23 18:47 pod
+Jul 23 15:59 polis
+Jul 23 20:00 poorswap
+Jul 23 16:46 PopChain
+Jul 23 17:13 PopularCoin
+Jul 23 18:02 posq
+Jul 23 18:41 PostCoin
+Jul 23 16:00 potcoin
+Jul 23 17:31 Pr
+Jul 23 16:05 primecoin
+Jul 23 17:50 PrimeStone
+Jul 23 18:47 Prime-xi
+Jul 23 18:44 Printerium-project
+Jul 23 18:00 printex-core
+Jul 23 19:10 privcy
+Jul 23 18:22 procurrency
+Jul 23 18:05 project
+Jul 23 17:55 ProjectCoin
+Jul 23 19:12 PROUDmoney
+Jul 23 17:46 proxynode
+Jul 23 16:57 PURA
+Jul 23 17:51 pure
+Jul 23 17:05 PWRcoin
+Jul 23 17:14 pyloncoin
+Jul 23 15:20 pyquarkchain
+Jul 23 19:41 Pyrex
+Jul 23 18:17 pyro
+Jul 23 18:09 pzdc
+Jul 23 18:08 QBase-Core
+Jul 23 18:53 qbc
+Jul 23 18:52 qbic
+Jul 23 19:48 QMC
+Jul 23 15:04 qtum
+Jul 23 15:40 qt-wallet-emc2
+Jul 23 17:18 QuantisNet-Fork-New-Chain
+Jul 23 16:19 quark
+Jul 23 19:32 quasar
+Jul 23 18:21 quatloo
+Jul 23 18:20 quazarcoin
+Jul 23 17:31 QubitCoin
+Jul 23 19:31 quix
+Jul 23 17:39 Quotient
+Jul 23 17:51 qwertycoin
+Jul 23 17:45 qynocoin
+Jul 23 19:11 RabbitCore
+Jul 23 19:29 racecoin
+Jul 23 16:12 radium-0
+Jul 23 19:33 Ragnarok
+Jul 23 15:13 raiblocks
+Jul 23 18:36 rain
+Jul 23 19:23 Rampant
+Jul 23 19:06 Rapture
+Jul 23 18:19 ratecoin
+Jul 23 15:08 Ravencoin
+Jul 23 18:53 rawcoin
+Jul 23 20:00 rea
+Jul 23 18:46 redcoin
+Jul 23 15:27 reddcoin
+Jul 23 18:47 Reecoin-Project
+Jul 23 19:10 Rel
+Jul 23 18:01 RenosCoin
+Jul 23 19:49 Respawn
+Jul 23 17:59 revolvercoin
+Jul 23 18:09 Rhenium
+Jul 23 18:57 RideMyCar-Coin
+Jul 23 17:09 riecoin
+Jul 23 18:12 rilcoin
+Jul 23 18:08 Rippedcoin
+Jul 23 14:48 rippled
+Jul 23 19:58 Ritocoin
+Jul 23 18:17 ROIcoin
+Jul 23 17:58 ROIyalCoin
+Jul 23 17:58 ronpaulcoin
+Jul 23 18:41 roofs
+Jul 23 19:06 Rovercoin
+Jul 23 18:33 RoyaltiesCLI
+Jul 23 17:54 rpicore
+Jul 23 16:53 rstr
+Jul 23 18:35 runners-source
+Jul 23 17:38 rupx
+Jul 23 18:45 RussiaCoin
+Jul 23 17:03 ryo-currency
+Jul 23 19:25 SAC
+Jul 23 20:03 Sacoin
+Jul 23 19:09 safe
+Jul 23 16:29 safecoin
+Jul 23 17:52 SafeTradeCoin
+Jul 23 17:04 safexcore
+Jul 23 18:45 SagaCoin
+Jul 23 18:28 sakuracoin
+Jul 23 18:27 salus
+Jul 23 18:10 sanchezium
+Jul 23 18:13 saros
+Jul 23 17:58 sativacoin
+Jul 23 17:19 SatoshiCoin
+Jul 23 17:50 SaveNodeCore
+Jul 23 19:52 savle-source
+Jul 23 18:49 sbccoin-source
+Jul 23 18:02 scashcpp
+Jul 23 19:26 schillingcoin
+Jul 23 19:55 scolcoin
+Jul 23 18:46 Scorecoin
+Jul 23 17:08 Scorum
+Jul 23 17:23 scriv
+Jul 23 16:14 SDChain-Core
+Jul 23 17:56 SecureCloud
+Jul 23 18:01 Securecoin
+Jul 23 19:45 securetag
+Jul 23 18:00 Seedcoin
+Jul 23 19:54 sekopay
+Jul 23 16:17 semux-core
+Jul 23 17:00 Sequence
+Jul 23 18:22 sexcoin
+Jul 23 17:05 SHACoin-Dead
+Jul 23 17:00 shard
+Jul 23 19:26 sharingmarketcoin
+Jul 23 18:32 SHIELD
+Jul 23 18:02 Shilling
+Jul 23 16:05 shopzcoin
+Jul 23 18:54 shorty
+Jul 23 19:34 shrooms
+Jul 23 16:32 sibcoin
+Jul 23 17:48 sierra
+Jul 23 18:15 Simple
+Jul 23 16:00 sins-coin
+Jul 23 19:27 sirius
+Jul 23 18:41 sixeleven
+Jul 23 19:38 sjwcoin-core
+Jul 23 17:49 skeincoin
+Jul 23 17:33 skyhub
+Jul 23 19:22 sld
+Jul 23 18:31 slevin
+Jul 23 17:41 Slothcoin
+Jul 23 17:43 smartcoin
+Jul 23 19:43 smartfox
+Jul 23 19:51 smrtc
+Jul 23 17:22 snode-coin
+Jul 23 16:49 Snowgem
+Jul 23 18:56 SocialCoin
+Jul 23 17:01 SocialSend
+Jul 23 19:03 SolaceCoin
+Jul 23 16:16 solarcoin
+Jul 23 16:53 Solaris
+Jul 23 19:05 solarium-XLRC
+Jul 23 18:51 Songcoin
+Jul 23 18:32 sonoa
+Jul 23 19:29 soom-core
+Jul 23 16:19 SophiaTX
+Jul 23 17:54 source
+Jul 23 16:37 Source
+Jul 23 19:28 SovCoin
+Jul 23 16:04 SpaceChainOS
+Jul 23 18:15 spacecoin
+Jul 23 18:47 sparks
+Jul 23 19:37 spartancoin
+Jul 23 16:07 spectre
+Jul 23 17:30 Spectrum-Coin
+Jul 23 19:32 spedo
+Jul 23 16:27 sphere
+Jul 23 18:22 sprouts
+Jul 23 19:50 SproutsClassic
+Jul 23 18:52 SproutsExtreme
+Jul 23 19:31 sqrcoin
+Jul 23 17:41 stack1
+Jul 23 17:42 stakecube
+Jul 23 17:21 startcoin
+Jul 23 20:01 startlife
+Jul 23 16:08 Stealth
+Jul 23 15:13 steem
+Jul 23 17:24 SteepCoin
+Jul 23 14:58 stellar-core
+Jul 23 18:59 Stellite
+Jul 23 20:00 stelo
+Jul 23 17:31 Sterlingcoin-1.5.1
+Jul 23 18:54 stipend
+Jul 23 18:07 Stonecoin
+Jul 23 17:26 straks
+Jul 23 19:38 StrayaCoin-Core
+Jul 23 16:23 stronghands
+Jul 23 17:06 StrongHandsMasterNode
+Jul 23 18:03 sucrecoin
+Jul 23 17:47 SucreCore
+Jul 23 17:02 sumokoin
+Jul 23 18:39 SuperBitcoin
+Jul 23 18:14 supro
+Jul 23 16:19 SUQA-CORE
+Jul 23 18:11 swapcash
+Jul 23 15:59 swarm-psim
+Jul 23 19:34 SWATCoin
+Jul 23 17:09 swiftcash
+Jul 23 17:38 Swing
+Jul 23 17:34 swippcore
+Jul 23 16:50 Swiscoin-Master
+Jul 23 17:47 SwisscoinNode
+Jul 23 16:52 SyndicateQT
+Jul 23 15:29 syscoin2
+Jul 23 18:57 tagrcoin
+Jul 23 17:58 tajcoin
+Jul 23 18:01 taler
+Jul 23 19:13 talium
+Jul 23 18:27 tao-core
+Jul 23 18:30 Tattoocoin-TLE
+Jul 23 18:30 tau
+Jul 23 19:45 TenUp
+Jul 23 17:01 terracoin
+Jul 23 18:27 TerraNova
+Jul 23 17:22 teslacoin
+Jul 23 19:52 tfchain
+Jul 23 16:15 THC
+Jul 23 18:10 The-Cypherfunks
+Jul 23 16:07 TheGCCcoin-source-code
+Jul 23 19:42 The-Midas-Touch-Gold
+Jul 23 18:00 TheresaMayCoin-v1.0.1
+Jul 23 18:54 TheSuperiorCoin
+Jul 23 15:16 theta-protocol-ledger
+Jul 23 18:46 Tigercoin
+Jul 23 18:13 timecoin
+Jul 23 18:54 tincoin
+Jul 23 17:55 titcoin
+Jul 23 17:42 tittiecoin-2-0
+Jul 23 19:32 TiValue
+Jul 23 16:27 TOA
+Jul 23 17:04 tokugawa
+Jul 23 17:41 tokyocoinsrc
+Jul 23 18:27 torcoin
+Jul 23 16:22 tos
+Jul 23 15:36 TOSC
+Jul 23 17:48 traidcoin
+Jul 23 17:21 transcendence
+Jul 23 16:20 Transfercoin
+Jul 23 17:10 TrezarCoin
+Jul 23 17:42 triangles
+Jul 23 16:55 trittium
+Jul 23 19:59 trivechain
+Jul 23 17:39 trocaninja
+Jul 23 17:13 TrollCoin-2
+Jul 23 17:33 Truckcoin
+Jul 23 19:31 truegalaxycash
+Jul 23 17:33 TRUMP
+Jul 23 17:30 TrustPlus
+Jul 23 19:46 TulipManiaCoin
+Jul 23 17:32 TurboStake
+Jul 23 16:02 turtlecoin
+Jul 23 17:57 tuxcoin-V2
+Jul 23 18:27 tyrocoin
+Jul 23 17:21 Uchain-Master
+Jul 23 18:21 ucoinx11
+Jul 23 17:22 ucom
+Jul 23 19:16 uec
+Jul 23 16:57 ufo
+Jul 23 20:04 UlatechGroup
+Jul 23 15:54 UlordChain
+Jul 23 18:50 UltimateSecureCash
+Jul 23 18:27 ultracoin-2
+Jul 23 18:08 ultranatum
+Jul 23 17:43 UltraNote
+Jul 23 18:59 unetwork
+Jul 23 17:00 unicoin
+Jul 23 18:46 unify-source
+Jul 23 18:19 Unioncoin
+Jul 23 18:31 unitcurrency
+Jul 23 18:40 UnitedBitcoin
+Jul 23 18:28 unitus
+Jul 23 18:09 universalmol
+Jul 23 17:26 Universe-UNI
+Jul 23 18:29 Unobtanium
+Jul 23 17:19 uplexa
+Jul 23 17:57 UraniumX
+Jul 23 17:47 USDEX
+Jul 23 18:11 uservcoin
+Jul 23 18:44 valorbit
+Jul 23 19:37 vantaur
+Jul 23 18:56 vaperscoin
+Jul 23 18:16 Vapex
+Jul 23 18:05 varius
+Jul 23 18:25 vash
+Jul 23 19:06 vclassiccoin
+Jul 23 19:26 venox
+Jul 23 15:15 verge
+Jul 23 16:23 vericoin
+Jul 23 16:54 verium
+Jul 23 15:31 vertcoin-core
+Jul 23 19:53 VerusCoin
+Jul 23 19:51 vest-token
+Jul 23 19:33 Vestx
+Jul 23 15:41 viacoin
+Jul 23 20:02 videogamescoinwallet
+Jul 23 17:52 vidulum
+Jul 23 18:12 VIOG
+Jul 23 17:46 virtacoinplus
+Jul 23 18:23 visioX
+Jul 23 19:25 Vitae
+Jul 23 16:31 Vites
+Jul 23 17:42 vividcoin
+Jul 23 18:36 vivo
+Jul 23 18:32 VoteCoin
+Jul 23 18:36 VSX
+Jul 23 17:03 Vulcano
+Jul 23 16:19 wallet
+Jul 23 19:27 Wallet
+Jul 23 18:40 WalletBuildersCoin
+Jul 23 19:44 wallets
+Jul 23 19:53 WASpace
+Jul 23 18:17 wavi
+Jul 23 19:44 WayaWolfCoin
+Jul 23 15:33 WaykiChain
+Jul 23 18:05 wealthsilo
+Jul 23 16:17 WeAreSatoshi2
+Jul 23 18:22 wexcoin
+Jul 23 18:37 WhaleCoin
+Jul 23 18:22 whitecoin
+Jul 23 18:10 widecash-project
+Jul 23 18:30 wincoin
+Jul 23 16:46 wire-core
+Jul 23 17:01 WithCoin
+Jul 23 16:21 wixlar
+Jul 23 19:48 wizbl
+Jul 23 17:48 WOKEcash
+Jul 23 17:36 womencoin
+Jul 23 18:24 woodcoin
+Jul 23 19:02 worktipscoin
+Jul 23 17:02 WorldcoinDaemon
+Jul 23 19:34 worx
+Jul 23 17:32 wownero
+Jul 23 17:27 x12-core
+Jul 23 19:34 Xano-Coin
+Jul 23 18:01 Xavander-coin
+Jul 23 18:53 xaya
+Jul 23 17:00 xbcwalletsource
+Jul 23 18:30 xc
+Jul 23 16:50 X-CASH
+Jul 23 17:47 xcoin
+Jul 23 16:20 xdag
+Jul 23 17:36 XDNA
+Jul 23 16:13 xel-lite-wallet
+Jul 23 19:56 xeonbit
+Jul 23 19:28 xflea
+Jul 23 17:45 XGalaxy
+Jul 23 17:32 xgox
+Jul 23 16:00 xmax-mainchain
+Jul 23 17:45 XORN
+Jul 23 16:23 XPCoin
+Jul 23 15:49 XSN
+Jul 23 17:33 XUEZ
+Jul 23 18:00 xuma-core
+Jul 23 18:52 yacoin
+Jul 23 18:27 YashCoin-Source
+Jul 23 18:30 ybcoin
+Jul 23 17:47 yenten
+Jul 23 19:30 Yi
+Jul 23 17:37 yibitcoin
+Jul 23 18:18 yocoin
+Jul 23 15:02 zcash
+Jul 23 17:09 zccoin
+Jul 23 15:22 zcoin
+Jul 23 17:50 Zealium
+Jul 23 17:02 zeitcoin
+Jul 23 16:24 zelcash
+Jul 23 15:26 zen
+Jul 23 18:12 zenad_v2
+Jul 23 17:10 ZENZO-Core
+Jul 23 17:11 Zero
+Jul 23 17:57 zeroonecoin
+Jul 23 17:34 ZestCoin
+Jul 23 17:20 zetacoin
+Jul 23 20:01 zettelkasten
+Jul 23 19:57 zijacoin
+Jul 23 15:09 Zilliqa
+Jul 23 18:08 zixxcore
+Jul 23 19:29 zNodium
+Jul 23 18:28 Zonecoin
+Jul 23 18:07 zoomba
+Jul 23 18:31 ZoZo-blockchain
+Jul 23 18:59 zSub1x
