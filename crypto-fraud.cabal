@@ -30,6 +30,7 @@ library
       --Lib
       Util
       Logging
+      PBSBuild
       --ParseC
       --DotSyntax
       --DotPretty

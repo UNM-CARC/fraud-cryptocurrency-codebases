@@ -22,6 +22,7 @@ import           Data.Traversable (traverse)
 
 --import Lib
 import Util
+import PBSBuild
 import ParseTrees
 import Basic
 

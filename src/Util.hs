@@ -31,6 +31,9 @@ import           System.FilePath (takeExtension)
 import Lib
 --import ParseTrees
 
+-- Special State type used when filtering verions/tags.
+type KeepState = ([Int], [(String, String, String)])
+
 first :: (a, b, c) -> a
 first (x,_,_) = x
 
@@ -124,14 +127,14 @@ traverseDir validDir transition =
            in go
 
 -- https://stackoverflow.com/questions/51712083/recursively-search-directories-for-all-files-matching-name-criteria-in-haskell
+-- Modified to only traverse one layer of a directory at a time.
 traverseDir2 :: (FilePath -> Bool) -> (b -> FilePath -> IO b) -> b -> FilePath -> IO b
 traverseDir2 validDir transition =
   let go state dirPath =
         do names <- listDirectory dirPath
            let paths = map (dirPath </>) names
            (dirPaths, filePaths) <- partitionM doesDirectoryExist paths
-           state' <- foldM transition state dirPaths -- process current dir
-           return state'
+           foldM transition state (filter validDir dirPaths)
            in go
 
 
@@ -173,19 +176,23 @@ generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
   let str = "mkdir /wheeler/scratch/khaskins/coins/" ++ repo
   (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
-  dirlist  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) []
+  dirlist  <- traverseDir (const True) (\fs f -> pure (f : fs)) []
                           ("/wheeler/scratch/khaskins/coins/" ++ repo)
-  let dirs     = map (\x -> x ++ " ") dirlist
+  let dirs     = map (++ " ") dirlist
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
 
 generateRepoList :: IO [FilePath]
-generateRepoList = do
-  dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  --dirlist  <- traverseDir2 (const True) (\fs f -> pure (f : fs)) [] 
-  --            "/home/ghostbird/Hacking/cybersecurity/coins/"
-  --dirlist <- walkDir "/wheeler/scratch/khaskins/coins/"
-  return dirlist
+generateRepoList =
+  --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
+
+generateRepoTagList :: IO [[FilePath]]
+generateRepoTagList = do
+  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f:fs)) []
+                            "/home/ghostbird/Hacking/cybersecurity/coins/"
+                            --"/wheeler/scratch/khaskins/coins/"
+  mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
@@ -210,10 +217,6 @@ pruneRepos (x:xs) = do
   pruneRepo $ fst x
   pruneRepos xs
 
---transferToTuple :: [[String]] -> [(String, String)]
---transferToTuple repos =
---  map (\x -> (head x, (head . tail . tail) x)) repos
-
 -- Clone a given repository based upon a list of three values:
 -- ["BTC", "bitcoin", "https..."]
 -- NEW :: Takes a tuple of ("Coin", "repo-link") and clones repo.
@@ -234,34 +237,18 @@ cloneRepos (x:xs) = do
 getTags :: String -> IO [(String, String, String)]
 getTags repo = do
   let str = "cd " ++ repo ++ " ; "
-  --let str = "cd /wheeler/scratch/khaskins/coins/" ++ repo ++ " ; "
-  --let str = "cd /home/ghostbird/Hacking/cybersecurity/coins/" ++ repo ++ " ; "
-  -- ls-remote
-  --let str2 = "git for-each-ref --sort=taggerdate --format '%(tag) %(taggerdate:raw)' refs/tags"
-  --let str2 = "git show-ref --tags"
-  --let str2 = "git ls-remote --tags origin | grep -v -e rc -e {} -e alpha -e dev -e build -e poc -e test -e release -e Tester -e noversion"
-  --let str2 = "git ls-remote --tags origin | grep -vE 'debug|ref|rc|{}|alpha|dev|build|poc|test|release|Tester|noversion|+'"
   let str2 = "git ls-remote --tags origin"
-  --let str2 = "git log --oneline --decorate --tags --no-walk"
-  -- | grep -v {} | grep -v alpha | grep -v dev | grep -v build | grep -v poc | grep -v test | grep -v release | grep -v Tester | grep -v noversion"
   (errc2, out2, err2) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
   let complete = Txt.splitOn (Txt.pack "\n") (Txt.pack out2)
   let tuples = case length complete of
-                 0 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)] 
-                 1 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)] 
-                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) $ map (Txt.splitOn (Txt.pack "/")) complete
-  --let filtered = map (\(x, y) -> (head $ Txt.splitOn (Txt.pack "\\") x, y)) tuples
-  --return $ map Txt.unpack
+                 0 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)]
+                 1 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)]
+                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) 
+                           $ map (Txt.splitOn (Txt.pack "/")) complete
   let unfiltered = map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
-  --print unfiltered
   let filtered1  = map (\(a, b, c) -> (a, filter (/= 'v') $ b, c)) unfiltered
-  --let tmp        = filter (\= '.') $ second 
-  --let tmp        = map second filtered1
   let filtered2  = filter (\(i,j,k) -> foldr (\x acc -> acc && isDigit x) True $ filter (/= '.') j) filtered1
-  --let filtered1  = map (\x -> filter (/= 'v') $ second x) unfiltered
   return $ filter (\x -> not $ L.isSuffixOf "-tags" $ third x)  filtered2
-
-type KeepState = ([Int], [(String, String, String)])
 
 --keepVersion :: String -> State String String -> Bool
 keepVersions :: [(String, String, String)] -> State KeepState [(String, String, String)]
@@ -270,14 +257,7 @@ keepVersions [] = do
   return acc
 keepVersions (x:xs) = do
   (oldVersion, acc) <- get
-  --let last    = filter (/= 'v') lastVersion
-  --let currentVersion = wordsWhen (=='.') $ second x
-  --let verOld = map (foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1)) $ wordsWhen (=='.') lastVersion
-  --let verOld = toInts $ wordsWhen (=='.') lastVersion
   let newVersion = addZeroes $ toInts [] (wordsWhen (=='.') $ second x)
-  -- Remove all but numeric digits and convert to integer values.
-  --let las  = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit lastVersion]
-  --let curr = fst $ foldl (\(y, z) x -> ((read x :: Int) * z, z * 10)) (0, 1) [filter isDigit current]
   let version = determineVersion newVersion oldVersion x
 
   if length (first version) /= 0 then
@@ -289,7 +269,7 @@ keepVersions (x:xs) = do
     toInts :: [Int] -> [String] -> [Int]
     toInts acc []     = acc
     toInts acc (y:ys) = toInts (acc ++ [fst $ foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1) [y]]) ys
- 
+
     addZeroes :: [Int] -> [Int]
     addZeroes xs = case length xs of
                      0 -> xs ++ [0,0,0,0]
@@ -297,13 +277,13 @@ keepVersions (x:xs) = do
                      2 -> xs ++ [0,0]
                      3 -> xs ++ [0]
                      _ -> xs
-    
+
     determineVersion :: [Int] -> [Int] -> (String, String, String) -> (String, String, String)
     determineVersion xs ys version
-      | head xs == head ys && head (tail xs) == head (tail ys) 
+      | head xs == head ys && head (tail xs) == head (tail ys)
                            && head (tail $ tail xs) < head (tail $ tail ys) = ("","","")
-      | head xs == head ys && head (tail xs) == head (tail ys) 
-                           && head (tail $ tail xs) == head (tail $ tail ys) 
+      | head xs == head ys && head (tail xs) == head (tail ys)
+                           && head (tail $ tail xs) == head (tail $ tail ys)
                            && head (tail $ tail xs) < head (tail $ tail ys) = ("","","")
       | head xs < head ys || head (tail xs) < head (tail ys) = version
       | otherwise = ("","","")
@@ -344,8 +324,6 @@ initialCopy dat = do
 
 makeCopy :: (String, String, String) -> String -> IO ()
 makeCopy dat new_path = do
-  --let str = "cp -r /wheeler/scratch/khaskins/" ++ third dat ++ " " ++ new_path ++ snd dat
-  --let str  = "cp -r /home/ghostbird/Hacking/cybersecurity/coins/" ++ third dat ++ " " ++ new_path ++ second dat
   let str  = "cp -r " ++ third dat ++ " " ++ new_path ++ second dat
   let str2 = " ; cd " ++ new_path ++ second dat ++ " ; git checkout " ++ first dat
   (errc, out, err) <- readCreateProcessWithExitCode (shell (str ++ str2)) []
@@ -353,19 +331,21 @@ makeCopy dat new_path = do
 
 
 makeCopies :: [(String, String, String)] -> IO ()
-makeCopies []   = do
-  print ""
+makeCopies [] =
+  putStrLn ""
 makeCopies (x:xs) = do
   new_path <- initialCopy x
   makeCopy x new_path
   makeCopies xs
 
 makeAllCopies :: [[(String, String, String)]] -> IO ()
-makeAllCopies [[]] = do
-  print ""
+makeAllCopies [[]] =
+  putStrLn ""
 makeAllCopies (x:xs) = do
   makeCopies x
   makeAllCopies xs
+makeAllCopies _ =
+  putStrLn ""
 
 -- Get all tags and make all repo copies to <repo>-tag.
 -- ** Function to call when generating copies of repos.
@@ -376,7 +356,8 @@ getAllTags = do
   let x = map filterMinorVersions tags
   -- Remove empty directories
   let out = filter (/=[]) x
-  print out
+  makeAllCopies out
+  --print out
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do

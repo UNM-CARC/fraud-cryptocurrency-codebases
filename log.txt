@@ -1,11 +1,12 @@
 ## Final list of coins with date and time pulled: 1192 coins total C++
 ## 
 ## Attempted to pull from:        2451
-## Actually kept:                 1271 (According to log)
+## Attempted to keep:             1271 (According to log)
 ## Failed to pull from:           79
 ## Actually pulled from and kept: 1192
+## Total number of tags/versions: 3302 (After filtering all non-numeric versions and minor versions from 1192)
 
-## Date and time for each repository:
+## Date and time for each repository kept (1192):
 ##
 Jul 23 17:00 1337
 Jul 23 17:21 1X2coin
