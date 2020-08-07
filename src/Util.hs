@@ -81,29 +81,6 @@ inString [] = []
 inString ('\"':xs) = '\"' : stripComments xs
 inString (x:xs) = x : inString xs
 
--- Compare all the hashes of one coin against another and return similarity
--- lx and ly are lengths of xs and ys respectively.
---
--- ** For now we no longer care about a percentage comparing the two as we
---    are more concerned with which repository is older. We will look into
---    using git log for this.
---
---compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Float)
---                                                            -> ([[String]], Float)
-compareCoinHashes :: [[String]] -> [[String]] -> Int -> Int -> ([[String]], Int)
-                                                            -> ([[String]], Int)
---compareCoinHashes []     ys lx ly acc = (fst acc, if lx > ly then snd acc / fromIntegral lx else snd acc / fromIntegral ly)
-compareCoinHashes []     ys lx ly acc = (fst acc, snd acc)
-compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
-  (fst acc ++ fst fun, snd acc + snd fun)
---  (acc ++ (foldr (\y a -> if head y ==
---                            head x then (y : fst a, snd a + 1)
---                                     else (fst a, snd a)) ([], 0.0) ys))
-  where
-    fun = (foldr (\y a -> if head y ==
-                             head x then (y : fst a, snd a + 1)
-                                    else (fst a, snd a)) ([], 0) ys)
-
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if L.isInfixOf s x then True else False) xs
 --filterFileType s xs = filter (\x -> if isInfixOf s x then False else True) xs -- Old
@@ -243,7 +220,7 @@ getTags repo = do
   let tuples = case length complete of
                  0 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)]
                  1 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)]
-                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo)) 
+                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo))
                            $ map (Txt.splitOn (Txt.pack "/")) complete
   let unfiltered = map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
   let filtered1  = map (\(a, b, c) -> (a, filter (/= 'v') $ b, c)) unfiltered
@@ -379,16 +356,16 @@ splitEvery _ [] = []
 splitEvery n xs = as : splitEvery n bs
   where (as,bs) = splitAt n xs
 
-listAllRepos :: IO [()]
-listAllRepos = do
-  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
-  let clean = fmap (\x -> fmap Txt.unpack x) $
-              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
-  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
-            . filter (/= '\r')) $ concat clean
-  let repos = map takeFileName $ concat $ map (tail . tail) tmp
-  let pairs = buildRepos repos []
-  mapM (writeDataToFile "misc/repo-pairs.csv") pairs
+--listAllRepos :: IO [()]
+--listAllRepos = do
+--  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
+--  let clean = fmap (\x -> fmap Txt.unpack x) $
+--              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+--  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+--            . filter (/= '\r')) $ concat clean
+--  let repos = map takeFileName $ concat $ map (tail . tail) tmp
+--  let pairs = buildRepos repos []
+--  mapM (writeDataToFile "misc/repo-pairs.csv") pairs
   --print repos
 
 buildRepos :: [String] -> [String]-> [String]
@@ -398,11 +375,9 @@ buildRepos (x:xs) acc = do
   --mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
   buildRepos xs (acc ++ m)
 
-
-
-writeDataToFile :: FilePath -> String -> IO ()
-writeDataToFile file dat = do
-  let fileNew = "data/" ++ (takeBaseName file) ++ ".csv"
+writeDataToFile :: String -> String -> String -> String -> String -> IO ()
+writeDataToFile repo1 repo2 dat hypothesis experiment = do
+  let fileNew = "data_final/" ++ hypothesis ++ "/" ++ experiment ++ "/" ++ (repo1 ++ "-" ++ repo2) ++ ".csv"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew AppendMode
   hPutStr h dat
@@ -410,7 +385,7 @@ writeDataToFile file dat = do
 
 writeTreeToFile :: FilePath -> String -> String -> IO ()
 writeTreeToFile file tree num = do
-  let fileNew = "asts/" ++ (takeBaseName file) ++ num ++ ".ast"
+  let fileNew = "asts/" ++ takeBaseName file ++ num ++ ".ast"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew WriteMode
   hPutStr h tree
