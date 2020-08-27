@@ -50,11 +50,11 @@ serialize :: Cursor -> String
 serialize root = '(' : (let x = Map.lookup (show $ cursorKind root) kindHash in
                            case x of Just o  -> o     -- Replace CursorKind with 2 letter string.
                                      Nothing -> "zz")
-                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y)
+                    ++ L.foldl (\acc y -> if (L.foldr (\yy xx -> if show (cursorKind y)
                                                                 == yy then False
                                                                         else xx) True Lib.filterOut)
                                             then acc ++ serialize y
-                                              else acc) "" (cursorChildren root))
+                                              else acc) "" (cursorChildren root)
                     ++ ")"
 
 treeToString :: FilePath -> IO String
@@ -87,38 +87,40 @@ compareTrees file1 file2 = do
 -- Takes two lists of files to compare and produces a list of tuples
 compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)]
 compareAllParseTrees xs ys = sequence $ helper xs ys []
+
   where
     helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
                                        -> [IO (String, String, Int, Int, Int)]
     helper []     _  acc = acc
     helper (f:fs) ms acc = let
-      fun = map (\y -> if (takeFileName f) == (takeFileName y) then
-                         [(compareTrees f y)]
-                       else ([return ("NULL","NULL",0,0,0)])) ms in
+      fun = map (\y -> if takeFileName f == takeFileName y then
+                         [compareTrees f y]
+                       else [return ("NULL","NULL",0,0,0)]) ms in
       --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
-        helper fs ms (acc ++ (concat fun))
+        helper fs ms (acc ++ concat fun)
 
 compareParseTreeRepos :: String -> String -> String -> String -> IO ()
 compareParseTreeRepos repo1 repo2 hypothesis experiment = do
-  dirlist1  <- traverseDir (const True) (\fs f -> pure (f : fs)) [] repo1
-  dirlist2  <- traverseDir (const True) (\fs f -> pure (f : fs)) [] repo2
-  let dirs1   = map (\x -> x ++ " ") dirlist1
-  let dirs2   = map (\x -> x ++ " ") dirlist2
-  let inter1  = map init $ filterFileType ".cpp " dirs1
-  let inter2  = map init $ filterFileType ".cpp " dirs2
-  let subset1 = L.take 200 inter1
-  let subset2 = L.take 200 inter2
+  dirlist1  <- generateFileList repo1 --traverseDir (const True) (\fs f -> pure (f : fs)) [] repo1
+  dirlist2  <- generateFileList repo2 --traverseDir (const True) (\fs f -> pure (f : fs)) [] repo2
+  --let dirs1   = map (++ " ") dirlist1
+  --let dirs2   = map (++ " ") dirlist2
+  --let inter1  = map init $ filterFileType ".cpp " dirs1
+  --let inter2  = map init $ filterFileType ".cpp " dirs2
+  let subset1 = L.take 200 dirlist1
+  let subset2 = L.take 200 dirlist2
   out    <- compareAllParseTrees subset1 subset2
   let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
-  let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
-  writeDataToFile repo1 repo2 out2 hypothesis experiment
+  --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
+  let out2 = concatMap convertToCSVLine test
+  writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
 
 mapRepos :: [String] -> String -> String -> IO ()
 mapRepos    []  _ _                   = return ()
 mapRepos (x:xs) hypothesis experiment = do
-  mapM (\y -> compareParseTreeRepos x y hypothesis experiment) xs
-  mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
+  mapM_ (\y -> compareParseTreeRepos x y hypothesis experiment) xs
+  mapM_ (\y -> print ("first repo: " ++ x ++ " second repo: " ++ y)) xs
   mapRepos xs hypothesis experiment
 
 -- **********************************************

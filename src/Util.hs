@@ -149,27 +149,51 @@ filterRepoLinks repos =
       map (\y -> ((takeBaseName . last) y, last y)) x
 
 
+-- mkdir if directory does not exist, otherwise generates and filters out C++ files for directory.
 generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
-  let str = "mkdir /wheeler/scratch/khaskins/coins/" ++ repo
-  (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
-  dirlist  <- traverseDir (const True) (\fs f -> pure (f : fs)) []
-                          ("/wheeler/scratch/khaskins/coins/" ++ repo)
+  (errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) []
+  dirlist  <- traverseDir (const True) (\fs f -> pure (f : fs)) [] repo
   let dirs     = map (++ " ") dirlist
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
 
+-- Generates list of repos in ${DIR}/coins excluding "-tags" directories
 generateRepoList :: IO [FilePath]
 generateRepoList =
   --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
   traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
 
+-- Generates list of repos in ${DIR}/coins including only "-tags" directories
 generateRepoTagList :: IO [[FilePath]]
 generateRepoTagList = do
   dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f:fs)) []
                             "/home/ghostbird/Hacking/cybersecurity/coins/"
                             --"/wheeler/scratch/khaskins/coins/"
   mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
+
+--  
+splitListByN :: [a] -> Int -> [[a]]
+splitListByN repos n = splitListHelper repos n []
+  where
+    splitListHelper :: [a] -> Int -> [[a]] -> [[a]]
+    splitListHelper [] _ acc = acc
+    splitListHelper xs n acc = splitListHelper (L.drop n xs) n (acc ++ [L.take n xs])
+
+
+-- Takes list produced by generateRepoList/generateRepoTagList
+-- Used for generating all pairs of repos to be compared and then
+-- returning the requested subset for a given wheeler node.
+--
+-- ******** 20 is hardcoded for number of ranks/nodes in genTestSetHelper *************
+--
+generateTestSet :: [FilePath] -> Int -> [(FilePath, FilePath)]
+generateTestSet repos subset = genTestSetHelper repos subset []
+  where
+    genTestSetHelper :: [FilePath] -> Int -> [(FilePath, FilePath)] -> [(FilePath, FilePath)]
+    genTestSetHelper []     subset acc = splitListByN acc 20 !! subset
+    gentestsethelper (x:xs) subset acc =
+      genTestSetHelper xs subset (acc ++ map (\y -> (x, y)) xs)
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
@@ -396,7 +420,7 @@ convertToCSVLine (a, b, c, d, e) = a ++ "," ++
                                    b ++ "," ++
                                    show c ++ "," ++
                                    show d ++ "," ++
-                                   show e
+                                   show e ++ "\n"
 
 convertToCSVTwo :: String -> String -> String
 convertToCSVTwo a b = a ++ "," ++ b ++ "\n"

@@ -83,15 +83,19 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
     -- Test unmodified
     0 -> do
       -- First repo
+      putStrLn $ "Comparing unmodified data " ++ takeBaseName repo1 ++ "-"
+                                              ++ takeBaseName repo2 ++ " "
+                                              ++ hypothesis         ++ " "
+                                              ++ experiment
       let md5DigestOut1 = map (MD.md5 . BLU.fromString . Txt.unpack) readFiles1
       let md5Text1 = map (toText . fromBytes . MD.md5DigestBytes) md5DigestOut1
       let zipOfData1 = zip3 (map Txt.unpack md5Text1) (map show lenFiles1) inter1
-      let csv1 = listify zipOfData1 [[]]
+      let csv1 = listify zipOfData1 []
       -- Second repo
       let md5DigestOut2 = map (MD.md5 . BLU.fromString . Txt.unpack) readFiles2
       let md5Text2 = map (toText . fromBytes . MD.md5DigestBytes) md5DigestOut2
       let zipOfData2 = zip3 (map Txt.unpack md5Text2) (map show lenFiles2) inter2
-      let csv2 = listify zipOfData2 [[]]
+      let csv2 = listify zipOfData2 []
 
       let k1 = compressFiles $ sort csv1
       let k2 = compressFiles $ sort csv2 -- concat csv2
@@ -104,16 +108,20 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
 
     -- Test preprocessed
     1 -> do
-      -- Fisrt repo preprocessed
+      -- First repo preprocessed
+      putStrLn $ "Comparing compressed data " ++ takeBaseName repo1 ++ "-"
+                                              ++ takeBaseName repo2 ++ " "
+                                              ++ hypothesis         ++ " "
+                                              ++ experiment
       let md5DigestOut1 = map (MD.md5 . BLU.fromString . Txt.unpack) file1NoCWS
       let md5Text1 = map (toText . fromBytes . MD.md5DigestBytes) md5DigestOut1
       let zipOfData1 = zip3 (map Txt.unpack md5Text1) (map show lenFilesNoCWS1) inter1
-      let csv1 = listify zipOfData1 [[]]
+      let csv1 = listify zipOfData1 []
       -- Second repo preprocessed
       let md5DigestOut2 = map (MD.md5 . BLU.fromString . Txt.unpack) file2NoCWS
       let md5Text2 = map (toText . fromBytes . MD.md5DigestBytes) md5DigestOut2
       let zipOfData2 = zip3 (map Txt.unpack md5Text2) (map show lenFilesNoCWS2) inter2
-      let csv2 = listify zipOfData2 [[]]
+      let csv2 = listify zipOfData2 []
 
       let k1 = compressFiles $ sort csv1
       let k2 = compressFiles $ sort csv2
@@ -141,7 +149,7 @@ compareAllBasicRepos :: Int -> String -> IO ()
 compareAllBasicRepos flag hyp = do
   repos <- generateRepoList
   let hypothesis = "hypothesis_" ++ hyp
-  let experiment = "basic" ++ (show $ flag + 1)
-  print hypothesis
-  print experiment
-  --foldRepos repos flag hypothesis experiment
+  let experiment = "basic" ++ show (flag + 1)
+  --print hypothesis
+  --print experiment
+  foldRepos repos flag hypothesis experiment

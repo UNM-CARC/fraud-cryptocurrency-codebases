@@ -59,23 +59,28 @@ main = do
 --      "3" -> do
 
     "4" -> do
-      let subset = head (tail args)
-      let hyp    = head (tail (tail args))
+      let hyp = head (tail args)
+      generateOutputDirectories
+      --let hyp    = head (tail (tail args))
       -- First level of comparison: No modification to source code.
-      compareAllBasicRepos 0 hyp
+      --compareAllBasicRepos 0 hyp
       -- Second level of comparison: Remove C style comments and whitespace.
-      compareAllBasicRepos 1  hyp
+      --compareAllBasicRepos 1 hyp
       -- Compare parse trees.
       compareAllParseTreeRepos hyp
+    "5" ->
+      cleanOutputDirectories
     else do
       putStrLn ""
       putStrLn "No arguments were provided:"
       putStrLn ""
       putStrLn "Usage:"
       putStrLn "       main 0 -> Clone and remove non c++ repos using names.csv"
-      putStrLn "       main 1 -> Further filter coins via comparisons to top 10 major coins"
+      putStrLn "       main 1 -> Further filter coins via comparisons to top 10 major coins <NOT IMPLEMENTED>"
       putStrLn "       main 2 -> Create <REPO>-tags directory and copy each coin,"
       putStrLn "                 giving one major version per year"
       putStrLn "       main 3 -> Generate PBS scripts given "
-      putStrLn "       main 4    <subset num(auto-generated via PBSBuild)> <hypothesis(1,2,3)>"
-      putStrLn "              -> Run all comparison tests on a given subset of repositories"
+      putStrLn "                 <hypothesis(1,2,3)>"
+      putStrLn "       main 4 -> Run all comparison tests on a given subset of repositories"
+      putStrLn "       main 5 -> remove all output files and directories. (USE WITH CAUTION!)"
+
