@@ -161,15 +161,15 @@ generateFileList repo = do
 -- Generates list of repos in ${DIR}/coins excluding "-tags" directories
 generateRepoList :: IO [FilePath]
 generateRepoList =
-  --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
+  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
 
 -- Generates list of repos in ${DIR}/coins including only "-tags" directories
 generateRepoTagList :: IO [[FilePath]]
 generateRepoTagList = do
   dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f:fs)) []
-                            "/home/ghostbird/Hacking/cybersecurity/coins/"
-                            --"/wheeler/scratch/khaskins/coins/"
+                            --"/home/ghostbird/Hacking/cybersecurity/coins/"
+                            "/wheeler/scratch/khaskins/coins/"
   mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
 
 --  
