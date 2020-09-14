@@ -116,25 +116,29 @@ compareParseTreeRepos repo1 repo2 hypothesis experiment = do
   let out2 = concatMap convertToCSVLine test
   writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
 
-mapRepos :: [String] -> String -> String -> IO ()
+
+--mapRepos :: [String] -> String -> String -> IO ()
+mapRepos :: [(String, String)] -> String -> String -> IO ()
 mapRepos    []  _ _                   = return ()
 mapRepos (x:xs) hypothesis experiment = do
-  mapM_ (\y -> compareParseTreeRepos x y hypothesis experiment) xs
-  mapM_ (\y -> print ("first repo: " ++ x ++ " second repo: " ++ y)) xs
+  --mapM_ (\y -> compareParseTreeRepos x y hypothesis experiment) xs
+  --mapM_ (\y -> print ("first repo: " ++ x ++ " second repo: " ++ y)) xs
+  compareParseTreeRepos (fst x) (snd x) hypothesis experiment
+  --uncurry compareParseTreeRepos x x hypothesis experiment
   mapRepos xs hypothesis experiment
 
 -- **********************************************
 -- Entry point for comparison of all parse trees.
 -- **********************************************
-compareAllParseTreeRepos :: String -> IO ()
-compareAllParseTreeRepos hyp = do
+compareAllParseTreeRepos :: [(String, String)] -> String -> IO ()
+compareAllParseTreeRepos dat hyp = do
 --  input <- fmap Txt.lines $ Txt.readFile "misc/testset.csv"
 --  let clean = fmap (\x -> fmap Txt.unpack x) $
 --              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
 --  let tmp   = splitEvery 3 $ fmap (L.filter (/= '\n')
 --            . L.filter (/= '\r')) $ concat clean
 --  let repos = map takeFileName $ concat $ map (tail . tail) tmp
-  repos <- generateRepoList
+  --repos <- generateRepoList
   let hypothesis = "hypothesis_" ++ hyp
   let experiment = "parse_trees"
-  mapRepos repos hypothesis experiment
+  mapRepos dat hypothesis experiment

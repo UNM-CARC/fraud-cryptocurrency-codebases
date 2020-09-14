@@ -139,17 +139,18 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
     listify []        acc = acc
     listify ((x,y,z):xs) acc = listify xs (acc ++ [[x, y, z]])
 
-foldRepos :: [String] -> Int -> String -> String -> IO ()
+foldRepos :: [(String, String)] -> Int -> String -> String -> IO ()
 foldRepos    []  _ _ _                      = return ()
 foldRepos (x:xs) flag hypothesis experiment = do
-  mapM_ (\y -> compareRepos x y flag hypothesis experiment) xs
+  --mapM_ (\y -> compareRepos x y flag hypothesis experiment) xs
+  compareRepos (fst x) (snd x) flag hypothesis experiment
   foldRepos xs flag hypothesis experiment
 
-compareAllBasicRepos :: Int -> String -> IO ()
-compareAllBasicRepos flag hyp = do
-  repos <- generateRepoList
+compareAllBasicRepos :: [(String, String)] -> Int -> String -> IO ()
+compareAllBasicRepos dat flag hyp = do
+  --repos <- generateRepoList
   let hypothesis = "hypothesis_" ++ hyp
   let experiment = "basic" ++ show (flag + 1)
   --print hypothesis
   --print experiment
-  foldRepos repos flag hypothesis experiment
+  foldRepos dat flag hypothesis experiment

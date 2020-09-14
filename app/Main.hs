@@ -59,15 +59,23 @@ main = do
 --      "3" -> do
 
     "4" -> do
-      let hyp = head (tail args)
+      let hyp    = head (tail args)
+      let subset = read $ head (tail (tail args)) :: Int
+      set1      <- case hyp of
+                     "1" -> generateRepoList
+                     _   -> generateRepoList
+      set2      <- case hyp of
+                     "1" -> generateRepoList
+                     _   -> generateRepoList
+      let dat    = generateTestSet set1 set2 subset
       generateOutputDirectories
       --let hyp    = head (tail (tail args))
       -- First level of comparison: No modification to source code.
-      --compareAllBasicRepos 0 hyp
+      compareAllBasicRepos dat 0 hyp
       -- Second level of comparison: Remove C style comments and whitespace.
-      --compareAllBasicRepos 1 hyp
+      compareAllBasicRepos dat 1 hyp
       -- Compare parse trees.
-      compareAllParseTreeRepos hyp
+      compareAllParseTreeRepos dat hyp
     "5" ->
       cleanOutputDirectories
     else do
@@ -82,5 +90,6 @@ main = do
       putStrLn "       main 3 -> Generate PBS scripts given "
       putStrLn "                 <hypothesis(1,2,3)>"
       putStrLn "       main 4 -> Run all comparison tests on a given subset of repositories"
+      putStrLn "                 main 4 <HYPOTHESIS (1-3)> <SUBSET (rank of process)>"
       putStrLn "       main 5 -> remove all output files and directories. (USE WITH CAUTION!)"
 
