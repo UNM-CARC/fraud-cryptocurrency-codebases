@@ -1,4 +1,3 @@
-(1.) We hypothesize that on average coins copy and or borrow code from newer coins over older coins.
-(2.) We hypothesize that coins copy code in pieces rather than entire codebases.
-(3.) We hypothesize that coins copy code from coins which have desirable traits or features. (More secure/modern cryptography, smart contract options, enhanced anonymity)
-(4.) We hypothesize that coins copy code from less well-known coins (Depends on whether or not it is desired to keep code copying more or less obvious, possibly not)
+1
+2
+3

@@ -180,21 +180,19 @@ splitListByN repos n = splitListHelper repos n []
     splitListHelper [] _ acc = acc
     splitListHelper xs n acc = splitListHelper (L.drop n xs) n (acc ++ [L.take n xs])
 
-
-
 -- Takes list produced by generateRepoList/generateRepoTagList
 -- Used for generating all pairs of repos to be compared and then
 -- returning the requested subset for a given wheeler node.
 --
--- ******** 20 is hardcoded for number of ranks/nodes in genTestSetHelper *************
+-- ******** 20 is hardcoded for number of nodes in genTestSetHelper *************
 --
 generateTestSet :: [FilePath] -> [FilePath]-> Int -> [(FilePath, FilePath)]
 generateTestSet set1 set2 subset = genTestSetHelper set1 set2 subset []
   where
     genTestSetHelper :: [FilePath] -> [FilePath] -> Int -> [(FilePath, FilePath)] -> [(FilePath, FilePath)]
-    genTestSetHelper []      _ subset acc = splitListByN acc 20 !! subset
-    gentestsethelper (x:xs) ys subset acc =
-      genTestSetHelper xs ys subset (acc ++ map (\y -> (x, y)) xs)
+    genTestSetHelper     []      _ subset acc = splitListByN acc 20 !! subset
+    gentestsethelper (x:xs) (_:ys) subset acc =
+      genTestSetHelper xs ys subset (acc ++ map (\y -> (x, y)) ys)
 
 removeRepo :: String -> IO ()
 removeRepo repo = do

@@ -76,8 +76,8 @@ main = do
       --compareAllBasicRepos dat 1 hyp
       -- Compare parse trees.
       --compareAllParseTreeRepos dat hyp
-      print "Hypothesis " ++ hyp
-      print "Subset     " ++ subset
+      let str = "Hypothesis " ++ hyp ++ " Subset " ++ show subset
+      (errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) [] 
     "5" ->
       cleanOutputDirectories
     else do
