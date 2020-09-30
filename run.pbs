@@ -12,8 +12,9 @@
 ## Change to directory the PBS script was submitted from
 cd $PBS_O_WORKDIR
 export JOBSPERNODE=8
+export JOBS=16
 source mods
 export THIS_HOST=$(hostname)
 #parallel --jobs 160 stack run 4 1 {#}
-parallel --joblog logfile --wd $PBS_O_WORKDIR -j $JOBSPERNODE --sshloginfile $PBS_NODEFILE --env PATH --arg-file jobs.txt 'stack run 4 1 {}'
+parallel --joblog logfile --wd $PBS_O_WORKDIR -j $JOBSPERNODE --sshloginfile $PBS_NODEFILE --env PATH --arg-file jobs.txt 'stack run 4 1 {} $JOBS'
 ####################################################

@@ -11,6 +11,7 @@
 ## Change to directory the PBS script was submitted from
 cd $PBS_O_WORKDIR
 source mods
+JOBS=16
 export THIS_HOST=$(hostname)
-parallel --jobs 16 stack run 4 1 {#}
+parallel --jobs 16 stack run 4 1 {#} $JOBS
 ####################################################
