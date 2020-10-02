@@ -172,7 +172,7 @@ generateRepoTagList = do
                             "/wheeler/scratch/khaskins/coins/"
   mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
 
---  
+--
 splitListByN :: [a] -> Int -> [[a]]
 splitListByN repos n = splitListHelper repos n []
   where
@@ -186,15 +186,15 @@ splitListByN repos n = splitListHelper repos n []
 --
 -- ******** 20 is hardcoded for number of nodes in genTestSetHelper *************
 --
-generateTestSet :: [FilePath] -> [FilePath] -> Int -> Int -> Int -> [(FilePath, FilePath)]
-generateTestSet set1 set2 subset numRepos jobs = genTestSetHelper set1 set2 subset numRepos jobs []
+generateTestSet :: [FilePath] -> [FilePath] -> Int -> Int -> [(FilePath, FilePath)]
+generateTestSet set1 set2 subset jobs = genTestSetHelper set1 set2 subset jobs []
   where
-    genTestSetHelper :: [FilePath] -> [FilePath] -> Int -> Int -> Int -> [(FilePath, FilePath)] 
+    genTestSetHelper :: [FilePath] -> [FilePath] -> Int -> Int -> [(FilePath, FilePath)]
                                                                       -> [(FilePath, FilePath)]
-    genTestSetHelper     []      _ subset numRepos jobs acc = splitListByN acc (numRepos `div` jobs)
-                                                              !! subset
-    gentestsethelper (x:xs) (_:ys) subset numRepos jobs acc =
-      genTestSetHelper xs ys subset numRepos jobs (acc ++ map (\y -> (x, y)) ys)
+    genTestSetHelper     []      _ subset jobs acc = splitListByN acc (length acc `div` jobs) !! subset
+    genTestSetHelper      _     [] subset jobs acc = splitListByN acc (length acc `div` jobs) !! subset
+    genTestSetHelper (x:xs) (_:ys) subset jobs acc =
+      genTestSetHelper xs ys subset jobs (acc ++ map (\y -> (x, y)) ys)
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
