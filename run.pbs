@@ -2,9 +2,8 @@
 ## The University of New Mexico
 ####################################################
 ## The next lines specify what resources you are requesting.
-#PBS -lnodes=1:ppn=8
-#PBS -lwalltime=1:00:00
-#PBS -qdebug
+#PBS -lnodes=2:ppn=8
+#PBS -lwalltime=2:00:00
 ## All other instructions to TORQUE are here as well and are preceded by a single #, note that normal comments can
 #also be preceded by a single #
 ## Specify the shell to be bash
@@ -15,6 +14,7 @@ export JOBSPERNODE=8
 export JOBS=16
 source mods
 export THIS_HOST=$(hostname)
+seq $JOBS > jobs.txt
 #parallel --jobs 160 stack run 4 1 {#}
 parallel --joblog logfile --wd $PBS_O_WORKDIR -j $JOBSPERNODE --sshloginfile $PBS_NODEFILE --env PATH --arg-file jobs.txt 'stack run 4 1 {} $JOBS'
 ####################################################

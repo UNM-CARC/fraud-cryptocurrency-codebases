@@ -60,7 +60,7 @@ main = do
 
     "4" -> do
       let hyp    = head (tail args)
-      let subset = read $ head (tail (tail args)) :: Int
+      let subset = (read $ head (tail (tail args)) :: Int) - 1
       let jobs   = read $ head (tail (tail (tail args))) :: Int
       set1      <- case hyp of
                      "1" -> generateRepoList
@@ -70,15 +70,14 @@ main = do
                      _   -> generateRepoList
       let dat    = generateTestSet set1 set2 subset jobs
       generateOutputDirectories
-      --let hyp    = head (tail (tail args))
       -- First level of comparison: No modification to source code.
-      --compareAllBasicRepos dat 0 hyp
+      compareAllBasicRepos dat 0 hyp
       -- Second level of comparison: Remove C style comments and whitespace.
       --compareAllBasicRepos dat 1 hyp
       -- Compare parse trees.
       --compareAllParseTreeRepos dat hyp
       --let str = "Hypothesis " ++ hyp ++ " Subset " ++ show subset
-      print dat
+      --print dat
       --(errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) [] 
     "5" ->
       cleanOutputDirectories
