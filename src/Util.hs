@@ -190,7 +190,7 @@ generateTestSet :: [FilePath] -> [FilePath] -> Int -> Int -> [(FilePath, FilePat
 generateTestSet set1 set2 subset jobs = genTestSetHelper set1 set2 subset jobs []
   where
     genTestSetHelper :: [FilePath] -> [FilePath] -> Int -> Int -> [(FilePath, FilePath)]
-                                                                      -> [(FilePath, FilePath)]
+                                                               -> [(FilePath, FilePath)]
     genTestSetHelper     []      _ subset jobs acc = splitListByN acc (length acc `div` jobs) !! subset
     genTestSetHelper      _     [] subset jobs acc = splitListByN acc (length acc `div` jobs) !! subset
     genTestSetHelper (x:xs) (_:ys) subset jobs acc =
