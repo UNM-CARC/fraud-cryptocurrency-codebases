@@ -10,7 +10,7 @@ import qualified Data.Digest.Pure.MD5 as MD
 import qualified Data.CSV as CSV
 
 import           System.Directory (doesDirectoryExist, listDirectory)
-import           Text.ParserCombinators.Parsec
+--import           Text.ParserCombinators.Parsec
 import           Numeric
 import           Data.List
 import           Data.Char
@@ -18,8 +18,10 @@ import           Data.Either
 import           Data.Csv
 import           Data.HexString
 import           System.IO
+import           System.IO.Error
 import           Control.Applicative
 import           Control.Monad
+import           Control.Exception
 import           System.Environment
 import           System.FilePath ((</>), FilePath)
 import           System.FilePath.Posix
@@ -31,6 +33,19 @@ import           System.Directory.Tree (
                    )
 
 import Util
+
+--tryJustReadFile :: FilePath -> String
+--tryJustReadFile filePath = do
+--  eitherExceptionFile <- tryJust handleReadFile (readFile filePath)
+--  case eitherExceptionFile of
+--   Left  er   -> putStrLn er
+--   Right file -> file
+--  where
+--    handleReadFile :: IOError -> Maybe String
+--    handleReadFile er
+--      | isDoesNotExistError er = Just "readFile: does not exist"
+--      | isPermissionError   er = Just "readFile: permission denied"
+--      | otherwise              = Nothing
 
 -- Compare all the hashes of one coin against another and return similarity
 -- lx and ly are lengths of xs and ys respectively.
@@ -63,8 +78,11 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
   let inter1 = map init $ filterFileType ".cpp " files1
   let inter2 = map init $ filterFileType ".cpp " files2
 
-  readFiles1 <- traverse Txt.readFile inter1
-  readFiles2 <- traverse Txt.readFile inter2
+--  readFiles1 <- traverse (\x -> case try $ Txt.readFile x of
+--                                  Left  except   -> print except
+--                                  Right contents -> contents) inter1
+  readFiles1 <- traverse readFileSafe inter1
+  readFiles2 <- traverse readFileSafe inter2
 
   -- Remove C style comments and whitespace from files.
   let file1NoCWS = map Txt.pack $ map (concat . words) $ map (stripComments . Txt.unpack) readFiles1
@@ -88,6 +106,7 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
                                               ++ hypothesis         ++ " "
                                               ++ experiment
       let md5DigestOut1 = map (MD.md5 . BLU.fromString . Txt.unpack) readFiles1
+      --let md5Text1 = map (toText . fromBytes . MD.md5DigestBytes) md5DigestOut1
       let md5Text1 = map (toText . fromBytes . MD.md5DigestBytes) md5DigestOut1
       let zipOfData1 = zip3 (map Txt.unpack md5Text1) (map show lenFiles1) inter1
       let csv1 = listify zipOfData1 []

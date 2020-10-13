@@ -416,6 +416,14 @@ writeTreeToFile file tree num = do
   hPutStr h tree
   hClose h
 
+readFileSafe :: FilePath -> IO Txt.Text
+readFileSafe file = do
+  h <- System.IO.openFile file System.IO.ReadMode
+  System.IO.hSetEncoding h System.IO.utf8_bom
+  text <- Txt.hGetContents h
+  return text
+  
+
 convertToCSVLine :: (String, String, Int, Int, Int) -> String
 convertToCSVLine (a, b, c, d, e) = a ++ "," ++
                                    b ++ "," ++
