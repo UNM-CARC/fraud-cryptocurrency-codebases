@@ -12,6 +12,7 @@ import           Data.String
 import           System.IO
 import           Control.Monad
 import           Control.Applicative
+import           Control.Exception
 import           System.Process
 import           Data.Digest.Pure.MD5
 --import           Control.Monad (foldM)
@@ -420,8 +421,10 @@ readFileSafe :: FilePath -> IO Txt.Text
 readFileSafe file = do
   h <- System.IO.openFile file System.IO.ReadMode
   System.IO.hSetEncoding h System.IO.utf8_bom
-  text <- Txt.hGetContents h
-  return text
+  text <- try (Txt.hGetContents h) :: IO (Either SomeException Txt.Text)
+  case text of
+    Left  exc -> return $ Txt.pack ""
+    Right dat -> return dat
   
 
 convertToCSVLine :: (String, String, Int, Int, Int) -> String
