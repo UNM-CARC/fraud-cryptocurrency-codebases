@@ -64,11 +64,15 @@ main = do
       let jobs   = read $ head (tail (tail (tail args))) :: Int
       set1      <- case hyp of
                      "1" -> generateRepoList
+                     "2" -> generateRepoList
+                     --"3" ->
                      _   -> generateRepoList
       set2      <- case hyp of
                      "1" -> generateRepoList
+                     "2" -> generateRepoTagListBitcoin
+                     --"3" ->
                      _   -> generateRepoList
-      let dat    = generateTestSet set1 set2 subset jobs
+      let dat    = generateTestSet set1 (concat set2) subset jobs
       generateOutputDirectories
       -- First level of comparison: No modification to source code.
       compareAllBasicRepos dat 0 hyp

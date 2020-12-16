@@ -29,7 +29,6 @@ import           System.Directory.Tree (
                    )
 import           System.FilePath (takeExtension)
 
-import Lib
 --import ParseTrees
 
 -- Special State type used when filtering verions/tags.
@@ -81,6 +80,10 @@ inString :: String -> String
 inString [] = []
 inString ('\"':xs) = '\"' : stripComments xs
 inString (x:xs) = x : inString xs
+
+-- filter
+
+
 
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if L.isInfixOf s x then True else False) xs
@@ -173,7 +176,16 @@ generateRepoTagList = do
                             "/wheeler/scratch/khaskins/coins/"
   mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
 
---
+generateRepoTagListBitcoin :: IO [FilePath]
+generateRepoTagListBitcoin = do
+  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> if takeBaseName f == "bitcoin" then 
+                                                              pure (f:fs) else pure fs) []
+                            --"/home/ghostbird/Hacking/cybersecurity/coins/"
+                            "/wheeler/scratch/khaskins/coins/"
+  mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) $ concat dirlist
+
+
+-- Split list by integer N into sublists.
 splitListByN :: [a] -> Int -> [[a]]
 splitListByN repos n = splitListHelper repos n []
   where
