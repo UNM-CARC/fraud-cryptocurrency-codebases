@@ -73,7 +73,8 @@ main = do
                      "3" ->
                      _   -> generateRepoList
       let dat    = generateTestSet set1 set2 subset jobs
-      --generateOutputDirectories
+
+      generateOutputDirectories
       -- First level of comparison: No modification to source code.
       --compareAllBasicRepos dat 0 hyp
       -- Second level of comparison: Remove C style comments and whitespace.

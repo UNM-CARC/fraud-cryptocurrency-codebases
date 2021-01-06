@@ -2,7 +2,7 @@
 ## The University of New Mexico
 ####################################################
 ## The next lines specify what resources you are requesting.
-#PBS -lnodes=20:ppn=8
+#PBS -lnodes=30:ppn=8
 #PBS -lwalltime=48:00:00
 ## All other instructions to TORQUE are here as well and are preceded by a single #, note that normal comments can
 #also be preceded by a single #
@@ -10,8 +10,8 @@
 #PBS -S /bin/bash
 ## Change to directory the PBS script was submitted from
 cd $PBS_O_WORKDIR
-export JOBSPERNODE=1
-export JOBS=320
+export JOBSPERNODE=8
+export JOBS=240
 source mods
 export THIS_HOST=$(hostname)
 seq $JOBS > jobs.txt
