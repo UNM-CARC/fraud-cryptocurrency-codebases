@@ -169,12 +169,13 @@ generateRepoList =
   --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
 
 -- Generates list of repos in ${DIR}/coins including only "-tags" directories
-generateRepoTagList :: IO [[FilePath]]
+generateRepoTagList :: IO [FilePath]
 generateRepoTagList = do
   dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f:fs)) []
                             --"/home/ghostbird/Hacking/cybersecurity/coins/"
                             "/wheeler/scratch/khaskins/coins/"
-  mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
+  taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
+  return $ concat taglist
 
 generateRepoTagListBitcoin :: IO [FilePath]
 generateRepoTagListBitcoin = do
@@ -182,7 +183,23 @@ generateRepoTagListBitcoin = do
                                                               pure (f:fs) else pure fs) []
                             --"/home/ghostbird/Hacking/cybersecurity/coins/"
                             "/wheeler/scratch/khaskins/coins/"
-  mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) $ concat dirlist
+  taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
+  return $ concat taglist
+
+generateRepoTagListOld :: IO [FilePath]
+generateRepoTagListOld = do
+  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> if takeBaseName f == "bitcoin"       ||
+                                                              takeBaseName f == "litecoin"      ||
+                                                              takeBaseName f == "rippled"       ||
+                                                              takeBaseName f == "namecoin-core" ||
+                                                              takeBaseName f == "dogecoin"
+                                                           then 
+                                                              pure (f:fs) else pure fs) []
+                            --"/home/ghostbird/Hacking/cybersecurity/coins/"
+                            "/wheeler/scratch/khaskins/coins/"
+  taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
+  return $ concat taglist
+
 
 
 -- Split list by integer N into sublists.
@@ -199,11 +216,11 @@ splitListByN repos n = splitListHelper repos n []
 --
 -- ******** 20 is hardcoded for number of nodes in genTestSetHelper *************
 --
-generateTestSet :: [FilePath] -> [FilePath] -> Int -> Int -> [(FilePath, FilePath)]
+generateTestSet :: [a] -> [a] -> Int -> Int -> [(a, a)]
 generateTestSet set1 set2 subset jobs = genTestSetHelper set1 set2 subset jobs []
   where
-    genTestSetHelper :: [FilePath] -> [FilePath] -> Int -> Int -> [(FilePath, FilePath)]
-                                                               -> [(FilePath, FilePath)]
+    genTestSetHelper :: [a] -> [a] -> Int -> Int -> [(a, a)]
+                                                 -> [(a, a)]
     genTestSetHelper     []      _ subset jobs acc = splitListByN acc (length acc `div` jobs) !! subset
     genTestSetHelper      _     [] subset jobs acc = splitListByN acc (length acc `div` jobs) !! subset
     genTestSetHelper (x:xs) (_:ys) subset jobs acc =
