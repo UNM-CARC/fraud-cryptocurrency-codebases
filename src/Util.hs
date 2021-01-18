@@ -165,8 +165,13 @@ generateFileList repo = do
 -- Generates list of repos in ${DIR}/coins excluding "-tags" directories
 generateRepoList :: IO [FilePath]
 generateRepoList =
-  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
+  --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
+
+generateRepoTags :: IO [FilePath]
+generateRepoTags =
+  --traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
+  traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
 
 -- Generates list of repos in ${DIR}/coins including only "-tags" directories
 generateRepoTagList :: IO [FilePath]
@@ -188,11 +193,11 @@ generateRepoTagListBitcoin = do
 
 generateRepoTagListOld :: IO [FilePath]
 generateRepoTagListOld = do
-  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> if takeBaseName f == "bitcoin"       ||
-                                                              takeBaseName f == "litecoin"      ||
-                                                              takeBaseName f == "rippled"       ||
-                                                              takeBaseName f == "namecoin-core" ||
-                                                              takeBaseName f == "dogecoin"
+  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> if takeBaseName f == "bitcoin"
+                                                           || takeBaseName f == "litecoin"
+                                                           || takeBaseName f == "rippled"
+                                                           || takeBaseName f == "namecoin-core"
+                                                           || takeBaseName f == "dogecoin"
                                                            then 
                                                               pure (f:fs) else pure fs) []
                             --"/home/ghostbird/Hacking/cybersecurity/coins/"
@@ -384,12 +389,23 @@ makeAllCopies _ =
 getAllTags :: IO ()
 getAllTags = do
   repos <- generateRepoList
-  tags  <- traverse getTags repos
+  tags_found <- generateRepoTags -- Generates list of repos with -tags suffix already
+  let filtered = filterDirs repos tags_found
+  tags  <- traverse getTags filtered
   let x = map filterMinorVersions tags
   -- Remove empty directories
   let out = filter (/=[]) x
   makeAllCopies out
   --print out
+
+filterDirs :: [FilePath] -> [FilePath] -> [FilePath]
+filterDirs repos tags = helper repos tags []
+  where
+    helper :: [FilePath] -> [FilePath] -> [FilePath] -> [FilePath]
+    helper []     _  acc = acc
+    helper (r:rs) ts acc = if (r ++ "-tags") `elem` ts then helper rs ts acc 
+                                                       else helper rs ts (acc ++ [r])
+                                                      
 
 --cloneRepositoryByYears :: (String, String) -> IO ()
 --cloneRepositoryByYears coin = do
