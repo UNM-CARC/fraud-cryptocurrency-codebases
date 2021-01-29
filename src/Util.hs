@@ -271,6 +271,30 @@ cloneRepos (x:xs) = do
   -- print $ head $ tail x
   cloneRepos xs
 
+gatherCommitHistory :: String -> IO ()
+gatherCommitHistory repo = do
+  let str1 = "cd " ++ repo ++ " ; "
+  let str3 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
+  --let str3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
+  let str2 = "git log --pretty=\"%h, %cd\" >> " ++ str3 ++ takeBaseName repo ++ ".csv"
+  (errc, out', err') <- readCreateProcessWithExitCode (shell (str1 ++ str2)) []
+  putStrLn $ "Gathered commit history for " ++ takeBaseName repo
+
+gatherAllCommitHistory :: [String] -> IO ()
+gatherAllCommitHistory []     = putStrLn ""
+gatherAllCommitHistory (x:xs) = do
+  gatherCommitHistory x
+  gatherAllCommitHistory xs
+
+
+-- Gather commit data.
+--performMultiple :: [a] -> (b -> IO ()) -> IO ()
+performMultiple [] _ =
+  print ""
+performMultiple (x:xs) fun = do
+  fun x
+  performMultiple xs fun
+
 getTags :: String -> IO [(String, String, String)]
 getTags repo = do
   let str = "cd " ++ repo ++ " ; "

@@ -9,6 +9,11 @@ import           System.Process
 
 import Util
 
+generateCommitDirectory :: IO ()
+generateCommitDirectory = do
+  let dir = "mkdir commit_history"
+  (errc, out, err) <- readCreateProcessWithExitCode(shell dir) []
+  putStrLn "Generated commit history directory"
 
 generateOutputDirectories :: IO ()
 generateOutputDirectories = do

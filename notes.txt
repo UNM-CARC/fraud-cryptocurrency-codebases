@@ -9,3 +9,13 @@
    data in sub-formats as we process it? For now I am going to create a second data directory to write stats
    to for each file. 
  * In terms of starting out 
+
+** For paper -> Keep information in their own locations.
+
+minife-128-mutrino-liballprof/
+
+%% Collect data on number of commits and absolute age of code base, (Time of commit) date of commit and relative
+%% age; time which has elapsed from first commit to most recent version. Absolute age. date and number of 
+commits. Can compute correlation and statistics. Use data already collected
+
+

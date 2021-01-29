@@ -46,6 +46,7 @@ main = do
       let filtered = filterRepoLinks tmp
       -- Clone all of the links filtered from previous line.
       cloneRepos filtered
+      --performMultiple cloneRepo filtered
       -- Remove all repos which do not contain C++ code.
       pruneRepos filtered
 --    "1" -> do
@@ -56,7 +57,10 @@ main = do
       -- in a new repo <repo>-tag
       getAllTags
 
---      "3" -> do
+    "3" -> do
+      generateCommitDirectory
+      set <- generateRepoList
+      gatherAllCommitHistory set
 
     "4" -> do
       let hyp    = head (tail args)
