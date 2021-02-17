@@ -88,7 +88,9 @@ main = do
       --let str = "Hypothesis " ++ hyp ++ " Subset " ++ show subset
       --print dat
       --(errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) [] 
-    "5" ->
+    "5" -> do
+      generateScoreData
+    "6" ->
       cleanOutputDirectories
     else do
       putStrLn ""

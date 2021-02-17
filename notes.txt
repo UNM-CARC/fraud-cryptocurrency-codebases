@@ -18,4 +18,24 @@ minife-128-mutrino-liballprof/
 %% age; time which has elapsed from first commit to most recent version. Absolute age. date and number of 
 commits. Can compute correlation and statistics. Use data already collected
 
+%% PSAAP
+How to get communication data -> how many bytes we've communicated at what rate -> TAU, LD-PRELOAD library, 
+traces
+
+** Communcation intensity -> How many bytes are we able to move/amount of communcation done.
+
+LASSEN
+
+module load tau
+
+pprof
+
+*** Parse Trees ***
+
+Instead of counting number of files which are the same, it is instead a weighted sum
+if identical 1 in numerator -> put a number between zero and one in the numerator
+
+How much much more information do we get when we use the parse tree method -> how much more is shared?
+
+
 

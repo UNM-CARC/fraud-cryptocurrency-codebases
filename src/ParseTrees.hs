@@ -72,12 +72,14 @@ treeToString file = do
 -- Takes two files, parses and converts them into ast strings, compares them and
 -- outputs a tuple containing the name of each file, their length, and the combined
 -- longest common substring length.
-compareTrees :: FilePath -> FilePath -> IO (String, String, Int, Int, Int) -- IO ()
-compareTrees file1 file2 = do
+compareTrees :: FilePath -> FilePath -> FilePath -> FilePath 
+             -> IO (String, String, String, String, Int, Int, Int) -- IO ()
+compareTrees file1 file2 repo1 repo2 = do
   x <- treeToString file1
   y <- treeToString file2
   let longest  = longestCommonSubstring $ x : [y]
-  let out      = (takeFileName file1, takeFileName file2, length x, length y, length longest)
+  let out      = (takeBaseName repo1, takeBaseName repo2, takeFileName file1, takeFileName file2, 
+                  length x, length y, length longest)
   return out
   --print $ "Size of tree x: " ++ (show $ length x)
   --print $ "Size of tree y: " ++ (show $ length y)
@@ -85,20 +87,22 @@ compareTrees file1 file2 = do
   --print out
 
 -- Takes two lists of files to compare and produces a list of tuples
-compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)]
-compareAllParseTrees xs ys = sequence $ helper xs ys []
+compareAllParseTrees :: [FilePath] -> [FilePath] -> FilePath -> FilePath
+                  -> IO [(String, String, String, String, Int, Int, Int)]
+compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
 
   where
-    helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
-                                       -> [IO (String, String, Int, Int, Int)]
-    helper []     _  acc = acc
-    helper (f:fs) ms acc = let
+    helper :: [FilePath] -> [FilePath] -> FilePath -> FilePath 
+                         -> [IO (String, String, String, String, Int, Int, Int)]
+                         -> [IO (String, String, String, String, Int, Int, Int)]
+    helper []      _ repo1 repo2 acc = acc
+    helper (f:fs) ms repo1 repo2 acc = let
       fun = map (\y -> if takeFileName f == takeFileName y then
-                         [compareTrees f y]
-                       else [return ("NULL","NULL",0,0,0)]) ms in
+                         [compareTrees f y repo1 repo2]
+                       else [return ("NULL","NULL","NULL","NULL",0,0,0)]) ms in
       --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
-        helper fs ms (acc ++ concat fun)
+        helper fs ms repo1 repo2 (acc ++ (concat fun))
 
 compareParseTreeRepos :: String -> String -> String -> String -> IO ()
 compareParseTreeRepos repo1 repo2 hypothesis experiment = do
@@ -110,10 +114,10 @@ compareParseTreeRepos repo1 repo2 hypothesis experiment = do
   --let inter2  = map init $ filterFileType ".cpp " dirs2
   let subset1 = L.take 200 dirlist1
   let subset2 = L.take 200 dirlist2
-  out    <- compareAllParseTrees subset1 subset2
+  out    <- compareAllParseTrees subset1 subset2 repo1 repo2
   let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
   --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
-  let out2 = concatMap convertToCSVLine test
+  let out2 = concatMap convertToCSVLine7 test
   writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
 
 

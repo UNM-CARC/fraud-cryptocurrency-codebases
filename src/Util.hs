@@ -7,6 +7,7 @@ import qualified Data.ByteString.Char8 as C
 
 import qualified Data.List as L
 --import           Data.List.Split
+import           Data.List.Split (splitOn)
 import           Data.Char
 import           Data.String
 import           System.IO
@@ -31,6 +32,12 @@ import           System.FilePath (takeExtension)
 
 --import ParseTrees
 
+coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
+--coins_loc = "/wheeler/scratch/khaskins/coins/"
+commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
+--commit_loc = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
+--commit_loc = "/carc/scratch/projects/bridges2016099/commit_history/"
+
 -- Special State type used when filtering verions/tags.
 type KeepState = ([Int], [(String, String, String)])
 
@@ -43,20 +50,20 @@ second (_,x,_) = x
 third :: (a, b, c) -> c
 third (_,_,x) = x
 
-g1st :: (a, b, c, d, e) -> a
-g1st (x,_,_,_,_) = x
+g1st :: (a, b, c, d, e, f, g) -> a
+g1st (x,_,_,_,_,_,_) = x
 
-g2nd :: (a, b, c, d, e) -> b
-g2nd (_,x,_,_,_) = x
+g2nd :: (a, b, c, d, e, f, g) -> b
+g2nd (_,x,_,_,_,_,_) = x
 
-g3rd :: (a, b, c, d, e) -> c
-g3rd (_,_,x,_,_) = x
+g3rd :: (a, b, c, d, e, f, g) -> c
+g3rd (_,_,x,_,_,_,_) = x
 
-g4th :: (a, b, c, d, e) -> d
-g4th (_,_,_,x,_) = x
+g4th :: (a, b, c, d, e, f, g) -> d
+g4th (_,_,_,x,_,_,_) = x
 
-g5th  :: (a, b, c, d, e) -> e
-g5th (_,_,_,_,x) = x
+g5th  :: (a, b, c, d, e, f, g) -> e
+g5th (_,_,_,_,x,_,_) = x
 
 -- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
@@ -81,8 +88,105 @@ inString [] = []
 inString ('\"':xs) = '\"' : stripComments xs
 inString (x:xs) = x : inString xs
 
--- filter
+nTimes :: Int -> (a -> a) -> a -> a
+nTimes n f x = iterate f x !! max 0 n
 
+-- Parse all commit data files.
+parseAllCommitsFiles :: [String] -> [(String, String)] -> IO [(String, String)]
+parseAllCommitsFiles [] acc     = return acc
+parseAllCommitsFiles (f:fs) acc = do
+  file <- readFileSafe f
+  let x = parseCommit (last $ map Txt.unpack (Txt.lines file))
+  parseAllCommitsFiles fs (acc ++ [x])
+  where
+    -- Parse single file.
+    parseCommitsFile :: [String] -> [(String, String)] -> [(String, String)]
+    parseCommitsFile []     acc = acc
+    parseCommitsFile (c:cs) acc = do
+      let x = parseCommit c
+      parseCommitsFile cs (acc ++ [x])
+    -- Parse individual commit line from file.
+--    parseCommit :: String -> (String, String)
+--    parseCommit commit = let list = L.groupBy (\a b -> b /= ',') commit in
+--                         (head list, head (tail list) ++ (head $ tail $ 
+--                            L.groupBy (\a b -> b /= ' ') $ head (((tail list)))))
+    parseCommit :: String -> (String, String)
+    parseCommit commit = let list = splitOn "," commit in
+                         (head list, nTimes 6 init $ tail $ head (tail list))
+
+computeAllBasicHashScores :: [String] -> [(String, String, String)] -> IO [(String, String, String)]
+computeAllBasicHashScores [] acc = return acc
+computeAllBasicHashScores (f:fs) acc = do
+  file <- readFileSafe f
+  let x = parseBasicFile (map Txt.unpack (Txt.lines file)) []
+  --print x
+  computeAllBasicHashScores fs (acc ++ x)
+  where
+    parseBasicFile :: [String] -> [(String, String, String)] -> [(String, String, String)]
+    parseBasicFile []     acc = acc
+    parseBasicFile (x:xs) acc = do
+      let score = computeScoreBasic x
+      parseBasicFile xs (acc ++ [score])
+    computeScoreBasic :: String -> (String, String, String)
+    computeScoreBasic line = let basic = splitOn "," line in
+                                 ( head basic
+                                 , head (tail basic)
+                                 , show $ ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
+                                  / 2))
+      where
+        first  x = read (head (tail (tail x))) :: Float
+        second x = read (head (tail (tail (tail x)))) :: Float
+        same   x = read (head (tail (tail (tail (tail x))))) :: Float
+
+computeAllParseTreeScores :: [String] -> [(String, String, String)] -> IO [(String, String, String)]
+computeAllParseTreeScores [] acc = return acc
+computeAllParseTreeScores (f:fs) acc = do
+  file <- readFileSafe f
+  let x = parseFile (map Txt.unpack (Txt.lines file)) []
+  computeAllParseTreeScores fs (acc ++ x)
+  where
+    parseFile :: [String] -> [(String, String, String)] -> [(String, String, String)]
+    parseFile []     acc = acc
+    parseFile (x:xs) acc = do
+      let score = computeScore x
+      parseFile xs (acc ++ [score])
+    computeScore :: String -> (String, String, String)
+    computeScore line = let basic = splitOn "," line in
+                                 ( head basic
+                                 , head (tail basic)
+                                 , show $ ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
+                                  / 2))
+      where
+        first  x = read (head (tail (tail x))) :: Float
+        second x = read (head (tail (tail (tail x)))) :: Float
+        same   x = read (head (tail (tail (tail (tail x))))) :: Float
+
+generateScoreData :: IO ()
+generateScoreData = do
+  basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
+      --"/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic1/"
+      "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
+  basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
+      --"/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic2/"
+      "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
+  parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
+      --"/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/parse_trees/"
+      "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees"
+  commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
+      --"/carc/scratch/projects/bridges2016099/commit_history/"
+      "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history"
+  --print $ map takeBaseName basic1
+  commits     <- parseAllCommitsFiles commitHist []
+  --print basic1
+  basicHashes1 <- computeAllBasicHashScores basic1 []
+  basicHashes2 <- computeAllBasicHashScores basic2 []
+  parseTrees   <- computeAllParseTreeScores basic2 []
+  print basicHashes1
+  print basicHashes2
 
 
 filterFileType :: String -> [String] -> [String]
@@ -165,29 +269,23 @@ generateFileList repo = do
 -- Generates list of repos in ${DIR}/coins excluding "-tags" directories
 generateRepoList :: IO [FilePath]
 generateRepoList =
-  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  --traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
+  traverseDir2 (not . L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] coins_loc
 
 generateRepoTags :: IO [FilePath]
 generateRepoTags =
-  traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/wheeler/scratch/khaskins/coins/"
-  --traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] "/home/ghostbird/Hacking/cybersecurity/coins/"
+  traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f : fs)) [] coins_loc
 
 -- Generates list of repos in ${DIR}/coins including only "-tags" directories
 generateRepoTagList :: IO [FilePath]
 generateRepoTagList = do
-  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f:fs)) []
-                            --"/home/ghostbird/Hacking/cybersecurity/coins/"
-                            "/wheeler/scratch/khaskins/coins/"
+  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> pure (f:fs)) [] coins_loc
   taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
   return $ concat taglist
 
 generateRepoTagListBitcoin :: IO [FilePath]
 generateRepoTagListBitcoin = do
   dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> if takeBaseName f == "bitcoin" then 
-                                                              pure (f:fs) else pure fs) []
-                            --"/home/ghostbird/Hacking/cybersecurity/coins/"
-                            "/wheeler/scratch/khaskins/coins/"
+                                                              pure (f:fs) else pure fs) [] coins_loc
   taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
   return $ concat taglist
 
@@ -199,13 +297,9 @@ generateRepoTagListOld = do
                                                            || takeBaseName f == "namecoin-core"
                                                            || takeBaseName f == "dogecoin"
                                                            then 
-                                                              pure (f:fs) else pure fs) []
-                            --"/home/ghostbird/Hacking/cybersecurity/coins/"
-                            "/wheeler/scratch/khaskins/coins/"
+                                                              pure (f:fs) else pure fs) [] coins_loc
   taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
   return $ concat taglist
-
-
 
 -- Split list by integer N into sublists.
 splitListByN :: [a] -> Int -> [[a]]
@@ -233,7 +327,7 @@ generateTestSet set1 set2 subset jobs = genTestSetHelper set1 set2 subset jobs [
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
-  let str = "rm -rf /wheeler/scratch/khaskins/coins/" ++ repo
+  let str = "rm -rf " ++ coins_loc ++ repo
   (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
   print $ "Removed " ++ repo
 
@@ -259,7 +353,7 @@ pruneRepos (x:xs) = do
 -- NEW :: Takes a tuple of ("Coin", "repo-link") and clones repo.
 cloneRepo :: (String, String) -> IO ()
 cloneRepo coin = do
-  let str = "git clone --recursive " ++ snd coin ++ " /wheeler/scratch/khaskins/coins/" ++ fst coin
+  let str = "git clone --recursive " ++ snd coin ++ " " ++ coins_loc ++ fst coin
   (errc, out', err') <- readCreateProcessWithExitCode (shell str) []
   print $ fst coin
 
@@ -274,9 +368,7 @@ cloneRepos (x:xs) = do
 gatherCommitHistory :: String -> IO ()
 gatherCommitHistory repo = do
   let str1 = "cd " ++ repo ++ " ; "
-  let str3 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
-  --let str3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
-  let str2 = "git log --pretty=\"%h, %cd\" >> " ++ str3 ++ takeBaseName repo ++ ".csv"
+  let str2 = "git log --pretty=\"%h, %cd\" >> " ++ commit_loc ++ takeBaseName repo ++ ".csv"
   (errc, out', err') <- readCreateProcessWithExitCode (shell (str1 ++ str2)) []
   putStrLn $ "Gathered commit history for " ++ takeBaseName repo
 
@@ -472,7 +564,8 @@ buildRepos (x:xs) acc = do
 
 writeDataToFile :: String -> String -> String -> String -> String -> IO ()
 writeDataToFile repo1 repo2 dat hypothesis experiment = do
-  let fileNew = "data_final/" ++ hypothesis ++ "/" ++ experiment ++ "/" ++ (repo1 ++ "-" ++ repo2) ++ ".csv"
+  let fileNew = "/carc/scratch/projects/bridges2016099/data_final/" ++ hypothesis ++ "/" ++ experiment ++ "/" 
+                                                                    ++ (repo1 ++ "-" ++ repo2) ++ ".csv"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew AppendMode
   hPutStr h dat
@@ -502,6 +595,16 @@ convertToCSVLine (a, b, c, d, e) = a ++ "," ++
                                    show c ++ "," ++
                                    show d ++ "," ++
                                    show e ++ "\n"
+
+convertToCSVLine7 :: (String, String, String, String, Int, Int, Int) -> String
+convertToCSVLine7 (a, b, c, d, e, f, g) = a ++ "," ++
+                                         b ++ "," ++
+                                         c ++ "," ++
+                                         d ++ "," ++
+                                    show e ++ "," ++
+                                    show f ++ "," ++
+                                    show g ++ "\n"
+
 
 convertToCSVTwo :: String -> String -> String
 convertToCSVTwo a b = a ++ "," ++ b ++ "\n"

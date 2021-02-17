@@ -47,6 +47,40 @@ generateOutputDirectories = do
                                                            )) []
   putStrLn "Generated final data directory structure"
 
+generateOutputDirectoriesNew :: IO ()
+generateOutputDirectoriesNew = do
+  let dir1 = "mkdir /carc/scratch/projects/bridges2016099/data_final ;"
+  let dir2 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_1 ;"
+  let dir3 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_2 ;"
+  let dir4 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_3 ;"
+  let dir5 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic1 ;"
+  let dir6 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic2 ;"
+  let dir7 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_1/parse_trees ;"
+  let dir8 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_2/basic1 ;"
+  let dir9 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_2/basic2 ;"
+  let dir10 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_2/parse_trees ;"
+  let dir11 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_3/basic1 ;"
+  let dir12 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_3/basic2 ;"
+  let dir13 = "mkdir /carc/scratch/projects/bridges2016099/data_final/hypothesis_3/parse_trees ;"
+  
+  (errc, out, err) <- readCreateProcessWithExitCode (shell (dir1  ++
+                                                            dir2  ++
+                                                            dir3  ++
+                                                            dir4  ++
+                                                            dir5  ++
+                                                            dir6  ++
+                                                            dir7  ++
+                                                            dir8  ++
+                                                            dir9  ++
+                                                            dir10 ++
+                                                            dir11 ++
+                                                            dir12 ++
+                                                            dir13
+                                                           )) []
+  putStrLn "Generated final data directory structure"
+
+
+
 cleanOutputDirectories :: IO ()
 cleanOutputDirectories = do
   let dir1 = "rm -rf data_final "
