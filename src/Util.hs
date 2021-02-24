@@ -35,6 +35,8 @@ import           System.FilePath (takeExtension)
 coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
 --coins_loc = "/wheeler/scratch/khaskins/coins/"
 commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
+--data_final = "/carc/scratch/projects/bridges2016099/data_final/"
+data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
 --commit_loc = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
 --commit_loc = "/carc/scratch/projects/bridges2016099/commit_history/"
 
@@ -114,7 +116,7 @@ parseAllCommitsFiles (f:fs) acc = do
     parseCommit commit = let list = splitOn "," commit in
                          (head list, nTimes 6 init $ tail $ head (tail list))
 
-computeAllBasicHashScores :: [String] -> [(String, String, String)] -> IO [(String, String, String)]
+computeAllBasicHashScores :: [String] -> [(String, String, Float)] -> IO [(String, String, Float)]
 computeAllBasicHashScores [] acc = return acc
 computeAllBasicHashScores (f:fs) acc = do
   file <- readFileSafe f
@@ -122,44 +124,79 @@ computeAllBasicHashScores (f:fs) acc = do
   --print x
   computeAllBasicHashScores fs (acc ++ x)
   where
-    parseBasicFile :: [String] -> [(String, String, String)] -> [(String, String, String)]
+    parseBasicFile :: [String] -> [(String, String, Float)] -> [(String, String, Float)]
     parseBasicFile []     acc = acc
     parseBasicFile (x:xs) acc = do
       let score = computeScoreBasic x
       parseBasicFile xs (acc ++ [score])
-    computeScoreBasic :: String -> (String, String, String)
+    computeScoreBasic :: String -> (String, String, Float)
     computeScoreBasic line = let basic = splitOn "," line in
                                  ( head basic
                                  , head (tail basic)
-                                 , show $ ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
+--                                 ,)
+                                 , ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
                                   / 2))
       where
         first  x = read (head (tail (tail x))) :: Float
         second x = read (head (tail (tail (tail x)))) :: Float
         same   x = read (head (tail (tail (tail (tail x))))) :: Float
 
-computeAllParseTreeScores :: [String] -> [(String, String, String)] -> IO [(String, String, String)]
+computeAllParseTreeScores :: [String] -> [(String, String, Float)] -> IO [(String, String, Float)]
 computeAllParseTreeScores [] acc = return acc
 computeAllParseTreeScores (f:fs) acc = do
   file <- readFileSafe f
-  let x = parseFile (map Txt.unpack (Txt.lines file)) []
-  computeAllParseTreeScores fs (acc ++ x)
+  let x = parseFile (map Txt.unpack (Txt.lines file)) [] 
+  computeAllParseTreeScores fs (acc ++ [(first  $ head x
+                                       , second $ head x
+                                       , (foldr (+) 0 (map third x)) / (fromIntegral $ length x :: Float))])
   where
-    parseFile :: [String] -> [(String, String, String)] -> [(String, String, String)]
+    parseFile :: [String] -> [(String, String, Float)] -> [(String, String, Float)]
     parseFile []     acc = acc
     parseFile (x:xs) acc = do
       let score = computeScore x
       parseFile xs (acc ++ [score])
-    computeScore :: String -> (String, String, String)
-    computeScore line = let basic = splitOn "," line in
-                                 ( head basic
-                                 , head (tail basic)
-                                 , show $ ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
-                                  / 2))
+    computeScore :: String -> (String, String, Float)
+    computeScore line = let tree = splitOn "," line in
+                                 ( head tree
+                                 , head (tail tree)
+                                 , if (first tree) == (same tree) then (1.0) else
+                                     if (second tree) == (same tree) then (1.0) else
+                                       if (same tree) >= (first tree) - 20 then (1.0) else
+                                       if (same tree) >= (second tree) - 20 then (1.0) else
+                                       if (first tree) < (second tree) 
+                                          && (first tree) < (same tree) 
+                                          then (first tree) / (same tree) else
+                                            if (second tree) < (first tree) 
+                                              && (second tree) < (same tree) 
+                                              then (second tree) / (same tree) else (0.0)) 
       where
-        first  x = read (head (tail (tail x))) :: Float
-        second x = read (head (tail (tail (tail x)))) :: Float
-        same   x = read (head (tail (tail (tail (tail x))))) :: Float
+        first  x = read (head (tail (tail (tail (tail x))))) :: Float
+        second x = read (head (tail (tail (tail (tail (tail x)))))) :: Float
+        same   x = read (head (tail (tail (tail (tail (tail (tail x))))))) :: Float
+
+-- Aggregate all data
+zipData :: [(String, String, Float)] 
+        -> [(String, String, Float)] 
+        -> [(String, String, Float)] 
+        -> [(String, String)]
+        -> [(String, String, String, String, String, String, Float, Float, Float)]
+        -> [(String, String, String, String, String, String, Float, Float, Float)]
+zipData []          []          []       []              acc = acc
+zipData _           _           []       _               acc = acc
+zipData (b1:basic1) (b2:basic2) (a:asts) (c1:c2:commits) acc = do
+  if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
+    (second b1) == (second b2) && (second b2) == (second a) 
+                                          then zipData basic1 basic2 asts commits (acc ++ [(first b1
+                                                                                          , second b1
+                                                                                          , snd c1
+                                                                                          , snd c2
+                                                                                          , fst c1
+                                                                                          , fst c2
+                                                                                          , third b1
+                                                                                          , third b2
+                                                                                          , third a
+                                                                                          )])
+  else zipData (b1:basic1) (b2:basic2) (asts) (c1:c2:commits) acc
 
 generateScoreData :: IO ()
 generateScoreData = do
@@ -184,9 +221,13 @@ generateScoreData = do
   --print basic1
   basicHashes1 <- computeAllBasicHashScores basic1 []
   basicHashes2 <- computeAllBasicHashScores basic2 []
-  parseTrees   <- computeAllParseTreeScores basic2 []
+  parseTrees1  <- computeAllParseTreeScores parseTrees []
+  let finalData = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+  print commits
   print basicHashes1
   print basicHashes2
+  print parseTrees1
+  print finalData
 
 
 filterFileType :: String -> [String] -> [String]
@@ -564,8 +605,8 @@ buildRepos (x:xs) acc = do
 
 writeDataToFile :: String -> String -> String -> String -> String -> IO ()
 writeDataToFile repo1 repo2 dat hypothesis experiment = do
-  let fileNew = "/carc/scratch/projects/bridges2016099/data_final/" ++ hypothesis ++ "/" ++ experiment ++ "/" 
-                                                                    ++ (repo1 ++ "-" ++ repo2) ++ ".csv"
+  let fileNew =  data_final ++ hypothesis ++ "/" ++ experiment ++ "/" 
+                            ++ (repo1 ++ "-" ++ repo2) ++ ".csv"
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew AppendMode
   hPutStr h dat
