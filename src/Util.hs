@@ -34,9 +34,9 @@ import           System.FilePath (takeExtension)
 
 coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
 --coins_loc = "/wheeler/scratch/khaskins/coins/"
-commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
---data_final = "/carc/scratch/projects/bridges2016099/data_final/"
 data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
+--data_final = "/carc/scratch/projects/bridges2016099/data_final/"
+commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
 --commit_loc = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
 --commit_loc = "/carc/scratch/projects/bridges2016099/commit_history/"
 
@@ -67,6 +67,12 @@ g4th (_,_,_,x,_,_,_) = x
 g5th  :: (a, b, c, d, e, f, g) -> e
 g5th (_,_,_,_,x,_,_) = x
 
+get1st :: (a, b, c, d, e, f, g, h, i) -> a
+get1st (x,_,_,_,_,_,_,_,_) = x
+
+get2nd :: (a, b, c, d, e, f, g, h, i) -> b
+get2nd (_,x,_,_,_,_,_,_,_) = x
+
 -- C style comment removal :: https://stackoverflow.com/questions/7904805/haskell-program-to-remove-comments
 stripComments :: String -> String
 stripComments [] = []
@@ -94,27 +100,29 @@ nTimes :: Int -> (a -> a) -> a -> a
 nTimes n f x = iterate f x !! max 0 n
 
 -- Parse all commit data files.
-parseAllCommitsFiles :: [String] -> [(String, String)] -> IO [(String, String)]
-parseAllCommitsFiles [] acc     = return acc
-parseAllCommitsFiles (f:fs) acc = do
+parseAllCommitFiles :: [String] -> [(String, String, String)] -> IO [(String, String, String)]
+parseAllCommitFiles [] acc     = return acc
+parseAllCommitFiles (f:fs) acc = do
   file <- readFileSafe f
-  let x = parseCommit (last $ map Txt.unpack (Txt.lines file))
-  parseAllCommitsFiles fs (acc ++ [x])
+  --print (head $ map Txt.unpack (Txt.lines file))
+  let x = parseCommit (head $ map Txt.unpack (Txt.lines file)) (last $ map Txt.unpack (Txt.lines file))
+  print (head $ map Txt.unpack (Txt.lines file))
+  parseAllCommitFiles fs (acc ++ [x])
   where
     -- Parse single file.
-    parseCommitsFile :: [String] -> [(String, String)] -> [(String, String)]
-    parseCommitsFile []     acc = acc
-    parseCommitsFile (c:cs) acc = do
-      let x = parseCommit c
-      parseCommitsFile cs (acc ++ [x])
+    parseCommitsFile :: [String] -> String -> [(String, String, String)] -> [(String, String, String)]
+    parseCommitsFile []     coin acc = acc
+    parseCommitsFile (c:cs) coin acc = do
+      let x = parseCommit c coin
+      parseCommitsFile cs coin (acc ++ [x])
     -- Parse individual commit line from file.
 --    parseCommit :: String -> (String, String)
 --    parseCommit commit = let list = L.groupBy (\a b -> b /= ',') commit in
 --                         (head list, head (tail list) ++ (head $ tail $ 
 --                            L.groupBy (\a b -> b /= ' ') $ head (((tail list)))))
-    parseCommit :: String -> (String, String)
-    parseCommit commit = let list = splitOn "," commit in
-                         (head list, nTimes 6 init $ tail $ head (tail list))
+    parseCommit :: String -> String -> (String, String, String)
+    parseCommit coin commit = let list = splitOn "," commit in
+                         (coin, head list, nTimes 6 init $ tail $ head (tail list))
 
 computeAllBasicHashScores :: [String] -> [(String, String, Float)] -> IO [(String, String, Float)]
 computeAllBasicHashScores [] acc = return acc
@@ -133,9 +141,11 @@ computeAllBasicHashScores (f:fs) acc = do
     computeScoreBasic line = let basic = splitOn "," line in
                                  ( head basic
                                  , head (tail basic)
---                                 ,)
-                                 , ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
-                                  / 2))
+                                 , if (first basic) < (second basic)
+                                     then (same basic) / (first basic)
+                                       else (same basic) / (second basic))
+                                 --, ((((same basic) / (first  basic)) + ((same basic) / (second basic))) 
+                                 -- / 2))
       where
         first  x = read (head (tail (tail x))) :: Float
         second x = read (head (tail (tail (tail x)))) :: Float
@@ -146,9 +156,14 @@ computeAllParseTreeScores [] acc = return acc
 computeAllParseTreeScores (f:fs) acc = do
   file <- readFileSafe f
   let x = parseFile (map Txt.unpack (Txt.lines file)) [] 
-  computeAllParseTreeScores fs (acc ++ [(first  $ head x
-                                       , second $ head x
-                                       , (foldr (+) 0 (map third x)) / (fromIntegral $ length x :: Float))])
+  if length x /= 0 then  
+    computeAllParseTreeScores fs (acc ++ [(first  $ head x
+                                         , second $ head x
+                                         , (foldr (+) 0 (map third x)) / (fromIntegral $ length x :: Float))])
+    else 
+    computeAllParseTreeScores fs (acc ++ [(first  $ head x
+                                         , second $ head x
+                                         , (foldr (+) 0 (map third x)) / (fromIntegral $ 1 :: Float))])
   where
     parseFile :: [String] -> [(String, String, Float)] -> [(String, String, Float)]
     parseFile []     acc = acc
@@ -159,16 +174,9 @@ computeAllParseTreeScores (f:fs) acc = do
     computeScore line = let tree = splitOn "," line in
                                  ( head tree
                                  , head (tail tree)
-                                 , if (first tree) == (same tree) then (1.0) else
-                                     if (second tree) == (same tree) then (1.0) else
-                                       if (same tree) >= (first tree) - 20 then (1.0) else
-                                       if (same tree) >= (second tree) - 20 then (1.0) else
-                                       if (first tree) < (second tree) 
-                                          && (first tree) < (same tree) 
-                                          then (first tree) / (same tree) else
-                                            if (second tree) < (first tree) 
-                                              && (second tree) < (same tree) 
-                                              then (second tree) / (same tree) else (0.0)) 
+                                 , if (first tree) < (second tree) 
+                                     then (same tree) / (first tree) else
+                                       (same tree) / (second tree))
       where
         first  x = read (head (tail (tail (tail (tail x))))) :: Float
         second x = read (head (tail (tail (tail (tail (tail x)))))) :: Float
@@ -178,25 +186,33 @@ computeAllParseTreeScores (f:fs) acc = do
 zipData :: [(String, String, Float)] 
         -> [(String, String, Float)] 
         -> [(String, String, Float)] 
-        -> [(String, String)]
+        -> [(String, String, String)]
         -> [(String, String, String, String, String, String, Float, Float, Float)]
         -> [(String, String, String, String, String, String, Float, Float, Float)]
 zipData []          []          []       []              acc = acc
+zipData []          _           _        _               acc = acc
+zipData _           []          _        _               acc = acc
 zipData _           _           []       _               acc = acc
-zipData (b1:basic1) (b2:basic2) (a:asts) (c1:c2:commits) acc = do
+zipData _           _           _        []              acc = acc
+zipData []          []          _        _               acc = acc
+zipData _           []          []       _               acc = acc
+zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
+  let c1 = foldr (\acc x -> if first b1 == first x then x else acc) ("","","") commits
+  let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
   if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
     (second b1) == (second b2) && (second b2) == (second a) 
-                                          then zipData basic1 basic2 asts commits (acc ++ [(first b1
+                                          then zipData basic1 basic2 asts (commits) (acc ++ [(first b1
                                                                                           , second b1
-                                                                                          , snd c1
-                                                                                          , snd c2
-                                                                                          , fst c1
-                                                                                          , fst c2
+                                                                                          , third c1
+                                                                                          , third c2
+                                                                                          , second c1
+                                                                                          , second c2
                                                                                           , third b1
                                                                                           , third b2
                                                                                           , third a
                                                                                           )])
-  else zipData (b1:basic1) (b2:basic2) (asts) (c1:c2:commits) acc
+  else zipData (b1:basic1) (b2:basic2) (asts) (commits) acc
+zipData _           _           _        _               acc = acc
 
 generateScoreData :: IO ()
 generateScoreData = do
@@ -217,17 +233,19 @@ generateScoreData = do
       --"/carc/scratch/projects/bridges2016099/commit_history/"
       "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history"
   --print $ map takeBaseName basic1
-  commits     <- parseAllCommitsFiles commitHist []
+  commits     <- parseAllCommitFiles commitHist []
   --print basic1
   basicHashes1 <- computeAllBasicHashScores basic1 []
   basicHashes2 <- computeAllBasicHashScores basic2 []
   parseTrees1  <- computeAllParseTreeScores parseTrees []
   let finalData = zipData basicHashes1 basicHashes2 parseTrees1 commits []
-  print commits
-  print basicHashes1
-  print basicHashes2
-  print parseTrees1
-  print finalData
+  let stringData = map convertToCSVLine9 finalData
+  writeFinalDataToFile stringData
+  --print commits
+  --print basicHashes1
+  --print basicHashes2
+  --print parseTrees1
+  --print finalData
 
 
 filterFileType :: String -> [String] -> [String]
@@ -409,7 +427,9 @@ cloneRepos (x:xs) = do
 gatherCommitHistory :: String -> IO ()
 gatherCommitHistory repo = do
   let str1 = "cd " ++ repo ++ " ; "
-  let str2 = "git log --pretty=\"%h, %cd\" >> " ++ commit_loc ++ takeBaseName repo ++ ".csv"
+  let str2 = "echo " ++ takeBaseName repo ++ " >> " ++ commit_loc 
+                     ++ takeBaseName repo ++ ".csv && git log --pretty=\"%h, %cd\" >> " ++ commit_loc 
+                     ++ takeBaseName repo ++ ".csv"
   (errc, out', err') <- readCreateProcessWithExitCode (shell (str1 ++ str2)) []
   putStrLn $ "Gathered commit history for " ++ takeBaseName repo
 
@@ -603,6 +623,18 @@ buildRepos (x:xs) acc = do
   --mapM (\y -> (print ("first repo: " ++ x ++ " second repo: " ++ y))) xs
   buildRepos xs (acc ++ m)
 
+
+
+writeFinalDataToFile :: [String] -> IO ()
+writeFinalDataToFile dat = do
+  let fileNew =  data_final ++ "data_final.csv"
+  let dataFinal = foldr (++) "" dat
+  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
+  h <- openFile fileNew AppendMode
+  hPutStr h dataFinal
+  hClose h
+
+
 writeDataToFile :: String -> String -> String -> String -> String -> IO ()
 writeDataToFile repo1 repo2 dat hypothesis experiment = do
   let fileNew =  data_final ++ hypothesis ++ "/" ++ experiment ++ "/" 
@@ -639,13 +671,23 @@ convertToCSVLine (a, b, c, d, e) = a ++ "," ++
 
 convertToCSVLine7 :: (String, String, String, String, Int, Int, Int) -> String
 convertToCSVLine7 (a, b, c, d, e, f, g) = a ++ "," ++
-                                         b ++ "," ++
-                                         c ++ "," ++
-                                         d ++ "," ++
-                                    show e ++ "," ++
-                                    show f ++ "," ++
-                                    show g ++ "\n"
+                                          b ++ "," ++
+                                          c ++ "," ++
+                                          d ++ "," ++
+                                     show e ++ "," ++
+                                     show f ++ "," ++
+                                     show g ++ "\n"
 
+convertToCSVLine9 :: (String, String, String, String, String, String, Float, Float, Float) -> String
+convertToCSVLine9 (a,b,c,d,e,f,g,h,i) = a ++ "," ++
+                                        b ++ "," ++
+                                        c ++ "," ++
+                                        d ++ "," ++
+                                        e ++ "," ++
+                                        f ++ "," ++
+                                   show g ++ "," ++
+                                   show h ++ "," ++
+                                   show i ++ "\n"
 
 convertToCSVTwo :: String -> String -> String
 convertToCSVTwo a b = a ++ "," ++ b ++ "\n"

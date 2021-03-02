@@ -37,5 +37,3 @@ if identical 1 in numerator -> put a number between zero and one in the numerato
 
 How much much more information do we get when we use the parse tree method -> how much more is shared?
 
-
-
