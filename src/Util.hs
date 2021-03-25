@@ -201,16 +201,17 @@ zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
   let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
   if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
     (second b1) == (second b2) && (second b2) == (second a) 
-                                          then zipData basic1 basic2 asts (commits) (acc ++ [(first b1
-                                                                                          , second b1
-                                                                                          , third c1
-                                                                                          , third c2
-                                                                                          , second c1
-                                                                                          , second c2
-                                                                                          , third b1
-                                                                                          , third b2
-                                                                                          , third a
-                                                                                          )])
+                                          then zipData basic1 basic2 asts (commits) (acc ++ 
+                                                 [(first b1
+                                                 , second b1
+                                                 , third c1
+                                                 , third c2
+                                                 , second c1
+                                                 , second c2
+                                                 , third b1
+                                                 , third b2
+                                                 , third a
+                                                 )])
   else zipData (b1:basic1) (b2:basic2) (asts) (commits) acc
 zipData _           _           _        _               acc = acc
 
@@ -448,6 +449,8 @@ performMultiple (x:xs) fun = do
   fun x
   performMultiple xs fun
 
+-- Gather all the tags for a given Git repository.
+-- (String: ,String: ,String: )
 getTags :: String -> IO [(String, String, String)]
 getTags repo = do
   let str = "cd " ++ repo ++ " ; "
@@ -457,11 +460,13 @@ getTags repo = do
   let tuples = case length complete of
                  0 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)]
                  1 -> [(Txt.pack "", Txt.pack "1.0.0.0", repo)]
-                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") (head x), last x, repo))
+                 _ -> init $ map (\x -> (head $ Txt.splitOn (Txt.pack "\t") 
+                           (head x), last x, repo))
                            $ map (Txt.splitOn (Txt.pack "/")) complete
   let unfiltered = map (\(x, y, z) -> (Txt.unpack x, Txt.unpack y, z)) tuples --filtered
   let filtered1  = map (\(a, b, c) -> (a, filter (/= 'v') $ b, c)) unfiltered
-  let filtered2  = filter (\(i,j,k) -> foldr (\x acc -> acc && isDigit x) True $ filter (/= '.') j) filtered1
+  let filtered2  = filter (\(i,j,k) -> foldr (\x acc -> acc && isDigit x) True 
+                                       $ filter (/= '.') j) filtered1
   return $ filter (\x -> not $ L.isSuffixOf "-tags" $ third x)  filtered2
 
 --keepVersion :: String -> State String String -> Bool
@@ -473,7 +478,6 @@ keepVersions (x:xs) = do
   (oldVersion, acc) <- get
   let newVersion = addZeroes $ toInts [] (wordsWhen (=='.') $ second x)
   let version = determineVersion newVersion oldVersion x
-
   if length (first version) /= 0 then
     put (newVersion, acc ++ [version])
   else
@@ -482,8 +486,8 @@ keepVersions (x:xs) = do
   where
     toInts :: [Int] -> [String] -> [Int]
     toInts acc []     = acc
-    toInts acc (y:ys) = toInts (acc ++ [fst $ foldl (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1) [y]]) ys
-
+    toInts acc (y:ys) = toInts (acc ++ [fst $ foldl 
+                        (\(i, j) k -> ((read k :: Int) * j, j * 10)) (0, 1) [y]]) ys
     addZeroes :: [Int] -> [Int]
     addZeroes xs = case length xs of
                      0 -> xs ++ [0,0,0,0]
@@ -491,8 +495,8 @@ keepVersions (x:xs) = do
                      2 -> xs ++ [0,0]
                      3 -> xs ++ [0]
                      _ -> xs
-
-    determineVersion :: [Int] -> [Int] -> (String, String, String) -> (String, String, String)
+    determineVersion :: [Int] -> [Int] -> (String, String, String) 
+                                       -> (String, String, String)
     determineVersion xs ys version
       | head xs == head ys && head (tail xs) == head (tail ys)
                            && head (tail $ tail xs) < head (tail $ tail ys) = ("","","")

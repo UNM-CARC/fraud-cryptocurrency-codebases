@@ -37,3 +37,20 @@ if identical 1 in numerator -> put a number between zero and one in the numerato
 
 How much much more information do we get when we use the parse tree method -> how much more is shared?
 
+* Two coins which aren't the same.
+
+** Put together a DOI for our dataset
+
+Reach out to John Wheeler -> We want to preserve this repository/data. Ask about DOI at the libraries
+paper -> How did we pick tags for tagged repositories? Go into detail under dataset section: Which tags did
+we want, this is what we ended up with. -> Go into more detail about the dataset.
+
+** How do we define established?? Important!
+
+Liballprof:
+
+rank 0:
+  * MPI_Init: 140728852294056, 140728852294032, 3777967953956
+
+rank 1:
+  * MPI_Init: 140734511923112, 140734511923088, 3777967953927
