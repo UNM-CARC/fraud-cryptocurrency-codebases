@@ -49,8 +49,23 @@ main = do
       --performMultiple cloneRepo filtered
       -- Remove all repos which do not contain C++ code.
       pruneRepos filtered
-    --"1" -> do
-      
+    "1" -> do
+      let hyp    = head (tail args)
+      let subset = (read $ head (tail (tail args)) :: Int) - 1
+      let jobs   = read $ head (tail (tail (tail args))) :: Int
+      set1      <- case hyp of
+                     "1" -> generateRepoList
+                     "2" -> generateRepoList
+                     "3" -> generateRepoTagList
+                     _   -> generateRepoList
+      set2      <- case hyp of
+                     "1" -> generateRepoList
+                     "2" -> generateRepoTagListBitcoin
+                     "3" -> generateRepoTagListOld
+                     _   -> generateRepoList
+      let dat    = generateTestSet set1 set2 subset jobs
+      needs <- filterAllCompleted dat data_final_parse
+      print needs
 
     "2" ->
       -- Get all tags from every C++ repo and generate copies of each for each tag
@@ -79,12 +94,13 @@ main = do
       let dat    = generateTestSet set1 set2 subset jobs
 
       generateOutputDirectories
+      not_done <- filterAllCompleted dat data_final_parse
       -- First level of comparison: No modification to source code.
-      compareAllBasicRepos dat 0 hyp
+      --compareAllBasicRepos dat 0 hyp
       -- Second level of comparison: Remove C style comments and whitespace.
-      compareAllBasicRepos dat 1 hyp
+      --compareAllBasicRepos dat 1 hyp
       -- Compare parse trees.
-      compareAllParseTreeRepos dat hyp
+      compareAllParseTreeRepos not_done hyp
       --let str = "Hypothesis " ++ hyp ++ " Subset " ++ show subset
       --print dat
       --(errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) [] 

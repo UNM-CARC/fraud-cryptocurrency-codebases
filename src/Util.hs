@@ -36,9 +36,14 @@ coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
 --coins_loc = "/wheeler/scratch/khaskins/coins/"
 data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
 --data_final = "/carc/scratch/projects/bridges2016099/data_final/"
+data_final_basic1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
+--data_final_basic1 = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic1/"
+data_final_basic2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
+--data_final_basic2 = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic2/"
+data_final_parse = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
+-- data_final_parse = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/parse_trees/"
 commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
 --commit_loc = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
---commit_loc = "/carc/scratch/projects/bridges2016099/commit_history/"
 
 -- Special State type used when filtering verions/tags.
 type KeepState = ([Int], [(String, String, String)])
@@ -218,15 +223,12 @@ zipData _           _           _        _               acc = acc
 generateScoreData :: IO ()
 generateScoreData = do
   basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
       --"/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic1/"
       "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
   basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
       --"/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic2/"
       "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
   parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      --"/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
       --"/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/parse_trees/"
       "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees"
   commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
@@ -248,6 +250,34 @@ generateScoreData = do
   --print parseTrees1
   --print finalData
 
+filterAllCompleted :: [(String, String)] -> FilePath -> IO [(String, String)]
+filterAllCompleted subset filePath = do
+  filelist <- traverseDir (const True) (\fs f -> pure (f:fs)) [] filePath
+  let out = filter (\(x,y) -> (takeBaseName x ++ "-" ++ 
+                               takeBaseName y) `notElem` 
+                              (map takeBaseName filelist)) subset
+  return out
+
+--filterAllCompleted :: [(String, String)] -> FilePath -> IO [(String, String)]
+--filterAllCompleted subset filePath = do
+--  filelist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] filePath
+--  helper subset filelist
+--  where
+--    helper :: [(String, String)] -> [String] ->    [(String, String)] 
+--                                             -> IO [(String, String)]
+--    helper _          [] acc = return acc
+--    helper subset (f:fs) acc = do
+--      filered <- filterCompleted subset f
+--      helper subset fs (acc ++ (filtered))
+      
+
+-- takes list of repos to compare, and filters the combinations that have already
+-- been generated.
+filterCompleted :: [(String, String)] -> String -> IO [(String, String)]
+filterCompleted subset finalDataFile = do
+  let filtered = filter (\(x,y) -> takeBaseName x ++ "-" 
+                                ++ takeBaseName y /= takeBaseName finalDataFile) subset
+  return filtered
 
 filterFileType :: String -> [String] -> [String]
 filterFileType s xs = filter (\x -> if L.isInfixOf s x then True else False) xs
@@ -321,8 +351,8 @@ filterRepoLinks repos =
 generateFileList :: String -> IO [FilePath]
 generateFileList repo = do
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) []
-  dirlist  <- traverseDir (const True) (\fs f -> pure (f : fs)) [] repo
-  let dirs     = map (++ " ") dirlist
+  filelist  <- traverseDir (const True) (\fs f -> pure (f : fs)) [] repo
+  let dirs     = map (++ " ") filelist
   let filtered = map init $ filterFileType ".cpp " dirs
   return filtered
 
