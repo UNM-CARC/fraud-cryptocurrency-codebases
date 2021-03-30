@@ -10,6 +10,30 @@ import qualified Data.Map.Strict as Map
 import qualified Data.List as L
 import           Data.Map.Strict (Map)
 
+coins_loc :: String
+coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
+--coins_loc = "/wheeler/scratch/khaskins/coins/"
+
+data_final :: String
+data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
+--data_final = "/carc/scratch/projects/bridges2016099/data_final/"
+
+data_final_basic1 :: String
+data_final_basic1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
+--data_final_basic1 = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic1/"
+
+data_final_basic2 :: String
+data_final_basic2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
+--data_final_basic2 = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic2/"
+
+data_final_parse :: String
+data_final_parse = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
+--data_final_parse = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/parse_trees/"
+
+commit_loc :: String
+commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
+--commit_loc = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
+
 filterOut :: [String]
 filterOut = [ "TypedefDecl"
             , "TypeRef"

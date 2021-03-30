@@ -47,10 +47,4 @@ we want, this is what we ended up with. -> Go into more detail about the dataset
 
 ** How do we define established?? Important!
 
-Liballprof:
 
-rank 0:
-  * MPI_Init: 140728852294056, 140728852294032, 3777967953956
-
-rank 1:
-  * MPI_Init: 140734511923112, 140734511923088, 3777967953927
