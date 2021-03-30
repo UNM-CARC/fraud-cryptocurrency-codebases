@@ -96,9 +96,9 @@ main = do
       generateOutputDirectories
       not_done <- filterAllCompleted dat data_final_parse
       -- First level of comparison: No modification to source code.
-      --compareAllBasicRepos dat 0 hyp
+      compareAllBasicRepos dat 0 hyp
       -- Second level of comparison: Remove C style comments and whitespace.
-      --compareAllBasicRepos dat 1 hyp
+      compareAllBasicRepos dat 1 hyp
       -- Compare parse trees.
       compareAllParseTreeRepos not_done hyp
       --let str = "Hypothesis " ++ hyp ++ " Subset " ++ show subset
