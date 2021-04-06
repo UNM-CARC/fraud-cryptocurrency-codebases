@@ -59,6 +59,12 @@ g4th (_,_,_,x,_,_,_) = x
 g5th  :: (a, b, c, d, e, f, g) -> e
 g5th (_,_,_,_,x,_,_) = x
 
+g6th  :: (a, b, c, d, e, f, g) -> f
+g6th (_,_,_,_,_,x,_) = x
+
+g7th  :: (a, b, c, d, e, f, g) -> g
+g7th (_,_,_,_,_,_,x) = x
+
 get1st :: (a, b, c, d, e, f, g, h, i) -> a
 get1st (x,_,_,_,_,_,_,_,_) = x
 

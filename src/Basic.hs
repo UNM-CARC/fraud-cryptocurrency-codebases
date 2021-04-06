@@ -91,11 +91,10 @@ writeBasicFile repo1 repo2 dat hypothesis experiment =
     writeDataToFile (takeBaseName repo1) (takeBaseName repo2) dat 
                     hypothesis experiment
 
-convertToBasicCSVLine :: String -> String -> String -> String 
-                         -> Int ->    Int ->    Int -> String
+convertToBasicCSVLine :: String -> String -> Int -> Int -> Int -> String
 convertToBasicCSVLine repo1 repo2 lengthA lengthB overlap =
-  if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" 
-    && "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
+  if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" && 
+     "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
     -- including the actual name of the coin.
     convertToCSVLine (((filter (/= '/') $ last $ init $ splitPath repo1) 

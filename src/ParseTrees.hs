@@ -105,7 +105,7 @@ compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
         helper fs ms repo1 repo2 (acc ++ (concat fun))
 
 writeParseRepos :: String -> String -> String -> String -> String -> IO ()
-writeParseRepos repo1 repo2 dat hypothesis experiment =
+writeParseRepos repo1 repo2 out2 hypothesis experiment =
   if takeBaseName repo2 `L.intersect` "-tags" == "-tags" 
     && takeBaseName repo1 `L.intersect` "-tags" == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
@@ -127,28 +127,29 @@ writeParseRepos repo1 repo2 dat hypothesis experiment =
     writeDataToFile (takeBaseName repo1) (takeBaseName repo2) 
                     out2 hypothesis experiment
 
-convertParseTreeToCSVLine7 :: String -> String -> String -> Int -> Int -> Int -> String
-convertParseTreeToCSVLine7 repo1 repo2 lengthA lengthB overlap =
-  if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags"
-  ¦ && "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
-  ¦ -- if both repo 1 and 2 are tagged repos, build new name for writing
-  ¦ -- including the actual name of the coin.
-  ¦ convertToCSVLine7 (((filter (/= '/') $ last $ init $ splitPath repo1)
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ++ "-" ++
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ (filter (/= '/') $ last $ splitPath repo1)),
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ((filter (/= '/') $ last $ init $ splitPath repo2)
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ++ "-" ++
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ (filter (/= '/') $ last $ splitPath repo2)),
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ lengthA, lengthB, overlap)
-  else if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" then
-  ¦ convertToCSVLine7 ((takeBaseName repo1),
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ((filter (/= '/') $ last $ init $ splitPath repo2)
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ++ "-" ++
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ (filter (/= '/') $ last $ splitPath repo2)),
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ lengthA, lengthB, overlap)
+convertParseTreeToCSVLine7 :: (String, String, String, String 
+                              , Int  , Int   , Int) -> String
+convertParseTreeToCSVLine7 dat =
+  if "-tags" `L.intersect` (last $ init $ splitPath $ g2nd dat) == "-tags" && 
+     "-tags" `L.intersect` (last $ init $ splitPath $ g1st dat) == "-tags" then
+    -- if both repo 1 and 2 are tagged repos, build new name for writing
+    -- including the actual name of the coin.
+    convertToCSVLine7 (((L.filter (/= '/') $ last $ init $ splitPath $ g1st dat)
+                    ++ "-" ++
+                    (L.filter (/= '/') $ last $ splitPath $ g1st dat)),
+                    ((L.filter (/= '/') $ last $ init $ splitPath $ g2nd dat)
+                    ++ "-" ++
+                    (L.filter (/= '/') $ last $ splitPath $ g2nd dat)),
+                    g3rd dat, g4th dat, g5th dat, g6th dat, g7th dat)
+  else if "-tags" `L.intersect` (last $ init $ splitPath $ g2nd dat) == "-tags" then
+    convertToCSVLine7 ((takeBaseName $ g1st dat),
+                    ((L.filter (/= '/') $ last $ init $ splitPath $ g2nd dat)
+                    ++ "-" ++
+                    (L.filter (/= '/') $ last $ splitPath $ g2nd dat)),
+                    g3rd dat, g4th dat, g5th dat, g6th dat, g7th dat)
   else
-  ¦ convertToCSVLine7 ((takeBaseName repo1), (takeBaseName repo2),
-  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ lengthA, lengthB, overlap)
+    convertToCSVLine7 ((takeBaseName $ g1st dat), (takeBaseName $ g2nd dat),
+                    g3rd dat, g4th dat, g5th dat, g6th dat, g7th dat)
 
 compareParseTreeRepos :: String -> String -> String -> String -> IO ()
 compareParseTreeRepos repo1 repo2 hypothesis experiment = do
@@ -163,7 +164,7 @@ compareParseTreeRepos repo1 repo2 hypothesis experiment = do
   out    <- compareAllParseTrees subset1 subset2 repo1 repo2
   let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
   --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
-  let out2 = concatMap convertToCSVLine7 test
+  let out2 = concatMap convertParseTreeToCSVLine7 test
   --writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
   writeParseRepos repo1 repo2 out2 hypothesis experiment
 
