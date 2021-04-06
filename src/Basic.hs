@@ -67,6 +67,53 @@ compareCoinHashes (x:xs) ys lx ly acc = compareCoinHashes xs ys lx ly
                              head x then (y : fst a, snd a + 1)
                                     else (fst a, snd a)) ([], 0) ys)
 
+
+writeBasicFile :: String -> String -> String -> String -> String -> IO ()
+writeBasicFile repo1 repo2 dat hypothesis experiment =
+  if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" 
+    && "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
+    -- if both repo 1 and 2 are tagged repos, build new name for writing
+    -- including the actual name of the coin.
+    writeDataToFile ((filter (/= '/') $ last $ init $ splitPath repo1) 
+                    ++ "-" ++ 
+                    (filter (/= '/') $ last $ splitPath repo1)) 
+                    ((filter (/= '/') $ last $ init $ splitPath repo2) 
+                    ++ "-" ++ 
+                    (filter (/= '/') $ last $ splitPath repo2))
+                    dat hypothesis experiment
+  else if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" then
+    writeDataToFile (takeBaseName repo1) 
+                    ((filter (/= '/') $ last $ init $ splitPath repo2)
+                    ++ "-" ++ 
+                    (filter (/= '/') $ last $ splitPath repo2))
+                    dat hypothesis experiment
+  else
+    writeDataToFile (takeBaseName repo1) (takeBaseName repo2) dat 
+                    hypothesis experiment
+
+convertToBasicCSVLine :: String -> String -> Int -> Int -> Int -> String
+convertToBasicCSVLine repo1 repo2 lengthA lengthB overlap =
+  if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" 
+    && "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
+    -- if both repo 1 and 2 are tagged repos, build new name for writing
+    -- including the actual name of the coin.
+    convertToCSVLine (((filter (/= '/') $ last $ init $ splitPath repo1) 
+                    ++ "-" ++ 
+                    (filter (/= '/') $ last $ splitPath repo1)),
+                    ((filter (/= '/') $ last $ init $ splitPath repo2) 
+                    ++ "-" ++ 
+                    (filter (/= '/') $ last $ splitPath repo2)),
+                    lengthA, lengthB, overlap)
+  else if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" then
+    convertToCSVLine ((takeBaseName repo1),
+                    ((filter (/= '/') $ last $ init $ splitPath repo2)
+                    ++ "-" ++ 
+                    (filter (/= '/') $ last $ splitPath repo2)),
+                    lengthA, lengthB, overlap)
+  else
+    convertToCSVLine ((takeBaseName repo1), (takeBaseName repo2),
+                    lengthA, lengthB, overlap)
+
 -- Compare repositories both original and after removal of whitespace and comments.
 compareRepos :: String -> String -> Int -> String -> String -> IO ()
 compareRepos repo1 repo2 flag hypothesis experiment = do
@@ -122,8 +169,9 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
       let aa = snd yy
       let bb = fst yy
 
-      let dat = convertToCSVLine (takeBaseName repo1, takeBaseName repo2, length k1, length k2, length bb)
-      writeDataToFile (takeBaseName repo1) (takeBaseName repo2) dat hypothesis experiment
+      let dat = convertToBasicCSVLine repo1 repo2 (length k1) (length k2) (length bb)
+      --writeDataToFile (takeBaseName repo1) (takeBaseName repo2) dat hypothesis experiment
+      writeBasicFile repo1 repo2 dat hypothesis experiment
 
     -- Test preprocessed
     1 -> do
@@ -148,8 +196,28 @@ compareRepos repo1 repo2 flag hypothesis experiment = do
       let aa = snd yy
       let bb = fst yy
 
-      let dat = convertToCSVLine (takeBaseName repo1, takeBaseName repo2, length k1, length k2, length bb)
-      writeDataToFile (takeBaseName repo1) (takeBaseName repo2) dat hypothesis experiment
+      let dat = convertToBasicCSVLine repo1 repo2 (length k1) (length k2) (length bb)
+      writeBasicFile repo1 repo2 dat hypothesis experiment
+--      if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" 
+--        && "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
+--        -- if both repo 1 and 2 are tagged repos, build new name for writing
+--        -- including the actual name of the coin.
+--        writeDataToFile ((filter (/= '/') $ last $ init $ splitPath repo1) 
+--                        ++ "-" ++ 
+--                        (filter (/= '/') $ last $ splitPath repo1)) 
+--                        ((filter (/= '/') $ last $ init $ splitPath repo2) 
+--                        ++ "-" ++ 
+--                        (filter (/= '/') $ last $ splitPath repo2))
+--                        dat hypothesis experiment
+--      else if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" then
+--        writeDataToFile (takeBaseName repo1) 
+--                        ((filter (/= '/') $ last $ init $ splitPath repo2)
+--                        ++ "-" ++ 
+--                        (filter (/= '/') $ last $ splitPath repo2))
+--                        dat hypothesis experiment
+--      else
+--        writeDataToFile (takeBaseName repo1) (takeBaseName repo2) dat 
+--                        hypothesis experiment
 
     _ -> error "invalid flag value..."
 

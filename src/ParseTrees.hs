@@ -118,8 +118,28 @@ compareParseTreeRepos repo1 repo2 hypothesis experiment = do
   let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
   --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
   let out2 = concatMap convertToCSVLine7 test
-  writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
+  --writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
 
+  if takeBaseName repo2 `L.intersect` "-tags" == "-tags" 
+    && takeBaseName repo1 `L.intersect` "-tags" == "-tags" then
+    -- if both repo 1 and 2 are tagged repos, build new name for writing
+    -- including the actual name of the coin.
+    writeDataToFile ((L.filter (/= '/') $ last $ init $ splitPath repo1) 
+                    ++ "-" ++ 
+                    (L.filter (/= '/') $ last $ splitPath repo1)) 
+                    ((L.filter (/= '/') $ last $ init $ splitPath repo2) 
+                    ++ "-" ++ 
+                    (L.filter (/= '/') $ last $ splitPath repo2))
+                    out2 hypothesis experiment
+  else if takeBaseName repo2 `L.intersect` "-tags" == "-tags" then
+    writeDataToFile (takeBaseName repo1) 
+                    ((L.filter (/= '/') $ last $ init $ splitPath repo2)
+                    ++ "-" ++ 
+                    (L.filter (/= '/') $ last $ splitPath repo2))
+                    out2 hypothesis experiment
+  else
+    writeDataToFile (takeBaseName repo1) (takeBaseName repo2) 
+                    out2 hypothesis experiment
 
 --mapRepos :: [String] -> String -> String -> IO ()
 mapRepos :: [(String, String)] -> String -> String -> IO ()

@@ -116,7 +116,8 @@ parseAllCommitFiles (f:fs) acc = do
     parseCommit coin commit = let list = splitOn "," commit in
                          (coin, head list, nTimes 6 init $ tail $ head (tail list))
 
-computeAllBasicHashScores :: [String] -> [(String, String, Float)] -> IO [(String, String, Float)]
+computeAllBasicHashScores :: [String] ->    [(String, String, Float)] 
+                                      -> IO [(String, String, Float)]
 computeAllBasicHashScores [] acc = return acc
 computeAllBasicHashScores (f:fs) acc = do
   file <- readFileSafe f
@@ -143,7 +144,8 @@ computeAllBasicHashScores (f:fs) acc = do
         second x = read (head (tail (tail (tail x)))) :: Float
         same   x = read (head (tail (tail (tail (tail x))))) :: Float
 
-computeAllParseTreeScores :: [String] -> [(String, String, Float)] -> IO [(String, String, Float)]
+computeAllParseTreeScores :: [String] ->    [(String, String, Float)] 
+                                      -> IO [(String, String, Float)]
 computeAllParseTreeScores [] acc = return acc
 computeAllParseTreeScores (f:fs) acc = do
   file <- readFileSafe f
@@ -151,11 +153,13 @@ computeAllParseTreeScores (f:fs) acc = do
   if length x /= 0 then  
     computeAllParseTreeScores fs (acc ++ [(first  $ head x
                                          , second $ head x
-                                         , (foldr (+) 0 (map third x)) / (fromIntegral $ length x :: Float))])
+                                         , (foldr (+) 0 (map third x)) 
+                                            / (fromIntegral $ length x :: Float))])
     else 
     computeAllParseTreeScores fs (acc ++ [(first  $ head x
                                          , second $ head x
-                                         , (foldr (+) 0 (map third x)) / (fromIntegral $ 1 :: Float))])
+                                         , (foldr (+) 0 (map third x)) 
+                                            / (fromIntegral $ 1 :: Float))])
   where
     parseFile :: [String] -> [(String, String, Float)] -> [(String, String, Float)]
     parseFile []     acc = acc
@@ -237,6 +241,8 @@ generateScoreData = do
   --print parseTrees1
   --print finalData
 
+-- Takes list of repository pairs and filters out those which have already been
+-- created.
 filterAllCompleted :: [(String, String)] -> FilePath -> IO [(String, String)]
 filterAllCompleted subset filePath = do
   filelist <- traverseDir (const True) (\fs f -> pure (f:fs)) [] filePath
@@ -263,7 +269,7 @@ filterAllCompleted subset filePath = do
 filterCompleted :: [(String, String)] -> String -> IO [(String, String)]
 filterCompleted subset finalDataFile = do
   let filtered = filter (\(x,y) -> takeBaseName x ++ "-" 
-                                ++ takeBaseName y /= takeBaseName finalDataFile) subset
+                                ++ takeBaseName y /= takeBaseName finalDataFile) subset 
   return filtered
 
 filterFileType :: String -> [String] -> [String]
@@ -361,19 +367,20 @@ generateRepoTagList = do
 
 generateRepoTagListBitcoin :: IO [FilePath]
 generateRepoTagListBitcoin = do
-  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> if takeBaseName f == "bitcoin" then 
-                                                              pure (f:fs) else pure fs) [] coins_loc
+  dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> 
+                              if takeBaseName f == "bitcoin-tags" then 
+                                pure (f:fs) else pure fs) [] coins_loc
   taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
-  return $ concat taglist
+  return $  (concat taglist)
 
 generateRepoTagListOld :: IO [FilePath]
 generateRepoTagListOld = do
   dirlist <- traverseDir2 (L.isSuffixOf "-tags") (\fs f -> 
-                              if takeBaseName f == "bitcoin"
-                              || takeBaseName f == "litecoin"
-                              || takeBaseName f == "rippled"
-                              || takeBaseName f == "namecoin-core"
-                              || takeBaseName f == "dogecoin"
+                              if takeBaseName f == "bitcoin-tags"
+                              || takeBaseName f == "litecoin-tags"
+                              || takeBaseName f == "rippled-tags"
+                              || takeBaseName f == "namecoin-core-tags"
+                              || takeBaseName f == "dogecoin-tags"
                               then 
                                 pure (f:fs) else pure fs) [] coins_loc
   taglist <- mapM (traverseDir2 (const True) (\fs f -> pure (f:fs)) []) dirlist
