@@ -104,22 +104,8 @@ compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
       --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
         helper fs ms repo1 repo2 (acc ++ (concat fun))
 
-compareParseTreeRepos :: String -> String -> String -> String -> IO ()
-compareParseTreeRepos repo1 repo2 hypothesis experiment = do
-  dirlist1  <- generateFileList repo1 --traverseDir (const True) (\fs f -> pure (f : fs)) [] repo1
-  dirlist2  <- generateFileList repo2 --traverseDir (const True) (\fs f -> pure (f : fs)) [] repo2
-  --let dirs1   = map (++ " ") dirlist1
-  --let dirs2   = map (++ " ") dirlist2
-  --let inter1  = map init $ filterFileType ".cpp " dirs1
-  --let inter2  = map init $ filterFileType ".cpp " dirs2
-  let subset1 = L.take 200 dirlist1
-  let subset2 = L.take 200 dirlist2
-  out    <- compareAllParseTrees subset1 subset2 repo1 repo2
-  let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
-  --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
-  let out2 = concatMap convertToCSVLine7 test
-  --writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
-
+writeParseRepos :: String -> String -> String -> String -> String -> IO ()
+writeParseRepos repo1 repo2 dat hypothesis experiment =
   if takeBaseName repo2 `L.intersect` "-tags" == "-tags" 
     && takeBaseName repo1 `L.intersect` "-tags" == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
@@ -140,6 +126,46 @@ compareParseTreeRepos repo1 repo2 hypothesis experiment = do
   else
     writeDataToFile (takeBaseName repo1) (takeBaseName repo2) 
                     out2 hypothesis experiment
+
+convertParseTreeToCSVLine7 :: String -> String -> String -> Int -> Int -> Int -> String
+convertParseTreeToCSVLine7 repo1 repo2 lengthA lengthB overlap =
+  if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags"
+  ¦ && "-tags" `intersect` (last $ init $ splitPath repo1) == "-tags" then
+  ¦ -- if both repo 1 and 2 are tagged repos, build new name for writing
+  ¦ -- including the actual name of the coin.
+  ¦ convertToCSVLine7 (((filter (/= '/') $ last $ init $ splitPath repo1)
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ++ "-" ++
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ (filter (/= '/') $ last $ splitPath repo1)),
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ((filter (/= '/') $ last $ init $ splitPath repo2)
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ++ "-" ++
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ (filter (/= '/') $ last $ splitPath repo2)),
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ lengthA, lengthB, overlap)
+  else if "-tags" `intersect` (last $ init $ splitPath repo2) == "-tags" then
+  ¦ convertToCSVLine7 ((takeBaseName repo1),
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ((filter (/= '/') $ last $ init $ splitPath repo2)
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ++ "-" ++
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ (filter (/= '/') $ last $ splitPath repo2)),
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ lengthA, lengthB, overlap)
+  else
+  ¦ convertToCSVLine7 ((takeBaseName repo1), (takeBaseName repo2),
+  ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ ¦ lengthA, lengthB, overlap)
+
+compareParseTreeRepos :: String -> String -> String -> String -> IO ()
+compareParseTreeRepos repo1 repo2 hypothesis experiment = do
+  dirlist1  <- generateFileList repo1 --traverseDir (const True) (\fs f -> pure (f : fs)) [] repo1
+  dirlist2  <- generateFileList repo2 --traverseDir (const True) (\fs f -> pure (f : fs)) [] repo2
+  --let dirs1   = map (++ " ") dirlist1
+  --let dirs2   = map (++ " ") dirlist2
+  --let inter1  = map init $ filterFileType ".cpp " dirs1
+  --let inter2  = map init $ filterFileType ".cpp " dirs2
+  let subset1 = L.take 200 dirlist1
+  let subset2 = L.take 200 dirlist2
+  out    <- compareAllParseTrees subset1 subset2 repo1 repo2
+  let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
+  --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
+  let out2 = concatMap convertToCSVLine7 test
+  --writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
+  writeParseRepos repo1 repo2 out2 hypothesis experiment
 
 --mapRepos :: [String] -> String -> String -> IO ()
 mapRepos :: [(String, String)] -> String -> String -> IO ()
