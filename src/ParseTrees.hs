@@ -78,7 +78,7 @@ compareTrees file1 file2 repo1 repo2 = do
   x <- treeToString file1
   y <- treeToString file2
   let longest  = longestCommonSubstring $ x : [y]
-  let out      = (takeBaseName repo1, takeBaseName repo2, takeFileName file1, takeFileName file2, 
+  let out      = (repo1, repo2, takeFileName file1, takeFileName file2, 
                   length x, length y, length longest)
   return out
   --print $ "Size of tree x: " ++ (show $ length x)
@@ -106,8 +106,10 @@ compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
 
 writeParseRepos :: String -> String -> String -> String -> String -> IO ()
 writeParseRepos repo1 repo2 out2 hypothesis experiment =
-  if takeBaseName repo2 `L.intersect` "-tags" == "-tags" 
-    && takeBaseName repo1 `L.intersect` "-tags" == "-tags" then
+  --if takeBaseName repo2 `L.intersect` "-tags" == "-tags" 
+  --  && takeBaseName repo1 `L.intersect` "-tags" == "-tags" then
+  if "-tags" `L.intersect` (last $ init $ splitPath repo2) == "-tags" 
+    && "-tags" `L.intersect` (last $ init $ splitPath repo1) == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
     -- including the actual name of the coin.
     writeDataToFile ((L.filter (/= '/') $ last $ init $ splitPath repo1) 
@@ -127,9 +129,9 @@ writeParseRepos repo1 repo2 out2 hypothesis experiment =
     writeDataToFile (takeBaseName repo1) (takeBaseName repo2) 
                     out2 hypothesis experiment
 
-convertParseTreeToCSVLine7 :: (String, String, String, String 
-                              , Int  , Int   , Int) -> String
-convertParseTreeToCSVLine7 dat =
+convertParseTreeToCSVLine7 :: (String, String, String, 
+                               String, Int   , Int   , Int) -> String
+convertParseTreeToCSVLine7 dat = do
   if "-tags" `L.intersect` (last $ init $ splitPath $ g2nd dat) == "-tags" && 
      "-tags" `L.intersect` (last $ init $ splitPath $ g1st dat) == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
@@ -165,6 +167,7 @@ compareParseTreeRepos repo1 repo2 hypothesis experiment = do
   let test = L.foldl (\a x -> if g1st x /= "NULL" then a ++ [x] else a) [] out
   --let out2 = L.foldl (\y a -> a ++ "\n" ++ y) "" (map convertToCSVLine test)
   let out2 = concatMap convertParseTreeToCSVLine7 test
+  --out2 <- concatMap convertParseTreeToCSVLine7 test
   --writeDataToFile (takeBaseName repo1) (takeBaseName repo2) out2 hypothesis experiment
   writeParseRepos repo1 repo2 out2 hypothesis experiment
 
