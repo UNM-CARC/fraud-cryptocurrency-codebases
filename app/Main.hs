@@ -104,6 +104,7 @@ main = do
       compareAllBasicRepos not_done_basic2 1 hyp
 
       not_done_parse <- filterAllCompleted dat data_final_parse
+      --print not_done_parse
       -- Compare parse trees.
       compareAllParseTreeRepos not_done_parse hyp
       --print set2
