@@ -48,3 +48,8 @@ we want, this is what we ended up with. -> Go into more detail about the dataset
 ** How do we define established?? Important!
 
 ** Subarrays
+
+** GPU triggered partitioned communication
+** CUDA graphs
+** Persistent, partitioned, neighbor communication
+** Host-triggered communication
