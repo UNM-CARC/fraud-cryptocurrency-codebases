@@ -95,13 +95,13 @@ main = do
       let dat    = generateTestSet set1 set2 subset jobs
       --print set2
       generateOutputDirectories
-      --not_done_basic1 <- filterAllCompleted dat data_final_basic1
+      not_done_basic1 <- filterAllCompleted dat data_final_basic1
       -- First level of comparison: No modification to source code.
-      --compareAllBasicRepos not_done_basic1 0 hyp
+      compareAllBasicRepos not_done_basic1 0 hyp
 
-      --not_done_basic2 <- filterAllCompleted dat data_final_basic2
+      not_done_basic2 <- filterAllCompleted dat data_final_basic2
       -- Second level of comparison: Remove C style comments and whitespace.
-      --compareAllBasicRepos not_done_basic2 1 hyp
+      compareAllBasicRepos not_done_basic2 1 hyp
 
       not_done_parse <- filterAllCompleted dat data_final_parse
       -- Compare parse trees.
