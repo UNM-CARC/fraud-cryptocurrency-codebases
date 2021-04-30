@@ -50,23 +50,23 @@ main = do
       -- Remove all repos which do not contain C++ code.
       pruneRepos filtered
 
-    "1" -> do
-      let hyp    = head (tail args)
-      let subset = (read $ head (tail (tail args)) :: Int) - 1
-      let jobs   = read $ head (tail (tail (tail args))) :: Int
-      set1      <- case hyp of
-                     "1" -> generateRepoList
-                     "2" -> generateRepoList
-                     "3" -> generateRepoTagList
-                     _   -> generateRepoList
-      set2      <- case hyp of
-                     "1" -> generateRepoList
-                     "2" -> generateRepoTagListBitcoin
-                     "3" -> generateRepoTagListOld
-                     _   -> generateRepoList
-      let dat    = generateTestSet set1 set2 subset jobs
-      needs <- filterAllCompleted dat data_final_parse
-      print needs
+--    "1" -> do
+--      let hyp    = head (tail args)
+--      let subset = (read $ head (tail (tail args)) :: Int) - 1
+--      let jobs   = read $ head (tail (tail (tail args))) :: Int
+--      set1      <- case hyp of
+--                     "1" -> generateRepoList
+--                     "2" -> generateRepoList
+--                     "3" -> generateRepoTagList
+--                     _   -> generateRepoList
+--      set2      <- case hyp of
+--                     "1" -> generateRepoList
+--                     "2" -> generateRepoTagListBitcoin
+--                     "3" -> generateRepoTagListOld
+--                     _   -> generateRepoList
+--      let dat    = generateTestSet set1 set2 subset jobs
+--      needs <- filterAllCompleted dat data_final_parse
+--      print needs
 
     "2" ->
       -- Get all tags from every C++ repo and generate copies of each for each tag
@@ -95,22 +95,52 @@ main = do
       let dat    = generateTestSet set1 set2 subset jobs
       --print set2
       generateOutputDirectories
-      not_done_basic1 <- filterAllCompleted dat data_final_basic1
-      -- First level of comparison: No modification to source code.
-      compareAllBasicRepos not_done_basic1 0 hyp
+      if hyp == "1" then do
+        not_done_basic1 <- filterAllCompleted dat data_final_basic1_hyp1
+        --print not_done_basic1
+        -- First level of comparison: No modification to source code.
+        compareAllBasicRepos not_done_basic1 0 hyp
 
-      not_done_basic2 <- filterAllCompleted dat data_final_basic2
-      -- Second level of comparison: Remove C style comments and whitespace.
-      compareAllBasicRepos not_done_basic2 1 hyp
+        not_done_basic2 <- filterAllCompleted dat data_final_basic2_hyp1
+        --print not_done_basic2
+        -- Second level of comparison: Remove C style comments and whitespace.
+        compareAllBasicRepos not_done_basic2 1 hyp
 
-      not_done_parse <- filterAllCompleted dat data_final_parse
-      --print not_done_parse
-      -- Compare parse trees.
-      compareAllParseTreeRepos not_done_parse hyp
-      --print set2
-      --let str = "Hypothesis " ++ hyp ++ " Subset " ++ show subset
-      --print dat
-      --(errc, out, err) <- readCreateProcessWithExitCode (shell ("mkdir " ++ repo)) [] 
+        not_done_parse <- filterAllCompleted dat data_final_parse_hyp1
+        --print not_done_parse
+        -- Compare parse trees.
+        compareAllParseTreeRepos not_done_parse hyp
+      else if hyp == "2" then do
+        not_done_basic1 <- filterAllCompleted dat data_final_basic1_hyp2
+        --print not_done_basic1
+        -- First level of comparison: No modification to source code.
+        compareAllBasicRepos not_done_basic1 0 hyp
+
+        not_done_basic2 <- filterAllCompleted dat data_final_basic2_hyp2
+        --print not_done_basic2
+        -- Second level of comparison: Remove C style comments and whitespace.
+        compareAllBasicRepos not_done_basic2 1 hyp
+
+        not_done_parse <- filterAllCompleted dat data_final_parse_hyp2
+        --print not_done_parse
+        -- Compare parse trees.
+        compareAllParseTreeRepos not_done_parse hyp
+      else if hyp == "3" do
+        not_done_basic1 <- filterAllCompleted dat data_final_basic1_hyp3
+        --print not_done_basic1
+        -- First level of comparison: No modification to source code.
+        compareAllBasicRepos not_done_basic1 0 hyp
+
+        not_done_basic2 <- filterAllCompleted dat data_final_basic2_hyp3
+        --print not_done_basic2
+        -- Second level of comparison: Remove C style comments and whitespace.
+        compareAllBasicRepos not_done_basic2 1 hyp
+
+        not_done_parse <- filterAllCompleted dat data_final_parse_hyp3
+        --print not_done_parse
+        -- Compare parse trees.
+        compareAllParseTreeRepos not_done_parse hyp
+      else print "Invalid hypothesis given."
     "5" -> do
       generateScoreData
     "6" ->
