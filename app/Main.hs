@@ -125,7 +125,7 @@ main = do
         --print not_done_parse
         -- Compare parse trees.
         compareAllParseTreeRepos not_done_parse hyp
-      else if hyp == "3" do
+      else if hyp == "3" then do
         not_done_basic1 <- filterAllCompleted dat data_final_basic1_hyp3
         --print not_done_basic1
         -- First level of comparison: No modification to source code.

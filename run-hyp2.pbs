@@ -22,6 +22,6 @@ env_parallel() {
   unset PARALLEL_ENV;
 } 
 
-#parallel --jobs 160 stack run 4 1 {}
+#parallel --jobs 160 stack run 4 1 {#}
 env_parallel --joblog logfile2 --resume --wd $PBS_O_WORKDIR -j $JOBSPERNODE --sshloginfile $PBS_NODEFILE --env PATH --arg-file jobs2.txt 'stack run 4 2 {} $JOBS'
 ####################################################

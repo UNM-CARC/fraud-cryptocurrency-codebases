@@ -199,8 +199,13 @@ zipData _           _           _        []              acc = acc
 zipData []          []          _        _               acc = acc
 zipData _           []          []       _               acc = acc
 zipData _           _           []       []              acc = acc
+zipData []          _           _        []              acc = acc
+zipData []          _           []       _               acc = acc
+zipData _           []          _        []              acc = acc
 zipData []          _           []       []              acc = acc
 zipData []          []          _        []              acc = acc
+zipData []          []          []       _               acc = acc
+zipData _           []          []       []              acc = acc
 zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
   let c1 = foldr (\acc x -> if first b1 == first x then x else acc) ("","","") commits
   let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
@@ -223,31 +228,26 @@ zipData _           _           _        _               acc = acc
 generateScoreData :: IO ()
 generateScoreData = do
   basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic1/"
-      --"/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
+		data_final_basic1_hyp1
+		--data_final_basic1_hyp2
+		--data_final_basic1_hyp3
   basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/basic2/"
-      --"/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
+		data_final_basic2_hyp1
+		--data_final_basic2_hyp2
+		--data_final_basic2_hyp3
   parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      "/carc/scratch/projects/bridges2016099/data_final/hypothesis_1/parse_trees/"
-      --"/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees"
+		data_final_parse_hyp1
+		--data_final_parse_hyp2
+		--data_final_parse_hyp3
   commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-      "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
-      --"/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history"
-  --print $ map takeBaseName basic1
-  commits     <- parseAllCommitFiles commitHist []
-  --print basic1
-  basicHashes1 <- computeAllBasicHashScores basic1 []
-  basicHashes2 <- computeAllBasicHashScores basic2 []
-  parseTrees1  <- computeAllParseTreeScores parseTrees []
-  let finalData = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+		commit_loc
+  commits       <- parseAllCommitFiles commitHist []
+  basicHashes1  <- computeAllBasicHashScores basic1 []
+  basicHashes2  <- computeAllBasicHashScores basic2 []
+  parseTrees1   <- computeAllParseTreeScores parseTrees []
+  let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
   let stringData = map convertToCSVLine9 finalData
   writeFinalDataToFile stringData
-  --print commits
-  --print basicHashes1
-  --print basicHashes2
-  --print parseTrees1
-  --print finalData
 
 -- Takes list of repository pairs and filters out those which have already been
 -- created.
