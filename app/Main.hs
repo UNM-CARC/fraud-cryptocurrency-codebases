@@ -112,19 +112,19 @@ main = do
         compareAllParseTreeRepos not_done_parse hyp
       else if hyp == "2" then do
         not_done_basic1 <- filterAllCompleted dat data_final_basic1_hyp2
-        --print not_done_basic1
+        print not_done_basic1
         -- First level of comparison: No modification to source code.
-        compareAllBasicRepos not_done_basic1 0 hyp
+        --compareAllBasicRepos not_done_basic1 0 hyp
 
-        not_done_basic2 <- filterAllCompleted dat data_final_basic2_hyp2
+        --not_done_basic2 <- filterAllCompleted dat data_final_basic2_hyp2
         --print not_done_basic2
         -- Second level of comparison: Remove C style comments and whitespace.
-        compareAllBasicRepos not_done_basic2 1 hyp
+        --compareAllBasicRepos not_done_basic2 1 hyp
 
-        not_done_parse <- filterAllCompleted dat data_final_parse_hyp2
+        --not_done_parse <- filterAllCompleted dat data_final_parse_hyp2
         --print not_done_parse
         -- Compare parse trees.
-        compareAllParseTreeRepos not_done_parse hyp
+        --compareAllParseTreeRepos not_done_parse hyp
       else if hyp == "3" then do
         not_done_basic1 <- filterAllCompleted dat data_final_basic1_hyp3
         --print not_done_basic1
