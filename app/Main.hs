@@ -48,7 +48,8 @@ main = do
       cloneRepos filtered
       --performMultiple cloneRepo filtered
       -- Remove all repos which do not contain C++ code.
-      pruneRepos filtered
+      exists <- generateRepoList
+      pruneRepos exists
 
 --    "1" -> do
 --      let hyp    = head (tail args)

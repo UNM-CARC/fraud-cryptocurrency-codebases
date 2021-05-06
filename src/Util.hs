@@ -434,13 +434,14 @@ pruneRepo repo = do
     then
       print $ "Keeping " ++ repo
     else
+      --print $ "Removing " ++ repo
       removeRepo repo
 
-pruneRepos :: [(String, String)] -> IO ()
+pruneRepos :: [String] -> IO ()
 pruneRepos []     = do
   print ""
 pruneRepos (x:xs) = do
-  pruneRepo $ fst x
+  pruneRepo $ x
   pruneRepos xs
 
 -- Clone a given repository based upon a list of three values:
