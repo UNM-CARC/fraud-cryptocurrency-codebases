@@ -11,13 +11,13 @@ import qualified Data.List as L
 import           Data.Map.Strict (Map)
 
 coins_loc :: String
-coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
---coins_loc = "/wheeler/scratch/khaskins/coins/"
+--coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
+coins_loc = "/wheeler/scratch/khaskins/coins/"
 
 data_final :: String
-data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
+--data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
 --data_final = "/carc/scratch/projects/bridges2016099/data_final/"
---data_final = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/"
+data_final = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/"
 
 data_final_basic1_hyp1 :: String
 --data_final_basic1_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
@@ -25,9 +25,9 @@ data_final_basic1_hyp1 :: String
 data_final_basic1_hyp1 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
 
 data_final_basic1_hyp2 :: String
-data_final_basic1_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
+--data_final_basic1_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
 --data_final_basic1_hyp2 = "/carc/scratch/projects/bridges2016099/data_final/hypothesis_2/basic1/"
---data_final_basic1_hyp2 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
+data_final_basic1_hyp2 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
 
 data_final_basic1_hyp3 :: String
 --data_final_basic1_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic1/"
