@@ -417,7 +417,7 @@ generateTestSet set1 set2 subset jobs = genTestSetHelper set1 set2 subset jobs [
                                                      (length acc `div` jobs) !! subset
     genTestSetHelper      _     [] subset jobs acc = splitListByN acc 
                                                      (length acc `div` jobs) !! subset
-    genTestSetHelper (x:xs) (_:ys) subset jobs acc =
+    genTestSetHelper (x:xs) ys subset jobs acc =
       genTestSetHelper xs ys subset jobs (acc ++ map (\y -> (x, y)) ys)
 
 removeRepo :: String -> IO ()
