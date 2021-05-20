@@ -45,10 +45,11 @@ main = do
       -- Filter all coins which actually have repo links.
       let filtered = filterRepoLinks tmp
       -- Clone all of the links filtered from previous line.
-      cloneRepos filtered
+      --cloneRepos filtered
       --performMultiple cloneRepo filtered
       -- Remove all repos which do not contain C++ code.
       exists <- generateRepoList
+      --print exists
       pruneRepos exists
 
 --    "1" -> do

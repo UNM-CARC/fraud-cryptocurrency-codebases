@@ -422,7 +422,8 @@ generateTestSet set1 set2 subset jobs = genTestSetHelper set1 set2 subset jobs [
 
 removeRepo :: String -> IO ()
 removeRepo repo = do
-  let str = "rm -rf " ++ coins_loc ++ repo
+  --let str = "rm -rf " ++ coins_loc ++ repo
+  let str = "rm -rf " ++ repo
   (errc, out, err) <- readCreateProcessWithExitCode (shell str) []
   print $ "Removed " ++ repo
 
