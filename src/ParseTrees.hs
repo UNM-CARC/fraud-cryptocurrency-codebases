@@ -106,8 +106,6 @@ compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
 
 writeParseRepos :: String -> String -> String -> String -> String -> IO ()
 writeParseRepos repo1 repo2 out2 hypothesis experiment =
-  --if takeBaseName repo2 `L.intersect` "-tags" == "-tags" 
-  --  && takeBaseName repo1 `L.intersect` "-tags" == "-tags" then
   if "-tags" `L.intersect` (last $ init $ splitPath repo2) == "-tags" 
     && "-tags" `L.intersect` (last $ init $ splitPath repo1) == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
@@ -119,7 +117,8 @@ writeParseRepos repo1 repo2 out2 hypothesis experiment =
                     ++ "-" ++ 
                     (L.filter (/= '/') $ last $ splitPath repo2))
                     out2 hypothesis experiment
-  else if takeBaseName repo2 `L.intersect` "-tags" == "-tags" then
+  --else if takeBaseName repo2 `L.intersect` "-tags" == "-tags" then
+  else if "-tags" `L.intersect` (last $ init $ splitPath repo2) == "-tags" then
     writeDataToFile (takeBaseName repo1) 
                     ((L.filter (/= '/') $ last $ init $ splitPath repo2)
                     ++ "-" ++ 
