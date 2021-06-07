@@ -225,29 +225,59 @@ zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
   else zipData (b1:basic1) (b2:basic2) asts commits acc
 zipData _           _           _        _               acc = acc
 
-generateScoreData :: IO ()
-generateScoreData = do
-  basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-		data_final_basic1_hyp1
-		--data_final_basic1_hyp2
-		--data_final_basic1_hyp3
-  basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-		data_final_basic2_hyp1
-		--data_final_basic2_hyp2
-		--data_final_basic2_hyp3
-  parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-		data_final_parse_hyp1
-		--data_final_parse_hyp2
-		--data_final_parse_hyp3
-  commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
-		commit_loc
-  commits       <- parseAllCommitFiles commitHist []
-  basicHashes1  <- computeAllBasicHashScores basic1 []
-  basicHashes2  <- computeAllBasicHashScores basic2 []
-  parseTrees1   <- computeAllParseTreeScores parseTrees []
-  let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
-  let stringData = map convertToCSVLine9 finalData
-  writeFinalDataToFile stringData
+generateScoreData :: String -> IO ()
+generateScoreData hyp =
+  case hyp of
+    "1" -> do
+      basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_basic1_hyp1
+      basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_basic2_hyp1
+      parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_parse_hyp1
+      commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	commit_loc
+      commits       <- parseAllCommitFiles commitHist []
+      basicHashes1  <- computeAllBasicHashScores basic1 []
+      basicHashes2  <- computeAllBasicHashScores basic2 []
+      parseTrees1   <- computeAllParseTreeScores parseTrees []
+      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+      let stringData = map convertToCSVLine9 finalData
+      writeFinalDataToFile stringData hyp
+    "2" -> do
+      basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_basic1_hyp2
+      basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_basic2_hyp2
+      parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_parse_hyp2
+      commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	commit_loc
+      commits       <- parseAllCommitFiles commitHist []
+      basicHashes1  <- computeAllBasicHashScores basic1 []
+      basicHashes2  <- computeAllBasicHashScores basic2 []
+      parseTrees1   <- computeAllParseTreeScores parseTrees []
+      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+      let stringData = map convertToCSVLine9 finalData
+      writeFinalDataToFile stringData hyp
+    "3" -> do
+      basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_basic1_hyp3
+      basic2     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_basic2_hyp3
+      parseTrees <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	data_final_parse_hyp3
+      commitHist <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
+	    	commit_loc
+      commits       <- parseAllCommitFiles commitHist []
+      basicHashes1  <- computeAllBasicHashScores basic1 []
+      basicHashes2  <- computeAllBasicHashScores basic2 []
+      parseTrees1   <- computeAllParseTreeScores parseTrees []
+      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+      let stringData = map convertToCSVLine9 finalData
+      writeFinalDataToFile stringData hyp
+    _ ->
+      print "Invalid hypothesis"
 
 -- Takes list of repository pairs and filters out those which have already been
 -- created.
@@ -666,9 +696,9 @@ buildRepos (x:xs) acc = do
 
 
 
-writeFinalDataToFile :: [String] -> IO ()
-writeFinalDataToFile dat = do
-  let fileNew =  data_final ++ "data_final.csv"
+writeFinalDataToFile :: [String] -> String -> IO ()
+writeFinalDataToFile dat hyp = do
+  let fileNew =  data_final ++ "data_final" ++ hyp ++ ".csv"
   let dataFinal = foldr (++) "" dat
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew AppendMode

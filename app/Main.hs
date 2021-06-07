@@ -132,8 +132,9 @@ main = do
         -- Compare parse trees.
         compareAllParseTreeRepos not_done_parse hyp
       else print "Invalid hypothesis given."
-    "5" ->
-      generateScoreData
+    "5" -> do
+      let hyp = head (tail args)
+      generateScoreData hyp
     "6" ->
       cleanOutputDirectories
     else do
