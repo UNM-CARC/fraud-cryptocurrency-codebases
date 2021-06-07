@@ -92,7 +92,7 @@ compareAllParseTrees :: [FilePath] -> [FilePath] -> FilePath -> FilePath
 compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
 
   where
-    helper :: [FilePath] -> [FilePath] -> FilePath -> FilePath 
+    helper :: [FilePath] -> [FilePath] -> FilePath -> FilePath
                          -> [IO (String, String, String, String, Int, Int, Int)]
                          -> [IO (String, String, String, String, Int, Int, Int)]
     helper []      _ repo1 repo2 acc = acc
@@ -106,14 +106,14 @@ compareAllParseTrees xs ys repo1 repo2 = sequence $ helper xs ys repo1 repo2 []
 
 writeParseRepos :: String -> String -> String -> String -> String -> IO ()
 writeParseRepos repo1 repo2 out2 hypothesis experiment =
-  if "-tags" `L.intersect` (last $ init $ splitPath repo2) == "-tags" 
+  if "-tags" `L.intersect` (last $ init $ splitPath repo2) == "-tags"
     && "-tags" `L.intersect` (last $ init $ splitPath repo1) == "-tags" then
     -- if both repo 1 and 2 are tagged repos, build new name for writing
     -- including the actual name of the coin.
-    writeDataToFile ((L.filter (/= '/') $ last $ init $ splitPath repo1) 
+    writeDataToFile ((L.filter (/= '/') $ last $ init $ splitPath repo1)
                     ++ "-" ++ 
-                    (L.filter (/= '/') $ last $ splitPath repo1)) 
-                    ((L.filter (/= '/') $ last $ init $ splitPath repo2) 
+                    (L.filter (/= '/') $ last $ splitPath repo1))
+                    ((L.filter (/= '/') $ last $ init $ splitPath repo2)
                     ++ "-" ++ 
                     (L.filter (/= '/') $ last $ splitPath repo2))
                     out2 hypothesis experiment

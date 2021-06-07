@@ -11,6 +11,7 @@ url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
 
 data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/data_final.csv"
 # data_final = "/carc/scratch/projects/bridges2016099/data_final/data_final.csv"
+# data_final = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/data_final.csv"
 df_data_final = pd.read_csv(data_final)
 # df_data_final.set_index("name", inplace=True)
 # print(df_data_final)

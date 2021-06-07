@@ -211,7 +211,7 @@ zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
   let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
   if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
     (second b1) == (second b2) && (second b2) == (second a) 
-                                          then zipData basic1 basic2 asts (commits) (acc ++ 
+         then zipData basic1 basic2 asts commits (acc ++ 
                                                  [(first b1
                                                  , second b1
                                                  , third c1
@@ -222,7 +222,7 @@ zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
                                                  , third b2
                                                  , third a
                                                  )])
-  else zipData (b1:basic1) (b2:basic2) (asts) (commits) acc
+  else zipData (b1:basic1) (b2:basic2) asts commits acc
 zipData _           _           _        _               acc = acc
 
 generateScoreData :: IO ()

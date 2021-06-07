@@ -55,18 +55,7 @@ main = do
 --    "1" -> do
 --      let hyp    = head (tail args)
 --      let subset = (read $ head (tail (tail args)) :: Int) - 1
---      let jobs   = read $ head (tail (tail (tail args))) :: Int
---      set1      <- case hyp of
---                     "1" -> generateRepoList
---                     "2" -> generateRepoList
---                     "3" -> generateRepoTagList
---                     _   -> generateRepoList
---      set2      <- case hyp of
---                     "1" -> generateRepoList
---                     "2" -> generateRepoTagListBitcoin
---                     "3" -> generateRepoTagListOld
---                     _   -> generateRepoList
---      let dat    = generateTestSet set1 set2 subset jobs
+--
 --      needs <- filterAllCompleted dat data_final_parse
 --      print needs
 
@@ -143,7 +132,7 @@ main = do
         -- Compare parse trees.
         compareAllParseTreeRepos not_done_parse hyp
       else print "Invalid hypothesis given."
-    "5" -> do
+    "5" ->
       generateScoreData
     "6" ->
       cleanOutputDirectories
