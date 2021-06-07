@@ -98,7 +98,8 @@ nTimes :: Int -> (a -> a) -> a -> a
 nTimes n f x = iterate f x !! max 0 n
 
 -- Parse all commit data files.
-parseAllCommitFiles :: [String] -> [(String, String, String)] -> IO [(String, String, String)]
+parseAllCommitFiles :: [String] ->    [(String, String, String)] 
+                                -> IO [(String, String, String)]
 parseAllCommitFiles [] acc     = return acc
 parseAllCommitFiles (f:fs) acc = do
   file <- readFileSafe f
@@ -108,7 +109,8 @@ parseAllCommitFiles (f:fs) acc = do
   parseAllCommitFiles fs (acc ++ [x])
   where
     -- Parse single file.
-    parseCommitsFile :: [String] -> String -> [(String, String, String)] -> [(String, String, String)]
+    parseCommitsFile :: [String] -> String -> [(String, String, String)] 
+                                           -> [(String, String, String)]
     parseCommitsFile []     coin acc = acc
     parseCommitsFile (c:cs) coin acc = do
       let x = parseCommit c coin
@@ -206,7 +208,7 @@ zipData []          _           []       []              acc = acc
 zipData []          []          _        []              acc = acc
 zipData []          []          []       _               acc = acc
 zipData _           []          []       []              acc = acc
-zipData (b1:basic1) (b2:basic2) (a:asts) (commits) acc = do
+zipData (b1:basic1) (b2:basic2) (a:asts) commits acc = do
   let c1 = foldr (\acc x -> if first b1 == first x then x else acc) ("","","") commits
   let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
   if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
