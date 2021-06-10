@@ -187,33 +187,86 @@ computeAllParseTreeScores (f:fs) acc = do
         same   x = read (head (tail (tail (tail (tail (tail (tail x))))))) :: Float
 
 -- Aggregate all data
+--zipData :: [(String, String, Float)] 
+--        -> [(String, String, Float)] 
+--        -> [(String, String, Float)] 
+--        -> [(String, String, String)]
+--        -> [(String, String, String, String, String, String, Float, Float, Float)]
+--        -> [(String, String, String, String, String, String, Float, Float, Float)]
+--zipData []          []          []       []              acc = acc
+--zipData []          _           _        _               acc = acc
+--zipData _           []          _        _               acc = acc
+--zipData _           _           []       _               acc = acc
+--zipData _           _           _        []              acc = acc
+--zipData []          []          _        _               acc = acc
+--zipData _           []          []       _               acc = acc
+--zipData _           _           []       []              acc = acc
+--zipData []          _           _        []              acc = acc
+--zipData []          _           []       _               acc = acc
+--zipData _           []          _        []              acc = acc
+--zipData []          _           []       []              acc = acc
+--zipData []          []          _        []              acc = acc
+--zipData []          []          []       _               acc = acc
+--zipData _           []          []       []              acc = acc
+--zipData (b1:basic1) (b2:basic2) (a:asts) commits acc = do
+--  let c1 = foldr (\acc x -> if first b1 == first x then x else acc) ("","","") commits
+--  let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
+--  if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
+--    (second b1) == (second b2) && (second b2) == (second a) 
+--         then zipData basic1 basic2 asts commits (acc ++ 
+--                                                 [(first b1
+--                                                 , second b1
+--                                                 , third c1
+--                                                 , third c2
+--                                                 , second c1
+--                                                 , second c2
+--                                                 , third b1
+--                                                 , third b2
+--                                                 , third a
+--                                                 )])
+--  else zipData (b1:basic1) (b2:basic2) asts commits acc
+--zipData _           _           _        _               acc = acc
+
 zipData :: [(String, String, Float)] 
         -> [(String, String, Float)] 
         -> [(String, String, Float)] 
         -> [(String, String, String)]
+        -> String
         -> [(String, String, String, String, String, String, Float, Float, Float)]
-        -> [(String, String, String, String, String, String, Float, Float, Float)]
-zipData []          []          []       []              acc = acc
-zipData []          _           _        _               acc = acc
-zipData _           []          _        _               acc = acc
-zipData _           _           []       _               acc = acc
-zipData _           _           _        []              acc = acc
-zipData []          []          _        _               acc = acc
-zipData _           []          []       _               acc = acc
-zipData _           _           []       []              acc = acc
-zipData []          _           _        []              acc = acc
-zipData []          _           []       _               acc = acc
-zipData _           []          _        []              acc = acc
-zipData []          _           []       []              acc = acc
-zipData []          []          _        []              acc = acc
-zipData []          []          []       _               acc = acc
-zipData _           []          []       []              acc = acc
-zipData (b1:basic1) (b2:basic2) (a:asts) commits acc = do
+        -> IO ()
+zipData []          []          []       []     _        acc = print acc
+zipData []          _           _        _      _        acc = print acc
+zipData _           []          _        _      _        acc = print acc
+zipData _           _           []       _      _        acc = print acc
+zipData _           _           _        []     _        acc = print acc
+zipData []          []          _        _      _        acc = print acc
+zipData _           []          []       _      _        acc = print acc
+zipData _           _           []       []     _        acc = print acc
+zipData []          _           _        []     _        acc = print acc
+zipData []          _           []       _      _        acc = print acc
+zipData _           []          _        []     _        acc = print acc
+zipData []          _           []       []     _        acc = print acc
+zipData []          []          _        []     _        acc = print acc
+zipData []          []          []       _      _        acc = print acc
+zipData _           []          []       []     _        acc = print acc
+zipData (b1:basic1) (b2:basic2) (a:asts) commits hyp acc = do
   let c1 = foldr (\acc x -> if first b1 == first x then x else acc) ("","","") commits
   let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
   if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
     (second b1) == (second b2) && (second b2) == (second a) 
-         then zipData basic1 basic2 asts commits (acc ++ 
+         then do 
+              writeFinalDataToFile (convertToCSVLine9 
+                                                 (first b1
+                                                 , second b1
+                                                 , third c1
+                                                 , third c2
+                                                 , second c1
+                                                 , second c2
+                                                 , third b1
+                                                 , third b2
+                                                 , third a
+                                                 )) hyp
+              zipData basic1 basic2 asts commits hyp (acc ++ 
                                                  [(first b1
                                                  , second b1
                                                  , third c1
@@ -223,9 +276,9 @@ zipData (b1:basic1) (b2:basic2) (a:asts) commits acc = do
                                                  , third b1
                                                  , third b2
                                                  , third a
-                                                 )])
-  else zipData (b1:basic1) (b2:basic2) asts commits acc
-zipData _           _           _        _               acc = acc
+                                                 )]) 
+  else zipData (b1:basic1) (b2:basic2) asts commits hyp acc
+zipData _           _           _        _      _        acc = print acc
 
 generateScoreData :: String -> IO ()
 generateScoreData hyp =
@@ -698,13 +751,22 @@ buildRepos (x:xs) acc = do
 
 
 
-writeFinalDataToFile :: [String] -> String -> IO ()
+--writeFinalDataToFile :: [String] -> String -> IO ()
+--writeFinalDataToFile dat hyp = do
+--  let fileNew =  data_final ++ "data_final" ++ hyp ++ ".csv"
+--  let dataFinal = foldr (++) "" dat
+--  (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
+--  h <- openFile fileNew AppendMode
+--  hPutStr h dataFinal
+--  hClose h
+
+writeFinalDataToFile :: String -> String -> IO ()
 writeFinalDataToFile dat hyp = do
   let fileNew =  data_final ++ "data_final" ++ hyp ++ ".csv"
-  let dataFinal = foldr (++) "" dat
+  --let dataFinal = foldr (++) "" dat
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
   h <- openFile fileNew AppendMode
-  hPutStr h dataFinal
+  hPutStr h dat
   hClose h
 
 
