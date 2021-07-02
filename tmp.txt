@@ -457,3 +457,27 @@ Date:   Mon Aug 19 08:29:14 2019 -0600
 --  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
 --            . filter (/= '\r')) $ concat clean
 --  let repos = map takeFileName $ concat $ map (tail . tail) tmp
+
+
+
+
+
+       slug   slug.1                      date                    date.1  \
+0  dogecoin  bitcoin  Sun Aug 30 03:46:39 2009  Sun Aug 30 03:46:39 2009   
+
+   commit-id commit-id2  overlap-basic1  overlap-basic2  overlap-parse  id  \
+0  4405b78d6  4405b78d6             0.0        0.004082       0.581615  74   
+
+   ... quote.USD.percent_change_30d quote.USD.percent_change_60d  \
+0  ...                   -35.806242                    12.165671   
+
+   quote.USD.percent_change_90d quote.USD.market_cap  \
+0                     441.77887         4.066116e+10   
+
+     quote.USD.last_updated  platform.id  platform.name  platform.symbol  \
+0  2021-06-16T19:00:03.000Z          NaN            NaN              NaN   
+
+   platform.slug  platform.token_address  
+0            NaN                     NaN  
+
+[1 rows x 36 columns]

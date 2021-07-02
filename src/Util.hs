@@ -98,6 +98,7 @@ nTimes :: Int -> (a -> a) -> a -> a
 nTimes n f x = iterate f x !! max 0 n
 
 -- Parse all commit data files.
+-- [(Coin, oldest commit, oldest date)]
 parseAllCommitFiles :: [String] ->    [(String, String, String)] 
                                 -> IO [(String, String, String)]
 parseAllCommitFiles [] acc     = return acc
@@ -115,11 +116,6 @@ parseAllCommitFiles (f:fs) acc = do
     parseCommitsFile (c:cs) coin acc = do
       let x = parseCommit c coin
       parseCommitsFile cs coin (acc ++ [x])
-    -- Parse individual commit line from file.
---    parseCommit :: String -> (String, String)
---    parseCommit commit = let list = L.groupBy (\a b -> b /= ',') commit in
---                         (head list, head (tail list) ++ (head $ tail $ 
---                            L.groupBy (\a b -> b /= ' ') $ head (((tail list)))))
     parseCommit :: String -> String -> (String, String, String)
     parseCommit coin commit = let list = splitOn "," commit in
                          (coin, head list, nTimes 6 init $ tail $ head (tail list))
@@ -227,58 +223,50 @@ computeAllParseTreeScores (f:fs) acc = do
 --  else zipData (b1:basic1) (b2:basic2) asts commits acc
 --zipData _           _           _        _               acc = acc
 
-zipData :: [(String, String, Float)] 
-        -> [(String, String, Float)] 
-        -> [(String, String, Float)] 
+zipData :: [(String, String,  Float)] 
+        -> [(String, String,  Float)] 
+        -> [(String, String,  Float)] 
         -> [(String, String, String)]
         -> String
         -> [(String, String, String, String, String, String, Float, Float, Float)]
-        -> IO ()
-zipData []          []          []       []     _        acc = print acc
-zipData []          _           _        _      _        acc = print acc
-zipData _           []          _        _      _        acc = print acc
-zipData _           _           []       _      _        acc = print acc
-zipData _           _           _        []     _        acc = print acc
-zipData []          []          _        _      _        acc = print acc
-zipData _           []          []       _      _        acc = print acc
-zipData _           _           []       []     _        acc = print acc
-zipData []          _           _        []     _        acc = print acc
-zipData []          _           []       _      _        acc = print acc
-zipData _           []          _        []     _        acc = print acc
-zipData []          _           []       []     _        acc = print acc
-zipData []          []          _        []     _        acc = print acc
-zipData []          []          []       _      _        acc = print acc
-zipData _           []          []       []     _        acc = print acc
-zipData (b1:basic1) (b2:basic2) (a:asts) commits hyp acc = do
-  let c1 = foldr (\acc x -> if first b1 == first x then x else acc) ("","","") commits
-  let c2 = foldr (\acc x -> if first b2 == first x then x else acc) ("","","") commits
-  if (first b1) ==  (first b2) &&  (first b2) == (first a) &&
-    (second b1) == (second b2) && (second b2) == (second a) 
-         then do 
-              writeFinalDataToFile (convertToCSVLine9 
-                                                 (first b1
-                                                 , second b1
-                                                 , third c1
-                                                 , third c2
-                                                 , second c1
-                                                 , second c2
-                                                 , third b1
-                                                 , third b2
-                                                 , third a
-                                                 )) hyp
-              zipData basic1 basic2 asts commits hyp (acc ++ 
-                                                 [(first b1
-                                                 , second b1
-                                                 , third c1
-                                                 , third c2
-                                                 , second c1
-                                                 , second c2
-                                                 , third b1
-                                                 , third b2
-                                                 , third a
-                                                 )]) 
-  else zipData (b1:basic1) (b2:basic2) asts commits hyp acc
-zipData _           _           _        _      _        acc = print acc
+        -> [(String, String, String, String, String, String, Float, Float, Float)]
+zipData []     []     []   _       _   acc = acc
+zipData basic1 basic2 asts commits hyp acc = do
+  let (b11:same_b1) = same basic1 asts []
+  let (b12:same_b2) = same basic2 asts []
+  let (p1:same_p)   = same asts basic1 []
+  let c1 = head $ filter (\x ->  first b11 == first x) commits
+  --print c1
+  let c2 = head $ filter (\x -> second b11 == first x) commits
+  --print c2
+  --let c12 = foldr (\acc x -> if first (head same_b2) 
+  --                           == first x then x else acc) ("","","") commits
+  --let p   = foldr (\acc x -> if first (head ) 
+  --                           == first x then x else acc) ("","","") same_p
+  zipData same_b1 same_b2 same_p commits hyp (acc ++ [( first b11
+                                                      , second b11
+                                                      , third c1
+                                                      , third c2
+                                                      , second c1
+                                                      , second c2
+                                                      , third b11
+                                                      , third b12
+                                                      , third p1
+                                                     )])
+  where
+    same :: [(String, String, Float)] 
+         -> [(String, String, Float)] 
+         -> [(String, String, Float)] 
+         -> [(String, String, Float)]
+    same []          _  acc = acc
+    same (a:list1) list2 acc = do
+      let matching = foldr (\x acc1 -> if (first x, second x) 
+                                       == (first a, second a) 
+                                       then acc1 ++ [a] 
+                                       else acc1) [] list2
+      same list1 list2 (acc ++ matching)
+  
+
 
 generateScoreData :: String -> IO ()
 generateScoreData hyp =
@@ -294,11 +282,15 @@ generateScoreData hyp =
 	    	commit_loc
       commits       <- parseAllCommitFiles commitHist []
       basicHashes1  <- computeAllBasicHashScores basic1 []
+      --print basicHashes1
       basicHashes2  <- computeAllBasicHashScores basic2 []
+      --print basicHashes2
       parseTrees1   <- computeAllParseTreeScores parseTrees []
-      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+      --print parseTrees1
+      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
+      print finalData
       let stringData = map convertToCSVLine9 finalData
-      writeFinalDataToFile stringData hyp
+      mapM_ (writeFinalDataToFile hyp) stringData
     "2" -> do
       basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
 	    	data_final_basic1_hyp2
@@ -312,9 +304,9 @@ generateScoreData hyp =
       basicHashes1  <- computeAllBasicHashScores basic1 []
       basicHashes2  <- computeAllBasicHashScores basic2 []
       parseTrees1   <- computeAllParseTreeScores parseTrees []
-      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
       let stringData = map convertToCSVLine9 finalData
-      writeFinalDataToFile stringData hyp
+      mapM_ (writeFinalDataToFile hyp) stringData
     "3" -> do
       basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
 	    	data_final_basic1_hyp3
@@ -328,11 +320,11 @@ generateScoreData hyp =
       basicHashes1  <- computeAllBasicHashScores basic1 []
       basicHashes2  <- computeAllBasicHashScores basic2 []
       parseTrees1   <- computeAllParseTreeScores parseTrees []
-      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits []
+      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
       let stringData = map convertToCSVLine9 finalData
-      writeFinalDataToFile stringData hyp
+      mapM_ (writeFinalDataToFile hyp) stringData
     _ ->
-      print "Invalid hypothesis"
+      putStrLn "Invalid hypothesis"
 
 -- Takes list of repository pairs and filters out those which have already been
 -- created.
@@ -761,7 +753,7 @@ buildRepos (x:xs) acc = do
 --  hClose h
 
 writeFinalDataToFile :: String -> String -> IO ()
-writeFinalDataToFile dat hyp = do
+writeFinalDataToFile hyp dat = do
   let fileNew =  data_final ++ "data_final" ++ hyp ++ ".csv"
   --let dataFinal = foldr (++) "" dat
   (errc, out, err) <- readCreateProcessWithExitCode (shell ("touch " ++ fileNew)) []
