@@ -223,15 +223,58 @@ computeAllParseTreeScores (f:fs) acc = do
 --  else zipData (b1:basic1) (b2:basic2) asts commits acc
 --zipData _           _           _        _               acc = acc
 
+--zipData :: [(String, String,  Float)] 
+--        -> [(String, String,  Float)] 
+--        -> [(String, String,  Float)] 
+--        -> [(String, String, String)]
+--        -> String
+--        -> [(String, String, String, String, String, String, Float, Float, Float)]
+--        -> [(String, String, String, String, String, String, Float, Float, Float)]
+--zipData []     []     []   _       _   acc = acc
+--zipData basic1 basic2 asts commits hyp acc = do
+--  let (b11:same_b1) = same basic1 asts []
+--  let (b12:same_b2) = same basic2 asts []
+--  let (p1:same_p)   = same asts basic1 []
+--  let c1 = head $ filter (\x ->  first b11 == first x) commits
+--  --print c1
+--  let c2 = head $ filter (\x -> second b11 == first x) commits
+--  --print c2
+--  --let c12 = foldr (\acc x -> if first (head same_b2) 
+--  --                           == first x then x else acc) ("","","") commits
+--  --let p   = foldr (\acc x -> if first (head ) 
+--  --                           == first x then x else acc) ("","","") same_p
+--  zipData same_b1 same_b2 same_p commits hyp (acc ++ [( first b11
+--                                                      , second b11
+--                                                      , third c1
+--                                                      , third c2
+--                                                      , second c1
+--                                                      , second c2
+--                                                      , third b11
+--                                                      , third b12
+--                                                      , third p1
+--                                                     )])
+--  where
+--    same :: [(String, String, Float)] 
+--         -> [(String, String, Float)] 
+--         -> [(String, String, Float)] 
+--         -> [(String, String, Float)]
+--    same []          _  acc = acc
+--    same (a:list1) list2 acc = do
+--      let matching = foldr (\x acc1 -> if (first x, second x) 
+--                                       == (first a, second a) 
+--                                       then acc1 ++ [a] 
+--                                       else acc1) [] list2
+--      same list1 list2 (acc ++ matching)
+
+
 zipData :: [(String, String,  Float)] 
         -> [(String, String,  Float)] 
         -> [(String, String,  Float)] 
         -> [(String, String, String)]
         -> String
-        -> [(String, String, String, String, String, String, Float, Float, Float)]
-        -> [(String, String, String, String, String, String, Float, Float, Float)]
-zipData []     []     []   _       _   acc = acc
-zipData basic1 basic2 asts commits hyp acc = do
+        -> IO ()
+zipData []     []     []   _       _   = print "Done"
+zipData basic1 basic2 asts commits hyp = do
   let (b11:same_b1) = same basic1 asts []
   let (b12:same_b2) = same basic2 asts []
   let (p1:same_p)   = same asts basic1 []
@@ -243,16 +286,17 @@ zipData basic1 basic2 asts commits hyp acc = do
   --                           == first x then x else acc) ("","","") commits
   --let p   = foldr (\acc x -> if first (head ) 
   --                           == first x then x else acc) ("","","") same_p
-  zipData same_b1 same_b2 same_p commits hyp (acc ++ [( first b11
-                                                      , second b11
-                                                      , third c1
-                                                      , third c2
-                                                      , second c1
-                                                      , second c2
-                                                      , third b11
-                                                      , third b12
-                                                      , third p1
-                                                     )])
+  writeFinalDataToFile hyp (convertToCSVLine9 ( first b11
+                                              , second b11
+                                              , third c1
+                                              , third c2
+                                              , second c1
+                                              , second c2
+                                              , third b11
+                                              , third b12
+                                              , third p1
+                                              ))
+  zipData same_b1 same_b2 same_p commits hyp
   where
     same :: [(String, String, Float)] 
          -> [(String, String, Float)] 
