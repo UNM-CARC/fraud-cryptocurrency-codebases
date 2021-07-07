@@ -331,10 +331,11 @@ generateScoreData hyp =
       --print basicHashes2
       parseTrees1   <- computeAllParseTreeScores parseTrees []
       --print parseTrees1
-      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
-      print finalData
-      let stringData = map convertToCSVLine9 finalData
-      mapM_ (writeFinalDataToFile hyp) stringData
+      --let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
+      zipData basicHashes1 basicHashes2 parseTrees1 commits hyp
+      --print finalData
+      --let stringData = map convertToCSVLine9 finalData
+      --mapM_ (writeFinalDataToFile hyp) stringData
     "2" -> do
       basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
 	    	data_final_basic1_hyp2
@@ -348,9 +349,10 @@ generateScoreData hyp =
       basicHashes1  <- computeAllBasicHashScores basic1 []
       basicHashes2  <- computeAllBasicHashScores basic2 []
       parseTrees1   <- computeAllParseTreeScores parseTrees []
-      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
-      let stringData = map convertToCSVLine9 finalData
-      mapM_ (writeFinalDataToFile hyp) stringData
+      zipData basicHashes1 basicHashes2 parseTrees1 commits hyp
+      --let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
+      --let stringData = map convertToCSVLine9 finalData
+      --mapM_ (writeFinalDataToFile hyp) stringData
     "3" -> do
       basic1     <- traverseDir (const True) (\fs f -> pure (f : fs)) [] 
 	    	data_final_basic1_hyp3
@@ -364,9 +366,10 @@ generateScoreData hyp =
       basicHashes1  <- computeAllBasicHashScores basic1 []
       basicHashes2  <- computeAllBasicHashScores basic2 []
       parseTrees1   <- computeAllParseTreeScores parseTrees []
-      let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
-      let stringData = map convertToCSVLine9 finalData
-      mapM_ (writeFinalDataToFile hyp) stringData
+      zipData basicHashes1 basicHashes2 parseTrees1 commits hyp
+      --let finalData  = zipData basicHashes1 basicHashes2 parseTrees1 commits hyp []
+      --let stringData = map convertToCSVLine9 finalData
+      --mapM_ (writeFinalDataToFile hyp) stringData
     _ ->
       putStrLn "Invalid hypothesis"
 

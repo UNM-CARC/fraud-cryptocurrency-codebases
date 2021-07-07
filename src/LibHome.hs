@@ -14,48 +14,37 @@ coins_loc :: String
 coins_loc  = "/home/ghostbird/Hacking/cybersecurity/coins/"
 
 data_final :: String
---data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
-data_final = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/"
+data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/"
 
 data_final_basic1_hyp1 :: String
---data_final_basic1_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
-data_final_basic1_hyp1 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
+data_final_basic1_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic1/"
 
 data_final_basic1_hyp2 :: String
---data_final_basic1_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
-data_final_basic1_hyp1 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
+data_final_basic1_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic1/"
 
 data_final_basic1_hyp3 :: String
---data_final_basic1_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic1/"
-data_final_basic1_hyp3 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic1/"
+data_final_basic1_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic1/"
 
 data_final_basic2_hyp1 :: String
---data_final_basic2_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
-data_final_basic2_hyp1 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
+data_final_basic2_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/basic2/"
 
 data_final_basic2_hyp2 :: String
---data_final_basic2_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic2/"
-data_final_basic2_hyp2 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic2/"
+data_final_basic2_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/basic2/"
 
 data_final_basic2_hyp3 :: String
---data_final_basic2_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic2/"
-data_final_basic2_hyp3 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic2/"
+data_final_basic2_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/basic2/"
 
 data_final_parse_hyp1 :: String
---data_final_parse_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
-data_final_parse_hyp1 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
+data_final_parse_hyp1 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_1/parse_trees/"
 
 data_final_parse_hyp2 :: String
---data_final_parse_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/parse_trees/"
-data_final_parse_hyp2 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_2/parse_trees/"
+data_final_parse_hyp2 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_2/parse_trees/"
 
 data_final_parse_hyp3 :: String
---data_final_parse_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/parse_trees/"
-data_final_parse_hyp1 = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/hypothesis_3/parse_trees/"
+data_final_parse_hyp3 = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/hypothesis_3/parse_trees/"
 
 commit_loc :: String
---commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
-commit_loc = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/commit_history/"
+commit_loc = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/commit_history/"
 
 filterOut :: [String]
 filterOut = [ "TypedefDecl"
