@@ -232,3 +232,252 @@ Author: Keira Haskins <wasp@unm.edu>
 Date:   Mon Aug 19 08:29:14 2019 -0600
 
     First commit
+
+*** Notes for repos.csv ***
+
+ - rpc, seeder, p2p, node, core, src, build -> Appended to coin name or similar we keep
+ - Unique names which include: message, ui, token, stats, js, py, or other languages other than cpp
+   -> do not keep
+* Bitcloud seems to use LIMXTEC/bitcore-*, megacoin, electrumx, europecoin, etc. For now I have excluded these
+* I have come across a number of coins/tokens which seem to use direct copies of repos from other coins directly in their own github hierarchies, as well as tokens
+  * e-Gulden
+  * TrustPlus
+  * Pylon Network
+  * APR Coin
+  * 808Coin
+  * Chronologic
+  * XGOX
+  * Signals Network
+  * Photon
+  * Parkgene
+  * Deutsche eMark -> German eMark?
+  * Machinecoin ***
+  * InsaneCoin
+
+*** ParseTrees.hs ***
+
+--serialize2 :: Cursor -> String
+--serialize2 root = '(' : (show $ cursorKind root)
+--                    ++ (L.foldl (\acc y -> if (L.foldr (\yy xx -> if (show $ cursorKind y)
+--                                                                == yy then False
+--                                                                        else xx) True filterOut)
+--                                            then acc ++ serialize2 y
+--                                              else acc) "" (cursorChildren root))
+--                    ++ ")"
+
+--lcstr xs ys = maximumBy (compare `on` length) . concat $ [f xs' ys | xs' <- tails xs] ++ [f xs ys' | ys' <- drop 1 $ tails ys]
+--  where f xs ys = scanl g [] $ zip xs ys
+--        g z (x, y) = if x == y then z ++ [x] else []
+
+-- Rosetta Code: Longest Common Substring
+-- So far seems to be too inefficient
+--subStrings :: [a] -> [[a]]
+--subStrings s =
+--  let intChars = length s
+--  in [ take n $ drop i s
+--     | i <- [0..intChars - 1]
+--     , n <- [1..intChars - i] ]
+--
+--longestCommon :: Eq a => [a] -> [a] -> [a]
+--longestCommon a b =
+--  maximumBy (comparing length) (subStrings a `intersect` subStrings b)
+
+--longestCommon :: Eq a => [a] -> [a] -> [a]
+--longestCommon a b =
+--  L.maximumBy (comparing length) $
+--  (uncurry L.intersect . pair) $ [tail . L.inits <=< L.tails] <*> [a, b]
+--
+--pair :: [a] -> (a, a)
+--pair [x, y] = (x, y)
+
+--stringArr :: Int -> Int -> Array Int Int
+--stringArr x y =
+--  array (0, x * y) [(x, z) | x <- [0..(x * y)], ]
+--
+--longestCommon :: String -> String -> Int
+--longestCommon a b
+--  where lcSuff =
+
+--parseCPP :: FilePath -> IO String
+--parseCPP file = do
+--    idx <- createIndex
+--    tu  <- parseTranslationUnit idx file ["-I/usr/local/include"]
+--    let root = translationUnitCursor tu
+--        --children = cursorChildren root
+--        --children = L.foldr (\y x -> if (L.foldr (\yy xx -> if (show $ cursorKind y)
+--        --                                             == yy then False else xx) True filterOut)
+--        --                           then y : x else x) [] (cursorDescendants root)
+--        children = serialize2 root
+        --functionDecls = filter (\c -> cursorKind c == FunctionDecl) children
+    --forM_ children (print . cursorSpelling)
+    --print root
+    --print $ map cursorKind children
+    --mapM_ print $ map cursorKind children
+    --return children
+
+--keep :: [String]
+--keep =      [ "FunctionDecl"
+--            , "ParmDecl"
+--            , "StructDecl"
+--            , "UnexposedDecl"
+--            , "UnexposedExpr"
+--            , "IntegerLiteral"
+--            ]
+
+--buildTrees :: FilePath -> FilePath -> IO ()
+--buildTrees file1 file2 = do
+--  x <- evaluate $ treeToString file1
+--  y <- evaluate $ treeToString file2
+--  m <- x
+--  n <- y
+--  writeTreeToFile file1 m "1"
+--  writeTreeToFile file2 n "2"
+  --let out  = longestCommonSubstring $ x : [y]
+  --let test = (takeFileName file1, takeFileName file2, length x, length y, length out)
+  --return test
+
+--compareAllParseTrees :: [FilePath] -> [FilePath] -> IO [(String, String, Int, Int, Int)]
+--compareAllParseTrees xs ys = sequence $ helper xs ys []
+--  where
+--    helper :: [FilePath] -> [FilePath] -> [IO (String, String, Int, Int, Int)]
+--                                       -> [IO (String, String, Int, Int, Int)]
+--    helper []     _  acc = acc
+--    helper (f:fs) ms acc = let
+--      --fun <- L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ms
+--      fun = map (\y -> [(compareTrees f y)]) ms in
+--      --let test = fmap (\n -> let (h,i,j,k,l) = n in (h,i,j,k,l)) fun
+--      --let xx = L.foldr (\r m -> let (a, b, c, d, e) = r in (a,b,c,d,e) : m) [] test
+--      helper fs ms (acc ++ (concat fun))
+
+--compareAllParseTrees (f:fs) ys acc = compareAllParseTrees fs ys (acc ++ fun)
+--  where
+--    fun = L.foldr (\y a -> a ++ [(compareTrees f y)]) [] ys
+    --xx f2 = do
+    --  m <- compareTrees f f2
+    --  let yy = m
+    --  yy
+
+--buildAllParseTrees :: [FilePath] -> [FilePath] -> IO [()]
+--buildAllParseTrees xs ys = sequence $ helper xs ys []
+--  where
+--    helper :: [FilePath] -> [FilePath] -> [IO ()]
+--                                       -> [IO ()]
+--    helper []     _  acc = acc
+--    helper (f:fs) ms acc = let
+--      fun = map (\y -> [(buildTrees f y)]) ms in
+--      helper fs ms (acc ++ (concat fun))
+
+--buildParseTreesRepos :: String -> String -> IO [()]
+--buildParseTreesRepos repo1 repo2 = do
+--  dirlist1  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] repo1
+--  dirlist2  <- traverseDir (\_ -> True) (\fs f -> pure (f : fs)) [] repo2
+--  let dirs1  = map (\x -> x ++ " ") dirlist1
+--  let dirs2  = map (\x -> x ++ " ") dirlist2
+--  let inter1 = map init $ filterFileType ".cpp " dirs1
+--  let inter2 = map init $ filterFileType ".cpp " dirs2
+--  let out    = buildAllParseTrees inter1 inter2
+--  out
+
+--input <- fmap Txt.lines $ Txt.readFile "misc/repos.csv"
+--input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/repos.csv"
+--input <- fmap Txt.lines $ Txt.readFile "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/misc/names.csv"
+
+--print (map snd $ transferToTuple tmp)
+--print $ length $ (map snd $ filtered)
+--print filtered
+
+--print $ map (takeBaseName . last) tmp
+
+--compareParseTreesRepos (head args) (head (tail args))
+
+--generateAST :: String -> String -> IO ()
+--generateAST repo file = do
+--  DIR.createDirectoryIfMissing True ("/tmp/AST/" ++ repo ++ "/")
+--  let command = prefix ++ suffix
+--  (errc, out, err) <- readCreateProcessWithExitCode (shell command) []
+--  print command
+--  where
+--    prefix = "clang -cc1 -ast-dump " ++ file
+--    suffix = " > /tmp/AST/" ++ repo ++ "/" ++ (dropExtension $ takeFileName file) ++ ".ast"
+
+--parseCSource file = do
+--  idx       <- createIndex
+--  transUnit <- parseTranslationUnit idx file [""]
+--  print transUnit -- translationUnitCursor transUnit
+
+--readAST repo file = do
+--  h <- Txt.readFile ("/tmp/AST/" ++ repo ++ "/" ++ (dropExtension $ takeFileName file) ++ ".ast")
+--  let y = Txt.unpack h
+--  let x = parseDot y
+--  prettyPrintDot x
+--  DOT.putDot x
+--  let x = DOT.readDotFile ("/tmp/AST/" ++ repo ++ "/" ++ (dropExtension $ takeFileName file) ++ ".ast") -- :: DotGraph a
+--  let y = x
+--  DOT.putDot y
+
+*** Util.hs ***
+
+*** Basic.hs ***
+
+--      let x = map (MD.md5 . BLU.fromString . Txt.unpack) a
+--      let o = map (toText . fromBytes . MD.md5DigestBytes) x
+--      let z = zip3 o n inter1
+--      --LB.writeFile ("inter/" ++ name1 ++ "pre.csv") $ encode z
+--      csv <- parseFromFile CSV.csvFile (encode z)
+--      -- Second iteration
+--      -- Get number of lines per file.
+--      let n2 = map (length . Txt.lines) out2
+--      let m2 = out2
+--
+--      -- To test on unmodified vs preprocessed use either m2 or b. (end of first line)
+--      let x2 = map (MD.md5 . BLU.fromString . Txt.unpack) b
+--      let o2 = map (toText . fromBytes . MD.md5DigestBytes) x2
+--      let z2 = zip3 o2 n2 inter1a
+--      --LB.writeFile ("inter/" ++ name2 ++ "pre.csv") $ encode z2
+--      csv2 <- parseFromFile CSV.csvFile (encode z2)
+--
+--      let p  = rights [csv]
+--      let p2 = rights [csv2]
+--      let l  = sort (concat p)
+--      let l2 = sort (concat p2)
+--
+--      let k = compressFiles l
+--      let k2 = compressFiles l2
+--
+--      let yy = compareCoinHashes k k2 (length k) (length k2) ([], 0)
+--      let aa = snd yy
+--      let bb = fst yy
+--
+--      let dat = convertToCSVLine (name1, name2, length k, length k2, length bb)
+--      writeDataToFile "level2" (dat ++ "\n")
+
+--  input <- Txt.lines <$> Txt.readFile "misc/testset.csv"
+--  let clean = fmap (\x -> fmap Txt.unpack x) $
+--              fmap (\x -> (Txt.splitOn $ (Txt.pack ",") ) x) input
+--  let tmp   = splitEvery 3 $ fmap (filter (/= '\n')
+--            . filter (/= '\r')) $ concat clean
+--  let repos = map takeFileName $ concat $ map (tail . tail) tmp
+
+
+
+
+
+       slug   slug.1                      date                    date.1  \
+0  dogecoin  bitcoin  Sun Aug 30 03:46:39 2009  Sun Aug 30 03:46:39 2009   
+
+   commit-id commit-id2  overlap-basic1  overlap-basic2  overlap-parse  id  \
+0  4405b78d6  4405b78d6             0.0        0.004082       0.581615  74   
+
+   ... quote.USD.percent_change_30d quote.USD.percent_change_60d  \
+0  ...                   -35.806242                    12.165671   
+
+   quote.USD.percent_change_90d quote.USD.market_cap  \
+0                     441.77887         4.066116e+10   
+
+     quote.USD.last_updated  platform.id  platform.name  platform.symbol  \
+0  2021-06-16T19:00:03.000Z          NaN            NaN              NaN   
+
+   platform.slug  platform.token_address  
+0            NaN                     NaN  
+
+[1 rows x 36 columns]

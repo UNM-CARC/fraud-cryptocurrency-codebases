@@ -5,12 +5,40 @@
 
 packages:
 - completed:
-    hackage: clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
+    hackage: clang-pure-0.2.0.6@sha256:c418f87154acc69fb8257379953a32215c518151d39b6fe1da61994495039b26,3766
     pantry-tree:
       size: 1293
-      sha256: a946ade0b7f7cf8138d2411ac36be23f31a23dcd3c5b22dc645034ecd5caf3ea
+      sha256: ca33cb1a1f7d69f676b75a1d66fb20612ef5d8a9434f0079057728dca624db84
   original:
-    hackage: clang-pure-0.2.0.5@sha256:b93f04e7682b846ca3e2ba5c3d08816422119f20609ff01c92b3cf661f9d4cda,3766
+    hackage: clang-pure-0.2.0.6@sha256:c418f87154acc69fb8257379953a32215c518151d39b6fe1da61994495039b26,3766
+- completed:
+    hackage: cabal-helper-0.7.3.0@sha256:1ec0e453ac2b600db0767b99546f963f50436186f55f7794cef81f803a2c1b4a,6654
+    pantry-tree:
+      size: 946
+      sha256: de7f3a8165e3fcfd519a7b16b2908982573442b0b06a0953f2a467f85e3f6137
+  original:
+    hackage: cabal-helper-0.7.3.0@sha256:1ec0e453ac2b600db0767b99546f963f50436186f55f7794cef81f803a2c1b4a,6654
+- completed:
+    hackage: djinn-ghc-0.0.2.3@sha256:0daf55cd1842fe05ca9e1a3dbe868a847a60060066c58420a26cc8662e881efa,816
+    pantry-tree:
+      size: 209
+      sha256: 9dab1f1e2efc437a5c53e18b0b9c94b2407c5fbf4015754aa3fa72f21cd4f497
+  original:
+    hackage: djinn-ghc-0.0.2.3@sha256:0daf55cd1842fe05ca9e1a3dbe868a847a60060066c58420a26cc8662e881efa,816
+- completed:
+    hackage: ghc-syb-utils-0.2.3.3@sha256:fc4cd944bbd4d5160b2ee8bb458974a135c0abbd9941fb6e5f9180164efd091a,1302
+    pantry-tree:
+      size: 345
+      sha256: 7196851c1114be35c275332b9d23856e396581dd0fd8491d9ef74c57809e983f
+  original:
+    hackage: ghc-syb-utils-0.2.3.3@sha256:fc4cd944bbd4d5160b2ee8bb458974a135c0abbd9941fb6e5f9180164efd091a,1302
+- completed:
+    hackage: djinn-lib-0.0.1.3@sha256:73d19e501c86b46da0141daccf2d54c1121b67a840a64420a9ad5f1e86c1e47f,979
+    pantry-tree:
+      size: 396
+      sha256: be11025597ff8f4c23911ef519600de29acf9c2cbb5f721f55271a600c99225e
+  original:
+    hackage: djinn-lib-0.0.1.3@sha256:73d19e501c86b46da0141daccf2d54c1121b67a840a64420a9ad5f1e86c1e47f,979
 snapshots:
 - completed:
     size: 523448

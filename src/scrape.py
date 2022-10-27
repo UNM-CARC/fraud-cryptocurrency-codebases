@@ -1,52 +1,27 @@
-#from requests import Request, Session
-#from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-#import json
-#
-#url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
-#parameters = {
-#  'start':'1',
-#  'limit':'5000',
-#  'convert':'USD'
-#}
-#headers = {
-#  'Accepts': 'application/json',
-#  'X-CMC_PRO_API_KEY': 'a3ddb8f0-b7c2-43e4-81d5-93bf3f50520f',
-#}
-#
-#session = Session()
-#session.headers.update(headers)
-#
-#try:
-#  response = session.get(url, params=parameters)
-#  data = json.loads(response.text)
-#  print(data)
-#except (ConnectionError, Timeout, TooManyRedirects) as e:
-#  print(e)
-  
-
- #This example uses Python 2.7 and the python-request library.
-
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+from collections import defaultdict
+from coinmarketcapapi import CoinMarketCapAPI
+from pandas.io.json import json_normalize  # package for flattening json in pandas df
+import pandas as pd
 import json
 
-#vals = list(range(1,2396))
+# url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info'
+url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
 
-url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info'
-parameters = {
-  'id':'1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16'
-}
-headers = {
-  'Accepts': 'application/json',
-  'X-CMC_PRO_API_KEY': 'a3ddb8f0-b7c2-43e4-81d5-93bf3f50520f',
-}
+data_final = "/home/ghostbird/Hacking/cybersecurity/fraud-cryptocurrency-codebases/data_final/data_final.csv"
+# data_final = "/carc/scratch/projects/bridges2016099/data_final/data_final.csv"
+# data_final = "/wheeler/scratch/khaskins/fraud-cryptocurrency-codebases/data_final/data_final.csv"
+df_data_final = pd.read_csv(data_final)
+# df_data_final.set_index("name", inplace=True)
+# print(df_data_final)
 
-session = Session()
-session.headers.update(headers)
-
-try:
-  response = session.get(url, params=parameters)
-  data = json.loads(response.text)
-  print(data)
-except (ConnectionError, Timeout, TooManyRedirects) as e:
-  print(e)
+cmc = CoinMarketCapAPI("f43cf05e-ba8f-42f8-8c8c-d8dbe6c7531b")
+data_id_map = cmc.cryptocurrency_listings_latest()
+# data_id_map = cmc.cryptocurrency_info(symbol="BTC")
+normalized = pd.json_normalize(data_id_map.data)
+df = pd.DataFrame(normalized)
+df.set_index("slug", inplace=True)
+# print(df)
+df_merge = pd.merge(df_data_final, df, on="slug")
+print(df_merge)
