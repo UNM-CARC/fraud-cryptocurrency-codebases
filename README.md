@@ -18,3 +18,5 @@ depending on the analysis to be performed.
 
 Data from the parse tree analysis resides in the data/ directory as a CSV file for each pair
 of comparisons. Each line of the file is a comparison of two source files, one from each cryptocurrency repository, followed by the length of the parse tree in each source file and, finally, the length of the longest common substring between the two parse trees.
+
+This material is based on work supported by the National Science Foundation under Grant CNS-1849729.
